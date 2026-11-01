@@ -33,7 +33,7 @@ export const stats = {
   yearsLabel: '+15 años',
   yearsText: 'De experiencia en arquitectura, interiorismo y obra',
   projects: '+100',
-  m2: 15642,
+  m2: 20642,
   pricePerM2: 1200,
 };
 
@@ -99,7 +99,7 @@ export const featured = {
 
 export const moreProjects = [
   { tag: 'Residencia senior · 716 m²', client: 'Associació Cultural Carena', img: '/img/carena-residencia.jpg' },
-  { tag: 'Club juvenil', client: 'Fundación Padua', img: '/img/padua.jpg' },
+  { tag: 'Club juvenil · 3.000 m²', client: 'Fundación Padua', img: '/img/padua.jpg' },
   { tag: 'Oficinas · 1.000 m²', client: 'Aloalto', img: '/img/aloalto.jpg' },
   { tag: 'Showroom y oficinas · 800 m²', client: 'Papiol', img: '/img/papiol.jpg' },
   { tag: 'Residencia universitaria · 1ª fase · 350 m²', client: 'Colegio Mayor Universitario Pedralbes', img: '/img/cmu-pedralbes.jpg' },
@@ -122,11 +122,11 @@ export const reviews = [
 export const team = {
   title: 'Arquitectos, interioristas y técnicos. Un solo equipo.',
   text: '14 personas en Barcelona que diseñan, tramitan y dirigen la obra. Cada proyecto lo lideramos de la primera visita a la entrega de llaves.',
-  image: { src: '/img/socios.jpg', alt: 'Nacho Vallhonrat y Pablo Notario, socios cofundadores de DTRES' },
+  image: { src: '/img/equipo.jpg', alt: 'Equipo de DTRES trabajando en el estudio de Barcelona' },
   partners: [
-    { name: 'Nacho Vallhonrat', role: 'Socio cofundador y Director General', img: null },
-    { name: 'Pablo Notario', role: 'Socio cofundador y Director de Operaciones', img: null },
-    { name: 'Iñigo Ugalde', role: 'Socio y Director de Expansión y Relaciones Institucionales', note: 'Director de la Escuela de Arquitectura de la UIC', img: null },
+    { name: 'Nacho Vallhonrat', role: 'Socio cofundador y Director General', img: '/img/nacho.jpg' },
+    { name: 'Pablo Notario', role: 'Socio cofundador y Director de Operaciones', img: '/img/pablo.jpg' },
+    { name: 'Iñigo Ugalde', role: 'Socio y Director de Expansión y Relaciones Institucionales', note: 'Director de la Escuela de Arquitectura de la UIC', img: '/img/inigo.jpg' },
   ],
 };
 
