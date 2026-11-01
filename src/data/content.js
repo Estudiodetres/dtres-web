@@ -33,7 +33,7 @@ export const stats = {
   yearsLabel: '+15 años',
   yearsText: 'De experiencia en arquitectura, interiorismo y obra',
   projects: '+100',
-  m2: 13642,
+  m2: 15642,
   pricePerM2: 1200,
 };
 
@@ -41,7 +41,7 @@ export const usp = {
   eyebrow: 'Normativa y patrimonio en Catalunya',
   title: 'Licencias que avanzan. Edificios que rinden.',
   text: 'Conocemos a fondo la normativa urbanística y patrimonial de Catalunya, los criterios de cada ayuntamiento y sus márgenes de interpretación. Eso nos permite maximizar, siempre dentro de la legalidad, el aprovechamiento y la rentabilidad de cada edificio, y que las licencias avancen sin bloqueos.',
-  image: { src: '/img/cmu-pedralbes.jpg', alt: 'Colegio Mayor Universitario Pedralbes' },
+  image: { src: '/img/iese-l-detalle.jpg', alt: 'Detalle restaurado del IESE Edificio L, edificio catalogado de 1910' },
   proofs: [
     { tag: 'Patrimonio catalogado · 1.022 m²', title: 'Campus universitario · IESE Business School', text: 'Reforma integral e interiorismo que transmite los valores de la institución, con el campus en funcionamiento.' },
     { tag: 'Patrimonio catalogado · 1.225 m²', title: 'Oficinas · Fundació Familiar Catalana', text: 'Sede de las oficinas de la UIC. Plan especial integral, licencias, obra e interiorismo. Más licencias para 5.163 m² de obra nueva en la parcela.' },
@@ -98,11 +98,11 @@ export const featured = {
 };
 
 export const moreProjects = [
-  { tag: 'Club juvenil · 1.752 m²', client: 'Associació Cultural Carena', img: '/img/carena-club.jpg' },
   { tag: 'Residencia senior · 716 m²', client: 'Associació Cultural Carena', img: '/img/carena-residencia.jpg' },
-  { tag: 'Headquarters · 2.000 m²', client: 'Amelia Hub', img: '/img/amelia-hub.jpg' },
+  { tag: 'Club juvenil', client: 'Fundación Padua', img: '/img/padua.jpg' },
+  { tag: 'Oficinas · 1.000 m²', client: 'Aloalto', img: '/img/aloalto.jpg' },
   { tag: 'Showroom y oficinas · 800 m²', client: 'Papiol', img: '/img/papiol.jpg' },
-  { tag: 'Residencia universitaria · 1ª fase · 350 m²', client: 'Colegio Mayor Universitario Pedralbes', img: '/img/cmu-pedralbes-2.jpg' },
+  { tag: 'Residencia universitaria · 1ª fase · 350 m²', client: 'Colegio Mayor Universitario Pedralbes', img: '/img/cmu-pedralbes.jpg' },
   { tag: 'Oficinas · 200 m²', client: 'Mier Giralt Abogados', img: '/img/mier-giralt.jpg' },
 ];
 
@@ -122,11 +122,11 @@ export const reviews = [
 export const team = {
   title: 'Arquitectos, interioristas y técnicos. Un solo equipo.',
   text: '14 personas en Barcelona que diseñan, tramitan y dirigen la obra. Cada proyecto lo lideramos de la primera visita a la entrega de llaves.',
-  image: { src: '/img/equipo.jpg', alt: 'Equipo de DTRES en el estudio de Barcelona' },
+  image: { src: '/img/socios.jpg', alt: 'Nacho Vallhonrat y Pablo Notario, socios cofundadores de DTRES' },
   partners: [
-    { name: 'Nacho Vallhonrat', role: 'Socio cofundador y Director General', img: '/img/nacho.jpg' },
-    { name: 'Pablo Notario', role: 'Socio cofundador y Director de Operaciones', img: '/img/pablo.jpg' },
-    { name: 'Iñigo Ugalde', role: 'Socio y Director de Expansión y Relaciones Institucionales', note: 'Director de la Escuela de Arquitectura de la UIC', img: '/img/inigo.jpg' },
+    { name: 'Nacho Vallhonrat', role: 'Socio cofundador y Director General', img: null },
+    { name: 'Pablo Notario', role: 'Socio cofundador y Director de Operaciones', img: null },
+    { name: 'Iñigo Ugalde', role: 'Socio y Director de Expansión y Relaciones Institucionales', note: 'Director de la Escuela de Arquitectura de la UIC', img: null },
   ],
 };
 
