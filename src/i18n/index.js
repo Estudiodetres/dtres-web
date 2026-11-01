@@ -46,9 +46,9 @@ export const ui = {
   },
   ca: {
     nav: { method: 'Mètode', dd: 'Due diligence', projects: 'Projectes', about: 'Nosaltres', blog: 'Blog' },
-    cta: 'Agendar trucada', ctaFree: 'Agendar trucada gratuïta', seeProjects: 'Veure projectes',
+    cta: 'Reservar trucada', ctaFree: 'Reservar trucada gratuïta', seeProjects: 'Veure projectes',
     footer: { tagline: 'Arquitectura, interiorisme, llicències i obra per a edificis singulars a Catalunya.', studio: 'Estudi', contact: 'Contacte', legal: 'Legal', legalNotice: 'Avís legal', privacy: 'Privacitat', cookies: 'Galetes' },
-    form: { name: 'Nom', email: 'Correu electrònic', phone: 'Telèfon', company: 'Empresa o entitat', profile: 'Ets', message: "Explica'ns quin edifici tens i què vols aconseguir", legal: 'Farem servir les teves dades només per respondre’t.', privacy: 'Política de privacitat', submit: 'Agendar trucada', hp: 'No omplir',
+    form: { name: 'Nom', email: 'Correu electrònic', phone: 'Telèfon', company: 'Empresa o entitat', profile: 'Ets', message: "Explica'ns quin edifici tens i què vols aconseguir", legal: 'Farem servir les teves dades només per respondre’t.', privacy: 'Política de privacitat', submit: 'Reservar trucada', hp: 'No omplir',
       profiles: [['Fundación', 'Fundació'], ['Inversor', 'Inversor'], ['Family office', 'Family office'], ['Empresa', 'Empresa'], ['Particular', 'Particular']] },
     home: { for: 'Treballem per a', projectsDone: 'Projectes lliurats', works: "D'obra gestionada", m2: 'Transformats en edificis singulars',
       methodEyebrow: 'Transformació integral · Mètode en 4 fases', methodTitle: "De la primera anàlisi al lliurament de claus.", methodNote: 'Pots començar per qualsevol fase. T’acompanyem fins al final.',

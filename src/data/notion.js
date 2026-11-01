@@ -36,7 +36,7 @@ export function formatStats(s, lang = 'es') {
   const m2Floor = Math.floor(s.m2 / 1000) * 1000;
   const eur = Math.floor((s.m2 * s.pricePerM2) / 1e6);
   return {
-    m2: `+${String(m2Floor).replace(/\B(?=(\d{3})+(?!\d))/g, sep)} m²`,
+    m2: lang === 'en' ? `${String(m2Floor).replace(/\B(?=(\d{3})+(?!\d))/g, sep)}+ m²` : `+${String(m2Floor).replace(/\B(?=(\d{3})+(?!\d))/g, sep)} m²`,
     obra: lang === 'en' ? `€${eur}M+` : `+${eur} M€`,
   };
 }

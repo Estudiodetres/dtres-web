@@ -4,6 +4,7 @@ description: "Cuándo se puede dividir una vivienda grande en varias en Barcelon
 keyword: "segregar vivienda Barcelona"
 phase: "Proyecto y licencias"
 author: "Pablo Notario"
+ref: "segregar-vivienda-barcelona"
 date: 2026-11-01
 ---
 

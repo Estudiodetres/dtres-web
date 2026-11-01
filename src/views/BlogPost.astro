@@ -3,11 +3,19 @@ import Base from '../layouts/Base.astro';
 import ContactForm from '../components/ContactForm.astro';
 import { getContent } from '../data/i18n-content.js';
 import { site } from '../data/content.js';
-import { ui, routes, phasePath } from '../i18n/index.js';
+import { ui, routes, phasePath, postPath, langs } from '../i18n/index.js';
+import { getPosts } from '../data/blog.js';
 const { lang = 'es', post } = Astro.props;
 const t = ui[lang].blog;
 const phase = getContent(lang).phases.find((f) => f.title === post.phase);
 const df = new Intl.DateTimeFormat(lang, { day: 'numeric', month: 'long', year: 'numeric' });
+const ref = post.ref || post.slug;
+const alternates = { [lang]: postPath(lang, post.slug) };
+for (const l of langs) {
+  if (l === lang) continue;
+  const m = (await getPosts(l)).find((p) => (p.ref || p.slug) === ref);
+  if (m) alternates[l] = postPath(l, m.slug);
+}
 const Content = post.entry ? (await post.entry.render()).Content : null;
 const ld = {
   '@context': 'https://schema.org', '@type': 'BlogPosting', headline: post.title, description: post.description,
@@ -16,7 +24,7 @@ const ld = {
   mainEntityOfPage: new URL(Astro.url.pathname, Astro.site).href,
 };
 ---
-<Base title={`${post.title} · DTRES`} description={post.description} lang={lang} jsonLd={[ld]}>
+<Base title={`${post.title} · DTRES`} description={post.description} lang={lang} alternates={alternates} jsonLd={[ld]}>
   <article class="wrap po">
     <header class="po__head">
       <a class="po__back" href={routes.blog[lang]}>{t.back}</a>

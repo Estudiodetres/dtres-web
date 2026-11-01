@@ -4,6 +4,7 @@ description: "Qué hace falta para convertir oficinas, locales o equipamientos e
 keyword: "cambio de uso a vivienda Barcelona"
 phase: "Proyecto y licencias"
 author: "Nacho Vallhonrat"
+ref: "cambio-uso-a-vivienda-barcelona"
 date: 2026-11-01
 ---
 

@@ -4,6 +4,7 @@ description: "Qué analiza una due diligence técnica, urbanística y patrimonia
 keyword: "due diligence técnica edificio Barcelona"
 phase: "Viabilidad"
 author: "Nacho Vallhonrat"
+ref: "due-diligence-tecnica-edificio-barcelona"
 date: 2026-11-01
 ---
 
