@@ -33,7 +33,7 @@ const listLd = {
           {p.img
             ? <img class="ph" src={p.img} alt={`${p.use} · ${p.client}`} width="600" height="750" loading="lazy" />
             : <div class="pj__ph"><span>{st(p.status) ?? t.project}</span><strong>{fmt(p.m2)} m²</strong></div>}
-          <span class="lbl">{[st(p.status), p.heritage && t.heritage, `${fmt(p.m2)} m²`].filter(Boolean).join(' · ')}</span>
+          <span class="lbl">{[p.img && st(p.status), p.heritage && t.heritage, p.img && `${fmt(p.m2)} m²`].filter(Boolean).join(' · ')}</span>
           <h2>{p.use}</h2>
           <p>{p.client}</p>
         </article>
@@ -70,7 +70,7 @@ const listLd = {
   .pj__filters button[aria-pressed="true"] { background: #202124; color: #eaeae4; border-color: #202124; }
   .pj__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 56px 24px; }
   @media (max-width: 860px) { .pj__grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 520px) { .pj__grid { grid-template-columns: 1fr; } }
+  @media (max-width: 520px) { .pj__grid { gap: 36px 12px; } .pj__grid h2 { font-size: 17px; } .pj__grid p { font-size: 14px; } .pj__ph { padding: 16px; } .pj__ph strong { font-size: 28px; } }
   .pj__grid article { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
   .pj__grid img, .pj__ph { aspect-ratio: 4 / 5; width: 100%; }
   .pj__ph { background: #dcdbd2; display: flex; flex-direction: column; justify-content: space-between; padding: 28px; }

@@ -11,6 +11,7 @@ const t = ui[lang].phase;
 const others = phases.filter((p) => p.id !== f.id);
 const alternates = Object.fromEntries(langs.map((l) => [l, phasePath(l, getContent(l).phases.find((p) => p.id === f.id).slug)]));
 
+const short = (txt, max = 160) => { let out = ''; for (const s of txt.split(/(?<=\.)\s+/)) { if ((out + ' ' + s).trim().length > max) break; out = (out + ' ' + s).trim(); } return out || txt.slice(0, max); };
 const serviceLd = {
   '@context': 'https://schema.org',
   '@type': 'Service',
@@ -20,7 +21,7 @@ const serviceLd = {
   areaServed: site.areaServed,
 };
 ---
-<Base title={`${f.seoTitle} · DTRES`} description={f.intro} jsonLd={[serviceLd]} lang={lang} alternates={alternates}>
+<Base title={`${f.seoTitle} · DTRES`} description={short(f.intro)} jsonLd={[serviceLd]} lang={lang} alternates={alternates}>
   <section class="wrap ph-hero">
     <p class="lbl">{t.label} {f.n} · {t.integral}</p>
     <h1>{f.seoTitle}</h1>
@@ -53,7 +54,7 @@ const serviceLd = {
 
   <section id="contacto" class="dark">
     <div class="wrap ph-cta">
-      <h2>{lang === 'es' ? '¿' : ''}{t.ctaPre} {f.title.toLowerCase()}?</h2>
+      <h2>{t.ctaPre} {f.title.toLowerCase()}?</h2>
       <ContactForm origen={`fase-${f.id}`} lang={lang} />
     </div>
   </section>

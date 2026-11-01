@@ -8,14 +8,14 @@ export const site = {
   email: 'info@detres.eu',
   phone: '+34 931 255 444',
   phoneDisplay: '931 255 444',
-  address: { street: "Carrer d'Osi 23", postalCode: '08034', city: 'Barcelona', region: 'Catalunya', country: 'ES' },
+  address: { street: "Carrer d'Osi 23, baixos 2a", postalCode: '08034', city: 'Barcelona', region: 'Catalunya', country: 'ES' },
   placeId: 'ChIJv3MWA6yXpBIRj6tO7BPYQxA',
   areaServed: ['Barcelona', 'Catalunya'],
 };
 
 export const meta = {
-  homeTitle: 'DTRES · Transformación de edificios en Barcelona: due diligence, licencias, interiorismo y obra',
-  homeDesc: 'Arquitectura y diseño que elevan el valor de tu inversión. Transformamos edificios en Barcelona y Catalunya: due diligence, cambio de uso, edificios catalogados, interiorismo y obra a precio cerrado.',
+  homeTitle: 'Transformación de edificios en Barcelona · DTRES Arquitectura',
+  homeDesc: 'Due diligence, cambio de uso, edificios catalogados, licencias, interiorismo y obra en Barcelona y Catalunya. De la primera visita a la entrega de llaves.',
 };
 
 export const hero = {

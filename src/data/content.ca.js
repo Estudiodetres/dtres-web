@@ -5,8 +5,8 @@ export const site = es.site;
 export const stats = { ...es.stats, yearsLabel: '+15 anys', yearsText: "D'experiència en arquitectura, interiorisme i obra" };
 
 export const meta = {
-  homeTitle: "DTRES · Transformació d'edificis a Barcelona: due diligence, llicències, interiorisme i obra",
-  homeDesc: "Arquitectura i disseny que eleven el valor de la teva inversió. Transformem edificis a Barcelona i Catalunya: due diligence, canvi d'ús, edificis catalogats, interiorisme i obra a preu tancat.",
+  homeTitle: "Transformació d'edificis a Barcelona · DTRES Arquitectura",
+  homeDesc: "Due diligence, canvi d'ús, edificis catalogats, llicències, interiorisme i obra a Barcelona i Catalunya. De la primera visita al lliurament de claus.",
 };
 
 export const hero = {

@@ -5,8 +5,8 @@ export const site = es.site;
 export const stats = { ...es.stats, yearsLabel: '15+ years', yearsText: 'Of experience in architecture, interior design and construction', projects: '100+' };
 
 export const meta = {
-  homeTitle: 'DTRES · Building transformation in Barcelona: due diligence, permits, interior design and construction',
-  homeDesc: 'Architecture and design that raise the value of your investment. We transform buildings in Barcelona and Catalonia: due diligence, change of use, listed buildings, interior design and fixed-price construction.',
+  homeTitle: 'Building transformation in Barcelona · DTRES Architecture',
+  homeDesc: 'Due diligence, change of use, listed buildings, permits, interior design and construction in Barcelona and Catalonia. From first visit to handover.',
 };
 
 export const hero = {

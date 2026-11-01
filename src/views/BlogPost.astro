@@ -24,7 +24,7 @@ const ld = {
   mainEntityOfPage: new URL(Astro.url.pathname, Astro.site).href,
 };
 ---
-<Base title={`${post.title} · DTRES`} description={post.description} lang={lang} alternates={alternates} jsonLd={[ld]}>
+<Base title={post.title.length > 62 ? post.title : `${post.title} · DTRES`} description={post.description} lang={lang} alternates={alternates} jsonLd={[ld]}>
   <article class="wrap po">
     <header class="po__head">
       <a class="po__back" href={routes.blog[lang]}>{t.back}</a>

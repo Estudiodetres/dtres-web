@@ -11,7 +11,10 @@ const t = ui[lang].footer;
     <div class="ftr__col"><span class="lbl">{t.contact}</span><a href={`mailto:${site.email}`}>{site.email}</a><a href={`tel:${site.phone.replace(/\s/g, '')}`}>{site.phoneDisplay}</a></div>
     <div class="ftr__col"><span class="lbl">{t.legal}</span><a href={routes.legal[lang]}>{t.legalNotice}</a><a href={routes.privacy[lang]}>{t.privacy}</a><a href={routes.cookies[lang]}>{t.cookies}</a></div>
   </div>
-  <div class="wrap ftr__base"><span>© {new Date().getFullYear()} {site.legalName}</span></div>
+  <div class="wrap ftr__base">
+    <span>© {new Date().getFullYear()} {site.legalName}</span>
+    <svg class="ftr__mark" viewBox="0 0 64 64" role="img" aria-label="DTRES"><rect width="64" height="64" fill="none" stroke="currentColor" stroke-width="2"/><text x="32" y="42" font-family="'Schibsted Grotesk', Helvetica, Arial, sans-serif" font-size="26" font-weight="600" fill="currentColor" text-anchor="middle">D3</text></svg>
+  </div>
 </footer>
 <style>
   .ftr { color: #c9c8bb; border-top: 1px solid rgba(234,234,228,.15); }
@@ -19,5 +22,6 @@ const t = ui[lang].footer;
   .ftr__col { display: flex; flex-direction: column; gap: 6px; }
   .ftr__col a { color: #c9c8bb; text-decoration: none; }
   .ftr__logo { font-size: 22px; font-weight: 600; letter-spacing: .06em; color: var(--bone); }
-  .ftr__base { padding-block: 0 40px; font-size: 13px; color: #8f8e82; }
+  .ftr__base { padding-block: 0 40px; font-size: 13px; color: #8f8e82; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+  .ftr__mark { width: 36px; height: 36px; color: #8f8e82; flex: none; }
 </style>
