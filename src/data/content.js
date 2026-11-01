@@ -134,9 +134,9 @@ export const team = {
   text: 'Hablas con una sola persona de principio a fin. Detrás, 14 arquitectos, interioristas, ingenieros y técnicos en Barcelona que diseñan, tramitan y dirigen la obra. Cada proyecto lo lideramos de la primera visita a la entrega de llaves.',
   image: { src: '/img/equipo.jpg', alt: 'Equipo de DTRES trabajando en el estudio de Barcelona' },
   partners: [
-    { name: 'Nacho Vallhonrat', role: 'Arquitecto, socio cofundador', title: 'Director de Estrategia y Adquisición', note: 'Profesor de la Escuela de Arquitectura de la UIC', img: '/img/nacho.jpg' },
-    { name: 'Pablo Notario', role: 'Arquitecto, socio cofundador', title: 'Director de Operaciones y Finanzas', note: 'Profesor de la Escuela de Arquitectura de la UIC', img: '/img/pablo.jpg' },
-    { name: 'Iñigo Ugalde', role: 'Doctor arquitecto, socio', title: 'Director de Calidad', note: 'Director de la Escuela de Arquitectura de la UIC', img: '/img/inigo.jpg' },
+    { name: 'Nacho Vallhonrat', role: 'Arquitecto, socio cofundador', title: 'Director de Estrategia y Adquisición', note: 'Profesor de la Escuela de Arquitectura UIC', img: '/img/nacho.jpg' },
+    { name: 'Pablo Notario', role: 'Arquitecto, socio cofundador', title: 'Director de Operaciones y Finanzas', note: 'Profesor de la Escuela de Arquitectura UIC', img: '/img/pablo.jpg' },
+    { name: 'Iñigo Ugalde', role: 'Doctor arquitecto, socio', title: 'Director de Calidad', note: 'Director de la Escuela de Arquitectura UIC', img: '/img/inigo.jpg' },
   ],
 };
 
@@ -144,7 +144,7 @@ export const team = {
 export const people = {
   staff: [
     { name: 'Elisabeth Pino', role: 'Responsable de Planificación y Procesos' },
-    { name: 'Arnau Carbó', role: 'Responsable de Calidad y Trámites' },
+    { name: 'Arnau Carbó', role: 'Responsable de Calidad y Trámites', sub: 'Arquitecto senior', note: 'Profesor de la Escuela de Arquitectura UIC' },
     { name: 'Miquel Marquès', role: 'Project Manager' },
     { name: 'Marta Cusí', role: 'Interiorista' },
     { name: 'Blanca de Prat', role: 'Arquitecta junior' },

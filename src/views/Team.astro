@@ -55,6 +55,8 @@ const ld = {
             : <div class="tm-ph" aria-hidden="true">{initials(p.name)}</div>}
           <h3>{p.name}</h3>
           <p class="tm-role">{p.role}</p>
+          {p.sub && <p>{p.sub}</p>}
+          {p.note && <p class="tm-note">{p.note}</p>}
         </article>
       ))}
     </div>

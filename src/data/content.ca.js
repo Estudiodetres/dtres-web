@@ -110,9 +110,9 @@ export const team = {
   text: "Parles amb una sola persona de principi a fi. Al darrere, 14 arquitectes, interioristes, enginyers i tècnics a Barcelona que dissenyen, tramiten i dirigeixen l'obra. Liderem cada projecte des de la primera visita fins al lliurament de claus.",
   image: { src: es.team.image.src, alt: "Equip de DTRES treballant a l'estudi de Barcelona" },
   partners: [
-    { ...es.team.partners[0], role: 'Arquitecte, soci cofundador', title: "Director d'Estratègia i Adquisició", note: "Professor de l'Escola d'Arquitectura de la UIC" },
-    { ...es.team.partners[1], role: 'Arquitecte, soci cofundador', title: "Director d'Operacions i Finances", note: "Professor de l'Escola d'Arquitectura de la UIC" },
-    { ...es.team.partners[2], role: 'Doctor arquitecte, soci', title: 'Director de Qualitat', note: "Director de l'Escola d'Arquitectura de la UIC" },
+    { ...es.team.partners[0], role: 'Arquitecte, soci cofundador', title: "Director d'Estratègia i Adquisició", note: "Professor de l'Escola d'Arquitectura UIC" },
+    { ...es.team.partners[1], role: 'Arquitecte, soci cofundador', title: "Director d'Operacions i Finances", note: "Professor de l'Escola d'Arquitectura UIC" },
+    { ...es.team.partners[2], role: 'Doctor arquitecte, soci', title: 'Director de Qualitat', note: "Director de l'Escola d'Arquitectura UIC" },
   ],
 };
 
@@ -124,8 +124,8 @@ export const faqs = [
   { q: 'Puc contractar-vos només per a una fase?', a: "Sí. Pots començar per la viabilitat, el projecte, l'obra o l'FF&E i el lliurament, i t'acompanyem fins al final." },
 ];
 export const clients = es.clients;
-const peopleRole = {'Responsable de Planificación y Procesos': 'Responsable de Planificació i Processos', 'Responsable de Calidad y Trámites': 'Responsable de Qualitat i Tràmits', 'Project Manager': 'Project Manager', 'Arquitecta senior': 'Arquitecta sènior', 'Arquitecto senior': 'Arquitecte sènior', 'Interiorista': 'Interiorista', 'Arquitecta junior': 'Arquitecta júnior', 'Modeladora 3D': 'Modeladora 3D', 'Ingeniero': 'Enginyer', 'Arquitecta técnica': 'Arquitecta tècnica', 'Constructor': 'Constructor'};
-export const people = { staff: es.people.staff.map((x) => ({ ...x, role: peopleRole[x.role] ?? x.role })), partners: es.people.partners.map((x) => ({ ...x, role: peopleRole[x.role] ?? x.role })) };
+const peopleRole = {'Responsable de Planificación y Procesos': 'Responsable de Planificació i Processos', 'Responsable de Calidad y Trámites': 'Responsable de Qualitat i Tràmits', 'Arquitecto senior': 'Arquitecte sènior', 'Profesor de la Escuela de Arquitectura UIC': "Professor de l'Escola d'Arquitectura UIC", 'Project Manager': 'Project Manager', 'Arquitecta senior': 'Arquitecta sènior', 'Arquitecto senior': 'Arquitecte sènior', 'Interiorista': 'Interiorista', 'Arquitecta junior': 'Arquitecta júnior', 'Modeladora 3D': 'Modeladora 3D', 'Ingeniero': 'Enginyer', 'Arquitecta técnica': 'Arquitecta tècnica', 'Constructor': 'Constructor'};
+export const people = { staff: es.people.staff.map((x) => ({ ...x, role: peopleRole[x.role] ?? x.role, sub: x.sub && (peopleRole[x.sub] ?? x.sub), note: x.note && (peopleRole[x.note] ?? x.note) })), partners: es.people.partners.map((x) => ({ ...x, role: peopleRole[x.role] ?? x.role })) };
 
 export const statusLabels = { 'En obra': 'En obra', 'En licitación': 'En licitació', 'En viabilidad': 'En viabilitat' };
 
