@@ -25,7 +25,7 @@ const faqLd = {
       <p class="hero__sub">{hero.subtitle}</p>
       <div class="hero__cta">
         <a class="btn" href="#contacto">Agendar llamada gratuita</a>
-        <a class="btn btn--ghost" href="#proyectos">Ver proyectos</a>
+        <a class="btn btn--ghost" href="/proyectos/">Ver proyectos</a>
       </div>
     </div>
   </section>
@@ -104,7 +104,7 @@ const faqLd = {
 
   <!-- MÁS PROYECTOS -->
   <section class="wrap more">
-    <h2>Más transformaciones</h2>
+    <div class="rev__head"><h2>Más transformaciones</h2><a href="/proyectos/">Ver todos los proyectos →</a></div>
     <div class="more__grid">
       {moreProjects.map((p) => (
         <article><img class="ph" src={p.img} alt={`${p.tag} · ${p.client}`} width="600" height="750" loading="lazy" /><span class="lbl">{p.tag}</span><h3>{p.client}</h3></article>

@@ -142,3 +142,29 @@ export const blog = [
   { tag: 'Proyecto y licencias', title: 'Cambio de uso a vivienda en Barcelona: requisitos y plazos', slug: 'cambio-uso-a-vivienda-barcelona' },
   { tag: 'Proyecto y licencias', title: 'Segregar una vivienda en varias en Barcelona: requisitos y rentabilidad', slug: 'segregar-vivienda-barcelona' },
 ];
+
+// Todos los proyectos (no vivienda). cat: patrimonio | residencias | oficinas | equipamientos. status: null | 'En obra' | 'En licitación' | 'En viabilidad'
+export const allProjects = [
+  { use: 'Oficinas en edificio de 1910', client: 'IESE Business School', m2: 1022, cat: 'patrimonio', heritage: true, img: '/img/iese-l-hero.jpg', place: 'Barcelona' },
+  { use: 'Oficinas', client: 'IESE Business School', m2: 279, cat: 'oficinas', heritage: true, img: '/img/iese-a.jpg', place: 'Barcelona' },
+  { use: 'Oficinas de la UIC', client: 'Fundació Familiar Catalana', m2: 1225, cat: 'patrimonio', heritage: true, status: 'En licitación', place: 'Barcelona' },
+  { use: 'Plan especial y licencias de obra nueva', client: 'Fundació Familiar Catalana', m2: 5163, cat: 'equipamientos', place: 'Barcelona' },
+  { use: 'Oficinas', client: 'OIP', m2: 1000, cat: 'oficinas', heritage: true, img: '/img/oip.jpg', place: 'Barcelona' },
+  { use: 'Residencia senior', client: 'Associació Col·laborativa Montroig', m2: 1000, cat: 'residencias', heritage: true, img: '/img/lesseps.jpg', place: 'Barcelona' },
+  { use: 'Residencia senior', client: 'Associació Cultural Carena', m2: 716, cat: 'residencias', img: '/img/carena-residencia.jpg', place: 'Barcelona' },
+  { use: 'Residencia universitaria', client: 'Colegio Mayor Universitario Bonaigua', m2: 4000, cat: 'residencias', status: 'En obra', place: 'Barcelona' },
+  { use: 'Residencia universitaria · 1ª fase', client: 'Colegio Mayor Universitario Pedralbes', m2: 350, cat: 'residencias', img: '/img/cmu-pedralbes.jpg', place: 'Barcelona' },
+  { use: 'Club juvenil', client: 'Fundación Padua', m2: 3000, cat: 'equipamientos', img: '/img/padua.jpg', place: 'Barcelona' },
+  { use: 'Club juvenil', client: 'Associació Cultural Carena', m2: 1752, cat: 'equipamientos', place: 'Barcelona' },
+  { use: 'Vestuarios y gradas', client: 'Brafa', m2: 1000, cat: 'equipamientos', place: 'Barcelona' },
+  { use: 'De coliving a 5 viviendas de alquiler', client: 'Fundació Privada Montseny', m2: 577, cat: 'residencias', status: 'En obra', place: 'Barcelona' },
+  { use: 'De oficinas a 5 viviendas', client: 'Fondo de inversión Relanza', m2: 490, cat: 'residencias', status: 'En viabilidad', place: 'Barcelona' },
+  { use: 'Headquarters', client: 'Amelia Hub', m2: 2000, cat: 'oficinas', place: 'Barcelona' },
+  { use: 'Oficinas', client: 'Aloalto', m2: 1000, cat: 'oficinas', img: '/img/aloalto.jpg', place: 'Barcelona' },
+  { use: 'Showroom y oficinas', client: 'Papiol', m2: 800, cat: 'oficinas', img: '/img/papiol.jpg', place: 'Barcelona' },
+  { use: 'Oficinas', client: 'Triple Risk', m2: 400, cat: 'oficinas', img: '/img/frankie.jpg', place: 'Barcelona' },
+  { use: 'Oficinas', client: 'Entrelazadogs', m2: 400, cat: 'oficinas', img: '/img/entrelazadogs.jpg', place: 'Barcelona' },
+  { use: 'Oficinas', client: 'Mier Giralt Abogados', m2: 200, cat: 'oficinas', img: '/img/mier-giralt.jpg', place: 'Barcelona' },
+  { use: 'Oficinas', client: 'Delaire', m2: 100, cat: 'oficinas', img: '/img/delaire.jpg', place: 'Barcelona' },
+  { use: 'Estudio de arquitectura', client: 'DTRES', m2: 100, cat: 'oficinas', img: '/img/oficinas-dtres.jpg', place: 'Barcelona' },
+];
