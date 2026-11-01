@@ -8,7 +8,7 @@ import { srcset } from '../lib/img.js';
 const { lang = 'es' } = Astro.props;
 const { team, people, site } = getContent(lang);
 const t = ui[lang].teamPage;
-const photos = { 'Nacho Vallhonrat': 'nacho', 'Pablo Notario': 'pablo', 'Iñigo Ugalde': 'inigo', 'Elisabeth Pino': 'elisabeth', 'Arnau Carbó': 'arnau', 'Miquel Marquès': 'miquel', 'Blanca de Prat': 'blanca', 'Sofía Egido': 'sofia', 'Andrea Peña': 'andrea', 'Natasha Schnippenkoetter': 'natasha', 'Eliana Mullis': 'eliana' };
+const photos = { 'Nacho Vallhonrat': 'nacho', 'Pablo Notario': 'pablo', 'Iñigo Ugalde': 'inigo', 'Elisabeth Pino': 'elisabeth', 'Marta Cusí': 'marta', 'Arnau Carbó': 'arnau', 'Miquel Marquès': 'miquel', 'Blanca de Prat': 'blanca', 'Sofía Egido': 'sofia', 'Andrea Peña': 'andrea', 'Natasha Schnippenkoetter': 'natasha', 'Eliana Mullis': 'eliana' };
 const photo = (n) => (photos[n] ? `/img/tm-${photos[n]}.jpg` : null);
 const initials = (n) => n.split(' ').map((w) => w[0]).slice(0, 2).join('');
 const ld = {
