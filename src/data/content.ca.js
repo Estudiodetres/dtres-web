@@ -124,7 +124,7 @@ export const faqs = [
   { q: 'Puc contractar-vos només per a una fase?', a: "Sí. Pots començar per la viabilitat, el projecte, l'obra o l'FF&E i el lliurament, i t'acompanyem fins al final." },
 ];
 export const clients = es.clients;
-const peopleRole = {'Arquitecta senior': 'Arquitecta sènior', 'Arquitecto senior': 'Arquitecte sènior', 'Interiorista': 'Interiorista', 'Arquitecta junior': 'Arquitecta júnior', 'Modeladora 3D': 'Modeladora 3D', 'Ingeniero': 'Enginyer', 'Arquitecta técnica': 'Arquitecta tècnica', 'Constructor': 'Constructor'};
+const peopleRole = {'Responsable de Planificación y Procesos': 'Responsable de Planificació i Processos', 'Responsable de Calidad y Trámites': 'Responsable de Qualitat i Tràmits', 'Project Manager': 'Project Manager', 'Arquitecta senior': 'Arquitecta sènior', 'Arquitecto senior': 'Arquitecte sènior', 'Interiorista': 'Interiorista', 'Arquitecta junior': 'Arquitecta júnior', 'Modeladora 3D': 'Modeladora 3D', 'Ingeniero': 'Enginyer', 'Arquitecta técnica': 'Arquitecta tècnica', 'Constructor': 'Constructor'};
 export const people = { staff: es.people.staff.map((x) => ({ ...x, role: peopleRole[x.role] ?? x.role })), partners: es.people.partners.map((x) => ({ ...x, role: peopleRole[x.role] ?? x.role })) };
 
 export const statusLabels = { 'En obra': 'En obra', 'En licitación': 'En licitació', 'En viabilidad': 'En viabilitat' };

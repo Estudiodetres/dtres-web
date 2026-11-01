@@ -143,9 +143,9 @@ export const team = {
 // Equipo (fuente: Notion · Equipo web)
 export const people = {
   staff: [
-    { name: 'Elisabeth Pino', role: 'Arquitecta senior' },
-    { name: 'Arnau Carbó', role: 'Arquitecto senior' },
-    { name: 'Miquel Marquès', role: 'Arquitecto senior' },
+    { name: 'Elisabeth Pino', role: 'Responsable de Planificación y Procesos' },
+    { name: 'Arnau Carbó', role: 'Responsable de Calidad y Trámites' },
+    { name: 'Miquel Marquès', role: 'Project Manager' },
     { name: 'Marta Cusí', role: 'Interiorista' },
     { name: 'Blanca de Prat', role: 'Arquitecta junior' },
     { name: 'Sofía Egido', role: 'Arquitecta junior' },
