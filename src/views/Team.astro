@@ -8,7 +8,9 @@ import { srcset } from '../lib/img.js';
 const { lang = 'es' } = Astro.props;
 const { team, people, site } = getContent(lang);
 const t = ui[lang].teamPage;
-const photos = { 'Nacho Vallhonrat': '/img/team-nacho.jpg', 'Pablo Notario': '/img/team-pablo.jpg', 'Iñigo Ugalde': '/img/team-inigo.jpg' };
+const photos = { 'Nacho Vallhonrat': 'nacho', 'Pablo Notario': 'pablo', 'Iñigo Ugalde': 'inigo', 'Elisabeth Pino': 'elisabeth', 'Arnau Carbó': 'arnau', 'Miquel Marquès': 'miquel', 'Blanca de Prat': 'blanca', 'Sofía Egido': 'sofia', 'Andrea Peña': 'andrea', 'Natasha Schnippenkoetter': 'natasha', 'Eliana Mullis': 'eliana' };
+const photo = (n) => (photos[n] ? `/img/tm-${photos[n]}.jpg` : null);
+const initials = (n) => n.split(' ').map((w) => w[0]).slice(0, 2).join('');
 const ld = {
   '@context': 'https://schema.org', '@type': 'Organization', name: 'DTRES', url: 'https://detres.eu/',
   employee: [
@@ -30,10 +32,10 @@ const ld = {
 
   <section class="wrap tm-block">
     <h2 class="lbl">{t.partners}</h2>
-    <div class="tm-partners">
+    <div class="tm-grid">
       {team.partners.map((p) => (
         <article>
-          <img class="ph" src={photos[p.name] ?? p.img} alt={p.name} width="640" height="800" loading="lazy" />
+          <img class="ph" src={photo(p.name)} alt={p.name} width="600" height="600" loading="lazy" />
           <h3>{p.name}</h3>
           <p class="tm-role">{p.title}</p>
           <p>{p.role}</p>
@@ -45,9 +47,17 @@ const ld = {
 
   <section class="wrap tm-block">
     <h2 class="lbl">{t.staff}</h2>
-    <ul class="tm-list">
-      {people.staff.map((p) => <li><strong>{p.name}</strong><span>{p.role}</span></li>)}
-    </ul>
+    <div class="tm-grid">
+      {people.staff.map((p) => (
+        <article>
+          {photo(p.name)
+            ? <img class="ph" src={photo(p.name)} alt={p.name} width="600" height="600" loading="lazy" />
+            : <div class="tm-ph" aria-hidden="true">{initials(p.name)}</div>}
+          <h3>{p.name}</h3>
+          <p class="tm-role">{p.role}</p>
+        </article>
+      ))}
+    </div>
   </section>
 
   <section class="wrap tm-block">
@@ -71,14 +81,15 @@ const ld = {
   .tm-hero__sub { font-size: 21px; line-height: 1.45; max-width: 52ch; }
   .tm-group { width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; }
   .tm-block { padding-block: clamp(56px, 8vw, 96px) 0; display: flex; flex-direction: column; gap: 32px; border-bottom: 0; }
-  .tm-partners { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px 24px; }
-  @media (max-width: 860px) { .tm-partners { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-  @media (max-width: 520px) { .tm-partners { grid-template-columns: 1fr; } }
-  .tm-partners article { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
-  .tm-partners img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; margin-bottom: 12px; }
-  .tm-partners h3 { font-size: 24px; font-weight: 500; }
-  .tm-partners p { font-size: 15px; color: var(--text2); }
-  .tm-partners .tm-role { color: var(--ink); font-weight: 500; }
+  .tm-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px 24px; }
+  @media (max-width: 860px) { .tm-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 480px) { .tm-grid { grid-template-columns: 1fr; } }
+  .tm-grid article { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+  .tm-grid img, .tm-ph { width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover; margin-bottom: 12px; }
+  .tm-ph { display: grid; place-items: center; background: var(--card); color: var(--muted); font-size: clamp(32px, 5vw, 56px); letter-spacing: .04em; }
+  .tm-grid h3 { font-size: 22px; font-weight: 500; }
+  .tm-grid p { font-size: 15px; color: var(--text2); }
+  .tm-grid .tm-role { color: var(--ink); font-weight: 500; }
   .tm-note { color: var(--muted) !important; font-size: 14px !important; }
   .tm-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(240px, 100%), 1fr)); border-top: 1px solid var(--line); }
   .tm-list li { display: flex; flex-direction: column; gap: 4px; padding: 20px 16px 20px 0; border-bottom: 1px solid var(--line); min-width: 0; }
