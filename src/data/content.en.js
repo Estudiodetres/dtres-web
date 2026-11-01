@@ -107,7 +107,7 @@ export const reviews = es.reviews.map((r, i) => ({ ...r, lang: r.lang || 'es', c
 
 export const team = {
   title: 'One point of contact. A full team behind it.',
-  text: 'You deal with one person from start to finish. Behind them, 14 architects, interior designers, engineers and technical experts in Barcelona who design, secure permits and manage construction. We lead every project from the first visit to handover.',
+  text: 'You deal with one person from start to finish. Behind them, a team of 12 in Barcelona: architects, interior designers and 3D modellers, backed by a trusted engineer, building surveyor and contractor. We design, secure permits and manage construction, from the first visit to handover.',
   image: { src: es.team.image.src, alt: 'The DTRES team working in the Barcelona studio' },
   partners: [
     { ...es.team.partners[0], role: 'Architect, co-founding partner', title: 'Director of Strategy and Acquisition', note: 'Lecturer at the UIC School of Architecture' },

@@ -107,7 +107,7 @@ export const reviews = es.reviews.map((r, i) => ({ ...r, lang: r.lang || 'es', c
 
 export const team = {
   title: 'Un sol interlocutor. Un equip complet al darrere.',
-  text: "Parles amb una sola persona de principi a fi. Al darrere, 14 arquitectes, interioristes, enginyers i tècnics a Barcelona que dissenyen, tramiten i dirigeixen l'obra. Liderem cada projecte des de la primera visita fins al lliurament de claus.",
+  text: "Parles amb una sola persona de principi a fi. Al darrere, un equip de 12 persones a Barcelona: arquitectes, interioristes i modeladors 3D, amb enginyeria, arquitectura tècnica i constructora de confiança. Dissenyem, tramitem i dirigim l'obra, des de la primera visita fins al lliurament de claus.",
   image: { src: es.team.image.src, alt: "Equip de DTRES treballant a l'estudi de Barcelona" },
   partners: [
     { ...es.team.partners[0], role: 'Arquitecte, soci cofundador', title: "Director d'Estratègia i Adquisició", note: "Professor de l'Escola d'Arquitectura UIC" },
