@@ -145,8 +145,8 @@ export const people = {
   staff: [
     { name: 'Elisabeth Pino', role: 'Responsable de Planificación y Procesos', sub: 'Arquitecta senior' },
     { name: 'Arnau Carbó', role: 'Responsable de Calidad y Trámites', sub: 'Arquitecto senior', note: 'Profesor de la Escuela de Arquitectura UIC' },
-    { name: 'Miquel Marquès', role: 'BIM Manager y Estudios de Viabilidad', sub: 'Arquitecto senior' },
-    { name: 'Marta Cusí', role: 'Interiorista' },
+    { name: 'Miquel Marquès', role: 'Responsable de BIM y Estudios de Viabilidad', sub: 'Arquitecto senior' },
+    { name: 'Marta Cusí', role: 'Responsable de Diseño de Interiores', sub: 'Interiorista' },
     { name: 'Blanca de Prat', role: 'Arquitectura y diseño de interiores', sub: 'Arquitecta junior' },
     { name: 'Sofía Egido', role: 'Arquitectura y diseño de interiores', sub: 'Arquitecta junior' },
     { name: 'Andrea Peña', role: 'Modeladora 3D' },
