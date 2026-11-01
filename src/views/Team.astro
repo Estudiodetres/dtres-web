@@ -1,0 +1,91 @@
+---
+import Base from '../layouts/Base.astro';
+import ContactForm from '../components/ContactForm.astro';
+import { getContent } from '../data/i18n-content.js';
+import { ui, routes } from '../i18n/index.js';
+import { srcset } from '../lib/img.js';
+
+const { lang = 'es' } = Astro.props;
+const { team, people, site } = getContent(lang);
+const t = ui[lang].teamPage;
+const photos = { 'Nacho Vallhonrat': '/img/team-nacho.jpg', 'Pablo Notario': '/img/team-pablo.jpg', 'Iñigo Ugalde': '/img/team-inigo.jpg' };
+const ld = {
+  '@context': 'https://schema.org', '@type': 'Organization', name: 'DTRES', url: 'https://detres.eu/',
+  employee: [
+    ...team.partners.map((p) => ({ '@type': 'Person', name: p.name, jobTitle: p.title })),
+    ...people.staff.map((p) => ({ '@type': 'Person', name: p.name, jobTitle: p.role })),
+  ],
+};
+---
+<Base title={t.metaTitle} description={t.metaDesc} jsonLd={[ld]} lang={lang} alternates={routes.team}>
+  <section class="wrap tm-hero">
+    <p class="lbl">{t.eyebrow}</p>
+    <h1>{t.title}</h1>
+    <p class="tm-hero__sub">{t.sub}</p>
+  </section>
+
+  <section class="wrap">
+    <img class="ph tm-group" src={team.image.src} srcset={srcset(team.image.src)} sizes="100vw" alt={team.image.alt} width="2000" height="1333" />
+  </section>
+
+  <section class="wrap tm-block">
+    <h2 class="lbl">{t.partners}</h2>
+    <div class="tm-partners">
+      {team.partners.map((p) => (
+        <article>
+          <img class="ph" src={photos[p.name] ?? p.img} alt={p.name} width="640" height="800" loading="lazy" />
+          <h3>{p.name}</h3>
+          <p class="tm-role">{p.title}</p>
+          <p>{p.role}</p>
+          {p.note && <p class="tm-note">{p.note}</p>}
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="wrap tm-block">
+    <h2 class="lbl">{t.staff}</h2>
+    <ul class="tm-list">
+      {people.staff.map((p) => <li><strong>{p.name}</strong><span>{p.role}</span></li>)}
+    </ul>
+  </section>
+
+  <section class="wrap tm-block">
+    <h2 class="lbl">{t.collab}</h2>
+    <p class="tm-collab-text">{t.collabText}</p>
+    <ul class="tm-list">
+      {people.partners.map((p) => <li><strong>{p.name}</strong><span>{p.role}</span></li>)}
+    </ul>
+  </section>
+
+  <section id="contacto" class="dark">
+    <div class="wrap tm-cta">
+      <h2>{ui[lang].home.ctaTitle}</h2>
+      <ContactForm origen="equipo" lang={lang} />
+    </div>
+  </section>
+</Base>
+<style>
+  .tm-hero { padding-block: clamp(48px, 8vw, 96px) 48px; display: flex; flex-direction: column; gap: 24px; }
+  .tm-hero h1 { font-size: clamp(40px, 6vw, 88px); line-height: 1; letter-spacing: -.02em; max-width: 16ch; text-wrap: balance; }
+  .tm-hero__sub { font-size: 21px; line-height: 1.45; max-width: 52ch; }
+  .tm-group { width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; }
+  .tm-block { padding-block: clamp(56px, 8vw, 96px) 0; display: flex; flex-direction: column; gap: 32px; border-bottom: 0; }
+  .tm-partners { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px 24px; }
+  @media (max-width: 860px) { .tm-partners { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 520px) { .tm-partners { grid-template-columns: 1fr; } }
+  .tm-partners article { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+  .tm-partners img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; margin-bottom: 12px; }
+  .tm-partners h3 { font-size: 24px; font-weight: 500; }
+  .tm-partners p { font-size: 15px; color: var(--text2); }
+  .tm-partners .tm-role { color: var(--ink); font-weight: 500; }
+  .tm-note { color: var(--muted) !important; font-size: 14px !important; }
+  .tm-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(240px, 100%), 1fr)); border-top: 1px solid var(--line); }
+  .tm-list li { display: flex; flex-direction: column; gap: 4px; padding: 20px 16px 20px 0; border-bottom: 1px solid var(--line); min-width: 0; }
+  .tm-list strong { font-weight: 500; font-size: 19px; }
+  .tm-list span { font-size: 15px; color: var(--text2); }
+  .tm-collab-text { font-size: 18px; max-width: 52ch; margin-top: -16px; }
+  .tm-cta { padding-block: clamp(64px, 10vw, 112px); display: flex; flex-direction: column; gap: 40px; }
+  .tm-cta h2 { font-size: clamp(32px, 4.5vw, 56px); line-height: 1.05; max-width: 18ch; text-wrap: balance; }
+  section.dark { margin-top: clamp(72px, 10vw, 120px); }
+</style>

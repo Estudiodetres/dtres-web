@@ -7,6 +7,7 @@ export const code = { es: 'ES', ca: 'CA', en: 'EN' };
 export const routes = {
   home: { es: '/', ca: '/ca/', en: '/en/' },
   projects: { es: '/proyectos/', ca: '/ca/projectes/', en: '/en/projects/' },
+  team: { es: '/equipo/', ca: '/ca/equip/', en: '/en/team/' },
   blog: { es: '/blog/', ca: '/ca/blog/', en: '/en/blog/' },
   legal: { es: '/aviso-legal/', ca: '/ca/avis-legal/', en: '/en/legal-notice/' },
   privacy: { es: '/privacidad/', ca: '/ca/privacitat/', en: '/en/privacy/' },
@@ -22,6 +23,7 @@ export const alt = (key) => routes[key];
 
 export const ui = {
   es: {
+    teamPage: { metaTitle: 'Equipo · DTRES Arquitectura e Interiorismo · Barcelona', metaDesc: 'Arquitectos, interioristas y técnicos en Barcelona. Conoce a las personas que lideran tu proyecto, de la due diligence a la entrega.', eyebrow: 'Equipo · Barcelona', title: 'Las personas que llevan tu proyecto.', sub: 'Un socio responde de tu proyecto de principio a fin. Detrás, un equipo de arquitectos, interioristas y técnicos que trabaja contigo en cada fase.', partners: 'Socios', staff: 'Equipo', collab: 'Colaboradores habituales', collabText: 'Profesionales con los que trabajamos en cada obra.', more: 'Conoce al equipo →' },
     nav: { method: 'Servicios', projects: 'Proyectos', about: 'Nosotros', blog: 'Blog' },
     cta: 'Agendar llamada', ctaFree: 'Agendar llamada gratuita', seeProjects: 'Ver proyectos',
     footer: { tagline: 'Arquitectura, interiorismo, licencias y obra para edificios singulares en Catalunya.', studio: 'Estudio', contact: 'Contacto', legal: 'Legal', legalNotice: 'Aviso legal', privacy: 'Privacidad', cookies: 'Cookies' },
@@ -45,6 +47,7 @@ export const ui = {
     updated: 'Última actualización',
   },
   ca: {
+    teamPage: { metaTitle: 'Equip · DTRES Arquitectura i Interiorisme · Barcelona', metaDesc: "Arquitectes, interioristes i tècnics a Barcelona. Coneix les persones que lideren el teu projecte, de la due diligence a l'entrega.", eyebrow: 'Equip · Barcelona', title: 'Les persones que porten el teu projecte.', sub: "Un soci respon del teu projecte de principi a fi. Al darrere, un equip d'arquitectes, interioristes i tècnics que treballa amb tu a cada fase.", partners: 'Socis', staff: 'Equip', collab: 'Col·laboradors habituals', collabText: 'Professionals amb qui treballem a cada obra.', more: "Coneix l'equip →" },
     nav: { method: 'Serveis', projects: 'Projectes', about: 'Nosaltres', blog: 'Blog' },
     cta: 'Reservar trucada', ctaFree: 'Reservar trucada gratuïta', seeProjects: 'Veure projectes',
     footer: { tagline: 'Arquitectura, interiorisme, llicències i obra per a edificis singulars a Catalunya.', studio: 'Estudi', contact: 'Contacte', legal: 'Legal', legalNotice: 'Avís legal', privacy: 'Privacitat', cookies: 'Galetes' },
@@ -68,6 +71,7 @@ export const ui = {
     updated: 'Darrera actualització',
   },
   en: {
+    teamPage: { metaTitle: 'Team · DTRES Architecture and Interior Design · Barcelona', metaDesc: 'Architects, interior designers and technical experts in Barcelona. Meet the people who lead your project, from due diligence to handover.', eyebrow: 'Team · Barcelona', title: 'The people who run your project.', sub: 'A partner is accountable for your project from start to finish. Behind them, a team of architects, interior designers and technical experts works with you at every phase.', partners: 'Partners', staff: 'Team', collab: 'Regular collaborators', collabText: 'Professionals we work with on every project.', more: 'Meet the team →' },
     nav: { method: 'Services', projects: 'Projects', about: 'About', blog: 'Blog' },
     cta: 'Book a call', ctaFree: 'Book a free call', seeProjects: 'See projects',
     footer: { tagline: 'Architecture, interior design, permits and construction for distinctive buildings in Catalonia.', studio: 'Studio', contact: 'Contact', legal: 'Legal', legalNotice: 'Legal notice', privacy: 'Privacy', cookies: 'Cookies' },

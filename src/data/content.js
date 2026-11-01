@@ -140,6 +140,26 @@ export const team = {
   ],
 };
 
+// Equipo (fuente: Notion · Equipo web)
+export const people = {
+  staff: [
+    { name: 'Elisabeth Pino', role: 'Arquitecta senior' },
+    { name: 'Arnau Carbó', role: 'Arquitecto senior' },
+    { name: 'Miquel Marquès', role: 'Arquitecto senior' },
+    { name: 'Marta Cusí', role: 'Interiorista' },
+    { name: 'Blanca de Prat', role: 'Arquitecta junior' },
+    { name: 'Sofía Egido', role: 'Arquitecta junior' },
+    { name: 'Andrea Peña', role: 'Modeladora 3D' },
+    { name: 'Natasha Schnippenkoetter', role: 'Modeladora 3D' },
+    { name: 'Eliana Mullis', role: 'Modeladora 3D' },
+  ],
+  partners: [
+    { name: 'Pere Rams', role: 'Ingeniero' },
+    { name: 'Sonia Castelló', role: 'Arquitecta técnica' },
+    { name: 'José Peris', role: 'Constructor' },
+  ],
+};
+
 export const faqs = [
   { q: '¿Cómo trabajáis con un fondo o inversor antes de la compra?', a: 'Hacemos la due diligence en paralelo a la negociación. En pocas semanas sabes qué permite el edificio, cuánto cuesta transformarlo y cuánto tarda, con una conclusión clara: comprar, negociar o no comprar. Si no compras, solo has invertido en esa fase.' },
   { q: '¿Qué os diferencia de un estudio de arquitectura convencional?', a: 'Un único interlocutor de la due diligence a la entrega de llaves. Proyecto, interiorismo, licencias, obra y FF&E en el mismo equipo, sin cambios de responsable entre fases ni información que se pierde por el camino.' },
@@ -197,4 +217,13 @@ export const clients = [
   { name: 'Pich Architects', logo: '/img/clientes/pich-architects.png' },
   { name: 'GCA Architects', logo: '/img/clientes/gca.png' },
   { name: 'Century 21 Nexus', logo: '/img/clientes/century21.png' },
+  { name: 'Global Exchange', logo: '/img/clientes/global-exchange.png' },
+  { name: 'Red Educativa Arenales', logo: '/img/clientes/arenales.png' },
+  { name: 'Editorial Casals', logo: '/img/clientes/editorial-casals.png' },
+  { name: 'Fundació Privada Montseny', logo: '/img/clientes/fundacio-montseny.png' },
+  { name: 'Club Pàdua', logo: '/img/clientes/club-padua.png' },
+  { name: 'Col·legi Xaloc', logo: '/img/clientes/xaloc.png' },
+  { name: 'Mafer.ai', logo: '/img/clientes/mafer.png' },
+  { name: 'Papiol Alfombres', logo: '/img/clientes/papiol.png' },
+  { name: 'Entrelazadogs', logo: '/img/clientes/entrelazadogs.png' },
 ];

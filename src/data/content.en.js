@@ -124,6 +124,8 @@ export const faqs = [
   { q: 'Can I hire you for just one phase?', a: 'Yes. You can start with feasibility, design, construction or FF&E and handover, and we stay with you to the end.' },
 ];
 export const clients = es.clients;
+const peopleRole = {'Arquitecta senior': 'Senior architect', 'Arquitecto senior': 'Senior architect', 'Interiorista': 'Interior designer', 'Arquitecta junior': 'Junior architect', 'Modeladora 3D': '3D modeller', 'Ingeniero': 'Engineer', 'Arquitecta técnica': 'Building surveyor', 'Constructor': 'Contractor'};
+export const people = { staff: es.people.staff.map((x) => ({ ...x, role: peopleRole[x.role] ?? x.role })), partners: es.people.partners.map((x) => ({ ...x, role: peopleRole[x.role] ?? x.role })) };
 
 export const statusLabels = { 'En obra': 'Under construction', 'En licitación': 'Out to tender', 'En viabilidad': 'Feasibility' };
 
