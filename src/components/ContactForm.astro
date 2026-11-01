@@ -1,0 +1,33 @@
+---
+const { origen = 'home' } = Astro.props;
+---
+<form class="cf" method="post" action="/api/contacto">
+  <input type="hidden" name="origen" value={origen} />
+  <input type="hidden" name="idioma" value="ES" />
+  <label class="cf__hp" aria-hidden="true">No rellenar <input name="website" tabindex="-1" autocomplete="off" /></label>
+  <div class="cf__grid">
+    <label>Nombre<input name="nombre" required autocomplete="name" /></label>
+    <label>Email<input name="email" type="email" required autocomplete="email" /></label>
+    <label>Teléfono<input name="telefono" type="tel" autocomplete="tel" /></label>
+    <label>Empresa o entidad<input name="empresa" autocomplete="organization" /></label>
+    <label>Eres
+      <select name="perfil">
+        <option>Fundación</option><option>Inversor</option><option>Family office</option><option>Empresa</option><option>Particular</option>
+      </select>
+    </label>
+    <label class="cf__full">Cuéntanos qué edificio tienes y qué quieres conseguir<textarea name="mensaje" rows="4"></textarea></label>
+  </div>
+  <p class="cf__legal">Usaremos tus datos solo para responderte. <a href="/privacidad/">Política de privacidad</a>.</p>
+  <button class="btn btn--light" type="submit">Agendar llamada</button>
+</form>
+<style>
+  .cf { display: flex; flex-direction: column; gap: 20px; width: 100%; max-width: 760px; }
+  .cf__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+  .cf label { display: flex; flex-direction: column; gap: 6px; font-size: 14px; color: #c9c8bb; }
+  .cf__full { grid-column: 1 / -1; }
+  .cf input, .cf select, .cf textarea { font: inherit; color: var(--bone); background: transparent; border: 1px solid rgba(234,234,228,.35); padding: 12px 14px; min-height: 48px; }
+  .cf select option { color: var(--ink); }
+  .cf__legal { font-size: 13px; color: #c9c8bb; }
+  .cf__hp { position: absolute; left: -9999px; }
+  .cf button { align-self: flex-start; border: 0; cursor: pointer; font: inherit; font-weight: 500; }
+</style>

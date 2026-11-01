@@ -1,0 +1,30 @@
+---
+---
+<header class="hdr">
+  <div class="wrap hdr__in">
+    <a href="/" class="hdr__logo" aria-label="DTRES, inicio">DTRES</a>
+    <nav class="hdr__nav" aria-label="Principal">
+      <a href="/#metodo">Método</a>
+      <a href="/fases/viabilidad/">Due diligence</a>
+      <a href="/#proyectos">Proyectos</a>
+      <a href="/#equipo">Nosotros</a>
+      <a href="/blog/">Blog</a>
+    </nav>
+    <div class="hdr__right">
+      <span class="hdr__lang">ES · <a href="/ca/">CA</a> · <a href="/en/">EN</a></span>
+      <a class="btn hdr__cta" href="/#contacto">Agendar llamada</a>
+    </div>
+  </div>
+</header>
+<style>
+  .hdr { border-bottom: 1px solid var(--line); }
+  .hdr__in { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding-block: 18px; }
+  .hdr__logo { font-size: 24px; font-weight: 600; letter-spacing: .06em; text-decoration: none; }
+  .hdr__nav { display: flex; gap: 28px; font-size: 15px; }
+  .hdr__nav a { text-decoration: none; }
+  .hdr__right { display: flex; align-items: center; gap: 20px; }
+  .hdr__lang { font-size: 13px; letter-spacing: .08em; }
+  .hdr__lang a { text-decoration: none; color: var(--muted); }
+  .hdr__cta { min-height: 44px; padding: 0 20px; font-size: 15px; }
+  @media (max-width: 900px) { .hdr__nav, .hdr__lang { display: none; } }
+</style>

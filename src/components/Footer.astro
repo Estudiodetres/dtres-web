@@ -1,0 +1,18 @@
+---
+import { site } from '../data/content.js';
+---
+<footer class="ftr dark">
+  <div class="wrap ftr__in">
+    <div class="ftr__col"><span class="ftr__logo">DTRES</span><span>Arquitectura, interiorismo, licencias y obra para edificios singulares en Catalunya.</span></div>
+    <div class="ftr__col"><span class="lbl">Estudio</span><span>{site.address.street}</span><span>{site.address.postalCode} {site.address.city}</span></div>
+    <div class="ftr__col"><span class="lbl">Contacto</span><a href={`mailto:${site.email}`}>{site.email}</a><a href={`tel:${site.phone.replace(/\s/g, '')}`}>{site.phoneDisplay}</a></div>
+    <div class="ftr__col"><span class="lbl">Legal</span><a href="/aviso-legal/">Aviso legal</a><a href="/privacidad/">Privacidad</a><a href="/cookies/">Cookies</a></div>
+  </div>
+</footer>
+<style>
+  .ftr { color: #c9c8bb; border-top: 1px solid rgba(234,234,228,.15); }
+  .ftr__in { padding-block: 56px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px; font-size: 15px; }
+  .ftr__col { display: flex; flex-direction: column; gap: 6px; }
+  .ftr__col a { color: #c9c8bb; text-decoration: none; }
+  .ftr__logo { font-size: 22px; font-weight: 600; letter-spacing: .06em; color: var(--bone); }
+</style>
