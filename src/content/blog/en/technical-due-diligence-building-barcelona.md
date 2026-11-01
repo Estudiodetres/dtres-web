@@ -5,7 +5,7 @@ keyword: "building due diligence Barcelona"
 phase: "Feasibility"
 author: "Nacho Vallhonrat"
 ref: "due-diligence-tecnica-edificio-barcelona"
-date: 2026-11-01
+date: 2026-10-28
 ---
 
 Buying a building to transform it is a bet on what it **could become**, not on what it is today. Technical due diligence tests whether that bet stands up: what planning allows, what heritage protects, what condition the building is in and what it will cost to bring it to the use you have in mind.

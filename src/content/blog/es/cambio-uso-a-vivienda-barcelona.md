@@ -5,7 +5,7 @@ keyword: "cambio de uso a vivienda Barcelona"
 phase: "Proyecto y licencias"
 author: "Nacho Vallhonrat"
 ref: "cambio-uso-a-vivienda-barcelona"
-date: 2026-11-01
+date: 2026-10-28
 ---
 
 Convertir oficinas, locales o edificios en desuso en viviendas es una de las operaciones con más sentido en Barcelona: hay demanda, hay edificios infrautilizados y el resultado suele multiplicar el valor del activo. Pero **no todo edificio puede cambiar de uso**, y los que pueden no siempre admiten tantas viviendas como parece.

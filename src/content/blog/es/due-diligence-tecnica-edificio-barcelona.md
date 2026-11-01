@@ -5,7 +5,7 @@ keyword: "due diligence técnica edificio Barcelona"
 phase: "Viabilidad"
 author: "Nacho Vallhonrat"
 ref: "due-diligence-tecnica-edificio-barcelona"
-date: 2026-11-01
+date: 2026-10-28
 ---
 
 Comprar un edificio para transformarlo es una apuesta sobre lo que **podrá llegar a ser**, no sobre lo que es hoy. La due diligence técnica sirve para comprobar que esa apuesta tiene base: qué permite el planeamiento, qué protege Patrimonio, en qué estado está el edificio y cuánto costará llevarlo al uso que buscas.

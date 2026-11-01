@@ -54,7 +54,7 @@ const serviceLd = {
 
   <section id="contacto" class="dark">
     <div class="wrap ph-cta">
-      <h2>{t.ctaPre} {f.title.toLowerCase()}?</h2>
+      <h2>{t.ctaPre} {/^[A-Z]{2}/.test(f.title) ? f.title : f.title[0].toLowerCase() + f.title.slice(1)}?</h2>
       <ContactForm origen={`fase-${f.id}`} lang={lang} />
     </div>
   </section>

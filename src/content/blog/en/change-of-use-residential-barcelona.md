@@ -5,7 +5,7 @@ keyword: "change of use to residential Barcelona"
 phase: "Design and permits"
 author: "Nacho Vallhonrat"
 ref: "cambio-uso-a-vivienda-barcelona"
-date: 2026-11-01
+date: 2026-10-28
 ---
 
 Turning offices, commercial premises or disused buildings into homes is one of the most sensible moves in Barcelona: there is demand, there are under-used buildings, and the result often multiplies the asset's value. But **not every building can change use**, and those that can do not always allow as many homes as it seems.

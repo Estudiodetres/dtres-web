@@ -5,7 +5,7 @@ keyword: "segregar vivienda Barcelona"
 phase: "Proyecto y licencias"
 author: "Pablo Notario"
 ref: "segregar-vivienda-barcelona"
-date: 2026-11-01
+date: 2026-10-28
 ---
 
 Muchas fincas de Barcelona tienen viviendas de 200 o 300 m² que hoy son difíciles de alquilar o vender a buen precio. Dividirlas en dos, tres o cinco viviendas más pequeñas puede **multiplicar el rendimiento**, pero solo si se cumplen tres condiciones: que el planeamiento lo permita, que cada vivienda resultante sea habitable y que los números salgan.

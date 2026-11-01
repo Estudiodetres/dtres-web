@@ -5,7 +5,7 @@ keyword: "canvi d'ús a habitatge Barcelona"
 phase: "Projecte i llicències"
 author: "Nacho Vallhonrat"
 ref: "cambio-uso-a-vivienda-barcelona"
-date: 2026-11-01
+date: 2026-10-28
 ---
 
 Convertir oficines, locals o edificis en desús en habitatges és una de les operacions amb més sentit a Barcelona: hi ha demanda, hi ha edificis infrautilitzats i el resultat sol multiplicar el valor de l'actiu. Però **no tots els edificis poden canviar d'ús**, i els que poden no sempre admeten tants habitatges com sembla.

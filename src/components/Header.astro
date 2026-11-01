@@ -7,7 +7,6 @@ const { phases } = getContent(lang);
 const home = routes.home[lang];
 const links = [
   [`${home}#metodo`, t.nav.method],
-  [phasePath(lang, phases[0].slug), t.nav.dd],
   [routes.projects[lang], t.nav.projects],
   [`${home}#equipo`, t.nav.about],
   [routes.blog[lang], t.nav.blog],

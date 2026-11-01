@@ -34,9 +34,9 @@ const listLd = {
           {p.img
             ? <img class="ph" src={p.img} srcset={srcset(p.img)} sizes="(min-width: 860px) 33vw, 50vw" alt={`${p.use} · ${p.client}`} width="600" height="750" loading="lazy" />
             : <div class="pj__ph"><span>{st(p.status) ?? t.project}</span><strong>{fmt(p.m2)} m²</strong></div>}
-          <span class="lbl">{[p.img && st(p.status), p.heritage && t.heritage, p.img && `${fmt(p.m2)} m²`].filter(Boolean).join(' · ')}</span>
-          <h2>{p.use}</h2>
+          <h2>{p.use} · {fmt(p.m2)} m²</h2>
           <p>{p.client}</p>
+          {(p.heritage || (p.img && p.status)) && <span class="lbl">{[p.img && st(p.status), p.heritage && t.heritage].filter(Boolean).join(' · ')}</span>}
         </article>
       ))}
     </div>

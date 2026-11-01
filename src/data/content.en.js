@@ -17,24 +17,24 @@ export const hero = {
 };
 
 export const audiences = {
-  title: 'For those who own a building with potential. Or want to.',
+  title: 'For those who own, or want to buy, an obsolete building and turn it into a unique, high-performing asset.',
   items: [
     { title: 'Foundations and institutions', text: 'Buildings that must keep serving their mission: residences, university halls, headquarters. Heritage rigour and a dignified, lasting result.' },
-    { title: 'Investors and family offices', text: 'Know what an asset allows before you buy it. Due diligence, change of use and construction with controlled time and cost.' },
-    { title: 'Family-owned property', text: 'An inherited building, or one that underperforms. We turn it into homes, hospitality or workspace, with a single point of contact.' },
+    { title: 'Real estate investment funds', text: 'Buildings acquired to be repositioned. Due diligence before purchase, change of use and construction at a fixed time and cost to deliver the business plan.' },
+    { title: 'Investors and family offices', text: 'Owned or inherited property that underperforms. We turn it into homes, hospitality or workspace, with a single point of contact.' },
   ],
 };
 
 export const usp = {
   eyebrow: 'Planning and heritage in Catalonia',
-  title: 'Permits that move. Buildings that perform.',
+  title: 'Faster permits. Higher returns.',
   text: "We know Catalonia's planning and heritage regulations inside out, along with each city council's criteria and room for interpretation. That lets us maximise, always within the law, the buildable potential and return of every building, and keep permits moving without blockages.",
   image: { src: es.usp.image.src, alt: 'Restored detail of IESE Building L, a listed 1910 building' },
   proofs: [
-    { tag: 'Listed heritage · 1,022 m²', title: 'University campus · IESE Business School', text: "Full refurbishment and interior design that conveys the institution's values, with the campus fully operational." },
-    { tag: 'Listed heritage · 1,225 m²', title: 'Offices · Fundació Familiar Catalana', text: 'Offices for UIC Barcelona. Special plan, permits, construction and interior design. Plus permits for 5,163 m² of new build on the plot.' },
-    { tag: 'Listed heritage · 1,000 m²', title: 'Senior residence · Associació Col·laborativa Montroig', text: 'Full transformation and interior design of the top two floors, with the residence fully operational.' },
-    { tag: 'Change of use · 577 m²', title: 'Rental homes · Fundació Privada Montseny', text: 'From a disused coliving to 5 homes: subdivision, design, permits and construction.' },
+    { tag: 'Listed heritage · IESE Business School', title: 'University campus · 1,022 m²', text: "Full refurbishment and interior design that conveys the institution's values, with the campus fully operational." },
+    { tag: 'Listed heritage · Fundació Familiar Catalana', title: 'Offices · 1,225 m²', text: 'Offices for UIC Barcelona. Special plan, permits, construction and interior design. Plus permits for 5,163 m² of new build on the plot.' },
+    { tag: 'Listed heritage · Associació Col·laborativa Montroig', title: 'Senior residence · 1,000 m²', text: 'Full transformation and interior design of the top two floors, with the residence fully operational.' },
+    { tag: 'Change of use · Fundació Privada Montseny', title: 'Rental homes · 577 m²', text: 'From a disused coliving to 5 homes: subdivision, design, permits and construction.' },
   ],
 };
 
@@ -64,12 +64,12 @@ export const phases = [
     includes: ['Site supervision', 'Project management and trade coordination', 'Cost control and valuations', 'Weekly report for the owner', 'Change management without surprises'],
   },
   {
-    id: 'entrega', slug: 'handover', n: '04', title: 'Handover',
-    what: 'Final documentation, legal sign-offs and building logbook.',
-    get: 'The building ready to operate, let or sell.',
-    seoTitle: 'Legal sign-off and handover of rehabilitated buildings',
-    intro: 'We close the project with all documentation in order, so the building can operate, be let or be sold from day one.',
-    includes: ['Completion certificate', 'Legal sign-offs and inspections', 'Habitability certificates and activity licences', 'Building logbook', 'Support during start-up'],
+    id: 'entrega', slug: 'handover', n: '04', title: 'FF&E and handover',
+    what: 'Furniture, fixtures and equipment (FF&E) design and selection, supplier coordination, legal sign-offs and final documentation.',
+    get: 'The building fitted out and ready to operate, let or sell.',
+    seoTitle: 'FF&E, legal sign-off and handover of rehabilitated buildings',
+    intro: 'We design and select furniture, fixtures and equipment (FF&E), coordinate suppliers through installation, and close all documentation so the building can operate from day one.',
+    includes: ['FF&E design and selection', 'Supplier coordination and installation', 'Completion certificate, legal sign-offs and inspections', 'Habitability certificates and activity licences', 'Building logbook and support during start-up'],
   },
 ];
 
@@ -94,32 +94,34 @@ export const moreProjects = [
   { tag: 'Offices · 200 m²', client: 'Mier Giralt Abogados', img: '/img/mier-giralt.jpg' },
 ];
 
-export const wip = [
-  { title: 'Under construction · University hall · 4,000 m²', client: 'Colegio Mayor Universitario Bonaigua', text: 'Full rehabilitation and interior design of the residence.' },
-  { title: 'Under construction · Subdivision into 5 homes · 577 m²', client: 'Fundació Privada Montseny', text: 'From a disused coliving to 5 homes: change of use and subdivision.' },
-  { title: 'Out to tender · Offices · 1,225 m²', client: 'Fundació Familiar Catalana', text: 'Transformation of a listed building into offices for UIC Barcelona, interiors included.' },
-  { title: 'Feasibility · From offices to 5 homes · 490 m²', client: 'Relanza investment fund', text: 'Technical and planning due diligence to turn five offices into homes before investing.' },
-];
+export const wip = es.wip.map((w, i) => ({ ...w, ...[
+  { use: 'University hall · 4,000 m²', text: 'Full rehabilitation and interior design of the residence.' },
+  { use: 'Subdivision into 5 homes · 577 m²', text: 'From a disused coliving to 5 homes: change of use and subdivision.' },
+  { use: 'Offices · 1,225 m²', text: 'A listed building transformed into offices for UIC Barcelona, interiors included. Out to tender.' },
+  { use: 'From offices to 5 homes · 490 m²', client: 'Relanza investment fund', text: 'Technical and planning due diligence to turn five offices into homes before investing.' },
+][i] }));
 
 export const reviews = es.reviews.map((r, i) => ({ ...r, lang: r.lang || 'es', context: ['Full refurbishment of a flexliving', 'Hotel refurbishment', 'Three full refurbishments'][i] }));
 
 export const team = {
-  title: 'Architects, interior designers and technical experts. One team.',
-  text: '14 people in Barcelona who design, secure permits and manage construction. We lead every project from the first visit to handover.',
+  title: 'One point of contact. A full team behind it.',
+  text: 'You deal with one person from start to finish. Behind them, 14 architects, interior designers, engineers and technical experts in Barcelona who design, secure permits and manage construction. We lead every project from the first visit to handover.',
   image: { src: es.team.image.src, alt: 'The DTRES team working in the Barcelona studio' },
   partners: [
-    { ...es.team.partners[0], role: 'Co-founding Partner and Managing Director' },
-    { ...es.team.partners[1], role: 'Co-founding Partner and Operations Director' },
-    { ...es.team.partners[2], role: 'Partner and Director of Expansion and Institutional Relations', note: 'Director of the UIC School of Architecture' },
+    { ...es.team.partners[0], role: 'Architect, co-founding partner', title: 'Director of Strategy and Acquisition', note: 'Lecturer at the UIC School of Architecture' },
+    { ...es.team.partners[1], role: 'Architect, co-founding partner', title: 'Director of Operations and Finance', note: 'Lecturer at the UIC School of Architecture' },
+    { ...es.team.partners[2], role: 'PhD architect, partner', title: 'Quality Director', note: 'Director of the UIC School of Architecture' },
   ],
 };
 
 export const faqs = [
-  { q: 'What does building due diligence in Barcelona include?', a: 'Technical condition, planning and heritage status, possible uses, buildable area, permits required, estimated transformation cost and a realistic timeline.' },
-  { q: 'Can a building be converted to residential use?', a: "It depends on the local zoning plan, which decides whether residential use is allowed and on what terms. Homes must also meet Catalonia's habitability standards (floor area, ventilation and natural light), and the building's community rules must not prevent it. A technical design and a permit are required. We check all this in the feasibility phase, before you invest." },
+  { q: 'How do you work with a fund or investor before the purchase?', a: 'We run due diligence alongside the negotiation. Within a few weeks you know what the building allows, what it costs to transform and how long it takes, with a clear conclusion: buy, negotiate or walk away. If you do not buy, you have only invested in that phase.' },
+  { q: 'What sets you apart from a conventional architecture firm?', a: 'A single point of contact from due diligence to handover. Design, interiors, permits, construction and FF&E in one team, with no change of lead between phases and nothing lost along the way.' },
+  { q: 'How do you control construction cost and time?', a: 'We fix the price with the contractor before starting, based on a complete detailed design. During construction, the owner receives a weekly report on progress, cost and pending decisions.' },
   { q: 'Do you work with listed buildings?', a: "Yes, it is our speciality. In Barcelona, works on buildings in the Heritage Catalogue may require a prior report from the City Council, which can be favourable, favourable with conditions or unfavourable. We prepare the pre-consultation and the design to secure a favourable report, as at IESE, Vila Regina and Lesseps." },
-  { q: 'Can I hire you for just one phase?', a: 'Yes. You can start with feasibility, design, construction or handover, and we stay with you to the end.' },
+  { q: 'Can I hire you for just one phase?', a: 'Yes. You can start with feasibility, design, construction or FF&E and handover, and we stay with you to the end.' },
 ];
+export const clients = es.clients;
 
 export const statusLabels = { 'En obra': 'Under construction', 'En licitación': 'Out to tender', 'En viabilidad': 'Feasibility' };
 

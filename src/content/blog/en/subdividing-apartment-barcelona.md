@@ -5,7 +5,7 @@ keyword: "subdivide apartment Barcelona"
 phase: "Design and permits"
 author: "Pablo Notario"
 ref: "segregar-vivienda-barcelona"
-date: 2026-11-01
+date: 2026-10-28
 ---
 
 Many Barcelona buildings have 200 or 300 m² apartments that are hard to let or sell at a good price today. Splitting them into two, three or five smaller homes can **multiply the return**, but only if three conditions are met: planning allows it, every resulting home is habitable, and the numbers work.

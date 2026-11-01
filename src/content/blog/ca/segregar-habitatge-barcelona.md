@@ -5,7 +5,7 @@ keyword: "segregar habitatge Barcelona"
 phase: "Projecte i llicències"
 author: "Pablo Notario"
 ref: "segregar-vivienda-barcelona"
-date: 2026-11-01
+date: 2026-10-28
 ---
 
 Moltes finques de Barcelona tenen habitatges de 200 o 300 m² que avui són difícils de llogar o vendre a bon preu. Dividir-los en dos, tres o cinc habitatges més petits pot **multiplicar el rendiment**, però només si es compleixen tres condicions: que el planejament ho permeti, que cada habitatge resultant sigui habitable i que els números surtin.

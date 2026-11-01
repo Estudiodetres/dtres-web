@@ -27,11 +27,11 @@ export const hero = {
 };
 
 export const audiences = {
-  title: 'Para quien tiene un edificio con potencial. O quiere tenerlo.',
+  title: 'Para quien tiene, o quiere comprar, un edificio obsoleto y convertirlo en un activo único y rentable.',
   items: [
     { title: 'Fundaciones e instituciones', text: 'Edificios que deben seguir cumpliendo su misión: residencias, colegios mayores, sedes. Rigor patrimonial y un resultado digno y duradero.' },
-    { title: 'Inversores y family offices', text: 'Saber qué permite un activo antes de comprarlo. Due diligence, cambio de uso y una obra con plazos y costes controlados.' },
-    { title: 'Patrimonio familiar', text: 'Un edificio heredado o que no rinde. Lo convertimos en viviendas, hospitality o espacio de trabajo, con un único interlocutor.' },
+    { title: 'Fondos de inversión inmobiliaria', text: 'Edificios que se compran para reposicionarlos. Due diligence antes de la compra, cambio de uso y una obra con plazo y coste cerrados para cumplir el plan de negocio.' },
+    { title: 'Inversores y family offices', text: 'Patrimonio propio o heredado que no rinde lo que podría. Lo convertimos en viviendas, hospitality o espacio de trabajo, con un único interlocutor.' },
   ],
 };
 
@@ -46,14 +46,14 @@ export const stats = {
 
 export const usp = {
   eyebrow: 'Normativa y patrimonio en Catalunya',
-  title: 'Licencias que avanzan. Edificios que rinden.',
+  title: 'Licencias más rápidas. Edificios más rentables.',
   text: 'Conocemos a fondo la normativa urbanística y patrimonial de Catalunya, los criterios de cada ayuntamiento y sus márgenes de interpretación. Eso nos permite maximizar, siempre dentro de la legalidad, el aprovechamiento y la rentabilidad de cada edificio, y que las licencias avancen sin bloqueos.',
   image: { src: '/img/iese-l-detalle.jpg', alt: 'Detalle restaurado del IESE Edificio L, edificio catalogado de 1910' },
   proofs: [
-    { tag: 'Patrimonio catalogado · 1.022 m²', title: 'Campus universitario · IESE Business School', text: 'Reforma integral e interiorismo que transmite los valores de la institución, con el campus en funcionamiento.' },
-    { tag: 'Patrimonio catalogado · 1.225 m²', title: 'Oficinas · Fundació Familiar Catalana', text: 'Sede de las oficinas de la UIC. Plan especial integral, licencias, obra e interiorismo. Más licencias para 5.163 m² de obra nueva en la parcela.' },
-    { tag: 'Patrimonio catalogado · 1.000 m²', title: 'Residencia senior · Associació Col·laborativa Montroig', text: 'Transformación integral e interiorismo de ático y sobreático, con la residencia en funcionamiento.' },
-    { tag: 'Cambio de uso · 577 m²', title: 'Viviendas de alquiler · Fundació Privada Montseny', text: 'De coliving en desuso a 5 viviendas: segregación, proyecto, licencias y obra.' },
+    { tag: 'Patrimonio catalogado · IESE Business School', title: 'Campus universitario · 1.022 m²', text: 'Reforma integral e interiorismo que transmite los valores de la institución, con el campus en funcionamiento.' },
+    { tag: 'Patrimonio catalogado · Fundació Familiar Catalana', title: 'Oficinas · 1.225 m²', text: 'Sede de las oficinas de la UIC. Plan especial integral, licencias, obra e interiorismo. Más licencias para 5.163 m² de obra nueva en la parcela.' },
+    { tag: 'Patrimonio catalogado · Associació Col·laborativa Montroig', title: 'Residencia senior · 1.000 m²', text: 'Transformación integral e interiorismo de ático y sobreático, con la residencia en funcionamiento.' },
+    { tag: 'Cambio de uso · Fundació Privada Montseny', title: 'Viviendas de alquiler · 577 m²', text: 'De coliving en desuso a 5 viviendas: segregación, proyecto, licencias y obra.' },
   ],
 };
 
@@ -83,12 +83,12 @@ export const phases = [
     includes: ['Dirección de obra', 'Project management y coordinación de industriales', 'Control de costes y certificaciones', 'Informe semanal para la propiedad', 'Gestión de cambios sin sorpresas'],
   },
   {
-    id: 'entrega', slug: 'entrega', n: '04', title: 'Entrega',
-    what: 'Documentación final, legalizaciones y libro del edificio.',
-    get: 'El edificio listo para operar, alquilar o vender.',
-    seoTitle: 'Legalización y entrega de edificios rehabilitados',
-    intro: 'Cerramos el proyecto con toda la documentación en regla para que el edificio pueda operar, alquilarse o venderse desde el primer día.',
-    includes: ['Certificado final de obra', 'Legalizaciones e inspecciones', 'Cédulas de habitabilidad y licencias de actividad', 'Libro del edificio', 'Acompañamiento en la puesta en marcha'],
+    id: 'entrega', slug: 'entrega', n: '04', title: 'FF&E y entrega',
+    what: 'Diseño y selección de mobiliario y equipamiento (FF&E), coordinación de proveedores, legalizaciones y documentación final.',
+    get: 'El edificio equipado y listo para operar, alquilar o vender.',
+    seoTitle: 'FF&E, legalización y entrega de edificios rehabilitados',
+    intro: 'Diseñamos y seleccionamos el mobiliario y el equipamiento (FF&E), coordinamos a los proveedores hasta la instalación y cerramos toda la documentación para que el edificio opere desde el primer día.',
+    includes: ['Diseño y selección de mobiliario y equipamiento (FF&E)', 'Coordinación de proveedores e instalación', 'Certificado final de obra, legalizaciones e inspecciones', 'Cédulas de habitabilidad y licencias de actividad', 'Libro del edificio y acompañamiento en la puesta en marcha'],
   },
 ];
 
@@ -113,35 +113,37 @@ export const moreProjects = [
   { tag: 'Oficinas · 200 m²', client: 'Mier Giralt Abogados', img: '/img/mier-giralt.jpg' },
 ];
 
+// phase = id de fase del método. img = foto del estado actual (se muestra en B/N)
 export const wip = [
-  { title: 'En obra · Residencia universitaria · 4.000 m²', client: 'Colegio Mayor Universitario Bonaigua', text: 'Rehabilitación integral e interiorismo de la residencia.' },
-  { title: 'En obra · Segregación de 5 viviendas · 577 m²', client: 'Fundació Privada Montseny', text: 'De coliving en desuso a 5 viviendas: cambio de uso y segregación.' },
-  { title: 'En licitación · Oficinas · 1.225 m²', client: 'Fundació Familiar Catalana', text: 'Transformación de un edificio catalogado en las oficinas de la UIC, interiorismo incluido.' },
-  { title: 'En viabilidad · De oficinas a 5 viviendas · 490 m²', client: 'Fondo de inversión Relanza', text: 'Due diligence técnica y urbanística para convertir cinco oficinas en viviendas antes de invertir.' },
+  { use: 'Residencia universitaria · 4.000 m²', client: 'Colegio Mayor Universitario Bonaigua', phase: 'obra', text: 'Rehabilitación integral e interiorismo de la residencia.', img: null },
+  { use: 'Segregación de 5 viviendas · 577 m²', client: 'Fundació Privada Montseny', phase: 'obra', text: 'De coliving en desuso a 5 viviendas: cambio de uso y segregación.', img: null },
+  { use: 'Oficinas · 1.225 m²', client: 'Fundació Familiar Catalana', phase: 'proyecto-y-licencias', text: 'Edificio catalogado transformado en las oficinas de la UIC, interiorismo incluido. En licitación de obra.', img: null },
+  { use: 'De oficinas a 5 viviendas · 490 m²', client: 'Fondo de inversión Relanza', phase: 'viabilidad', text: 'Due diligence técnica y urbanística para convertir cinco oficinas en viviendas antes de invertir.', img: null },
 ];
 
 export const reviews = [
-  { quote: 'Buscábamos un estudio de arquitectura en Barcelona para la reforma integral de nuestro Flexliving y el equipo de DTRES superó nuestras expectativas. Entendieron perfectamente cómo reflejar nuestros valores en el espacio. Se encargaron de todo, desde el interiorismo hasta la gestión de licencias, cumpliendo con los plazos de entrega y costes objetivo.', author: 'Arnau Lluch', context: 'Reforma integral de un Flexliving' },
-  { quote: 'He tenido la suerte de poder colaborar con ellos en el proceso de reforma de un hotel. Su profesionalidad y seguimiento hicieron que quisiera seguir trabajando con ellos. En ambos casos me han aportado tranquilidad, escucha activa y profesionalidad, algo que por desgracia, hoy en día, no es fácil de encontrar.', author: 'Jon Abalop', context: 'Reforma de un hotel' },
-  { quote: 'They manage the entire process end-to-end, from initial ideation and design to project planning and final execution. What truly sets them apart is their style, which uniquely blends a modern aesthetic with the authentic spirit of Barcelona.', author: 'Magdalena K.', context: 'Tres reformas integrales', lang: 'en' },
+  { quote: 'Buscábamos un estudio de arquitectura en Barcelona para la reforma integral de nuestro Flexliving y el equipo de DTRES superó nuestras expectativas. Entendieron perfectamente cómo reflejar nuestros valores en el espacio. Se encargaron de todo, desde el interiorismo hasta la gestión de licencias, cumpliendo con los plazos de entrega y costes objetivo.', rating: 5, author: 'Arnau Lluch', context: 'Reforma integral de un Flexliving' },
+  { quote: 'He tenido la suerte de poder colaborar con ellos en el proceso de reforma de un hotel. Su profesionalidad y seguimiento hicieron que quisiera seguir trabajando con ellos. En ambos casos me han aportado tranquilidad, escucha activa y profesionalidad, algo que por desgracia, hoy en día, no es fácil de encontrar.', rating: 5, author: 'Jon Abalop', context: 'Reforma de un hotel' },
+  { quote: 'They manage the entire process end-to-end, from initial ideation and design to project planning and final execution. What truly sets them apart is their style, which uniquely blends a modern aesthetic with the authentic spirit of Barcelona.', rating: 5, author: 'Magdalena K.', context: 'Tres reformas integrales', lang: 'en' },
 ];
 
 export const team = {
-  title: 'Arquitectos, interioristas y técnicos. Un solo equipo.',
-  text: '14 personas en Barcelona que diseñan, tramitan y dirigen la obra. Cada proyecto lo lideramos de la primera visita a la entrega de llaves.',
+  title: 'Un solo interlocutor. Un equipo completo detrás.',
+  text: 'Hablas con una sola persona de principio a fin. Detrás, 14 arquitectos, interioristas, ingenieros y técnicos en Barcelona que diseñan, tramitan y dirigen la obra. Cada proyecto lo lideramos de la primera visita a la entrega de llaves.',
   image: { src: '/img/equipo.jpg', alt: 'Equipo de DTRES trabajando en el estudio de Barcelona' },
   partners: [
-    { name: 'Nacho Vallhonrat', role: 'Socio cofundador y Director General', img: '/img/nacho.jpg' },
-    { name: 'Pablo Notario', role: 'Socio cofundador y Director de Operaciones', img: '/img/pablo.jpg' },
-    { name: 'Iñigo Ugalde', role: 'Socio y Director de Expansión y Relaciones Institucionales', note: 'Director de la Escuela de Arquitectura de la UIC', img: '/img/inigo.jpg' },
+    { name: 'Nacho Vallhonrat', role: 'Arquitecto, socio cofundador', title: 'Director de Estrategia y Adquisición', note: 'Profesor de la Escuela de Arquitectura de la UIC', img: '/img/nacho.jpg' },
+    { name: 'Pablo Notario', role: 'Arquitecto, socio cofundador', title: 'Director de Operaciones y Finanzas', note: 'Profesor de la Escuela de Arquitectura de la UIC', img: '/img/pablo.jpg' },
+    { name: 'Iñigo Ugalde', role: 'Doctor arquitecto, socio', title: 'Director de Calidad', note: 'Director de la Escuela de Arquitectura de la UIC', img: '/img/inigo.jpg' },
   ],
 };
 
 export const faqs = [
-  { q: '¿Qué incluye una due diligence de un edificio en Barcelona?', a: 'Estado técnico, situación urbanística y patrimonial, usos posibles, edificabilidad, licencias necesarias, coste estimado de la transformación y plazo realista.' },
-  { q: '¿Se puede cambiar el uso de un edificio a vivienda?', a: 'Depende del planeamiento urbanístico de la zona, que decide si el uso residencial está permitido y en qué condiciones. Además, la vivienda debe cumplir la normativa de habitabilidad de Catalunya (superficie, ventilación y luz natural) y los estatutos de la comunidad no deben impedirlo. Se necesita proyecto técnico y licencia. Lo comprobamos en la fase de viabilidad, antes de que inviertas.' },
+  { q: '¿Cómo trabajáis con un fondo o inversor antes de la compra?', a: 'Hacemos la due diligence en paralelo a la negociación. En pocas semanas sabes qué permite el edificio, cuánto cuesta transformarlo y cuánto tarda, con una conclusión clara: comprar, negociar o no comprar. Si no compras, solo has invertido en esa fase.' },
+  { q: '¿Qué os diferencia de un estudio de arquitectura convencional?', a: 'Un único interlocutor de la due diligence a la entrega de llaves. Proyecto, interiorismo, licencias, obra y FF&E en el mismo equipo, sin cambios de responsable entre fases ni información que se pierde por el camino.' },
+  { q: '¿Cómo controláis el presupuesto y el plazo de obra?', a: 'Cerramos el presupuesto con la constructora antes de empezar, sobre un proyecto ejecutivo completo. Durante la obra, la propiedad recibe cada semana un informe con el avance, el coste y las decisiones pendientes.' },
   { q: '¿Trabajáis con edificios catalogados?', a: 'Sí, es nuestra especialidad. En Barcelona, las obras en edificios del Catálogo de Patrimonio pueden requerir un informe previo del Ayuntamiento, que puede ser favorable, favorable con condiciones o desfavorable. Preparamos la consulta previa y el proyecto para conseguir un informe favorable, como en el IESE, Vila Regina o Lesseps.' },
-  { q: '¿Puedo contrataros solo para una fase?', a: 'Sí. Puedes empezar por la viabilidad, el proyecto, la obra o la entrega, y te acompañamos hasta el final.' },
+  { q: '¿Puedo contrataros solo para una fase?', a: 'Sí. Puedes empezar por la viabilidad, el proyecto, la obra o el FF&E y la entrega, y te acompañamos hasta el final.' },
 ];
 
 export const blog = [
@@ -169,9 +171,22 @@ export const allProjects = [
   { use: 'Headquarters', client: 'Amelia Hub', m2: 2000, cat: 'oficinas', place: 'Barcelona' },
   { use: 'Oficinas', client: 'Aloalto', m2: 1000, cat: 'oficinas', img: '/img/aloalto.jpg', place: 'Barcelona' },
   { use: 'Showroom y oficinas', client: 'Papiol', m2: 800, cat: 'oficinas', img: '/img/papiol.jpg', place: 'Barcelona' },
-  { use: 'Oficinas', client: 'Triple Risk', m2: 400, cat: 'oficinas', img: '/img/frankie.jpg', place: 'Barcelona' },
+  { use: 'Oficinas', client: 'Triple A Risk Finance', m2: 400, cat: 'oficinas', img: '/img/frankie.jpg', place: 'Barcelona' },
   { use: 'Oficinas', client: 'Entrelazadogs', m2: 400, cat: 'oficinas', img: '/img/entrelazadogs.jpg', place: 'Barcelona' },
   { use: 'Oficinas', client: 'Mier Giralt Abogados', m2: 200, cat: 'oficinas', img: '/img/mier-giralt.jpg', place: 'Barcelona' },
   { use: 'Oficinas', client: 'Delaire', m2: 100, cat: 'oficinas', img: '/img/delaire.jpg', place: 'Barcelona' },
   { use: 'Estudio de arquitectura', client: 'DTRES', m2: 100, cat: 'oficinas', img: '/img/oficinas-dtres.jpg', place: 'Barcelona' },
+];
+
+// Logos de clientes (blancos, para fondo oscuro)
+export const clients = [
+  { name: 'IESE Business School', logo: '/img/clientes/iese.png' },
+  { name: 'UIC Barcelona', logo: '/img/clientes/uic.png' },
+  { name: 'Mier Giralt Laboralistas', logo: '/img/clientes/mier-giralt.png' },
+  { name: 'Aloalto', logo: '/img/clientes/aloalto.png' },
+  { name: 'Triple A Risk Finance', logo: '/img/clientes/triple-a-risk-finance.png' },
+  { name: 'Delaire', logo: '/img/clientes/delaire.png' },
+  { name: 'Octocam Vision', logo: '/img/clientes/octocam-vision.png' },
+  { name: 'CDC Hiacre', logo: '/img/clientes/cdc-hiacre.png' },
+  { name: 'Pich Architects', logo: '/img/clientes/pich-architects.png' },
 ];

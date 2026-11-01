@@ -17,24 +17,24 @@ export const hero = {
 };
 
 export const audiences = {
-  title: 'Per a qui té un edifici amb potencial. O el vol tenir.',
+  title: 'Per a qui té, o vol comprar, un edifici obsolet i convertir-lo en un actiu únic i rendible.',
   items: [
     { title: 'Fundacions i institucions', text: 'Edificis que han de continuar complint la seva missió: residències, col·legis majors, seus. Rigor patrimonial i un resultat digne i durador.' },
-    { title: 'Inversors i family offices', text: "Saber què permet un actiu abans de comprar-lo. Due diligence, canvi d'ús i una obra amb terminis i costos controlats." },
-    { title: 'Patrimoni familiar', text: "Un edifici heretat o que no rendeix. El convertim en habitatges, hospitality o espai de treball, amb un únic interlocutor." },
+    { title: "Fons d'inversió immobiliària", text: "Edificis que es compren per reposicionar-los. Due diligence abans de la compra, canvi d'ús i una obra amb termini i cost tancats per complir el pla de negoci." },
+    { title: 'Inversors i family offices', text: 'Patrimoni propi o heretat que no rendeix el que podria. El convertim en habitatges, hospitality o espai de treball, amb un únic interlocutor.' },
   ],
 };
 
 export const usp = {
   eyebrow: 'Normativa i patrimoni a Catalunya',
-  title: 'Llicències que avancen. Edificis que rendeixen.',
+  title: 'Llicències més ràpides. Edificis més rendibles.',
   text: "Coneixem a fons la normativa urbanística i patrimonial de Catalunya, els criteris de cada ajuntament i els seus marges d'interpretació. Això ens permet maximitzar, sempre dins de la legalitat, l'aprofitament i la rendibilitat de cada edifici, i que les llicències avancin sense bloquejos.",
   image: { src: es.usp.image.src, alt: "Detall restaurat de l'IESE Edifici L, edifici catalogat de 1910" },
   proofs: [
-    { tag: 'Patrimoni catalogat · 1.022 m²', title: 'Campus universitari · IESE Business School', text: "Reforma integral i interiorisme que transmet els valors de la institució, amb el campus en funcionament." },
-    { tag: 'Patrimoni catalogat · 1.225 m²', title: 'Oficines · Fundació Familiar Catalana', text: "Seu de les oficines de la UIC. Pla especial integral, llicències, obra i interiorisme. A més, llicències per a 5.163 m² d'obra nova a la parcel·la." },
-    { tag: 'Patrimoni catalogat · 1.000 m²', title: 'Residència sènior · Associació Col·laborativa Montroig', text: "Transformació integral i interiorisme de l'àtic i el sobreàtic, amb la residència en funcionament." },
-    { tag: "Canvi d'ús · 577 m²", title: 'Habitatges de lloguer · Fundació Privada Montseny', text: "D'un coliving en desús a 5 habitatges: segregació, projecte, llicències i obra." },
+    { tag: 'Patrimoni catalogat · IESE Business School', title: 'Campus universitari · 1.022 m²', text: "Reforma integral i interiorisme que transmet els valors de la institució, amb el campus en funcionament." },
+    { tag: 'Patrimoni catalogat · Fundació Familiar Catalana', title: 'Oficines · 1.225 m²', text: "Seu de les oficines de la UIC. Pla especial integral, llicències, obra i interiorisme. A més, llicències per a 5.163 m² d'obra nova a la parcel·la." },
+    { tag: 'Patrimoni catalogat · Associació Col·laborativa Montroig', title: 'Residència sènior · 1.000 m²', text: "Transformació integral i interiorisme de l'àtic i el sobreàtic, amb la residència en funcionament." },
+    { tag: "Canvi d'ús · Fundació Privada Montseny", title: 'Habitatges de lloguer · 577 m²', text: "D'un coliving en desús a 5 habitatges: segregació, projecte, llicències i obra." },
   ],
 };
 
@@ -64,12 +64,12 @@ export const phases = [
     includes: ["Direcció d'obra", "Project management i coordinació d'industrials", 'Control de costos i certificacions', 'Informe setmanal per a la propietat', 'Gestió de canvis sense sorpreses'],
   },
   {
-    id: 'entrega', slug: 'lliurament', n: '04', title: 'Lliurament',
-    what: "Documentació final, legalitzacions i llibre de l'edifici.",
-    get: "L'edifici a punt per operar, llogar o vendre.",
-    seoTitle: "Legalització i lliurament d'edificis rehabilitats",
-    intro: "Tanquem el projecte amb tota la documentació en regla perquè l'edifici pugui operar, llogar-se o vendre's des del primer dia.",
-    includes: ["Certificat final d'obra", 'Legalitzacions i inspeccions', "Cèdules d'habitabilitat i llicències d'activitat", "Llibre de l'edifici", 'Acompanyament en la posada en marxa'],
+    id: 'entrega', slug: 'lliurament', n: '04', title: 'FF&E i lliurament',
+    what: "Disseny i selecció de mobiliari i equipament (FF&E), coordinació de proveïdors, legalitzacions i documentació final.",
+    get: "L'edifici equipat i a punt per operar, llogar o vendre.",
+    seoTitle: "FF&E, legalització i lliurament d'edificis rehabilitats",
+    intro: "Dissenyem i seleccionem el mobiliari i l'equipament (FF&E), coordinem els proveïdors fins a la instal·lació i tanquem tota la documentació perquè l'edifici operi des del primer dia.",
+    includes: ['Disseny i selecció de mobiliari i equipament (FF&E)', 'Coordinació de proveïdors i instal·lació', "Certificat final d'obra, legalitzacions i inspeccions", "Cèdules d'habitabilitat i llicències d'activitat", "Llibre de l'edifici i acompanyament en la posada en marxa"],
   },
 ];
 
@@ -94,32 +94,34 @@ export const moreProjects = [
   { tag: 'Oficines · 200 m²', client: 'Mier Giralt Abogados', img: '/img/mier-giralt.jpg' },
 ];
 
-export const wip = [
-  { title: 'En obra · Residència universitària · 4.000 m²', client: 'Colegio Mayor Universitario Bonaigua', text: 'Rehabilitació integral i interiorisme de la residència.' },
-  { title: 'En obra · Segregació de 5 habitatges · 577 m²', client: 'Fundació Privada Montseny', text: "D'un coliving en desús a 5 habitatges: canvi d'ús i segregació." },
-  { title: 'En licitació · Oficines · 1.225 m²', client: 'Fundació Familiar Catalana', text: "Transformació d'un edifici catalogat en les oficines de la UIC, interiorisme inclòs." },
-  { title: "En viabilitat · D'oficines a 5 habitatges · 490 m²", client: "Fons d'inversió Relanza", text: "Due diligence tècnica i urbanística per convertir cinc oficines en habitatges abans d'invertir." },
-];
+export const wip = es.wip.map((w, i) => ({ ...w, ...[
+  { use: 'Residència universitària · 4.000 m²', text: 'Rehabilitació integral i interiorisme de la residència.' },
+  { use: 'Segregació de 5 habitatges · 577 m²', text: "D'un coliving en desús a 5 habitatges: canvi d'ús i segregació." },
+  { use: 'Oficines · 1.225 m²', text: "Edifici catalogat transformat en les oficines de la UIC, interiorisme inclòs. En licitació d'obra." },
+  { use: "D'oficines a 5 habitatges · 490 m²", client: "Fons d'inversió Relanza", text: "Due diligence tècnica i urbanística per convertir cinc oficines en habitatges abans d'invertir." },
+][i] }));
 
 export const reviews = es.reviews.map((r, i) => ({ ...r, lang: r.lang || 'es', context: ["Reforma integral d'un Flexliving", "Reforma d'un hotel", 'Tres reformes integrals'][i] }));
 
 export const team = {
-  title: 'Arquitectes, interioristes i tècnics. Un sol equip.',
-  text: "14 persones a Barcelona que dissenyen, tramiten i dirigeixen l'obra. Liderem cada projecte des de la primera visita fins al lliurament de claus.",
+  title: 'Un sol interlocutor. Un equip complet al darrere.',
+  text: "Parles amb una sola persona de principi a fi. Al darrere, 14 arquitectes, interioristes, enginyers i tècnics a Barcelona que dissenyen, tramiten i dirigeixen l'obra. Liderem cada projecte des de la primera visita fins al lliurament de claus.",
   image: { src: es.team.image.src, alt: "Equip de DTRES treballant a l'estudi de Barcelona" },
   partners: [
-    { ...es.team.partners[0], role: 'Soci cofundador i Director General' },
-    { ...es.team.partners[1], role: "Soci cofundador i Director d'Operacions" },
-    { ...es.team.partners[2], role: "Soci i Director d'Expansió i Relacions Institucionals", note: "Director de l'Escola d'Arquitectura de la UIC" },
+    { ...es.team.partners[0], role: 'Arquitecte, soci cofundador', title: "Director d'Estratègia i Adquisició", note: "Professor de l'Escola d'Arquitectura de la UIC" },
+    { ...es.team.partners[1], role: 'Arquitecte, soci cofundador', title: "Director d'Operacions i Finances", note: "Professor de l'Escola d'Arquitectura de la UIC" },
+    { ...es.team.partners[2], role: 'Doctor arquitecte, soci', title: 'Director de Qualitat', note: "Director de l'Escola d'Arquitectura de la UIC" },
   ],
 };
 
 export const faqs = [
-  { q: "Què inclou una due diligence d'un edifici a Barcelona?", a: "Estat tècnic, situació urbanística i patrimonial, usos possibles, edificabilitat, llicències necessàries, cost estimat de la transformació i termini realista." },
-  { q: "Es pot canviar l'ús d'un edifici a habitatge?", a: "Depèn del planejament urbanístic de la zona, que decideix si l'ús residencial està permès i en quines condicions. A més, l'habitatge ha de complir la normativa d'habitabilitat de Catalunya (superfície, ventilació i llum natural) i els estatuts de la comunitat no ho han d'impedir. Cal projecte tècnic i llicència. Ho comprovem en la fase de viabilitat, abans que inverteixis." },
+  { q: 'Com treballeu amb un fons o inversor abans de la compra?', a: "Fem la due diligence en paral·lel a la negociació. En poques setmanes saps què permet l'edifici, quant costa transformar-lo i quant triga, amb una conclusió clara: comprar, negociar o no comprar. Si no compres, només has invertit en aquesta fase." },
+  { q: "Què us diferencia d'un estudi d'arquitectura convencional?", a: "Un únic interlocutor de la due diligence al lliurament de claus. Projecte, interiorisme, llicències, obra i FF&E dins el mateix equip, sense canvis de responsable entre fases ni informació que es perd pel camí." },
+  { q: "Com controleu el pressupost i el termini d'obra?", a: "Tanquem el pressupost amb la constructora abans de començar, sobre un projecte executiu complet. Durant l'obra, la propietat rep cada setmana un informe amb l'avenç, el cost i les decisions pendents." },
   { q: 'Treballeu amb edificis catalogats?', a: "Sí, és la nostra especialitat. A Barcelona, les obres en edificis del Catàleg de Patrimoni poden requerir un informe previ de l'Ajuntament, que pot ser favorable, favorable amb condicions o desfavorable. Preparem la consulta prèvia i el projecte per aconseguir un informe favorable, com a l'IESE, Vila Regina o Lesseps." },
-  { q: 'Puc contractar-vos només per a una fase?', a: "Sí. Pots començar per la viabilitat, el projecte, l'obra o el lliurament, i t'acompanyem fins al final." },
+  { q: 'Puc contractar-vos només per a una fase?', a: "Sí. Pots començar per la viabilitat, el projecte, l'obra o l'FF&E i el lliurament, i t'acompanyem fins al final." },
 ];
+export const clients = es.clients;
 
 export const statusLabels = { 'En obra': 'En obra', 'En licitación': 'En licitació', 'En viabilidad': 'En viabilitat' };
 
