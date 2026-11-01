@@ -101,6 +101,7 @@ export const wip = es.wip.map((w, i) => ({ ...w, ...[
   { use: 'Segregació de 5 habitatges · 577 m²', text: "D'un coliving en desús a 5 habitatges: canvi d'ús i segregació." },
   { use: 'Oficines · 1.225 m²', text: "Edifici catalogat transformat en les oficines de la UIC, interiorisme inclòs. En licitació d'obra." },
   { use: "D'oficines a 5 habitatges · 490 m²", client: "Fons d'inversió Relanza", text: "Due diligence tècnica i urbanística per convertir cinc oficines en habitatges abans d'invertir." },
+  { use: 'Oficines · 210 m²', text: "Local de dues plantes amb pati per a una empresa de 18 persones que preveu doblar la plantilla. Estudi de distribució, llicència d'activitat i auditoria del pressupost d'obra." },
 ][i] }));
 
 export const reviews = es.reviews.map((r, i) => ({ ...r, lang: r.lang || 'es', context: ["Reforma integral d'un Flexliving", "Reforma d'un hotel", 'Tres reformes integrals'][i] }));

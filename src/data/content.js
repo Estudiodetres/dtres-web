@@ -121,6 +121,7 @@ export const wip = [
   { use: 'Segregación de 5 viviendas · 577 m²', client: 'Fundació Privada Montseny', phase: 'obra', text: 'De coliving en desuso a 5 viviendas: cambio de uso y segregación.', img: '/img/wip-lepant.jpg' },
   { use: 'Oficinas · 1.225 m²', client: 'Fundació Familiar Catalana', phase: 'proyecto-y-licencias', text: 'Edificio catalogado transformado en las oficinas de la UIC, interiorismo incluido. En licitación de obra.', img: '/img/wip-vila-regina.jpg' },
   { use: 'De oficinas a 5 viviendas · 490 m²', client: 'Fondo de inversión Relanza', phase: 'viabilidad', text: 'Due diligence técnica y urbanística para convertir cinco oficinas en viviendas antes de invertir.', img: '/img/wip-muntaner.jpg' },
+  { use: 'Oficinas · 210 m²', client: 'Mafer.ai', phase: 'viabilidad', text: 'Local de dos plantas con patio para una empresa de 18 personas que prevé doblar plantilla. Estudio de distribución, licencia de actividad y auditoría del presupuesto de obra.', img: '/img/wip-mafer.jpg' },
 ];
 
 export const reviews = [
@@ -191,6 +192,7 @@ export const allProjects = [
   { use: 'Graderías', client: 'Brafa', cat: 'equipamientos', place: 'Barcelona' },
   { use: 'De coliving a 5 viviendas de alquiler', client: 'Fundació Privada Montseny', m2: 577, cat: 'residencias', img: '/img/pj-lepant.jpg', status: 'En obra', place: 'Barcelona' },
   { use: 'De oficinas a 5 viviendas', client: 'Fondo de inversión Relanza', m2: 490, cat: 'residencias', img: '/img/pj-muntaner.jpg', status: 'En viabilidad', place: 'Barcelona' },
+  { use: 'Oficinas', client: 'Mafer.ai', m2: 210, cat: 'oficinas', img: '/img/pj-mafer.jpg', status: 'En viabilidad', place: 'Barcelona' },
   { use: 'Headquarters', client: 'Amelia Hub', m2: 2000, cat: 'oficinas', img: '/img/pj-amelia.jpg', place: 'Barcelona' },
   { use: 'Oficinas', client: 'Aloalto', m2: 1000, cat: 'oficinas', img: '/img/pj-aloalto.jpg', place: 'Barcelona' },
   { use: 'Showroom y oficinas', client: 'Papiol', m2: 800, cat: 'oficinas', img: '/img/pj-papiol.jpg', place: 'Barcelona' },

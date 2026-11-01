@@ -101,6 +101,7 @@ export const wip = es.wip.map((w, i) => ({ ...w, ...[
   { use: 'Subdivision into 5 homes · 577 m²', text: 'From a disused coliving to 5 homes: change of use and subdivision.' },
   { use: 'Offices · 1,225 m²', text: 'A listed building transformed into offices for UIC Barcelona, interiors included. Out to tender.' },
   { use: 'From offices to 5 homes · 490 m²', client: 'Relanza investment fund', text: 'Technical and planning due diligence to turn five offices into homes before investing.' },
+  { use: 'Offices · 210 m²', text: 'Two-storey premises with a courtyard for an 18-person company planning to double in size. Space planning, activity licence and audit of the construction budget.' },
 ][i] }));
 
 export const reviews = es.reviews.map((r, i) => ({ ...r, lang: r.lang || 'es', context: ['Full refurbishment of a flexliving', 'Hotel refurbishment', 'Three full refurbishments'][i] }));
