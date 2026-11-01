@@ -3,7 +3,7 @@ import { site } from './content.js';
 
 const company = `<strong>${site.legalName}</strong>`;
 const id = `${company}, amb NIF ${site.taxId} i domicili a ${site.address.street}, ${site.address.postalCode} ${site.address.city}`;
-const reg = site.registry ? ` Inscrita a ${site.registry}.` : '';
+const reg = ' Inscrita al Registre Mercantil de Barcelona, tom 46912, foli 216, full B-535114.';
 
 export const updated = '1 de novembre de 2026';
 

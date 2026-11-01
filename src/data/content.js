@@ -3,7 +3,7 @@ export const site = {
   name: 'DTRES',
   legalName: 'ESDETRES Arquitectura e Interiorismo SLP',
   taxId: 'B67432088',
-  registry: null, // p. ej. 'el Registro Mercantil de Barcelona, tomo X, folio Y, hoja B-Z'
+  registry: { tomo: '46912', folio: '216', hoja: 'B-535114' }, // Registro Mercantil de Barcelona
   url: 'https://detres.eu',
   email: 'info@detres.eu',
   phone: '+34 931 255 444',

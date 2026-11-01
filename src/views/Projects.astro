@@ -3,6 +3,7 @@ import Base from '../layouts/Base.astro';
 import ContactForm from '../components/ContactForm.astro';
 import { getContent } from '../data/i18n-content.js';
 import { ui, routes, fmt as fmtL } from '../i18n/index.js';
+import { srcset } from '../lib/img.js';
 
 const { lang = 'es' } = Astro.props;
 const { allProjects, statusLabels } = getContent(lang);
@@ -31,7 +32,7 @@ const listLd = {
       {allProjects.map((p) => (
         <article data-cat={p.cat} data-heritage={p.heritage ? '1' : '0'} data-curso={p.status ? '1' : '0'} class={p.img ? '' : 'noimg'}>
           {p.img
-            ? <img class="ph" src={p.img} alt={`${p.use} · ${p.client}`} width="600" height="750" loading="lazy" />
+            ? <img class="ph" src={p.img} srcset={srcset(p.img)} sizes="(min-width: 860px) 33vw, 50vw" alt={`${p.use} · ${p.client}`} width="600" height="750" loading="lazy" />
             : <div class="pj__ph"><span>{st(p.status) ?? t.project}</span><strong>{fmt(p.m2)} m²</strong></div>}
           <span class="lbl">{[p.img && st(p.status), p.heritage && t.heritage, p.img && `${fmt(p.m2)} m²`].filter(Boolean).join(' · ')}</span>
           <h2>{p.use}</h2>
@@ -61,10 +62,10 @@ const listLd = {
   }));
 </script>
 <style>
-  .pj-hero { padding-block: 96px 56px; display: flex; flex-direction: column; gap: 24px; }
+  .pj-hero { padding-block: clamp(48px, 8vw, 96px) 56px; display: flex; flex-direction: column; gap: 24px; }
   .pj-hero h1 { font-size: clamp(40px, 6vw, 88px); line-height: 1; letter-spacing: -.02em; max-width: 16ch; text-wrap: balance; }
   .pj-hero__sub { font-size: 21px; line-height: 1.45; max-width: 52ch; }
-  .pj { padding-block: 0 120px; display: flex; flex-direction: column; gap: 40px; }
+  .pj { padding-block: 0 clamp(72px, 10vw, 120px); display: flex; flex-direction: column; gap: 40px; }
   .pj__filters { display: flex; flex-wrap: wrap; gap: 8px; }
   .pj__filters button { font: inherit; font-size: 14px; padding: 10px 16px; border: 1px solid var(--line); background: transparent; color: inherit; cursor: pointer; }
   .pj__filters button[aria-pressed="true"] { background: #202124; color: #eaeae4; border-color: #202124; }
@@ -78,5 +79,5 @@ const listLd = {
   .pj__ph strong { font-size: clamp(36px, 4vw, 56px); font-weight: 400; letter-spacing: -.02em; color: #202124; }
   .pj__grid h2 { font-size: 22px; font-weight: 500; line-height: 1.2; }
   .pj__grid p { color: var(--text2); }
-  .pj-cta { padding-block: 112px; display: flex; flex-direction: column; gap: 32px; } .pj-cta h2 { font-size: clamp(32px, 4vw, 56px); }
+  .pj-cta { padding-block: clamp(64px, 10vw, 112px); display: flex; flex-direction: column; gap: 32px; } .pj-cta h2 { font-size: clamp(32px, 4vw, 56px); }
 </style>

@@ -80,10 +80,12 @@ const org = {
   body { margin: 0; background: var(--bone); color: var(--ink); font: 400 17px/1.5 'Schibsted Grotesk', 'Helvetica Neue', Arial, sans-serif; }
   img { max-width: 100%; display: block; }
   [hidden] { display: none !important; }
+  @media (max-width: 520px) { .cf button { align-self: stretch; justify-content: center; } }
   a { color: inherit; }
-  h1, h2, h3 { text-wrap: balance; font-weight: 500; margin: 0; }
+  h1, h2, h3 { text-wrap: balance; font-weight: 500; margin: 0; overflow-wrap: break-word; }
   p { margin: 0; }
   .wrap { max-width: 1280px; margin: 0 auto; padding-left: max(24px, 4vw); padding-right: max(24px, 4vw); }
+  @media (min-width: 1680px) { .wrap { max-width: 1520px; } }
   .lbl { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
   .btn { display: inline-flex; align-items: center; min-height: 52px; padding: 0 28px; background: var(--ink); color: var(--bone); text-decoration: none; font-weight: 500; }
   .btn--ghost { background: transparent; color: var(--ink); border: 1px solid var(--ink); }

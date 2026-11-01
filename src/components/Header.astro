@@ -39,12 +39,18 @@ const langHref = (l) => (alternates && alternates[l]) || routes.home[l];
     </div>
   </div>
 </header>
+<script>
+  const menu = document.querySelector('.hdr__menu');
+  menu?.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => menu.removeAttribute('open')));
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') menu?.removeAttribute('open'); });
+</script>
 <style>
   .hdr { border-bottom: 1px solid var(--line); position: relative; }
   .hdr__in { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding-block: 18px; }
   .hdr__logo { font-size: 24px; font-weight: 600; letter-spacing: .06em; text-decoration: none; }
   .hdr__nav { display: flex; gap: 28px; font-size: 15px; }
-  .hdr__nav a { text-decoration: none; }
+  .hdr__nav a { text-decoration: none; padding-block: 12px; }
+  .hdr__lang a, .hdr__lang span { display: inline-block; padding: 12px 2px; }
   .hdr__right { display: flex; align-items: center; gap: 20px; }
   .hdr__lang { font-size: 13px; letter-spacing: .08em; }
   .hdr__lang a { text-decoration: none; color: var(--muted); }
@@ -57,7 +63,8 @@ const langHref = (l) => (alternates && alternates[l]) || routes.home[l];
     display: flex; flex-direction: column; padding: 8px max(24px, 4vw) 24px; }
   .hdr__drawer a { text-decoration: none; font-size: 20px; padding-block: 12px; border-bottom: 1px solid var(--line); }
   .hdr__drawer-lang { display: flex; gap: 20px; padding-top: 16px; font-size: 14px; letter-spacing: .08em; }
-  .hdr__drawer-lang a { border: 0; font-size: 14px; padding: 0; color: var(--muted); }
+  .hdr__drawer-lang span, .hdr__drawer-lang a { border: 0; font-size: 15px; padding: 12px 4px; min-width: 44px; color: var(--muted); }
+  .hdr__drawer-lang span { color: var(--ink); }
   @media (max-width: 900px) { .hdr__nav, .hdr__lang { display: none; } .hdr__menu { display: block; } }
   @media (max-width: 420px) { .hdr__cta { display: none; } }
 </style>

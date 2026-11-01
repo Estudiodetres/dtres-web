@@ -18,9 +18,10 @@ const t = ui[lang].footer;
 </footer>
 <style>
   .ftr { color: #c9c8bb; border-top: 1px solid rgba(234,234,228,.15); }
-  .ftr__in { padding-block: 56px 32px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px; font-size: 15px; }
+  .ftr__in { padding-block: 56px 32px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr)); gap: 32px; font-size: 15px; }
   .ftr__col { display: flex; flex-direction: column; gap: 6px; }
   .ftr__col a { color: #c9c8bb; text-decoration: none; }
+  @media (hover: none), (max-width: 760px) { .ftr__col { gap: 2px; } .ftr__col a { padding-block: 8px; } }
   .ftr__logo { font-size: 22px; font-weight: 600; letter-spacing: .06em; color: var(--bone); }
   .ftr__base { padding-block: 0 40px; font-size: 13px; color: #8f8e82; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
   .ftr__mark { width: 36px; height: 36px; color: #8f8e82; flex: none; }

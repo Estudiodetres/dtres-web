@@ -24,7 +24,7 @@ const t = ui[lang].form;
 </form>
 <style>
   .cf { display: flex; flex-direction: column; gap: 20px; width: 100%; max-width: 760px; }
-  .cf__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+  .cf__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 16px; }
   .cf label { display: flex; flex-direction: column; gap: 6px; font-size: 14px; color: #c9c8bb; }
   .cf__full { grid-column: 1 / -1; }
   .cf input, .cf select, .cf textarea { font: inherit; color: var(--bone); background: transparent; border: 1px solid rgba(234,234,228,.35); padding: 12px 14px; min-height: 48px; }
