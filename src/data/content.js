@@ -27,11 +27,13 @@ export const hero = {
 };
 
 export const audiences = {
-  title: 'Para quien tiene, o quiere comprar, un edificio obsoleto y convertirlo en un activo único y rentable.',
+  title: 'Quienes quieren transformar un edificio obsoleto en un activo único y rentable.',
   items: [
-    { title: 'Fundaciones e instituciones', text: 'Edificios que deben seguir cumpliendo su misión: residencias, colegios mayores, sedes. Rigor patrimonial y un resultado digno y duradero.' },
-    { title: 'Fondos de inversión inmobiliaria', text: 'Edificios que se compran para reposicionarlos. Due diligence antes de la compra, cambio de uso y una obra con plazo y coste cerrados para cumplir el plan de negocio.' },
-    { title: 'Inversores y family offices', text: 'Patrimonio propio o heredado que no rinde lo que podría. Lo convertimos en viviendas, hospitality o espacio de trabajo, con un único interlocutor.' },
+    { title: 'Fondos e inversores Real Estate', text: 'Due diligence antes de la compra, cambio de uso y una obra con plazo y coste cerrados para cumplir el plan de negocio.' },
+    { title: 'Family offices y patrimonio familiar', text: 'Edificios propios o heredados que no rinden lo que podrían. Los convertimos en viviendas, hospitality u oficinas.' },
+    { title: 'Fundaciones e instituciones', text: 'Residencias, colegios mayores y sedes que deben seguir cumpliendo su misión, con rigor patrimonial.' },
+    { title: 'Empresas y sedes corporativas', text: 'Oficinas y headquarters que representan a la compañía y acompañan su crecimiento.' },
+    { title: 'Agencias y gestores inmobiliarios', text: 'Viabilidad y due diligence técnica para asesorar mejor a sus clientes antes de comprar o vender.' },
   ],
 };
 
@@ -115,10 +117,10 @@ export const moreProjects = [
 
 // phase = id de fase del método. img = foto del estado actual (se muestra en B/N)
 export const wip = [
-  { use: 'Residencia universitaria · 4.000 m²', client: 'Colegio Mayor Universitario Bonaigua', phase: 'obra', text: 'Rehabilitación integral e interiorismo de la residencia.', img: null },
-  { use: 'Segregación de 5 viviendas · 577 m²', client: 'Fundació Privada Montseny', phase: 'obra', text: 'De coliving en desuso a 5 viviendas: cambio de uso y segregación.', img: null },
-  { use: 'Oficinas · 1.225 m²', client: 'Fundació Familiar Catalana', phase: 'proyecto-y-licencias', text: 'Edificio catalogado transformado en las oficinas de la UIC, interiorismo incluido. En licitación de obra.', img: null },
-  { use: 'De oficinas a 5 viviendas · 490 m²', client: 'Fondo de inversión Relanza', phase: 'viabilidad', text: 'Due diligence técnica y urbanística para convertir cinco oficinas en viviendas antes de invertir.', img: null },
+  { use: 'Residencia universitaria · 4.000 m²', client: 'Colegio Mayor Universitario Bonaigua', phase: 'obra', text: 'Rehabilitación integral e interiorismo de la residencia.', img: '/img/wip-bonaigua.jpg' },
+  { use: 'Segregación de 5 viviendas · 577 m²', client: 'Fundació Privada Montseny', phase: 'obra', text: 'De coliving en desuso a 5 viviendas: cambio de uso y segregación.', img: '/img/wip-lepant.jpg' },
+  { use: 'Oficinas · 1.225 m²', client: 'Fundació Familiar Catalana', phase: 'proyecto-y-licencias', text: 'Edificio catalogado transformado en las oficinas de la UIC, interiorismo incluido. En licitación de obra.', img: '/img/wip-vila-regina.jpg' },
+  { use: 'De oficinas a 5 viviendas · 490 m²', client: 'Fondo de inversión Relanza', phase: 'viabilidad', text: 'Due diligence técnica y urbanística para convertir cinco oficinas en viviendas antes de invertir.', img: '/img/wip-muntaner.jpg' },
 ];
 
 export const reviews = [
@@ -182,9 +184,13 @@ export const allProjects = [
 export const clients = [
   { name: 'IESE Business School', logo: '/img/clientes/iese.png' },
   { name: 'UIC Barcelona', logo: '/img/clientes/uic.png' },
-  { name: 'Mier Giralt Laboralistas', logo: '/img/clientes/mier-giralt.png' },
-  { name: 'Aloalto', logo: '/img/clientes/aloalto.png' },
+  { name: 'Colegio Mayor Universitario Bonaigua', logo: '/img/clientes/bonaigua.png' },
+  { name: 'Relanza Capital', logo: '/img/clientes/relanza-capital.png' },
   { name: 'Triple A Risk Finance', logo: '/img/clientes/triple-a-risk-finance.png' },
+  { name: 'Mier Giralt Laboralistas', logo: '/img/clientes/mier-giralt.png' },
+  { name: 'Heads Up Barcelona', logo: '/img/clientes/headsup.png' },
+  { name: 'Aloalto', logo: '/img/clientes/aloalto.png' },
+  { name: 'Qgat Homes', logo: '/img/clientes/qgat-homes.png' },
   { name: 'Delaire', logo: '/img/clientes/delaire.png' },
   { name: 'Octocam Vision', logo: '/img/clientes/octocam-vision.png' },
   { name: 'CDC Hiacre', logo: '/img/clientes/cdc-hiacre.png' },

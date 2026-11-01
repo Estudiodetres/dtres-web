@@ -73,7 +73,7 @@ export const ui = {
     footer: { tagline: 'Architecture, interior design, permits and construction for distinctive buildings in Catalonia.', studio: 'Studio', contact: 'Contact', legal: 'Legal', legalNotice: 'Legal notice', privacy: 'Privacy', cookies: 'Cookies' },
     form: { name: 'Name', email: 'Email', phone: 'Phone', company: 'Company or organisation', profile: 'You are', message: 'Tell us about your building and what you want to achieve', legal: 'We will only use your details to reply to you.', privacy: 'Privacy policy', submit: 'Book a call', hp: 'Do not fill',
       profiles: [['Fundación', 'Foundation'], ['Inversor', 'Investor'], ['Family office', 'Family office'], ['Empresa', 'Company'], ['Particular', 'Private owner']] },
-    home: { for: 'Who we work for', projectsDone: 'Projects delivered', works: 'Of construction managed', m2: 'Transformed in distinctive buildings',
+    home: { for: 'We work for', projectsDone: 'Projects delivered', works: 'Of construction managed', m2: 'Transformed in distinctive buildings',
       methodEyebrow: 'End-to-end transformation · 4-phase method', methodTitle: 'From first analysis to handover.', methodNote: 'You can start at any phase. We stay with you to the end.',
       youGet: 'You get', startHere: 'Start here →', before: 'Before', after: 'After', situation: 'Situation', transformation: 'Transformation', result: 'Result',
       more: 'More transformations', allProjects: 'See all projects →', wipEyebrow: 'In progress', wipTitle: 'What we are transforming now.',

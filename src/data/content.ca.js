@@ -17,11 +17,13 @@ export const hero = {
 };
 
 export const audiences = {
-  title: 'Per a qui té, o vol comprar, un edifici obsolet i convertir-lo en un actiu únic i rendible.',
+  title: 'Qui vol transformar un edifici obsolet en un actiu únic i rendible.',
   items: [
-    { title: 'Fundacions i institucions', text: 'Edificis que han de continuar complint la seva missió: residències, col·legis majors, seus. Rigor patrimonial i un resultat digne i durador.' },
-    { title: "Fons d'inversió immobiliària", text: "Edificis que es compren per reposicionar-los. Due diligence abans de la compra, canvi d'ús i una obra amb termini i cost tancats per complir el pla de negoci." },
-    { title: 'Inversors i family offices', text: 'Patrimoni propi o heretat que no rendeix el que podria. El convertim en habitatges, hospitality o espai de treball, amb un únic interlocutor.' },
+    { title: 'Fons i inversors Real Estate', text: "Due diligence abans de la compra, canvi d'ús i una obra amb termini i cost tancats per complir el pla de negoci." },
+    { title: 'Family offices i patrimoni familiar', text: 'Edificis propis o heretats que no rendeixen el que podrien. Els convertim en habitatges, hospitality o oficines.' },
+    { title: 'Fundacions i institucions', text: 'Residències, col·legis majors i seus que han de continuar complint la seva missió, amb rigor patrimonial.' },
+    { title: 'Empreses i seus corporatives', text: "Oficines i headquarters que representen la companyia i n'acompanyen el creixement." },
+    { title: 'Agències i gestors immobiliaris', text: 'Viabilitat i due diligence tècnica per assessorar millor els seus clients abans de comprar o vendre.' },
   ],
 };
 

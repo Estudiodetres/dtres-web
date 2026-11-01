@@ -17,11 +17,13 @@ export const hero = {
 };
 
 export const audiences = {
-  title: 'For those who own, or want to buy, an obsolete building and turn it into a unique, high-performing asset.',
+  title: 'Those who want to turn an obsolete building into a unique, high-performing asset.',
   items: [
-    { title: 'Foundations and institutions', text: 'Buildings that must keep serving their mission: residences, university halls, headquarters. Heritage rigour and a dignified, lasting result.' },
-    { title: 'Real estate investment funds', text: 'Buildings acquired to be repositioned. Due diligence before purchase, change of use and construction at a fixed time and cost to deliver the business plan.' },
-    { title: 'Investors and family offices', text: 'Owned or inherited property that underperforms. We turn it into homes, hospitality or workspace, with a single point of contact.' },
+    { title: 'Real estate funds and investors', text: 'Due diligence before purchase, change of use and construction at a fixed time and cost to deliver the business plan.' },
+    { title: 'Family offices and family-owned property', text: 'Owned or inherited buildings that underperform. We turn them into homes, hospitality or offices.' },
+    { title: 'Foundations and institutions', text: 'Residences, university halls and headquarters that must keep serving their mission, with heritage rigour.' },
+    { title: 'Companies and corporate headquarters', text: 'Offices and headquarters that represent the company and support its growth.' },
+    { title: 'Real estate agencies and asset managers', text: 'Feasibility and technical due diligence to advise their clients better before buying or selling.' },
   ],
 };
 
