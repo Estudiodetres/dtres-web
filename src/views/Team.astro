@@ -84,8 +84,15 @@ const ld = {
   .tm-group { width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; }
   .tm-block { padding-block: clamp(56px, 8vw, 96px) 0; display: flex; flex-direction: column; gap: 32px; border-bottom: 0; }
   .tm-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px 24px; }
-  @media (max-width: 860px) { .tm-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-  @media (max-width: 480px) { .tm-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 700px) {
+    .tm-grid { gap: 24px 10px; }
+    .tm-grid article { gap: 3px; }
+    .tm-grid img, .tm-ph { margin-bottom: 6px; }
+    .tm-grid h3 { font-size: 13.5px !important; line-height: 1.25; overflow-wrap: anywhere; hyphens: auto; }
+    .tm-grid p { font-size: 11.5px !important; line-height: 1.3; }
+    .tm-note { font-size: 11px !important; }
+    .tm-ph { font-size: 22px; }
+  }
   .tm-grid article { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
   .tm-grid img, .tm-ph { width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover; margin-bottom: 12px; }
   .tm-ph { display: grid; place-items: center; background: var(--card); color: var(--muted); font-size: clamp(32px, 5vw, 56px); letter-spacing: .04em; }
