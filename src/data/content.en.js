@@ -42,7 +42,7 @@ export const usp = {
 
 export const phases = [
   {
-    id: 'viabilidad', slug: 'feasibility', n: '01', title: 'Feasibility',
+    id: 'viabilidad', slug: 'feasibility', n: '01', title: 'Feasibility', sub: 'Technical due diligence or feasibility study', alt: ['Feasibility'],
     what: 'Technical, planning and heritage due diligence: possible uses, buildable area and risks.',
     get: 'A report on what the building allows, what it costs and how long it takes, before you invest.',
     seoTitle: 'Technical due diligence for buildings in Barcelona',
@@ -50,7 +50,7 @@ export const phases = [
     includes: ['Planning status: permitted uses, buildable area and housing density', 'Heritage protection and whether a heritage report is needed', 'Condition of structure, services, façade and roof', 'Habitability, accessibility and fire safety for the future use', 'Cost estimate, permit and construction timeline, and return'],
   },
   {
-    id: 'proyecto-y-licencias', slug: 'design-and-permits', n: '02', title: 'Design and permits',
+    id: 'proyecto-y-licencias', slug: 'design-and-permits', n: '02', title: 'Design', sub: 'Building permit, activity licence, basic design, detailed design and interior design', alt: ['Design and permits'],
     what: 'Architecture and interior design, basic and detailed design with services, building permit, change of use and activity licence.',
     get: 'A defined design, a fixed budget and permits under way.',
     seoTitle: 'Architecture, interior design and permits in Barcelona',
@@ -58,7 +58,7 @@ export const phases = [
     includes: ['Architecture and interior design', 'Basic and detailed design with services', 'Heritage pre-consultation and report', 'Building permit, change of use and activity licence', 'Tendering and fixed-price contract with the builder'],
   },
   {
-    id: 'obra', slug: 'construction', n: '03', title: 'Construction',
+    id: 'obra', slug: 'construction', n: '03', title: 'Construction', sub: 'Construction supervision and project management', alt: ['Construction'],
     what: 'Site supervision and project management.',
     get: 'Time, cost and quality under control, with a weekly report for the owner.',
     seoTitle: 'Construction management in Barcelona',
@@ -66,7 +66,7 @@ export const phases = [
     includes: ['Site supervision', 'Project management and trade coordination', 'Cost control and valuations', 'Weekly report for the owner', 'Change management without surprises'],
   },
   {
-    id: 'entrega', slug: 'handover', n: '04', title: 'FF&E and handover',
+    id: 'entrega', slug: 'handover', n: '04', title: 'Handover', sub: 'Furniture, fixtures and equipment (FF&E) and legal sign-offs', alt: ['Handover'],
     what: 'Furniture, fixtures and equipment (FF&E) design and selection, supplier coordination, legal sign-offs and final documentation.',
     get: 'The building fitted out and ready to operate, let or sell.',
     seoTitle: 'FF&E, legal sign-off and handover of rehabilitated buildings',

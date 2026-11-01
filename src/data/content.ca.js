@@ -42,7 +42,7 @@ export const usp = {
 
 export const phases = [
   {
-    id: 'viabilidad', slug: 'viabilitat', n: '01', title: 'Viabilitat',
+    id: 'viabilidad', slug: 'viabilitat', n: '01', title: 'Viabilitat', sub: 'Due diligence tècnica o estudi de viabilitat', alt: ['Viabilitat'],
     what: 'Due diligence tècnica, urbanística i patrimonial: usos possibles, edificabilitat i riscos.',
     get: "Un informe amb el que permet l'edifici, quant costa i quant triga, abans d'invertir.",
     seoTitle: "Due diligence tècnica d'edificis a Barcelona",
@@ -50,7 +50,7 @@ export const phases = [
     includes: ["Situació urbanística: usos admesos, edificabilitat i densitat d'habitatges", "Protecció patrimonial i necessitat d'informe de Patrimoni", "Estat de l'estructura, les instal·lacions, la façana i la coberta", "Habitabilitat, accessibilitat i incendis segons l'ús futur", "Pressupost estimat, termini de llicències i obra, i rendibilitat"],
   },
   {
-    id: 'proyecto-y-licencias', slug: 'projecte-i-llicencies', n: '02', title: 'Projecte i llicències',
+    id: 'proyecto-y-licencias', slug: 'projecte-i-llicencies', n: '02', title: 'Projecte', sub: "Permís d'obra, llicència d'activitat, projecte bàsic, projecte executiu i projecte d'interiorisme", alt: ['Projecte i llicències'],
     what: "Arquitectura i interiorisme, projecte bàsic i executiu amb instal·lacions, permís d'obra, canvi d'ús i llicència d'activitat.",
     get: 'El projecte definit, el pressupost tancat i les llicències en marxa.',
     seoTitle: 'Projecte, interiorisme i llicències a Barcelona',
@@ -58,7 +58,7 @@ export const phases = [
     includes: ['Arquitectura i interiorisme', 'Projecte bàsic i executiu amb instal·lacions', 'Consulta prèvia i informe de Patrimoni', "Permís d'obra, canvi d'ús i llicència d'activitat", 'Licitació i pressupost tancat amb constructora'],
   },
   {
-    id: 'obra', slug: 'obra', n: '03', title: 'Obra',
+    id: 'obra', slug: 'obra', n: '03', title: 'Obra', sub: "Direcció d'obra i project management", alt: ['Obra'],
     what: "Direcció d'obra i project management.",
     get: 'Terminis, costos i qualitat sota control, amb un informe setmanal per a la propietat.',
     seoTitle: "Direcció d'obra i project management a Barcelona",
@@ -66,7 +66,7 @@ export const phases = [
     includes: ["Direcció d'obra", "Project management i coordinació d'industrials", 'Control de costos i certificacions', 'Informe setmanal per a la propietat', 'Gestió de canvis sense sorpreses'],
   },
   {
-    id: 'entrega', slug: 'lliurament', n: '04', title: 'FF&E i lliurament',
+    id: 'entrega', slug: 'lliurament', n: '04', title: 'Lliurament', sub: 'Equipament (FF&E) i legalitzacions', alt: ['Lliurament'],
     what: "Disseny i selecció de mobiliari i equipament (FF&E), coordinació de proveïdors, legalitzacions i documentació final.",
     get: "L'edifici equipat i a punt per operar, llogar o vendre.",
     seoTitle: "FF&E, legalització i lliurament d'edificis rehabilitats",

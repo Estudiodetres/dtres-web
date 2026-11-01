@@ -61,7 +61,7 @@ export const usp = {
 
 export const phases = [
   {
-    id: 'viabilidad', slug: 'viabilidad', n: '01', title: 'Viabilidad',
+    id: 'viabilidad', slug: 'viabilidad', n: '01', title: 'Viabilidad', sub: 'Due diligence técnica o estudio de viabilidad', alt: ['Viabilidad'],
     what: 'Due diligence técnica, urbanística y patrimonial: usos posibles, edificabilidad y riesgos.',
     get: 'Un informe con lo que permite el edificio, cuánto cuesta y cuánto tarda, antes de invertir.',
     seoTitle: 'Due diligence técnica de edificios en Barcelona',
@@ -69,7 +69,7 @@ export const phases = [
     includes: ['Situación urbanística: usos admitidos, edificabilidad y densidad de viviendas', 'Protección patrimonial y necesidad de informe de Patrimonio', 'Estado de estructura, instalaciones, fachada y cubierta', 'Habitabilidad, accesibilidad e incendios según el uso futuro', 'Presupuesto estimado, plazo de licencias y obra, y rentabilidad'],
   },
   {
-    id: 'proyecto-y-licencias', slug: 'proyecto-y-licencias', n: '02', title: 'Proyecto y licencias',
+    id: 'proyecto-y-licencias', slug: 'proyecto-y-licencias', n: '02', title: 'Proyecto', sub: 'Permiso de obra, licencia de actividad, proyecto básico, proyecto ejecutivo y proyecto de interiorismo', alt: ['Proyecto y licencias'],
     what: 'Arquitectura e interiorismo, proyecto básico y ejecutivo con instalaciones, permiso de obra, cambio de uso y licencia de actividad.',
     get: 'El proyecto definido, el presupuesto cerrado y las licencias en marcha.',
     seoTitle: 'Proyecto, interiorismo y licencias en Barcelona',
@@ -77,7 +77,7 @@ export const phases = [
     includes: ['Arquitectura e interiorismo', 'Proyecto básico y ejecutivo con instalaciones', 'Consulta previa e informe de Patrimonio', 'Permiso de obra, cambio de uso y licencia de actividad', 'Licitación y presupuesto cerrado con constructora'],
   },
   {
-    id: 'obra', slug: 'obra', n: '03', title: 'Obra',
+    id: 'obra', slug: 'obra', n: '03', title: 'Obra', sub: 'Dirección de obra y project management', alt: ['Obra'],
     what: 'Dirección de obra y project management.',
     get: 'Plazos, costes y calidad bajo control, con un informe semanal para la propiedad.',
     seoTitle: 'Dirección de obra y project management en Barcelona',
@@ -85,7 +85,7 @@ export const phases = [
     includes: ['Dirección de obra', 'Project management y coordinación de industriales', 'Control de costes y certificaciones', 'Informe semanal para la propiedad', 'Gestión de cambios sin sorpresas'],
   },
   {
-    id: 'entrega', slug: 'entrega', n: '04', title: 'FF&E y entrega',
+    id: 'entrega', slug: 'entrega', n: '04', title: 'Entrega', sub: 'Equipamiento (FF&E) y legalizaciones', alt: ['Entrega', 'FF&E y entrega'],
     what: 'Diseño y selección de mobiliario y equipamiento (FF&E), coordinación de proveedores, legalizaciones y documentación final.',
     get: 'El edificio equipado y listo para operar, alquilar o vender.',
     seoTitle: 'FF&E, legalización y entrega de edificios rehabilitados',
@@ -195,4 +195,6 @@ export const clients = [
   { name: 'Octocam Vision', logo: '/img/clientes/octocam-vision.png' },
   { name: 'CDC Hiacre', logo: '/img/clientes/cdc-hiacre.png' },
   { name: 'Pich Architects', logo: '/img/clientes/pich-architects.png' },
+  { name: 'GCA Architects', logo: '/img/clientes/gca.png' },
+  { name: 'Century 21 Nexus', logo: '/img/clientes/century21.png' },
 ];

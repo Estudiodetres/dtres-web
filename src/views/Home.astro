@@ -89,7 +89,7 @@ const faqLd = {
           <a class="method__card" href={phasePath(lang, f.slug)}>
             <span class="method__n">{f.n}</span>
             <h3>{f.title}</h3>
-            <p class="method__what">{f.what}</p>
+            <p class="method__sub">{f.sub}</p>
             <p class="method__get"><span class="lbl">{t.youGet}</span>{f.get}</p>
             <span class="method__go">{t.startHere}</span>
           </a>
@@ -216,12 +216,11 @@ const faqLd = {
 
   .logos { padding-block: 0 clamp(48px, 8vw, 80px); display: flex; flex-direction: column; gap: 28px; border-top: 1px solid rgba(234,234,228,.15); padding-top: 40px; }
   .logos .lbl { color: #8f8e82; }
-  .logos__row { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 40px 32px; align-items: center; }
-  @media (max-width: 1100px) { .logos__row { grid-template-columns: repeat(5, minmax(0, 1fr)); } }
+  .logos__row { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 24px 40px; align-items: center; }
+  @media (max-width: 1100px) { .logos__row { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
   .logos__row li { display: flex; justify-content: center; }
-  .logos__row img { max-height: 44px; max-width: 100%; width: auto; height: auto; opacity: .72; transition: opacity .2s; }
-  .logos__row img:hover { opacity: 1; }
-  @media (max-width: 620px) { .logos__row { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; } .logos__row img { max-height: 32px; max-width: 90px; } }
+  .logos__row img { width: 100%; max-width: 168px; height: auto; }
+  @media (max-width: 620px) { .logos__row { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; } }
   .stats { padding-block: clamp(48px, 8vw, 80px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr)); gap: 40px; }
   .stats div { display: flex; flex-direction: column; gap: 8px; }
   .stats__n { font-size: clamp(44px, 5vw, 72px); font-weight: 500; line-height: 1; letter-spacing: -.02em; }
@@ -243,8 +242,8 @@ const faqLd = {
   .method__head .h2 { max-width: 20ch; margin-top: 16px; } .method__head > p { max-width: 36ch; }
   .method__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr)); gap: 16px; }
   .method__card { display: flex; flex-direction: column; gap: 16px; padding: 32px 28px 36px; background: var(--bone); text-decoration: none; min-height: 380px; }
-  .method__card h3 { font-size: 28px; } .method__n { font-size: 14px; color: var(--muted); }
-  .method__what { color: var(--text2); font-size: 15px; }
+  .method__card h3 { font-size: 24px; text-transform: uppercase; letter-spacing: .06em; } .method__n { font-size: 14px; color: var(--muted); }
+  .method__sub { font-weight: 600; font-size: 15px; line-height: 1.4; color: var(--ink); }
   .method__get { font-size: 15px; border-top: 1px solid var(--line); padding-top: 14px; } .method__get .lbl { display: block; margin-bottom: 6px; }
   .method__go { margin-top: auto; font-size: 14px; font-weight: 500; }
 

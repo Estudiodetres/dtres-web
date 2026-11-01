@@ -7,7 +7,7 @@ import { ui, routes, phasePath, postPath, langs } from '../i18n/index.js';
 import { getPosts } from '../data/blog.js';
 const { lang = 'es', post } = Astro.props;
 const t = ui[lang].blog;
-const phase = getContent(lang).phases.find((f) => f.title === post.phase);
+const phase = getContent(lang).phases.find((f) => f.title === post.phase || f.alt?.includes(post.phase));
 const df = new Intl.DateTimeFormat(lang, { day: 'numeric', month: 'long', year: 'numeric' });
 const ref = post.ref || post.slug;
 const alternates = { [lang]: postPath(lang, post.slug) };
