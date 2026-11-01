@@ -2,6 +2,8 @@
 export const site = {
   name: 'DTRES',
   legalName: 'ESDETRES Arquitectura e Interiorismo SLP',
+  taxId: 'B67432088',
+  registry: null, // p. ej. 'el Registro Mercantil de Barcelona, tomo X, folio Y, hoja B-Z'
   url: 'https://detres.eu',
   email: 'info@detres.eu',
   phone: '+34 931 255 444',
@@ -9,6 +11,11 @@ export const site = {
   address: { street: "Carrer d'Osi 23", postalCode: '08034', city: 'Barcelona', region: 'Catalunya', country: 'ES' },
   placeId: 'ChIJv3MWA6yXpBIRj6tO7BPYQxA',
   areaServed: ['Barcelona', 'Catalunya'],
+};
+
+export const meta = {
+  homeTitle: 'DTRES · Transformación de edificios en Barcelona: due diligence, licencias, interiorismo y obra',
+  homeDesc: 'Arquitectura y diseño que elevan el valor de tu inversión. Transformamos edificios en Barcelona y Catalunya: due diligence, cambio de uso, edificios catalogados, interiorismo y obra a precio cerrado.',
 };
 
 export const hero = {
@@ -52,7 +59,7 @@ export const usp = {
 
 export const phases = [
   {
-    slug: 'viabilidad', n: '01', title: 'Viabilidad',
+    id: 'viabilidad', slug: 'viabilidad', n: '01', title: 'Viabilidad',
     what: 'Due diligence técnica, urbanística y patrimonial: usos posibles, edificabilidad y riesgos.',
     get: 'Un informe con lo que permite el edificio, cuánto cuesta y cuánto tarda, antes de invertir.',
     seoTitle: 'Due diligence técnica de edificios en Barcelona',
@@ -60,7 +67,7 @@ export const phases = [
     includes: ['Situación urbanística: usos admitidos, edificabilidad y densidad de viviendas', 'Protección patrimonial y necesidad de informe de Patrimonio', 'Estado de estructura, instalaciones, fachada y cubierta', 'Habitabilidad, accesibilidad e incendios según el uso futuro', 'Presupuesto estimado, plazo de licencias y obra, y rentabilidad'],
   },
   {
-    slug: 'proyecto-y-licencias', n: '02', title: 'Proyecto y licencias',
+    id: 'proyecto-y-licencias', slug: 'proyecto-y-licencias', n: '02', title: 'Proyecto y licencias',
     what: 'Arquitectura e interiorismo, proyecto básico y ejecutivo con instalaciones, permiso de obra, cambio de uso y licencia de actividad.',
     get: 'El proyecto definido, el presupuesto cerrado y las licencias en marcha.',
     seoTitle: 'Proyecto, interiorismo y licencias en Barcelona',
@@ -68,7 +75,7 @@ export const phases = [
     includes: ['Arquitectura e interiorismo', 'Proyecto básico y ejecutivo con instalaciones', 'Consulta previa e informe de Patrimonio', 'Permiso de obra, cambio de uso y licencia de actividad', 'Licitación y presupuesto cerrado con constructora'],
   },
   {
-    slug: 'obra', n: '03', title: 'Obra',
+    id: 'obra', slug: 'obra', n: '03', title: 'Obra',
     what: 'Dirección de obra y project management.',
     get: 'Plazos, costes y calidad bajo control, con un informe semanal para la propiedad.',
     seoTitle: 'Dirección de obra y project management en Barcelona',
@@ -76,7 +83,7 @@ export const phases = [
     includes: ['Dirección de obra', 'Project management y coordinación de industriales', 'Control de costes y certificaciones', 'Informe semanal para la propiedad', 'Gestión de cambios sin sorpresas'],
   },
   {
-    slug: 'entrega', n: '04', title: 'Entrega',
+    id: 'entrega', slug: 'entrega', n: '04', title: 'Entrega',
     what: 'Documentación final, legalizaciones y libro del edificio.',
     get: 'El edificio listo para operar, alquilar o vender.',
     seoTitle: 'Legalización y entrega de edificios rehabilitados',

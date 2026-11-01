@@ -1,11 +1,14 @@
 ---
 import Base from '../layouts/Base.astro';
+import { ui, routes } from '../i18n/index.js';
+const lang = 'es';
+const t = ui[lang].thanks;
 ---
-<Base title="Gracias · DTRES" description="Hemos recibido tu mensaje.">
+<Base title={`${t.eyebrow} · DTRES`} description={t.title} lang={lang} alternates={routes.thanks} noindex>
   <section class="wrap" style="padding-block:140px;display:flex;flex-direction:column;gap:24px;align-items:flex-start">
-    <p class="lbl">Mensaje recibido</p>
-    <h1 style="font-size:clamp(40px,6vw,80px);line-height:1">Gracias. Te llamamos en menos de 48 horas.</h1>
-    <p style="font-size:19px;max-width:44ch">Si es urgente, escríbenos a info@detres.eu o llámanos al 931 255 444.</p>
-    <a class="btn" href="/">Volver al inicio</a>
+    <p class="lbl">{t.eyebrow}</p>
+    <h1 style="font-size:clamp(40px,6vw,80px);line-height:1;max-width:18ch">{t.title}</h1>
+    <p style="font-size:19px;max-width:44ch">{t.text}</p>
+    <a class="btn" href={routes.home[lang]}>{t.back}</a>
   </section>
 </Base>

@@ -1,0 +1,9 @@
+---
+import Phase from '../../../views/Phase.astro';
+import { getContent } from '../../../data/i18n-content.js';
+export function getStaticPaths() {
+  return getContent('ca').phases.map((f) => ({ params: { slug: f.slug }, props: { f } }));
+}
+const { f } = Astro.props;
+---
+<Phase lang="ca" f={f} />

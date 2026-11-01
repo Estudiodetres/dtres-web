@@ -1,24 +1,26 @@
 ---
-const { origen = 'home' } = Astro.props;
+import { ui, routes, code } from '../i18n/index.js';
+const { origen = 'home', lang = 'es' } = Astro.props;
+const t = ui[lang].form;
 ---
 <form class="cf" method="post" action="/api/contacto">
   <input type="hidden" name="origen" value={origen} />
-  <input type="hidden" name="idioma" value="ES" />
-  <label class="cf__hp" aria-hidden="true">No rellenar <input name="website" tabindex="-1" autocomplete="off" /></label>
+  <input type="hidden" name="idioma" value={code[lang]} />
+  <label class="cf__hp" aria-hidden="true">{t.hp} <input name="website" tabindex="-1" autocomplete="off" /></label>
   <div class="cf__grid">
-    <label>Nombre<input name="nombre" required autocomplete="name" /></label>
-    <label>Email<input name="email" type="email" required autocomplete="email" /></label>
-    <label>Teléfono<input name="telefono" type="tel" autocomplete="tel" /></label>
-    <label>Empresa o entidad<input name="empresa" autocomplete="organization" /></label>
-    <label>Eres
+    <label>{t.name}<input name="nombre" required autocomplete="name" /></label>
+    <label>{t.email}<input name="email" type="email" required autocomplete="email" /></label>
+    <label>{t.phone}<input name="telefono" type="tel" autocomplete="tel" /></label>
+    <label>{t.company}<input name="empresa" autocomplete="organization" /></label>
+    <label>{t.profile}
       <select name="perfil">
-        <option>Fundación</option><option>Inversor</option><option>Family office</option><option>Empresa</option><option>Particular</option>
+        {t.profiles.map(([v, l]) => <option value={v}>{l}</option>)}
       </select>
     </label>
-    <label class="cf__full">Cuéntanos qué edificio tienes y qué quieres conseguir<textarea name="mensaje" rows="4"></textarea></label>
+    <label class="cf__full">{t.message}<textarea name="mensaje" rows="4"></textarea></label>
   </div>
-  <p class="cf__legal">Usaremos tus datos solo para responderte. <a href="/privacidad/">Política de privacidad</a>.</p>
-  <button class="btn btn--light" type="submit">Agendar llamada</button>
+  <p class="cf__legal">{t.legal} <a href={routes.privacy[lang]}>{t.privacy}</a>.</p>
+  <button class="btn btn--light" type="submit">{t.submit}</button>
 </form>
 <style>
   .cf { display: flex; flex-direction: column; gap: 20px; width: 100%; max-width: 760px; }

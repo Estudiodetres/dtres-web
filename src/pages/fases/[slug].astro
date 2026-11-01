@@ -1,75 +1,9 @@
 ---
-import Base from '../../layouts/Base.astro';
-import ContactForm from '../../components/ContactForm.astro';
-import { phases, site } from '../../data/content.js';
-
+import Phase from '../../views/Phase.astro';
+import { getContent } from '../../data/i18n-content.js';
 export function getStaticPaths() {
-  return phases.map((f) => ({ params: { slug: f.slug }, props: { f } }));
+  return getContent('es').phases.map((f) => ({ params: { slug: f.slug }, props: { f } }));
 }
 const { f } = Astro.props;
-const others = phases.filter((p) => p.slug !== f.slug);
-
-const serviceLd = {
-  '@context': 'https://schema.org',
-  '@type': 'Service',
-  name: f.seoTitle,
-  description: f.intro,
-  provider: { '@id': `${site.url}/#org` },
-  areaServed: site.areaServed,
-};
 ---
-<Base title={`${f.seoTitle} · DTRES`} description={f.intro} jsonLd={[serviceLd]}>
-  <section class="wrap ph-hero">
-    <p class="lbl">Fase {f.n} · Transformación integral</p>
-    <h1>{f.seoTitle}</h1>
-    <p class="ph-hero__intro">{f.intro}</p>
-    <a class="btn" href="#contacto">Agendar llamada gratuita</a>
-  </section>
-
-  <section class="wrap ph-body">
-    <div>
-      <h2>Qué incluye</h2>
-      <ul>{f.includes.map((i) => <li>{i}</li>)}</ul>
-    </div>
-    <div class="ph-get">
-      <span class="lbl">Recibes</span>
-      <p>{f.get}</p>
-      <p class="ph-note">Puedes empezar por aquí. Te acompañamos hasta el final.</p>
-    </div>
-  </section>
-
-  <section class="stone">
-    <div class="wrap ph-next">
-      <h2>Las otras fases</h2>
-      <div class="ph-next__grid">
-        {others.map((o) => (
-          <a href={`/fases/${o.slug}/`}><span class="lbl">{o.n}</span><h3>{o.title}</h3><p>{o.what}</p></a>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <section id="contacto" class="dark">
-    <div class="wrap ph-cta">
-      <h2>¿Empezamos por {f.title.toLowerCase()}?</h2>
-      <ContactForm origen={`fase-${f.slug}`} />
-    </div>
-  </section>
-</Base>
-<style>
-  .ph-hero { padding-block: 96px 72px; display: flex; flex-direction: column; gap: 28px; align-items: flex-start; }
-  .ph-hero h1 { font-size: clamp(40px, 6vw, 88px); line-height: 1; letter-spacing: -.02em; max-width: 18ch; }
-  .ph-hero__intro { font-size: 21px; line-height: 1.45; max-width: 52ch; }
-  .ph-body { padding-block: 72px 120px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 56px; }
-  .ph-body h2 { font-size: 32px; margin-bottom: 20px; }
-  .ph-body ul { margin: 0; padding: 0; list-style: none; }
-  .ph-body li { border-top: 1px solid var(--line); padding-block: 14px; }
-  .ph-get { background: var(--card); padding: 32px; display: flex; flex-direction: column; gap: 12px; align-self: start; }
-  .ph-get p:first-of-type { font-size: 22px; line-height: 1.35; }
-  .ph-note { color: var(--muted); }
-  .ph-next { padding-block: 96px; display: flex; flex-direction: column; gap: 32px; } .ph-next h2 { font-size: 32px; }
-  .ph-next__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; }
-  .ph-next__grid a { text-decoration: none; background: var(--bone); padding: 28px; display: flex; flex-direction: column; gap: 10px; }
-  .ph-next__grid h3 { font-size: 24px; } .ph-next__grid p { color: var(--text2); font-size: 15px; }
-  .ph-cta { padding-block: 112px; display: flex; flex-direction: column; gap: 32px; } .ph-cta h2 { font-size: clamp(32px, 4vw, 56px); }
-</style>
+<Phase lang="es" f={f} />

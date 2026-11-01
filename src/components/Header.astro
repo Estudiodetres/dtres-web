@@ -1,23 +1,46 @@
 ---
+import { ui, routes, phasePath, langs, code } from '../i18n/index.js';
+import { getContent } from '../data/i18n-content.js';
+const { lang = 'es', alternates = null } = Astro.props;
+const t = ui[lang];
+const { phases } = getContent(lang);
+const home = routes.home[lang];
+const links = [
+  [`${home}#metodo`, t.nav.method],
+  [phasePath(lang, phases[0].slug), t.nav.dd],
+  [routes.projects[lang], t.nav.projects],
+  [`${home}#equipo`, t.nav.about],
+  [routes.blog[lang], t.nav.blog],
+];
+const langHref = (l) => (alternates && alternates[l]) || routes.home[l];
 ---
 <header class="hdr">
   <div class="wrap hdr__in">
-    <a href="/" class="hdr__logo" aria-label="DTRES, inicio">DTRES</a>
+    <a href={home} class="hdr__logo" aria-label="DTRES">DTRES</a>
     <nav class="hdr__nav" aria-label="Principal">
-      <a href="/#metodo">Método</a>
-      <a href="/fases/viabilidad/">Due diligence</a>
-      <a href="/proyectos/">Proyectos</a>
-      <a href="/#equipo">Nosotros</a>
-      <a href="/blog/">Blog</a>
+      {links.map(([h, l]) => <a href={h}>{l}</a>)}
     </nav>
     <div class="hdr__right">
-      <span class="hdr__lang">ES · <a href="/ca/">CA</a> · <a href="/en/">EN</a></span>
-      <a class="btn hdr__cta" href="/#contacto">Agendar llamada</a>
+      <span class="hdr__lang">
+        {langs.map((l, i) => (
+          <>{i > 0 && ' · '}{l === lang ? <span aria-current="true">{code[l]}</span> : <a href={langHref(l)} hreflang={l} lang={l}>{code[l]}</a>}</>
+        ))}
+      </span>
+      <a class="btn hdr__cta" href={`${home}#contacto`}>{t.cta}</a>
+      <details class="hdr__menu">
+        <summary aria-label="Menú"><span></span><span></span></summary>
+        <div class="hdr__drawer">
+          {links.map(([h, l]) => <a href={h}>{l}</a>)}
+          <div class="hdr__drawer-lang">
+            {langs.map((l) => (l === lang ? <span>{code[l]}</span> : <a href={langHref(l)} hreflang={l}>{code[l]}</a>))}
+          </div>
+        </div>
+      </details>
     </div>
   </div>
 </header>
 <style>
-  .hdr { border-bottom: 1px solid var(--line); }
+  .hdr { border-bottom: 1px solid var(--line); position: relative; }
   .hdr__in { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding-block: 18px; }
   .hdr__logo { font-size: 24px; font-weight: 600; letter-spacing: .06em; text-decoration: none; }
   .hdr__nav { display: flex; gap: 28px; font-size: 15px; }
@@ -26,5 +49,15 @@
   .hdr__lang { font-size: 13px; letter-spacing: .08em; }
   .hdr__lang a { text-decoration: none; color: var(--muted); }
   .hdr__cta { min-height: 44px; padding: 0 20px; font-size: 15px; }
-  @media (max-width: 900px) { .hdr__nav, .hdr__lang { display: none; } }
+  .hdr__menu { display: none; }
+  .hdr__menu summary { list-style: none; cursor: pointer; width: 44px; height: 44px; display: flex; flex-direction: column; justify-content: center; gap: 7px; padding: 0 10px; }
+  .hdr__menu summary::-webkit-details-marker { display: none; }
+  .hdr__menu summary span { height: 1.5px; background: var(--ink); display: block; }
+  .hdr__drawer { position: absolute; left: 0; right: 0; top: 100%; background: var(--bone); border-bottom: 1px solid var(--line); z-index: 20;
+    display: flex; flex-direction: column; padding: 8px max(24px, 4vw) 24px; }
+  .hdr__drawer a { text-decoration: none; font-size: 20px; padding-block: 12px; border-bottom: 1px solid var(--line); }
+  .hdr__drawer-lang { display: flex; gap: 20px; padding-top: 16px; font-size: 14px; letter-spacing: .08em; }
+  .hdr__drawer-lang a { border: 0; font-size: 14px; padding: 0; color: var(--muted); }
+  @media (max-width: 900px) { .hdr__nav, .hdr__lang { display: none; } .hdr__menu { display: block; } }
+  @media (max-width: 420px) { .hdr__cta { display: none; } }
 </style>

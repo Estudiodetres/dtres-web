@@ -1,13 +1,15 @@
 // Recibe el formulario "Agendar llamada" y crea una fila en Notion › Contactos web.
 const NOTION_VERSION = '2022-06-28';
 const PERFILES = ['Fundación', 'Inversor', 'Family office', 'Empresa', 'Particular'];
+const THANKS = { ES: '/gracias/', CA: '/ca/gracies/', EN: '/en/thank-you/' };
 const txt = (v) => [{ text: { content: String(v || '').slice(0, 1900) } }];
 
 export default async (req) => {
   if (req.method !== 'POST') return new Response('Method not allowed', { status: 405 });
 
   const data = Object.fromEntries(await req.formData());
-  if (data.website) return Response.redirect(new URL('/gracias/', req.url), 303); // honeypot
+  const thanks = new URL(THANKS[data.idioma] || THANKS.ES, req.url);
+  if (data.website) return Response.redirect(thanks, 303); // honeypot
   if (!data.nombre || !data.email) return new Response('Faltan nombre o email', { status: 400 });
 
   const properties = {
@@ -35,7 +37,7 @@ export default async (req) => {
     console.error('Notion error', res.status, await res.text());
     return new Response('No se pudo enviar. Escríbenos a info@detres.eu', { status: 502 });
   }
-  return Response.redirect(new URL('/gracias/', req.url), 303);
+  return Response.redirect(thanks, 303);
 };
 
 export const config = { path: '/api/contacto' };

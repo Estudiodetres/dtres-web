@@ -2,9 +2,14 @@
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { site } from '../data/content.js';
+import { htmlLang, ogLocale, langs } from '../i18n/index.js';
+import '@fontsource/schibsted-grotesk/400.css';
+import '@fontsource/schibsted-grotesk/500.css';
+import '@fontsource/schibsted-grotesk/600.css';
 
-const { title, description, jsonLd = [] } = Astro.props;
+const { title, description, jsonLd = [], lang = 'es', alternates = null, noindex = false } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const abs = (p) => new URL(p, Astro.site).href;
 
 const org = {
   '@context': 'https://schema.org',
@@ -37,29 +42,31 @@ const org = {
 };
 ---
 <!doctype html>
-<html lang="es">
+<html lang={htmlLang[lang]}>
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>{title}</title>
   <meta name="description" content={description} />
   <link rel="canonical" href={canonical} />
-  <link rel="alternate" hreflang="es" href={canonical} />
+  {noindex && <meta name="robots" content="noindex" />}
+  {alternates
+    ? [...langs.filter((l) => alternates[l]).map((l) => <link rel="alternate" hreflang={l} href={abs(alternates[l])} />),
+       <link rel="alternate" hreflang="x-default" href={abs(alternates.es ?? alternates[lang])} />]
+    : <link rel="alternate" hreflang={lang} href={canonical} />}
   <meta property="og:type" content="website" />
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
   <meta property="og:url" content={canonical} />
-  <meta property="og:locale" content="es_ES" />
+  <meta property="og:locale" content={ogLocale[lang]} />
+  <meta property="og:image" content={abs('/img/iese-l-hero.jpg')} />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600&display=swap" />
   <script type="application/ld+json" set:html={JSON.stringify([org, ...jsonLd])} />
 </head>
 <body>
-  <Header />
+  <Header lang={lang} alternates={alternates} />
   <main><slot /></main>
-  <Footer />
+  <Footer lang={lang} />
 </body>
 </html>
 
