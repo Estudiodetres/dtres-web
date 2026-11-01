@@ -11,10 +11,11 @@ const t = ui[lang].projects;
 const fmt = (n) => fmtL(n, lang);
 const st = (s) => (s && statusLabels ? statusLabels[s] ?? s : s);
 const filters = Object.entries(t.filters);
-const total = allProjects.reduce((a, p) => a + p.m2, 0);
+const total = allProjects.reduce((a, p) => a + (p.m2 || 0), 0);
+const m2 = (p) => (p.m2 ? ` · ${fmt(p.m2)} m²` : '');
 const listLd = {
   '@context': 'https://schema.org', '@type': 'ItemList', name: t.title,
-  itemListElement: allProjects.map((p, i) => ({ '@type': 'ListItem', position: i + 1, name: `${p.use} · ${p.client} · ${fmt(p.m2)} m²` })),
+  itemListElement: allProjects.map((p, i) => ({ '@type': 'ListItem', position: i + 1, name: `${p.use} · ${p.client}${m2(p)}` })),
 };
 ---
 <Base title={t.metaTitle} description={t.metaDesc(allProjects.length, fmt(Math.floor(total / 1000) * 1000))} jsonLd={[listLd]} lang={lang} alternates={routes.projects}>
@@ -33,8 +34,8 @@ const listLd = {
         <article data-cat={p.cat} data-heritage={p.heritage ? '1' : '0'} data-curso={p.status ? '1' : '0'} class={p.img ? '' : 'noimg'}>
           {p.img
             ? <img class="ph" src={p.img} srcset={srcset(p.img)} sizes="(min-width: 860px) 33vw, 50vw" alt={`${p.use} · ${p.client}`} width="600" height="750" loading="lazy" />
-            : <div class="pj__ph"><span>{st(p.status) ?? t.project}</span><strong>{fmt(p.m2)} m²</strong></div>}
-          <h2>{p.use} · {fmt(p.m2)} m²</h2>
+            : <div class="pj__ph"><span>{st(p.status) ?? t.project}</span>{p.m2 && <strong>{fmt(p.m2)} m²</strong>}</div>}
+          <h2>{p.use}{m2(p)}</h2>
           <p>{p.client}</p>
           {(p.heritage || (p.img && p.status)) && <span class="lbl">{[p.img && st(p.status), p.heritage && t.heritage].filter(Boolean).join(' · ')}</span>}
         </article>

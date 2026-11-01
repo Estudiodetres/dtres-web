@@ -130,7 +130,7 @@ export const people = { staff: es.people.staff.map((x) => ({ ...x, role: peopleR
 export const statusLabels = { 'En obra': 'Under construction', 'En licitación': 'Out to tender', 'En viabilidad': 'Feasibility' };
 
 const use = {
-  'Oficinas en edificio de 1910': 'Offices in a 1910 building', Oficinas: 'Offices', 'Oficinas de la UIC': 'Offices for UIC Barcelona',
+  'Vestuarios': 'Changing rooms', 'Graderías': 'Stands', 'Oficinas en edificio de 1910': 'Offices in a 1910 building', Oficinas: 'Offices', 'Oficinas de la UIC': 'Offices for UIC Barcelona',
   'Plan especial y licencias de obra nueva': 'Special plan and new-build permits', 'Residencia senior': 'Senior residence',
   'Residencia universitaria': 'University hall', 'Residencia universitaria · 1ª fase': 'University hall · Phase 1',
   'Club juvenil': 'Youth club', 'Vestuarios y gradas': 'Changing rooms and stands', 'De coliving a 5 viviendas de alquiler': 'From coliving to 5 rental homes',
