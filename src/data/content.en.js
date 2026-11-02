@@ -31,7 +31,7 @@ export const usp = {
   eyebrow: 'Planning and heritage in Catalonia',
   title: 'Faster permits. Higher returns.',
   text: "We know Catalonia's planning and heritage regulations inside out, along with each city council's criteria and room for interpretation. That lets us maximise, always within the law, the buildable potential and return of every building, and keep permits moving without blockages.",
-  image: { src: es.usp.image.src, alt: 'Restored detail of IESE Building L, a listed 1910 building' },
+  image: { src: es.usp.image.src, alt: 'DTRES team on a site visit in a building under refurbishment' },
   proofs: [
     { tag: 'Listed heritage · IESE Business School', title: 'University campus · 1,022 m²', text: "Full refurbishment and interior design that conveys the institution's values, with the campus fully operational." },
     { tag: 'Listed heritage · Fundació Familiar Catalana', title: 'Offices · 1,225 m²', text: 'Offices for UIC Barcelona. Special plan, permits, construction and interior design. Plus permits for 5,163 m² of new build on the plot.' },

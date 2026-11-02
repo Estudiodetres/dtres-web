@@ -50,7 +50,7 @@ export const usp = {
   eyebrow: 'Normativa y patrimonio en Catalunya',
   title: 'Licencias más rápidas. Edificios más rentables.',
   text: 'Conocemos a fondo la normativa urbanística y patrimonial de Catalunya, los criterios de cada ayuntamiento y sus márgenes de interpretación. Eso nos permite maximizar, siempre dentro de la legalidad, el aprovechamiento y la rentabilidad de cada edificio, y que las licencias avancen sin bloqueos.',
-  image: { src: '/img/iese-l-detalle.jpg', alt: 'Detalle restaurado del IESE Edificio L, edificio catalogado de 1910' },
+  image: { src: '/img/usp-obra.jpg', alt: 'Visita técnica del equipo DTRES en un edificio en rehabilitación' },
   proofs: [
     { tag: 'Patrimonio catalogado · IESE Business School', title: 'Campus universitario · 1.022 m²', text: 'Reforma integral e interiorismo que transmite los valores de la institución, con el campus en funcionamiento.' },
     { tag: 'Patrimonio catalogado · Fundació Familiar Catalana', title: 'Oficinas · 1.225 m²', text: 'Sede de las oficinas de la UIC. Plan especial integral, licencias, obra e interiorismo. Más licencias para 5.163 m² de obra nueva en la parcela.' },
