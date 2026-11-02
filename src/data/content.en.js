@@ -13,7 +13,7 @@ export const hero = {
   eyebrow: 'Architecture and interior design · Barcelona and Catalonia · Since 2017',
   title: 'Architecture and design that raise the value of your investment.',
   subtitle: 'We transform buildings for a new use, with distinctive interiors, fast-moving permits and construction without surprises. From due diligence to handover.',
-  image: { src: es.hero.image.src, alt: 'IESE Building L, a listed 1910 building rehabilitated as offices' },
+  image: { src: '/img/hero-papiol.jpg', alt: 'Papiol showroom and offices in Barcelona, with a double-height space and staircase' },
 };
 
 export const audiences = {
@@ -42,33 +42,33 @@ export const usp = {
 
 export const phases = [
   {
-    id: 'viabilidad', slug: 'feasibility', n: '01', title: 'Feasibility', sub: 'Technical due diligence or feasibility study', alt: ['Feasibility'],
+    id: 'viabilidad', slug: 'feasibility', n: '01', title: 'Feasibility', sub: "Technical due diligence", alt: ['Feasibility'],
     what: 'Technical, planning and heritage due diligence: possible uses, buildable area and risks.',
-    get: 'A report on what the building allows, what it costs and how long it takes, before you invest.',
+    get: "We identify technical risks, assess the investment cost, check planning and legal compliance and set the timeline for the whole process.",
     seoTitle: 'Technical due diligence for buildings in Barcelona',
     intro: 'Before buying or transforming a building you need to know what planning allows, what heritage protects, what condition it is in and what it will cost. We analyse it and give you a clear conclusion: buy, negotiate or walk away.',
     includes: ['Planning status: permitted uses, buildable area and housing density', 'Heritage protection and whether a heritage report is needed', 'Condition of structure, services, façade and roof', 'Habitability, accessibility and fire safety for the future use', 'Cost estimate, permit and construction timeline, and return'],
   },
   {
-    id: 'proyecto-y-licencias', slug: 'design-and-permits', n: '02', title: 'Design', sub: 'Building permit, activity licence, basic design, detailed design and interior design', alt: ['Design and permits'],
+    id: 'proyecto-y-licencias', slug: 'design-and-permits', n: '02', title: 'Design', sub: "Architecture and building permit, engineering and activity licence, interior design and furniture", alt: ['Design and permits'],
     what: 'Architecture and interior design, basic and detailed design with services, building permit, change of use and activity licence.',
-    get: 'A defined design, a fixed budget and permits under way.',
+    get: "A design built in 3D so you can experience it before it is built, detailed in BIM and with the building permit granted.",
     seoTitle: 'Architecture, interior design and permits in Barcelona',
     intro: 'We design the building and its interiors, and handle everything needed to start construction as soon as possible: building permits, change of use, activity licence and heritage consultations.',
     includes: ['Architecture and interior design', 'Basic and detailed design with services', 'Heritage pre-consultation and report', 'Building permit, change of use and activity licence', 'Tendering and fixed-price contract with the builder'],
   },
   {
-    id: 'obra', slug: 'construction', n: '03', title: 'Construction', sub: 'Construction supervision and project management', alt: ['Construction'],
+    id: 'obra', slug: 'construction', n: '03', title: 'Construction', sub: "Project management and site supervision by architect, building surveyor, engineer and interior designer", alt: ['Construction'],
     what: 'Site supervision and project management.',
-    get: 'Time, cost and quality under control, with a weekly report for the owner.',
+    get: "Time, cost and build quality under control, with a weekly report and a single point of contact.",
     seoTitle: 'Construction management in Barcelona',
     intro: 'We supervise the works and manage every party so that time, cost and quality are met. The owner receives a clear progress report every week.',
     includes: ['Site supervision', 'Project management and trade coordination', 'Cost control and valuations', 'Weekly report for the owner', 'Change management without surprises'],
   },
   {
-    id: 'entrega', slug: 'handover', n: '04', title: 'Handover', sub: 'Furniture, fixtures and equipment (FF&E) and legal sign-offs', alt: ['Handover'],
+    id: 'entrega', slug: 'handover', n: '04', title: 'Handover', sub: "Fit-out and legal sign-offs", alt: ['Handover'],
     what: 'Furniture, fixtures and equipment (FF&E) design and selection, supplier coordination, legal sign-offs and final documentation.',
-    get: 'The building fitted out and ready to operate, let or sell.',
+    get: "The building fitted out and ready to operate, let or sell.",
     seoTitle: 'FF&E, legal sign-off and handover of rehabilitated buildings',
     intro: 'We design and select furniture, fixtures and equipment (FF&E), coordinate suppliers through installation, and close all documentation so the building can operate from day one.',
     includes: ['FF&E design and selection', 'Supplier coordination and installation', 'Completion certificate, legal sign-offs and inspections', 'Habitability certificates and activity licences', 'Building logbook and support during start-up'],
@@ -98,8 +98,8 @@ export const moreProjects = [
 
 export const wip = es.wip.map((w, i) => ({ ...w, ...[
   { use: 'University hall · 4,000 m²', text: 'Full rehabilitation and interior design of the residence.' },
-  { use: 'Subdivision into 5 homes · 577 m²', text: 'From a disused coliving to 5 homes: change of use and subdivision.' },
-  { use: 'Offices · 1,225 m²', text: 'A listed building transformed into offices for UIC Barcelona, interiors included. Out to tender.' },
+  { use: 'From cultural facility to 5 homes · 577 m²', text: 'Change of use and subdivision into 5 rental homes.' },
+  { use: 'From senior residence to institutional offices · 1,225 m²', text: 'A listed building transformed into offices for UIC Barcelona, interiors included. Out to tender.' },
   { use: 'From offices to 5 homes · 490 m²', client: 'Relanza investment fund', text: 'Technical and planning due diligence to turn five offices into homes before investing.' },
   { use: 'Offices · 210 m²', text: 'Two-storey premises with a courtyard for an 18-person company planning to double in size. Space planning, activity licence and audit of the construction budget.' },
 ][i] }));
@@ -125,7 +125,7 @@ export const faqs = [
   { q: 'Can I hire you for just one phase?', a: 'Yes. You can start with feasibility, design, construction or FF&E and handover, and we stay with you to the end.' },
 ];
 export const clients = es.clients;
-const peopleRole = {'Responsable de BIM y Estudios de Viabilidad': 'Head of BIM and Feasibility Studies', 'Responsable de Diseño de Interiores': 'Head of Interior Design', 'BIM Manager y Estudios de Viabilidad': 'BIM Manager and Feasibility Studies', 'Arquitectura y diseño de interiores': 'Architecture and interior design', 'Responsable de Planificación y Procesos': 'Head of Planning and Processes', 'Responsable de Calidad y Trámites': 'Head of Quality and Permitting', 'Arquitecto senior': 'Senior architect', 'Profesor de la Escuela de Arquitectura UIC': 'Lecturer at the UIC School of Architecture', 'Project Manager': 'Project Manager', 'Arquitecta senior': 'Senior architect', 'Arquitecto senior': 'Senior architect', 'Interiorista': 'Interior designer', 'Arquitecta junior': 'Junior architect', 'Modeladora 3D': '3D modeller', 'Ingeniero': 'Engineer', 'Arquitecta técnica': 'Building surveyor', 'Constructor': 'Contractor'};
+const peopleRole = {'Directora de Proyecto y Producción': 'Project and Production Director', 'Director de Proyecto y Diseño': 'Project and Design Director', 'Director de Proyecto y BIM Manager': 'Project Director and BIM Manager', 'Constructor consultor': 'Consulting contractor', 'Responsable de BIM y Estudios de Viabilidad': 'Head of BIM and Feasibility Studies', 'Responsable de Diseño de Interiores': 'Head of Interior Design', 'BIM Manager y Estudios de Viabilidad': 'BIM Manager and Feasibility Studies', 'Arquitectura y diseño de interiores': 'Architecture and interior design', 'Responsable de Planificación y Procesos': 'Head of Planning and Processes', 'Responsable de Calidad y Trámites': 'Head of Quality and Permitting', 'Arquitecto senior': 'Senior architect', 'Profesor de la Escuela de Arquitectura UIC': 'Lecturer at the UIC School of Architecture', 'Project Manager': 'Project Manager', 'Arquitecta senior': 'Senior architect', 'Arquitecto senior': 'Senior architect', 'Interiorista': 'Interior designer', 'Arquitecta junior': 'Junior architect', 'Modeladora 3D': '3D modeller', 'Ingeniero': 'Engineer', 'Arquitecta técnica': 'Building surveyor', 'Constructor': 'Contractor'};
 export const people = { staff: es.people.staff.map((x) => ({ ...x, role: peopleRole[x.role] ?? x.role, sub: x.sub && (peopleRole[x.sub] ?? x.sub), note: x.note && (peopleRole[x.note] ?? x.note) })), partners: es.people.partners.map((x) => ({ ...x, role: peopleRole[x.role] ?? x.role })) };
 
 export const statusLabels = { 'En obra': 'Under construction', 'En licitación': 'Out to tender', 'En viabilidad': 'Feasibility' };

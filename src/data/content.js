@@ -23,7 +23,7 @@ export const hero = {
   title: 'Arquitectura y diseño que elevan el valor de tu inversión.',
   subtitle:
     'Transformamos edificios para darles un nuevo uso, con interiorismo de carácter, licencias ágiles y una obra sin sorpresas. De la due diligence a la entrega de llaves.',
-  image: { src: '/img/iese-l-hero.jpg', alt: 'IESE Edificio L, edificio catalogado de 1910 rehabilitado como oficinas' },
+  image: { src: '/img/hero-papiol.jpg', alt: 'Showroom y oficinas de Papiol en Barcelona, con doble altura y escalera' },
 };
 
 export const audiences = {
@@ -61,33 +61,33 @@ export const usp = {
 
 export const phases = [
   {
-    id: 'viabilidad', slug: 'viabilidad', n: '01', title: 'Viabilidad', sub: 'Due diligence técnica o estudio de viabilidad', alt: ['Viabilidad'],
+    id: 'viabilidad', slug: 'viabilidad', n: '01', title: 'Viabilidad', sub: "Due diligence técnica", alt: ['Viabilidad'],
     what: 'Due diligence técnica, urbanística y patrimonial: usos posibles, edificabilidad y riesgos.',
-    get: 'Un informe con lo que permite el edificio, cuánto cuesta y cuánto tarda, antes de invertir.',
+    get: "Identificamos los riesgos técnicos, evaluamos el coste de la inversión, revisamos el cumplimiento normativo y legal y fijamos los plazos de todo el proceso.",
     seoTitle: 'Due diligence técnica de edificios en Barcelona',
     intro: 'Antes de comprar o transformar un edificio necesitas saber qué permite el planeamiento, qué protege Patrimonio, en qué estado está y cuánto costará. Lo analizamos y te damos una conclusión clara: comprar, negociar o no comprar.',
     includes: ['Situación urbanística: usos admitidos, edificabilidad y densidad de viviendas', 'Protección patrimonial y necesidad de informe de Patrimonio', 'Estado de estructura, instalaciones, fachada y cubierta', 'Habitabilidad, accesibilidad e incendios según el uso futuro', 'Presupuesto estimado, plazo de licencias y obra, y rentabilidad'],
   },
   {
-    id: 'proyecto-y-licencias', slug: 'proyecto-y-licencias', n: '02', title: 'Proyecto', sub: 'Permiso de obra, licencia de actividad, proyecto básico, proyecto ejecutivo y proyecto de interiorismo', alt: ['Proyecto y licencias'],
+    id: 'proyecto-y-licencias', slug: 'proyecto-y-licencias', n: '02', title: 'Proyecto', sub: "Arquitectura y permiso de obra, ingeniería y licencia de actividad, interiorismo y mobiliario", alt: ['Proyecto y licencias'],
     what: 'Arquitectura e interiorismo, proyecto básico y ejecutivo con instalaciones, permiso de obra, cambio de uso y licencia de actividad.',
-    get: 'El proyecto definido, el presupuesto cerrado y las licencias en marcha.',
+    get: "Un proyecto diseñado y construido en 3D para vivirlo antes de construirlo, definido al detalle en BIM y con el permiso de obra concedido.",
     seoTitle: 'Proyecto, interiorismo y licencias en Barcelona',
     intro: 'Diseñamos el edificio y su interiorismo, y tramitamos todo lo necesario para que la obra empiece cuanto antes: permisos de obra, cambio de uso, licencia de actividad y consultas con Patrimonio.',
     includes: ['Arquitectura e interiorismo', 'Proyecto básico y ejecutivo con instalaciones', 'Consulta previa e informe de Patrimonio', 'Permiso de obra, cambio de uso y licencia de actividad', 'Licitación y presupuesto cerrado con constructora'],
   },
   {
-    id: 'obra', slug: 'obra', n: '03', title: 'Obra', sub: 'Dirección de obra y project management', alt: ['Obra'],
+    id: 'obra', slug: 'obra', n: '03', title: 'Obra', sub: "Project management y dirección de obra con arquitecto, aparejador, ingeniero e interiorista", alt: ['Obra'],
     what: 'Dirección de obra y project management.',
-    get: 'Plazos, costes y calidad bajo control, con un informe semanal para la propiedad.',
+    get: "Plazos, costes y calidad constructiva bajo control, con un informe semanal y un solo interlocutor.",
     seoTitle: 'Dirección de obra y project management en Barcelona',
     intro: 'Dirigimos la obra y gestionamos a todos los agentes para que se cumplan plazo, coste y calidad. La propiedad recibe cada semana un informe claro del avance.',
     includes: ['Dirección de obra', 'Project management y coordinación de industriales', 'Control de costes y certificaciones', 'Informe semanal para la propiedad', 'Gestión de cambios sin sorpresas'],
   },
   {
-    id: 'entrega', slug: 'entrega', n: '04', title: 'Entrega', sub: 'Equipamiento (FF&E) y legalizaciones', alt: ['Entrega', 'FF&E y entrega'],
+    id: 'entrega', slug: 'entrega', n: '04', title: 'Entrega', sub: "Equipamiento y legalizaciones", alt: ['Entrega', 'FF&E y entrega'],
     what: 'Diseño y selección de mobiliario y equipamiento (FF&E), coordinación de proveedores, legalizaciones y documentación final.',
-    get: 'El edificio equipado y listo para operar, alquilar o vender.',
+    get: "El edificio equipado y listo para operar, alquilar o vender.",
     seoTitle: 'FF&E, legalización y entrega de edificios rehabilitados',
     intro: 'Diseñamos y seleccionamos el mobiliario y el equipamiento (FF&E), coordinamos a los proveedores hasta la instalación y cerramos toda la documentación para que el edificio opere desde el primer día.',
     includes: ['Diseño y selección de mobiliario y equipamiento (FF&E)', 'Coordinación de proveedores e instalación', 'Certificado final de obra, legalizaciones e inspecciones', 'Cédulas de habitabilidad y licencias de actividad', 'Libro del edificio y acompañamiento en la puesta en marcha'],
@@ -118,8 +118,8 @@ export const moreProjects = [
 // phase = id de fase del método. img = foto del estado actual (se muestra en B/N)
 export const wip = [
   { use: 'Residencia universitaria · 4.000 m²', client: 'Colegio Mayor Universitario Bonaigua', phase: 'obra', text: 'Rehabilitación integral e interiorismo de la residencia.', img: '/img/wip-bonaigua.jpg' },
-  { use: 'Segregación de 5 viviendas · 577 m²', client: 'Fundació Privada Montseny', phase: 'obra', text: 'De coliving en desuso a 5 viviendas: cambio de uso y segregación.', img: '/img/wip-lepant.jpg' },
-  { use: 'Oficinas · 1.225 m²', client: 'Fundació Familiar Catalana', phase: 'proyecto-y-licencias', text: 'Edificio catalogado transformado en las oficinas de la UIC, interiorismo incluido. En licitación de obra.', img: '/img/wip-vila-regina.jpg' },
+  { use: 'De equipamiento cultural a 5 viviendas · 577 m²', client: 'Fundació Privada Montseny', phase: 'obra', text: 'Cambio de uso y segregación en 5 viviendas de alquiler.', img: '/img/wip-lepant.jpg' },
+  { use: 'De residencia senior a oficina institucional · 1.225 m²', client: 'Fundació Familiar Catalana', phase: 'proyecto-y-licencias', text: 'Edificio catalogado transformado en las oficinas de la UIC, interiorismo incluido. En licitación de obra.', img: '/img/wip-vila-regina.jpg' },
   { use: 'De oficinas a 5 viviendas · 490 m²', client: 'Fondo de inversión Relanza', phase: 'viabilidad', text: 'Due diligence técnica y urbanística para convertir cinco oficinas en viviendas antes de invertir.', img: '/img/wip-muntaner.jpg' },
   { use: 'Oficinas · 210 m²', client: 'Mafer.ai', phase: 'viabilidad', text: 'Local de dos plantas con patio para una empresa de 18 personas que prevé doblar plantilla. Estudio de distribución, licencia de actividad y auditoría del presupuesto de obra.', img: '/img/wip-mafer.jpg' },
 ];
@@ -144,9 +144,9 @@ export const team = {
 // Equipo (fuente: Notion · Equipo web)
 export const people = {
   staff: [
-    { name: 'Elisabeth Pino', role: 'Responsable de Planificación y Procesos', sub: 'Arquitecta senior' },
-    { name: 'Arnau Carbó', role: 'Responsable de Calidad y Trámites', sub: 'Arquitecto senior', note: 'Profesor de la Escuela de Arquitectura UIC' },
-    { name: 'Miquel Marquès', role: 'Responsable de BIM y Estudios de Viabilidad', sub: 'Arquitecto senior' },
+    { name: 'Elisabeth Pino', role: 'Directora de Proyecto y Producción', sub: 'Arquitecta senior' },
+    { name: 'Arnau Carbó', role: 'Director de Proyecto y Diseño', sub: 'Arquitecto senior', note: 'Profesor de la Escuela de Arquitectura UIC' },
+    { name: 'Miquel Marquès', role: 'Director de Proyecto y BIM Manager', sub: 'Arquitecto senior' },
     { name: 'Marta Cusí', role: 'Responsable de Diseño de Interiores', sub: 'Interiorista' },
     { name: 'Blanca de Prat', role: 'Arquitectura y diseño de interiores', sub: 'Arquitecta junior' },
     { name: 'Sofía Egido', role: 'Arquitectura y diseño de interiores', sub: 'Arquitecta junior' },
@@ -157,7 +157,7 @@ export const people = {
   partners: [
     { name: 'Pere Rams', role: 'Ingeniero' },
     { name: 'Sonia Castelló', role: 'Arquitecta técnica' },
-    { name: 'José Peris', role: 'Constructor' },
+    { name: 'José Peris', role: 'Constructor consultor' },
   ],
 };
 
@@ -189,7 +189,7 @@ export const allProjects = [
   { use: 'Club juvenil', client: 'Fundación Padua', m2: 3000, cat: 'equipamientos', img: '/img/pj-padua.jpg', place: 'Barcelona' },
   { use: 'Club juvenil', client: 'Associació Cultural Carena', m2: 1752, cat: 'equipamientos', img: '/img/carena-club.jpg', place: 'Barcelona' },
   { use: 'Vestuarios', client: 'Brafa', cat: 'equipamientos', img: '/img/pj-brafa-vestuarios.jpg', place: 'Barcelona' },
-  { use: 'Graderías', client: 'Brafa', cat: 'equipamientos', place: 'Barcelona' },
+  { use: 'Graderías', client: 'Brafa', cat: 'equipamientos', img: '/img/pj-brafa-graderias.jpg', place: 'Barcelona' },
   { use: 'De coliving a 5 viviendas de alquiler', client: 'Fundació Privada Montseny', m2: 577, cat: 'residencias', img: '/img/pj-lepant.jpg', status: 'En obra', place: 'Barcelona' },
   { use: 'De oficinas a 5 viviendas', client: 'Fondo de inversión Relanza', m2: 490, cat: 'residencias', img: '/img/pj-muntaner.jpg', status: 'En viabilidad', place: 'Barcelona' },
   { use: 'Oficinas', client: 'Giménez-Salinas Abogados', m2: 1000, cat: 'oficinas', img: '/img/pj-gimenez-salinas.jpg', status: 'En viabilidad', place: 'Barcelona' },
