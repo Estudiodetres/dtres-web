@@ -132,7 +132,7 @@ const faqLd = {
       <div class="wip__grid">
         {wip.map((w) => (
           <article class="wip__card">
-            {w.img && <img class="ph wip__img" src={w.img} srcset={srcset(w.img)} sizes="(min-width: 900px) 33vw, (min-width: 520px) 50vw, 100vw" alt={`${w.use} · ${w.client}`} width="600" height="450" loading="lazy" />}
+            {w.img ? <img class="ph wip__img" src={w.img} srcset={srcset(w.img)} sizes="(min-width: 1100px) 25vw, (min-width: 520px) 50vw, 100vw" alt={`${w.use} · ${w.client}`} width="600" height="450" loading="lazy" /> : <div class="wip__img wip__ph" aria-hidden="true"></div>}
             <h3>{w.use.split(' · ')[0]}</h3>
             <span class="wip__m2">{w.use.split(' · ')[1]}</span>
             <span class="lbl">{w.client} · {t.phaseLabel} {phases.find((f) => f.id === w.phase)?.title}</span>
@@ -271,11 +271,13 @@ const faqLd = {
   .more__grid article { display: flex; flex-direction: column; gap: 12px; } .more__grid img { aspect-ratio: 4 / 5; } .more__grid h3 { font-size: 20px; line-height: 1.25; }
 
   .wip { padding-block: clamp(64px, 10vw, 112px); display: flex; flex-direction: column; gap: 48px; } .wip .h2 { max-width: 22ch; margin-top: 16px; }
-  .wip__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px 24px; }
+  .wip__grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 40px 20px; }
+  @media (max-width: 1100px) { .wip__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
   @media (max-width: 900px) { .wip__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
   @media (max-width: 520px) { .wip__grid { grid-template-columns: 1fr; } }
   .wip__card { display: grid; grid-template-rows: subgrid; grid-row: span 5; gap: 10px; align-content: start; }
   .wip__card > h3 { padding-top: 14px; } .wip__m2 { font-size: 17px; color: var(--bone); margin-top: -4px; }
+  .wip__ph { background: #2c2d31; width: 100%; }
   .wip__img { aspect-ratio: 4 / 3; filter: grayscale(1) contrast(1.05); }
   .wip__card h3 { font-size: 21px; line-height: 1.25; text-wrap: balance; } .wip__card p { color: #c9c8bb; }
 

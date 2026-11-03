@@ -103,6 +103,7 @@ export const wip = es.wip.map((w, i) => ({ ...w, ...[
   { use: '5 homes · 500 m²', client: 'Relanza investment fund', text: 'Technical and planning due diligence to turn five offices into homes before investing.' },
   { use: 'Offices · 200 m²', text: 'Two-storey premises with a courtyard for an 18-person company planning to double in size. Space planning, activity licence and audit of the construction budget.' },
   { use: 'Offices · 1,000 m²', text: "Feasibility study for the firm's new headquarters." },
+  { use: 'Youth centre · 500 m²', text: 'Change of use of a listed Joan Rubió i Bellver building for a socio-educational project. Due diligence, space planning and permits.' },
 ][i] }));
 
 export const reviews = es.reviews.map((r, i) => ({ ...r, lang: r.lang || 'es', context: ['Full refurbishment of a flexliving', 'Hotel refurbishment', 'Three full refurbishments'][i] }));
@@ -132,6 +133,7 @@ export const people = { staff: es.people.staff.map((x) => ({ ...x, role: peopleR
 export const statusLabels = { 'Cambio de uso': 'Change of use', 'En obra': 'Under construction', 'En licitación': 'Out to tender', 'En viabilidad': 'Feasibility' };
 
 const use = {
+  'Centro juvenil': 'Youth centre',
   'Docencia': 'Education', '5 viviendas': '5 homes', 'Nuestro estudio': 'Our studio',
   'Vestuarios': 'Changing rooms', 'Graderías': 'Stands', 'Oficinas en edificio de 1910': 'Offices in a 1910 building', Oficinas: 'Offices', 'Oficinas de la UIC': 'Offices for UIC Barcelona',
   'Plan especial y licencias de obra nueva': 'Special plan and new-build permits', 'Residencia senior': 'Senior residence',

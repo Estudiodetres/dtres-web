@@ -123,6 +123,7 @@ export const wip = [
   { use: '5 viviendas · 500 m²', client: 'Fondo de inversión Relanza', phase: 'viabilidad', text: 'Due diligence técnica y urbanística para convertir cinco oficinas en viviendas antes de invertir.', img: '/img/pj-muntaner.jpg' },
   { use: 'Oficinas · 200 m²', client: 'Mafer.ai', phase: 'viabilidad', text: 'Local de dos plantas con patio para una empresa de 18 personas que prevé doblar plantilla. Estudio de distribución, licencia de actividad y auditoría del presupuesto de obra.', img: '/img/pj-mafer.jpg' },
   { use: 'Oficinas · 1.000 m²', client: 'Giménez-Salinas Abogados', phase: 'viabilidad', text: 'Estudio de viabilidad para la nueva sede del despacho.', img: '/img/pj-gimenez-salinas.jpg' },
+  { use: 'Centro juvenil · 500 m²', client: 'Heads Up Barcelona', phase: 'viabilidad', text: 'Cambio de uso de un edificio protegido de Joan Rubió i Bellver para un proyecto socioeducativo. Due diligence, distribución y licencias.' },
 ];
 
 export const reviews = [
@@ -194,6 +195,7 @@ export const allProjects = [
   { use: '5 viviendas', client: 'Fundació Privada Montseny', m2: 600, tag: 'Cambio de uso', cat: 'residencias', img: '/img/pj-lepant.jpg', status: 'En obra', place: 'Barcelona' },
   { use: '5 viviendas', client: 'Fondo de inversión Relanza', m2: 500, tag: 'Cambio de uso', cat: 'residencias', img: '/img/pj-muntaner.jpg', status: 'En viabilidad', place: 'Barcelona' },
   { use: 'Oficinas', client: 'Giménez-Salinas Abogados', m2: 1000, cat: 'oficinas', img: '/img/pj-gimenez-salinas.jpg', status: 'En viabilidad', place: 'Barcelona' },
+  { use: 'Centro juvenil', client: 'Heads Up Barcelona', m2: 500, cat: 'equipamientos', heritage: true, tag: 'Cambio de uso', status: 'En viabilidad', place: 'Barcelona' },
   { use: 'Oficinas', client: 'Mafer.ai', m2: 200, cat: 'oficinas', img: '/img/pj-mafer.jpg', status: 'En viabilidad', place: 'Barcelona' },
   { use: 'Oficinas', client: 'Amelia Hub', m2: 2000, cat: 'oficinas', img: '/img/pj-amelia.jpg', place: 'Barcelona' },
   { use: 'Oficinas', client: 'Aloalto', m2: 1000, cat: 'oficinas', img: '/img/pj-aloalto.jpg', place: 'Barcelona' },

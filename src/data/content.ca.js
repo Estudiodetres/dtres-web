@@ -103,6 +103,7 @@ export const wip = es.wip.map((w, i) => ({ ...w, ...[
   { use: '5 habitatges · 500 m²', client: "Fons d'inversió Relanza", text: "Due diligence tècnica i urbanística per convertir cinc oficines en habitatges abans d'invertir." },
   { use: 'Oficines · 200 m²', text: "Local de dues plantes amb pati per a una empresa de 18 persones que preveu doblar la plantilla. Estudi de distribució, llicència d'activitat i auditoria del pressupost d'obra." },
   { use: 'Oficines · 1.000 m²', text: 'Estudi de viabilitat per a la nova seu del despatx.' },
+  { use: 'Centre juvenil · 500 m²', text: "Canvi d'ús d'un edifici protegit de Joan Rubió i Bellver per a un projecte socioeducatiu. Due diligence, distribució i llicències." },
 ][i] }));
 
 export const reviews = es.reviews.map((r, i) => ({ ...r, lang: r.lang || 'es', context: ["Reforma integral d'un Flexliving", "Reforma d'un hotel", 'Tres reformes integrals'][i] }));
@@ -132,6 +133,7 @@ export const people = { staff: es.people.staff.map((x) => ({ ...x, role: peopleR
 export const statusLabels = { 'Cambio de uso': "Canvi d'ús", 'En obra': 'En obra', 'En licitación': 'En licitació', 'En viabilidad': 'En viabilitat' };
 
 const use = {
+  'Centro juvenil': 'Centre juvenil',
   'Docencia': 'Docència', '5 viviendas': '5 habitatges', 'Nuestro estudio': 'El nostre estudi',
   'Vestuarios': 'Vestidors', 'Graderías': 'Graderies', 'Oficinas en edificio de 1910': 'Oficines en un edifici de 1910', Oficinas: 'Oficines', 'Oficinas de la UIC': 'Oficines de la UIC',
   'Plan especial y licencias de obra nueva': "Pla especial i llicències d'obra nova", 'Residencia senior': 'Residència sènior',
