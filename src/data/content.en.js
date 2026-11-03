@@ -33,10 +33,10 @@ export const usp = {
   text: "We know Catalonia's planning and heritage regulations inside out, along with each city council's criteria and room for interpretation. That lets us maximise, always within the law, the buildable potential and return of every building, and keep permits moving without blockages.",
   image: { src: es.usp.image.src, alt: 'DTRES team on a site visit in a building under refurbishment' },
   proofs: [
-    { tag: 'Listed heritage · IESE Business School', title: 'University campus · 1,000 m²', text: "Full refurbishment and interior design that conveys the institution's values, with the campus fully operational." },
-    { tag: 'Listed heritage · Fundació Familiar Catalana', title: 'Offices · 1,200 m²', text: 'Offices for UIC Barcelona. Special plan, permits, construction and interior design. Plus permits for 5,000 m² of new build on the plot.' },
-    { tag: 'Listed heritage · Associació Col·laborativa Montroig', title: 'Senior residence · 1,000 m²', text: 'Full transformation and interior design of the top two floors, with the residence fully operational.' },
-    { tag: 'Change of use · Fundació Privada Montseny', title: 'Rental homes · 600 m²', text: 'From a disused coliving to 5 homes: subdivision, design, permits and construction.' },
+    { icon: 'split', title: 'Permits in parts', tag: 'Permitting strategy', text: 'We know which permits to apply for and in what order. We split the application into parts that move in parallel, instead of one single permit that blocks everything.' },
+    { icon: 'route', title: 'How the file travels', tag: 'From ECA review to the city council', text: "We know how a project moves from the ECA's review until the city council assigns it to its departments. So we plan timelines and strategy from day one." },
+    { icon: 'heritage', title: 'Heritage, no surprises', tag: 'Experience with listed buildings', text: "We know what the heritage authority accepts, what it rejects and what can be negotiated. Before you buy a building, we tell you whether your project can be done." },
+    { icon: 'ready', title: 'Ready the day works finish', tag: 'Sign-offs in parallel', text: 'During construction we process the legalisations, electrical certificates and other permits. Any requests surface while works are under way, when the builder can solve them fast. The building is ready to operate, let or sell the day works finish.' },
   ],
 };
 

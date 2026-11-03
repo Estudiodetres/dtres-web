@@ -33,10 +33,10 @@ export const usp = {
   text: "Coneixem a fons la normativa urbanística i patrimonial de Catalunya, els criteris de cada ajuntament i els seus marges d'interpretació. Això ens permet maximitzar, sempre dins de la legalitat, l'aprofitament i la rendibilitat de cada edifici, i que les llicències avancin sense bloquejos.",
   image: { src: es.usp.image.src, alt: "Visita tècnica de l'equip DTRES en un edifici en rehabilitació" },
   proofs: [
-    { tag: 'Patrimoni catalogat · IESE Business School', title: 'Campus universitari · 1.000 m²', text: "Reforma integral i interiorisme que transmet els valors de la institució, amb el campus en funcionament." },
-    { tag: 'Patrimoni catalogat · Fundació Familiar Catalana', title: 'Oficines · 1.200 m²', text: "Seu de les oficines de la UIC. Pla especial integral, llicències, obra i interiorisme. A més, llicències per a 5.000 m² d'obra nova a la parcel·la." },
-    { tag: 'Patrimoni catalogat · Associació Col·laborativa Montroig', title: 'Residència sènior · 1.000 m²', text: "Transformació integral i interiorisme de l'àtic i el sobreàtic, amb la residència en funcionament." },
-    { tag: "Canvi d'ús · Fundació Privada Montseny", title: 'Habitatges de lloguer · 600 m²', text: "D'un coliving en desús a 5 habitatges: segregació, projecte, llicències i obra." },
+    { icon: 'split', title: 'Llicències per parts', tag: 'Estratègia de tramitació', text: "Sabem quines llicències demanar i en quin ordre. Dividim l'expedient en parts que avancen en paral·lel, en lloc d'una sola llicència que ho bloqueja tot." },
+    { icon: 'route', title: "El recorregut de l'expedient", tag: "Del visat de l'ECA a l'ajuntament", text: "Coneixem com viatja el projecte des que el visa l'ECA fins que l'ajuntament el reparteix entre els seus departaments. Així planifiquem terminis i estratègia des del primer dia." },
+    { icon: 'heritage', title: 'Patrimoni, sense sorpreses', tag: 'Experiència en edificis catalogats', text: "Sabem què accepta Patrimoni, què no i què es pot negociar. Abans que compris un edifici, et diem si el teu projecte es pot fer." },
+    { icon: 'ready', title: "A punt el dia que acaba l'obra", tag: 'Legalitzacions en paral·lel', text: "Durant l'obra tramitem legalitzacions, butlletins d'electricitat i la resta de permisos. Si hi ha requeriments, apareixen amb l'obra en marxa, quan el constructor els pot resoldre ràpid. L'edifici queda a punt per operar, llogar o vendre el mateix dia que acaben els treballs." },
   ],
 };
 

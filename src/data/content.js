@@ -52,10 +52,10 @@ export const usp = {
   text: 'Conocemos a fondo la normativa urbanística y patrimonial de Catalunya, los criterios de cada ayuntamiento y sus márgenes de interpretación. Eso nos permite maximizar, siempre dentro de la legalidad, el aprovechamiento y la rentabilidad de cada edificio, y que las licencias avancen sin bloqueos.',
   image: { src: '/img/usp-obra.jpg', alt: 'Visita técnica del equipo DTRES en un edificio en rehabilitación' },
   proofs: [
-    { tag: 'Patrimonio catalogado · IESE Business School', title: 'Campus universitario · 1.000 m²', text: 'Reforma integral e interiorismo que transmite los valores de la institución, con el campus en funcionamiento.' },
-    { tag: 'Patrimonio catalogado · Fundació Familiar Catalana', title: 'Oficinas · 1.200 m²', text: 'Sede de las oficinas de la UIC. Plan especial integral, licencias, obra e interiorismo. Más licencias para 5.000 m² de obra nueva en la parcela.' },
-    { tag: 'Patrimonio catalogado · Associació Col·laborativa Montroig', title: 'Residencia senior · 1.000 m²', text: 'Transformación integral e interiorismo de ático y sobreático, con la residencia en funcionamiento.' },
-    { tag: 'Cambio de uso · Fundació Privada Montseny', title: 'Viviendas de alquiler · 600 m²', text: 'De coliving en desuso a 5 viviendas: segregación, proyecto, licencias y obra.' },
+    { icon: 'split', title: 'Licencias troceadas', tag: 'Estrategia de tramitación', text: 'Sabemos qué licencias pedir y en qué orden. Dividimos el expediente en partes que avanzan en paralelo, en lugar de una sola licencia que lo bloquea todo.' },
+    { icon: 'route', title: 'El recorrido del expediente', tag: 'Del visado de la ECA al ayuntamiento', text: 'Conocemos cómo viaja el proyecto desde que lo visa la ECA hasta que el ayuntamiento lo reparte entre sus departamentos. Así planificamos plazos y estrategia desde el primer día.' },
+    { icon: 'heritage', title: 'Patrimonio, sin sorpresas', tag: 'Experiencia en edificios catalogados', text: 'Sabemos qué acepta Patrimonio, qué no y qué se puede negociar. Antes de que compres un edificio, te decimos si tu proyecto se puede hacer.' },
+    { icon: 'ready', title: 'Listo el día que acaba la obra', tag: 'Legalizaciones en paralelo', text: 'Durante la obra tramitamos legalizaciones, boletines de electricidad y el resto de permisos. Si hay requerimientos, aparecen con la obra en marcha, cuando la constructora puede resolverlos rápido. El edificio queda listo para operar, alquilar o vender el mismo día que terminan los trabajos.' },
   ],
 };
 
