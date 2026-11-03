@@ -30,8 +30,8 @@ export const audiences = {
   title: 'Quienes quieren transformar un edificio obsoleto en un activo único y rentable.',
   items: [
     { icon: 'invest', title: "Inversores", text: "Fondos e inversores particulares que compran para transformar. Due diligence antes de la compra, cambio de uso y obra con plazo y coste cerrados para cumplir el plan de negocio." },
-    { icon: 'owner', title: "Propietarios", text: "Patrimoniales y family offices con edificios propios o heredados que no rinden lo que podrían. Los convertimos en viviendas, hospitality u oficinas." },
     { icon: 'institution', title: "Fundaciones e instituciones", text: "Residencias, colegios mayores y sedes que deben seguir cumpliendo su misión, con rigor patrimonial." },
+    { icon: 'owner', title: "Propietarios", text: "Patrimoniales y family offices con edificios propios o heredados que no rinden lo que podrían. Los convertimos en viviendas, hospitality u oficinas." },
     { icon: 'company', title: "Empresas", text: "Sedes y oficinas que representan a la compañía y acompañan su crecimiento." },
   ],
 };

@@ -20,8 +20,8 @@ export const audiences = {
   title: 'Those who want to turn an obsolete building into a unique, high-performing asset.',
   items: [
     { icon: 'invest', title: "Investors", text: "Funds and private investors buying to transform. Due diligence before purchase, change of use and construction at a fixed time and cost to deliver the business plan." },
-    { icon: 'owner', title: "Owners", text: "Family offices and property owners with owned or inherited buildings that underperform. We turn them into homes, hospitality or offices." },
     { icon: 'institution', title: "Foundations and institutions", text: "Residences, university halls and headquarters that must keep serving their mission, with heritage rigour." },
+    { icon: 'owner', title: "Owners", text: "Family offices and property owners with owned or inherited buildings that underperform. We turn them into homes, hospitality or offices." },
     { icon: 'company', title: "Companies", text: "Headquarters and offices that represent the company and support its growth." },
   ],
 };

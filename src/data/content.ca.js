@@ -20,8 +20,8 @@ export const audiences = {
   title: 'Qui vol transformar un edifici obsolet en un actiu únic i rendible.',
   items: [
     { icon: 'invest', title: "Inversors", text: "Fons i inversors particulars que compren per transformar. Due diligence abans de la compra, canvi d'ús i obra amb termini i cost tancats per complir el pla de negoci." },
-    { icon: 'owner', title: "Propietaris", text: "Patrimonials i family offices amb edificis propis o heretats que no rendeixen el que podrien. Els convertim en habitatges, hospitality o oficines." },
     { icon: 'institution', title: "Fundacions i institucions", text: "Residències, col·legis majors i seus que han de continuar complint la seva missió, amb rigor patrimonial." },
+    { icon: 'owner', title: "Propietaris", text: "Patrimonials i family offices amb edificis propis o heretats que no rendeixen el que podrien. Els convertim en habitatges, hospitality o oficines." },
     { icon: 'company', title: "Empreses", text: "Seus i oficines que representen la companyia i n'acompanyen el creixement." },
   ],
 };
