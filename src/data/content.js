@@ -96,9 +96,9 @@ export const phases = [
 
 export const featured = {
   eyebrow: 'Caso destacado · Patrimonio catalogado · 2024',
-  title: 'Oficinas en un edificio de 1910 · IESE Business School',
-  before: { src: '/img/iese-l-antes.jpg', alt: 'IESE Edificio L antes de la rehabilitación' },
-  after: { src: '/img/iese-l-despues.jpg', alt: 'IESE Edificio L después de la rehabilitación' },
+  title: 'Oficinas en edificio 1910 · IESE Business School',
+  before: { src: '/img/iese-l-antes2.jpg', alt: 'IESE Edificio L antes de la rehabilitación' },
+  after: { src: '/img/iese-l-despues2.jpg', alt: 'IESE Edificio L después de la rehabilitación' },
   situation: 'Edificio catalogado sin licencia de actividad: un tercio de la superficie no se podía usar, y escaleras, accesibilidad e incendios estaban fuera de normativa. El IESE quería recuperarlo entero para oficinas sin tocar el patrimonio.',
   transformation: 'Due diligence, informe favorable de Patrimonio, cambio de uso a oficinas, proyecto e interiorismo, y obra a precio y plazo cerrados. Fachada, cubierta, madera y pavimentos restaurados.',
   resultFigure: 'Renta anual x2',
@@ -117,11 +117,12 @@ export const moreProjects = [
 
 // phase = id de fase del método. img = foto del estado actual (se muestra en B/N)
 export const wip = [
-  { use: 'Residencia universitaria · 4.000 m²', client: 'Colegio Mayor Universitario Bonaigua', phase: 'obra', text: 'Rehabilitación integral e interiorismo de la residencia.', img: '/img/wip-bonaigua.jpg' },
-  { use: 'De equipamiento cultural a 5 viviendas · 600 m²', client: 'Fundació Privada Montseny', phase: 'obra', text: 'Cambio de uso y segregación en 5 viviendas de alquiler.', img: '/img/wip-lepant.jpg' },
-  { use: 'De residencia senior a oficina institucional · 1.200 m²', client: 'Fundació Familiar Catalana', phase: 'proyecto-y-licencias', text: 'Edificio catalogado transformado en las oficinas de la UIC, interiorismo incluido. En licitación de obra.', img: '/img/wip-vila-regina.jpg' },
-  { use: 'De oficinas a 5 viviendas · 500 m²', client: 'Fondo de inversión Relanza', phase: 'viabilidad', text: 'Due diligence técnica y urbanística para convertir cinco oficinas en viviendas antes de invertir.', img: '/img/wip-muntaner.jpg' },
-  { use: 'Oficinas · 200 m²', client: 'Mafer.ai', phase: 'viabilidad', text: 'Local de dos plantas con patio para una empresa de 18 personas que prevé doblar plantilla. Estudio de distribución, licencia de actividad y auditoría del presupuesto de obra.', img: '/img/wip-mafer.jpg' },
+  { use: 'Residencia universitaria · 4.000 m²', client: 'Colegio Mayor Universitario Bonaigua', phase: 'obra', text: 'Rehabilitación integral e interiorismo de la residencia.', img: '/img/pj-bonaigua.jpg' },
+  { use: '5 viviendas · 600 m²', client: 'Fundació Privada Montseny', phase: 'obra', text: 'Cambio de uso y segregación en 5 viviendas de alquiler.', img: '/img/pj-lepant.jpg' },
+  { use: 'Oficinas · 1.200 m²', client: 'Fundació Familiar Catalana', phase: 'proyecto-y-licencias', text: 'Edificio catalogado transformado en las oficinas de la UIC, interiorismo incluido. En licitación de obra.', img: '/img/pj-vila-regina.jpg' },
+  { use: '5 viviendas · 500 m²', client: 'Fondo de inversión Relanza', phase: 'viabilidad', text: 'Due diligence técnica y urbanística para convertir cinco oficinas en viviendas antes de invertir.', img: '/img/pj-muntaner.jpg' },
+  { use: 'Oficinas · 200 m²', client: 'Mafer.ai', phase: 'viabilidad', text: 'Local de dos plantas con patio para una empresa de 18 personas que prevé doblar plantilla. Estudio de distribución, licencia de actividad y auditoría del presupuesto de obra.', img: '/img/pj-mafer.jpg' },
+  { use: 'Oficinas · 1.000 m²', client: 'Giménez-Salinas Abogados', phase: 'viabilidad', text: 'Estudio de viabilidad para la nueva sede del despacho.', img: '/img/pj-gimenez-salinas.jpg' },
 ];
 
 export const reviews = [
@@ -180,7 +181,7 @@ export const allProjects = [
   { use: 'Oficinas', client: 'IESE Business School', m2: 1000, cat: 'patrimonio', heritage: true, img: '/img/pj-iese-l.jpg', place: 'Barcelona' },
   { use: 'Oficinas', client: 'IESE Business School', m2: 279, cat: 'oficinas', heritage: true, img: '/img/pj-iese-a.jpg', place: 'Barcelona' },
   { use: 'Oficinas', client: 'Fundació Familiar Catalana', m2: 1200, cat: 'patrimonio', heritage: true, img: '/img/pj-vila-regina.jpg', status: 'En licitación', place: 'Barcelona' },
-  { use: 'Docencia', client: 'Fundació Familiar Catalana', m2: 5000, cat: 'equipamientos', img: '/img/ffc-plantada.jpg', place: 'Barcelona' },
+  { use: 'Docencia', client: 'Fundació Familiar Catalana', m2: 5000, bw: true, cat: 'equipamientos', img: '/img/ffc-plantada.jpg', place: 'Barcelona' },
   { use: 'Oficinas', client: 'OIP', m2: 1000, cat: 'oficinas', heritage: true, img: '/img/pj-oip.jpg', place: 'Barcelona' },
   { use: 'Residencia senior', client: 'Associació Col·laborativa Montroig', m2: 1000, cat: 'residencias', heritage: true, img: '/img/pj-lesseps.jpg', place: 'Barcelona' },
   { use: 'Residencia senior', client: 'Associació Cultural Carena', m2: 716, cat: 'residencias', img: '/img/pj-carena-residencia.jpg', place: 'Barcelona' },

@@ -98,10 +98,11 @@ export const moreProjects = [
 
 export const wip = es.wip.map((w, i) => ({ ...w, ...[
   { use: 'University hall · 4,000 m²', text: 'Full rehabilitation and interior design of the residence.' },
-  { use: 'From cultural facility to 5 homes · 600 m²', text: 'Change of use and subdivision into 5 rental homes.' },
-  { use: 'From senior residence to institutional offices · 1,200 m²', text: 'A listed building transformed into offices for UIC Barcelona, interiors included. Out to tender.' },
-  { use: 'From offices to 5 homes · 500 m²', client: 'Relanza investment fund', text: 'Technical and planning due diligence to turn five offices into homes before investing.' },
+  { use: '5 homes · 600 m²', text: 'Change of use and subdivision into 5 rental homes.' },
+  { use: 'Offices · 1,200 m²', text: 'A listed building transformed into offices for UIC Barcelona, interiors included. Out to tender.' },
+  { use: '5 homes · 500 m²', client: 'Relanza investment fund', text: 'Technical and planning due diligence to turn five offices into homes before investing.' },
   { use: 'Offices · 200 m²', text: 'Two-storey premises with a courtyard for an 18-person company planning to double in size. Space planning, activity licence and audit of the construction budget.' },
+  { use: 'Offices · 1,000 m²', text: "Feasibility study for the firm's new headquarters." },
 ][i] }));
 
 export const reviews = es.reviews.map((r, i) => ({ ...r, lang: r.lang || 'es', context: ['Full refurbishment of a flexliving', 'Hotel refurbishment', 'Three full refurbishments'][i] }));

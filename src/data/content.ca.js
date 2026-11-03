@@ -78,7 +78,7 @@ export const phases = [
 export const featured = {
   ...es.featured,
   eyebrow: 'Cas destacat · Patrimoni catalogat · 2024',
-  title: "Oficines en un edifici de 1910 · IESE Business School",
+  title: "Oficines en edifici 1910 · IESE Business School",
   before: { src: es.featured.before.src, alt: "IESE Edifici L abans de la rehabilitació" },
   after: { src: es.featured.after.src, alt: "IESE Edifici L després de la rehabilitació" },
   situation: "Edifici catalogat sense llicència d'activitat: un terç de la superfície no es podia fer servir, i escales, accessibilitat i incendis estaven fora de normativa. L'IESE el volia recuperar sencer per a oficines sense tocar el patrimoni.",
@@ -98,10 +98,11 @@ export const moreProjects = [
 
 export const wip = es.wip.map((w, i) => ({ ...w, ...[
   { use: 'Residència universitària · 4.000 m²', text: 'Rehabilitació integral i interiorisme de la residència.' },
-  { use: "D'equipament cultural a 5 habitatges · 600 m²", text: "Canvi d'ús i segregació en 5 habitatges de lloguer." },
-  { use: 'De residència sènior a oficina institucional · 1.200 m²', text: "Edifici catalogat transformat en les oficines de la UIC, interiorisme inclòs. En licitació d'obra." },
-  { use: "D'oficines a 5 habitatges · 500 m²", client: "Fons d'inversió Relanza", text: "Due diligence tècnica i urbanística per convertir cinc oficines en habitatges abans d'invertir." },
+  { use: '5 habitatges · 600 m²', text: "Canvi d'ús i segregació en 5 habitatges de lloguer." },
+  { use: 'Oficines · 1.200 m²', text: "Edifici catalogat transformat en les oficines de la UIC, interiorisme inclòs. En licitació d'obra." },
+  { use: '5 habitatges · 500 m²', client: "Fons d'inversió Relanza", text: "Due diligence tècnica i urbanística per convertir cinc oficines en habitatges abans d'invertir." },
   { use: 'Oficines · 200 m²', text: "Local de dues plantes amb pati per a una empresa de 18 persones que preveu doblar la plantilla. Estudi de distribució, llicència d'activitat i auditoria del pressupost d'obra." },
+  { use: 'Oficines · 1.000 m²', text: 'Estudi de viabilitat per a la nova seu del despatx.' },
 ][i] }));
 
 export const reviews = es.reviews.map((r, i) => ({ ...r, lang: r.lang || 'es', context: ["Reforma integral d'un Flexliving", "Reforma d'un hotel", 'Tres reformes integrals'][i] }));
