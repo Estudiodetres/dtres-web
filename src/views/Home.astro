@@ -5,10 +5,12 @@ import { getContent } from '../data/i18n-content.js';
 import { getStats, formatStats } from '../data/notion.js';
 import { getPosts } from '../data/blog.js';
 import { srcset } from '../lib/img.js';
-import { ui, routes, phasePath, langs } from '../i18n/index.js';
+import { ui, routes, phasePath, langs, fmt } from '../i18n/index.js';
 
 const { lang = 'es' } = Astro.props;
-const { hero, audiences, stats, usp, phases, featured, moreProjects, wip, reviews, team, faqs, meta, clients } = getContent(lang);
+const { hero, audiences, stats, usp, phases, featured, wip, reviews, team, faqs, meta, clients, allProjects } = getContent(lang);
+// Más proyectos: los 6 terminados con más m²
+const moreProjects = allProjects.filter((p) => !p.status && p.img && p.m2).sort((a, b) => b.m2 - a.m2).slice(0, 6).map((p) => ({ ...p, tag: `${p.use} · ${fmt(p.m2, lang)} m²` }));
 const t = ui[lang].home;
 const T = ui[lang];
 const home = routes.home[lang];
@@ -120,7 +122,7 @@ const faqLd = {
     <div class="rev__head"><h2>{t.more}</h2><a href={routes.projects[lang]}>{t.allProjects}</a></div>
     <div class="more__grid">
       {moreProjects.map((p) => (
-        <article><img class="ph" src={p.img} srcset={srcset(p.img)} sizes="(min-width: 860px) 33vw, (min-width: 520px) 50vw, 100vw" alt={`${p.tag} · ${p.client}`} width="600" height="750" loading="lazy" /><h3>{p.tag}</h3><span class="lbl">{p.client}</span></article>
+        <article><img class={p.bw ? "ph bw" : "ph"} src={p.img} srcset={srcset(p.img)} sizes="(min-width: 860px) 33vw, (min-width: 520px) 50vw, 100vw" alt={`${p.tag} · ${p.client}`} width="600" height="750" loading="lazy" /><h3>{p.tag}</h3><span class="lbl">{p.client}</span></article>
       ))}
     </div>
   </section>
@@ -268,7 +270,7 @@ const faqLd = {
   .more__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px 24px; }
   @media (max-width: 860px) { .more__grid { grid-template-columns: repeat(2, 1fr); } }
   @media (max-width: 520px) { .more__grid { grid-template-columns: 1fr; } }
-  .more__grid article { display: flex; flex-direction: column; gap: 12px; } .more__grid img { aspect-ratio: 4 / 5; } .more__grid h3 { font-size: 20px; line-height: 1.25; }
+  .more__grid article { display: flex; flex-direction: column; gap: 12px; } .more__grid img { aspect-ratio: 4 / 5; } .more__grid .bw { filter: grayscale(1); } .more__grid h3 { font-size: 20px; line-height: 1.25; }
 
   .wip { padding-block: clamp(64px, 10vw, 112px); display: flex; flex-direction: column; gap: 48px; } .wip .h2 { max-width: 22ch; margin-top: 16px; }
   .wip__grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 40px 20px; }

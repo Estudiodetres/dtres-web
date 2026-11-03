@@ -31,7 +31,7 @@ const listLd = {
     </div>
     <div class="pj__grid">
       {allProjects.map((p) => (
-        <article data-cat={p.cat} data-heritage={p.heritage ? '1' : '0'} data-curso={p.status ? '1' : '0'} class={p.img ? '' : 'noimg'}>
+        <article data-cat={p.cat} data-heritage={p.heritage ? '1' : '0'} data-cambio={p.tag === 'Cambio de uso' ? '1' : '0'} data-curso={p.status ? '1' : '0'} class={p.img ? '' : 'noimg'}>
           {p.img
             ? <img class={p.bw ? "ph bw" : "ph"} src={p.img} srcset={srcset(p.img)} sizes="(min-width: 860px) 33vw, 50vw" alt={`${p.use} · ${p.client}`} width="600" height="750" loading="lazy" />
             : <div class="pj__ph"><span>{st(p.status) ?? t.project}</span>{p.m2 && <strong>{fmt(p.m2)} m²</strong>}</div>}
@@ -57,7 +57,7 @@ const listLd = {
     const f = b.dataset.f;
     btns.forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
     items.forEach((it) => {
-      const show = f === 'todos' || (f === 'curso' ? it.dataset.curso === '1' : f === 'patrimonio' ? it.dataset.heritage === '1' : it.dataset.cat === f);
+      const show = f === 'todos' || (f === 'curso' ? it.dataset.curso === '1' : f === 'patrimonio' ? it.dataset.heritage === '1' : f === 'cambio' ? it.dataset.cambio === '1' : it.dataset.cat === f);
       it.hidden = !show;
     });
   }));
