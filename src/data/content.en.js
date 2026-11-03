@@ -130,6 +130,7 @@ export const people = { staff: es.people.staff.map((x) => ({ ...x, role: peopleR
 export const statusLabels = { 'Cambio de uso': 'Change of use', 'En obra': 'Under construction', 'En licitación': 'Out to tender', 'En viabilidad': 'Feasibility' };
 
 const use = {
+  'Vivienda': 'Home',
   'Centro juvenil': 'Youth centre',
   'Docencia': 'Education', '5 viviendas': '5 homes', 'Nuestro estudio': 'Our studio',
   'Vestuarios': 'Changing rooms', 'Graderías': 'Stands', 'Oficinas en edificio de 1910': 'Offices in a 1910 building', Oficinas: 'Offices', 'Oficinas de la UIC': 'Offices for UIC Barcelona',
@@ -138,5 +139,5 @@ const use = {
   'Club juvenil': 'Youth club', 'Vestuarios y gradas': 'Changing rooms and stands', 'De coliving a 5 viviendas de alquiler': 'From coliving to 5 rental homes',
   'De oficinas a 5 viviendas': 'From offices to 5 homes', Headquarters: 'Headquarters', 'Showroom y oficinas': 'Showroom and offices', 'Estudio de arquitectura': 'Architecture studio',
 };
-const client = { 'Escuela Deportiva Brafa': 'Brafa Sports School', 'Fondo de inversión Relanza': 'Relanza investment fund' };
+const client = { 'Inversor particular': 'Private investor', 'Escuela Deportiva Brafa': 'Brafa Sports School', 'Fondo de inversión Relanza': 'Relanza investment fund' };
 export const allProjects = es.allProjects.map((p) => ({ ...p, use: use[p.use] ?? p.use, client: client[p.client] ?? p.client }));

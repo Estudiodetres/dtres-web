@@ -191,6 +191,7 @@ export const allProjects = [
   { use: 'Graderías', client: 'Escuela Deportiva Brafa', m2: 700, cat: 'equipamientos', img: '/img/pj-brafa-graderias.jpg', place: 'Barcelona' },
   { use: '5 viviendas', client: 'Fundació Privada Montseny', m2: 600, tag: 'Cambio de uso', cat: 'residencias', img: '/img/pj-lepant.jpg', status: 'En obra', place: 'Barcelona' },
   { use: '5 viviendas', client: 'Fondo de inversión Relanza', m2: 500, tag: 'Cambio de uso', cat: 'residencias', img: '/img/pj-muntaner.jpg', status: 'En viabilidad', place: 'Barcelona' },
+  { use: 'Vivienda', client: 'Inversor particular', m2: 200, cat: 'residencias', tag: 'Cambio de uso', img: '/img/pj-vivienda-inversor.jpg', place: 'Barcelona' },
   { use: 'Oficinas', client: 'Giménez-Salinas Abogados', m2: 1000, cat: 'oficinas', img: '/img/pj-gimenez-salinas.jpg', status: 'En viabilidad', place: 'Barcelona' },
   { use: 'Centro juvenil', client: 'Heads Up Barcelona', m2: 500, cat: 'equipamientos', heritage: true, tag: 'Cambio de uso', status: 'En viabilidad', img: '/img/pj-headsup.jpg', place: 'Barcelona' },
   { use: 'Oficinas', client: 'Mafer.ai', m2: 200, cat: 'oficinas', img: '/img/pj-mafer.jpg', status: 'En viabilidad', place: 'Barcelona' },

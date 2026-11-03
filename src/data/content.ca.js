@@ -130,6 +130,7 @@ export const people = { staff: es.people.staff.map((x) => ({ ...x, role: peopleR
 export const statusLabels = { 'Cambio de uso': "Canvi d'ús", 'En obra': 'En obra', 'En licitación': 'En licitació', 'En viabilidad': 'En viabilitat' };
 
 const use = {
+  'Vivienda': 'Habitatge',
   'Centro juvenil': 'Centre juvenil',
   'Docencia': 'Docència', '5 viviendas': '5 habitatges', 'Nuestro estudio': 'El nostre estudi',
   'Vestuarios': 'Vestidors', 'Graderías': 'Graderies', 'Oficinas en edificio de 1910': 'Oficines en un edifici de 1910', Oficinas: 'Oficines', 'Oficinas de la UIC': 'Oficines de la UIC',
@@ -138,5 +139,5 @@ const use = {
   'Club juvenil': 'Club juvenil', 'Vestuarios y gradas': 'Vestidors i graderies', 'De coliving a 5 viviendas de alquiler': "De coliving a 5 habitatges de lloguer",
   'De oficinas a 5 viviendas': "D'oficines a 5 habitatges", Headquarters: 'Seu corporativa', 'Showroom y oficinas': 'Showroom i oficines', 'Estudio de arquitectura': "Estudi d'arquitectura",
 };
-const client = { 'Escuela Deportiva Brafa': "Escola Esportiva Brafa", 'Fondo de inversión Relanza': "Fons d'inversió Relanza" };
+const client = { 'Inversor particular': 'Inversor particular', 'Escuela Deportiva Brafa': "Escola Esportiva Brafa", 'Fondo de inversión Relanza': "Fons d'inversió Relanza" };
 export const allProjects = es.allProjects.map((p) => ({ ...p, use: use[p.use] ?? p.use, client: client[p.client] ?? p.client }));
