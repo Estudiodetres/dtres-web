@@ -139,5 +139,5 @@ const use = {
   'Club juvenil': 'Club juvenil', 'Vestuarios y gradas': 'Vestidors i graderies', 'De coliving a 5 viviendas de alquiler': "De coliving a 5 habitatges de lloguer",
   'De oficinas a 5 viviendas': "D'oficines a 5 habitatges", Headquarters: 'Seu corporativa', 'Showroom y oficinas': 'Showroom i oficines', 'Estudio de arquitectura': "Estudi d'arquitectura",
 };
-const client = { 'Inversor particular': 'Inversor particular', 'Escuela Deportiva Brafa': "Escola Esportiva Brafa", 'Fondo de inversión Relanza': "Fons d'inversió Relanza" };
+const client = { 'Le Mirath · El Cairo': 'Le Mirath · El Caire', 'Inversor particular': 'Inversor particular', 'Escuela Deportiva Brafa': "Escola Esportiva Brafa", 'Fondo de inversión Relanza': "Fons d'inversió Relanza" };
 export const allProjects = es.allProjects.map((p) => ({ ...p, use: use[p.use] ?? p.use, client: client[p.client] ?? p.client }));

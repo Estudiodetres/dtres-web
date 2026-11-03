@@ -107,7 +107,7 @@ export const featured = {
 };
 
 // Más proyectos destacados en la home (por imagen de allProjects, en este orden)
-export const moreImgs = ['/img/pj-iese-l.jpg', '/img/pj-carena-residencia.jpg', '/img/pj-papiol.jpg', '/img/pj-cmu.jpg', '/img/pj-amelia.jpg', '/img/carena-club.jpg'];
+export const moreImgs = ['/img/pj-iese-l.jpg', '/img/pj-carena-residencia.jpg', '/img/pj-papiol.jpg', '/img/pj-cmu.jpg', '/img/pj-hotel-cairo.jpg', '/img/carena-club.jpg'];
 
 export const moreProjects = [
   { tag: 'Residencia senior · 716 m²', client: 'Associació Cultural Carena', img: '/img/pj-carena-residencia.jpg' },
@@ -198,6 +198,7 @@ export const allProjects = [
   { use: 'Oficinas', client: 'Giménez-Salinas Abogados', m2: 1000, cat: 'oficinas', img: '/img/pj-gimenez-salinas.jpg', status: 'En viabilidad', place: 'Barcelona' },
   { use: 'Centro juvenil', client: 'Heads Up Barcelona', m2: 500, cat: 'equipamientos', heritage: true, tag: 'Cambio de uso', status: 'En viabilidad', img: '/img/pj-headsup.jpg', place: 'Barcelona' },
   { use: 'Oficinas', client: 'Mafer.ai', m2: 200, cat: 'oficinas', img: '/img/pj-mafer.jpg', status: 'En viabilidad', place: 'Barcelona' },
+  { use: 'Hotel', client: 'Le Mirath · El Cairo', m2: 1000, cat: 'residencias', img: '/img/pj-hotel-cairo.jpg', place: 'El Cairo' },
   { use: 'Oficinas', client: 'Amelia Hub', m2: 2000, cat: 'oficinas', img: '/img/pj-amelia.jpg', place: 'Barcelona' },
   { use: 'Oficinas', client: 'Aloalto', m2: 1000, cat: 'oficinas', img: '/img/pj-aloalto.jpg', place: 'Barcelona' },
   { use: 'Showroom y oficinas', client: 'Papiol', m2: 800, cat: 'oficinas', img: '/img/pj-papiol.jpg', place: 'Barcelona' },
