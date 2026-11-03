@@ -25,8 +25,7 @@ const faqLd = {
 ---
 <Base title={meta.homeTitle} description={meta.homeDesc} jsonLd={[faqLd]} lang={lang} alternates={routes.home}>
   <!-- HERO -->
-  <section class="hero-bg">
-  <div class="wrap hero">
+  <section class="wrap hero">
     <p class="lbl">{hero.eyebrow}</p>
     <h1>{hero.title}</h1>
     <div class="hero__row">
@@ -36,7 +35,6 @@ const faqLd = {
         <a class="btn btn--ghost" href={routes.projects[lang]}>{T.seeProjects}</a>
       </div>
     </div>
-  </div>
   </section>
   <div class="wrap"><img class="ph hero__img" src={hero.image.src} srcset={srcset(hero.image.src)} sizes="(min-width: 1680px) 1520px, (min-width: 1280px) 1280px, 100vw" fetchpriority="high" alt={hero.image.alt} width="1600" height="800" /></div>
 
@@ -204,9 +202,6 @@ const faqLd = {
 </Base>
 
 <style>
-  .hero-bg { position: relative; background: var(--bone); isolation: isolate; }
-  .hero-bg::before { content: ""; position: absolute; inset: 0; z-index: -1; background: url('/img/hero-bg.jpg') center 62% / cover no-repeat; opacity: .5; }
-  @media (max-width: 700px) { .hero-bg::before { background-image: url('/img/hero-bg-w750.jpg'); background-position: 40% 60%; } }
   .hero { padding-block: clamp(48px, 8vw, 96px) 64px; display: flex; flex-direction: column; gap: 40px; }
   .hero h1 { font-size: clamp(44px, 7.5vw, 112px); line-height: .98; letter-spacing: -.025em; max-width: 16ch; }
   .hero__row { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 32px; }
