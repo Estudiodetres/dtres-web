@@ -15,6 +15,10 @@ const icons = {
   split: '<rect x="3" y="3" width="11" height="11"/><rect x="18" y="3" width="11" height="11"/><rect x="3" y="18" width="11" height="11"/><rect x="18" y="18" width="11" height="11" stroke-dasharray="3 2.5"/>',
   route: '<circle cx="6" cy="6" r="3"/><circle cx="26" cy="9" r="3"/><circle cx="26" cy="23" r="3"/><circle cx="6" cy="26" r="3"/><path d="M9 6h7v17h7M16 9h7M9 26h7"/>',
   heritage: '<path d="M3 12 16 4l13 8z"/><path d="M3 28h26M5 25h22M8 14v11M13 14v11M19 14v11M24 14v11"/>',
+  invest: '<path d="M4 4v24h24"/><path d="M8 22l6-7 5 4 8-10"/><path d="M21 9h6v6"/>',
+  owner: '<circle cx="10" cy="16" r="6"/><path d="M16 16h13M24 16v5M28 16v4"/>',
+  institution: '<path d="M6 28V9h20v19M3 28h26M13 28v-6a3 3 0 0 1 6 0v6M10 13h3M19 13h3M10 18h3M19 18h3M16 9V3h5v3h-5"/>',
+  company: '<rect x="6" y="5" width="20" height="13"/><path d="M13 22h6M16 18v4M3 26h26M7 26v3M25 26v3"/>',
   ready: '<rect x="4" y="6" width="24" height="22"/><path d="M4 12h24M10 3v6M22 3v6M11 20l4 4 7-8"/>',
 };
 const t = ui[lang].home;
@@ -49,7 +53,7 @@ const faqLd = {
     <div class="aud__head"><p class="lbl">{t.for}</p><h2 class="aud__title">{audiences.title}</h2></div>
     <ul class="aud__list">
       {audiences.items.map((a) => (
-        <li class="aud__item"><h3>{a.title}</h3><p>{a.text}</p></li>
+        <li class="aud__item"><div class="aud__name">{a.icon && <svg class="aud__icon" viewBox="0 0 32 32" aria-hidden="true" set:html={icons[a.icon]} />}<h3>{a.title}</h3></div><p>{a.text}</p></li>
       ))}
     </ul>
   </section>
@@ -220,7 +224,7 @@ const faqLd = {
   @media (min-width: 900px) { .aud { grid-template-columns: 1fr 1.15fr; gap: 80px; align-items: start; } }
   .aud__title { font-size: clamp(28px, 3.4vw, 44px); line-height: 1.1; margin-top: 16px; max-width: 18ch; }
   .aud__list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--ink); }
-  .aud__item { border-bottom: 1px solid var(--line); padding-block: 22px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); gap: 8px 32px; align-items: baseline; }
+  .aud__item { border-bottom: 1px solid var(--line); padding-block: 22px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); gap: 8px 32px; align-items: center; }
   @media (max-width: 600px) {
     .aud__list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 16px; }
     .aud__item { grid-template-columns: 1fr; padding-block: 16px; gap: 6px; align-content: start; align-items: start; }
@@ -228,6 +232,8 @@ const faqLd = {
     .aud__title { font-size: 26px; }
   }
   @media (max-width: 340px) { .aud__list { grid-template-columns: 1fr; } }
+  .aud__name { display: flex; align-items: center; gap: 14px; } .aud__icon { flex: none; width: 32px; height: 32px; fill: none; stroke: var(--ink); stroke-width: 1.5; stroke-linecap: square; stroke-linejoin: miter; }
+  @media (max-width: 600px) { .aud__name { flex-direction: column; align-items: flex-start; gap: 10px; } .aud__icon { width: 28px; height: 28px; } }
   .aud__item h3 { font-size: 21px; line-height: 1.25; } .aud__item p { color: var(--text2); font-size: 16px; }
 
   .logos { padding-block: 0 clamp(48px, 8vw, 80px); display: flex; flex-direction: column; gap: 28px; border-top: 1px solid rgba(234,234,228,.15); padding-top: 40px; }

@@ -29,11 +29,10 @@ export const hero = {
 export const audiences = {
   title: 'Quienes quieren transformar un edificio obsoleto en un activo único y rentable.',
   items: [
-    { title: 'Fondos e inversores Real Estate', text: 'Due diligence antes de la compra, cambio de uso y una obra con plazo y coste cerrados para cumplir el plan de negocio.' },
-    { title: 'Family offices y patrimonio familiar', text: 'Edificios propios o heredados que no rinden lo que podrían. Los convertimos en viviendas, hospitality u oficinas.' },
-    { title: 'Fundaciones e instituciones', text: 'Residencias, colegios mayores y sedes que deben seguir cumpliendo su misión, con rigor patrimonial.' },
-    { title: 'Empresas y sedes corporativas', text: 'Oficinas y headquarters que representan a la compañía y acompañan su crecimiento.' },
-    { title: 'Agencias y gestores inmobiliarios', text: 'Viabilidad y due diligence técnica para asesorar mejor a sus clientes antes de comprar o vender.' },
+    { icon: 'invest', title: "Inversores", text: "Fondos e inversores particulares que compran para transformar. Due diligence antes de la compra, cambio de uso y obra con plazo y coste cerrados para cumplir el plan de negocio." },
+    { icon: 'owner', title: "Propietarios", text: "Patrimoniales y family offices con edificios propios o heredados que no rinden lo que podrían. Los convertimos en viviendas, hospitality u oficinas." },
+    { icon: 'institution', title: "Fundaciones e instituciones", text: "Residencias, colegios mayores y sedes que deben seguir cumpliendo su misión, con rigor patrimonial." },
+    { icon: 'company', title: "Empresas", text: "Sedes y oficinas que representan a la compañía y acompañan su crecimiento." },
   ],
 };
 
