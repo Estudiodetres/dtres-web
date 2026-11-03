@@ -2,6 +2,7 @@
 import Base from '../layouts/Base.astro';
 import ContactForm from '../components/ContactForm.astro';
 import { getContent } from '../data/i18n-content.js';
+import { moreImgs } from '../data/content.js';
 import { getStats, formatStats } from '../data/notion.js';
 import { getPosts } from '../data/blog.js';
 import { srcset } from '../lib/img.js';
@@ -9,8 +10,7 @@ import { ui, routes, phasePath, langs, fmt } from '../i18n/index.js';
 
 const { lang = 'es' } = Astro.props;
 const { hero, audiences, stats, usp, phases, featured, wip, reviews, team, faqs, meta, clients, allProjects } = getContent(lang);
-// Más proyectos: los 6 terminados con más m²
-const moreProjects = allProjects.filter((p) => !p.status && p.img && p.m2).sort((a, b) => b.m2 - a.m2).slice(0, 6).map((p) => ({ ...p, tag: `${p.use} · ${fmt(p.m2, lang)} m²` }));
+const moreProjects = moreImgs.map((img) => allProjects.find((p) => p.img === img)).filter(Boolean).map((p) => ({ ...p, tag: `${p.use} · ${fmt(p.m2, lang)} m²` }));
 const t = ui[lang].home;
 const T = ui[lang];
 const home = routes.home[lang];

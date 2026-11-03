@@ -106,6 +106,9 @@ export const featured = {
   testimonial: null, // { quote, author, role }
 };
 
+// Más proyectos destacados en la home (por imagen de allProjects, en este orden)
+export const moreImgs = ['/img/pj-iese-l.jpg', '/img/pj-carena-residencia.jpg', '/img/pj-papiol.jpg', '/img/pj-cmu.jpg', '/img/pj-amelia.jpg', '/img/carena-club.jpg'];
+
 export const moreProjects = [
   { tag: 'Residencia senior · 716 m²', client: 'Associació Cultural Carena', img: '/img/pj-carena-residencia.jpg' },
   { tag: 'Club juvenil · 3.000 m²', client: 'Fundación Padua', img: '/img/pj-padua.jpg' },
@@ -179,7 +182,7 @@ export const allProjects = [
   { use: 'Oficinas', client: 'IESE Business School', m2: 1000, cat: 'patrimonio', heritage: true, img: '/img/pj-iese-l.jpg', place: 'Barcelona' },
   { use: 'Oficinas', client: 'IESE Business School', m2: 279, cat: 'oficinas', heritage: true, img: '/img/pj-iese-a.jpg', place: 'Barcelona' },
   { use: 'Oficinas', client: 'Fundació Familiar Catalana', m2: 1200, cat: 'patrimonio', heritage: true, img: '/img/pj-vila-regina.jpg', status: 'En licitación', place: 'Barcelona' },
-  { use: 'Docencia', client: 'Fundació Familiar Catalana', m2: 5000, bw: true, cat: 'equipamientos', img: '/img/ffc-plantada.jpg', place: 'Barcelona' },
+  { use: 'Docencia', client: 'Fundació Familiar Catalana', m2: 5000, status: 'En obra', cat: 'equipamientos', img: '/img/ffc-plantada.jpg', place: 'Barcelona' },
   { use: 'Oficinas', client: 'OIP', m2: 1000, cat: 'oficinas', heritage: true, img: '/img/pj-oip.jpg', place: 'Barcelona' },
   { use: 'Residencia senior', client: 'Associació Col·laborativa Montroig', m2: 1000, cat: 'residencias', heritage: true, img: '/img/pj-lesseps.jpg', place: 'Barcelona' },
   { use: 'Residencia senior', client: 'Associació Cultural Carena', m2: 716, cat: 'residencias', img: '/img/pj-carena-residencia.jpg', place: 'Barcelona' },
