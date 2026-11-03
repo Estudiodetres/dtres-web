@@ -198,7 +198,6 @@ export const allProjects = [
   { use: 'Oficinas', client: 'Aloalto', m2: 1000, cat: 'oficinas', img: '/img/pj-aloalto.jpg', place: 'Barcelona' },
   { use: 'Showroom y oficinas', client: 'Papiol', m2: 800, cat: 'oficinas', img: '/img/pj-papiol.jpg', place: 'Barcelona' },
   { use: 'Oficinas', client: 'Triple A Risk Finance', m2: 400, cat: 'oficinas', img: '/img/pj-frankie.jpg', place: 'Barcelona' },
-  { use: 'Oficinas', client: 'Entrelazadogs', m2: 400, cat: 'oficinas', img: '/img/entrelazadogs.jpg', place: 'Barcelona' },
   { use: 'Oficinas', client: 'Mier Giralt Abogados', m2: 200, cat: 'oficinas', img: '/img/pj-mier.jpg', place: 'Barcelona' },
   { use: 'Oficinas', client: 'Delaire', m2: 100, cat: 'oficinas', img: '/img/pj-delaire.jpg', place: 'Barcelona' },
   { use: 'Estudio de arquitectura', client: 'DTRES', m2: 100, cat: 'oficinas', img: '/img/pj-dtres.jpg', place: 'Barcelona' },
