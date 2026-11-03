@@ -33,10 +33,10 @@ export const usp = {
   text: "We know Catalonia's planning and heritage regulations inside out, along with each city council's criteria and room for interpretation. That lets us maximise, always within the law, the buildable potential and return of every building, and keep permits moving without blockages.",
   image: { src: es.usp.image.src, alt: 'DTRES team on a site visit in a building under refurbishment' },
   proofs: [
-    { tag: 'Listed heritage · IESE Business School', title: 'University campus · 1,022 m²', text: "Full refurbishment and interior design that conveys the institution's values, with the campus fully operational." },
-    { tag: 'Listed heritage · Fundació Familiar Catalana', title: 'Offices · 1,225 m²', text: 'Offices for UIC Barcelona. Special plan, permits, construction and interior design. Plus permits for 5,163 m² of new build on the plot.' },
+    { tag: 'Listed heritage · IESE Business School', title: 'University campus · 1,000 m²', text: "Full refurbishment and interior design that conveys the institution's values, with the campus fully operational." },
+    { tag: 'Listed heritage · Fundació Familiar Catalana', title: 'Offices · 1,200 m²', text: 'Offices for UIC Barcelona. Special plan, permits, construction and interior design. Plus permits for 5,000 m² of new build on the plot.' },
     { tag: 'Listed heritage · Associació Col·laborativa Montroig', title: 'Senior residence · 1,000 m²', text: 'Full transformation and interior design of the top two floors, with the residence fully operational.' },
-    { tag: 'Change of use · Fundació Privada Montseny', title: 'Rental homes · 577 m²', text: 'From a disused coliving to 5 homes: subdivision, design, permits and construction.' },
+    { tag: 'Change of use · Fundació Privada Montseny', title: 'Rental homes · 600 m²', text: 'From a disused coliving to 5 homes: subdivision, design, permits and construction.' },
   ],
 };
 
@@ -88,20 +88,20 @@ export const featured = {
 };
 
 export const moreProjects = [
-  { tag: 'Senior residence · 716 m²', client: 'Associació Cultural Carena', img: '/img/carena-residencia.jpg' },
-  { tag: 'Youth club · 3,000 m²', client: 'Fundación Padua', img: '/img/padua.jpg' },
-  { tag: 'Offices · 1,000 m²', client: 'Aloalto', img: '/img/aloalto.jpg' },
-  { tag: 'Showroom and offices · 800 m²', client: 'Papiol', img: '/img/papiol.jpg' },
-  { tag: 'University hall · Phase 1 · 350 m²', client: 'Colegio Mayor Universitario Pedralbes', img: '/img/cmu-pedralbes.jpg' },
-  { tag: 'Offices · 200 m²', client: 'Mier Giralt Abogados', img: '/img/mier-giralt.jpg' },
+  { tag: 'Senior residence · 716 m²', client: 'Associació Cultural Carena', img: '/img/pj-carena-residencia.jpg' },
+  { tag: 'Youth club · 3,000 m²', client: 'Fundación Padua', img: '/img/pj-padua.jpg' },
+  { tag: 'Offices · 1,000 m²', client: 'Aloalto', img: '/img/pj-aloalto.jpg' },
+  { tag: 'Showroom and offices · 800 m²', client: 'Papiol', img: '/img/pj-papiol.jpg' },
+  { tag: 'University hall · 1,500 m²', client: 'Colegio Mayor Universitario Pedralbes', img: '/img/pj-cmu.jpg' },
+  { tag: 'Offices · 200 m²', client: 'Mier Giralt Abogados', img: '/img/pj-mier.jpg' },
 ];
 
 export const wip = es.wip.map((w, i) => ({ ...w, ...[
   { use: 'University hall · 4,000 m²', text: 'Full rehabilitation and interior design of the residence.' },
-  { use: 'From cultural facility to 5 homes · 577 m²', text: 'Change of use and subdivision into 5 rental homes.' },
-  { use: 'From senior residence to institutional offices · 1,225 m²', text: 'A listed building transformed into offices for UIC Barcelona, interiors included. Out to tender.' },
-  { use: 'From offices to 5 homes · 490 m²', client: 'Relanza investment fund', text: 'Technical and planning due diligence to turn five offices into homes before investing.' },
-  { use: 'Offices · 210 m²', text: 'Two-storey premises with a courtyard for an 18-person company planning to double in size. Space planning, activity licence and audit of the construction budget.' },
+  { use: 'From cultural facility to 5 homes · 600 m²', text: 'Change of use and subdivision into 5 rental homes.' },
+  { use: 'From senior residence to institutional offices · 1,200 m²', text: 'A listed building transformed into offices for UIC Barcelona, interiors included. Out to tender.' },
+  { use: 'From offices to 5 homes · 500 m²', client: 'Relanza investment fund', text: 'Technical and planning due diligence to turn five offices into homes before investing.' },
+  { use: 'Offices · 200 m²', text: 'Two-storey premises with a courtyard for an 18-person company planning to double in size. Space planning, activity licence and audit of the construction budget.' },
 ][i] }));
 
 export const reviews = es.reviews.map((r, i) => ({ ...r, lang: r.lang || 'es', context: ['Full refurbishment of a flexliving', 'Hotel refurbishment', 'Three full refurbishments'][i] }));
@@ -128,14 +128,15 @@ export const clients = es.clients;
 const peopleRole = {'Directora de Proyecto y Producción': 'Project and Production Director', 'Director de Proyecto y Diseño': 'Project and Design Director', 'Director de Proyecto y BIM Manager': 'Project Director and BIM Manager', 'Constructor consultor': 'Consulting contractor', 'Responsable de BIM y Estudios de Viabilidad': 'Head of BIM and Feasibility Studies', 'Responsable de Diseño de Interiores': 'Head of Interior Design', 'BIM Manager y Estudios de Viabilidad': 'BIM Manager and Feasibility Studies', 'Arquitectura y diseño de interiores': 'Architecture and interior design', 'Responsable de Planificación y Procesos': 'Head of Planning and Processes', 'Responsable de Calidad y Trámites': 'Head of Quality and Permitting', 'Arquitecto senior': 'Senior architect', 'Profesor de la Escuela de Arquitectura UIC': 'Lecturer at the UIC School of Architecture', 'Project Manager': 'Project Manager', 'Arquitecta senior': 'Senior architect', 'Arquitecto senior': 'Senior architect', 'Interiorista': 'Interior designer', 'Arquitecta junior': 'Junior architect', 'Modeladora 3D': '3D modeller', 'Ingeniero': 'Engineer', 'Arquitecta técnica': 'Building surveyor', 'Constructor': 'Contractor'};
 export const people = { staff: es.people.staff.map((x) => ({ ...x, role: peopleRole[x.role] ?? x.role, sub: x.sub && (peopleRole[x.sub] ?? x.sub), note: x.note && (peopleRole[x.note] ?? x.note) })), partners: es.people.partners.map((x) => ({ ...x, role: peopleRole[x.role] ?? x.role })) };
 
-export const statusLabels = { 'En obra': 'Under construction', 'En licitación': 'Out to tender', 'En viabilidad': 'Feasibility' };
+export const statusLabels = { 'Cambio de uso': 'Change of use', 'En obra': 'Under construction', 'En licitación': 'Out to tender', 'En viabilidad': 'Feasibility' };
 
 const use = {
+  'Docencia': 'Education', '5 viviendas': '5 homes', 'Nuestro estudio': 'Our studio',
   'Vestuarios': 'Changing rooms', 'Graderías': 'Stands', 'Oficinas en edificio de 1910': 'Offices in a 1910 building', Oficinas: 'Offices', 'Oficinas de la UIC': 'Offices for UIC Barcelona',
   'Plan especial y licencias de obra nueva': 'Special plan and new-build permits', 'Residencia senior': 'Senior residence',
   'Residencia universitaria': 'University hall', 'Residencia universitaria · 1ª fase': 'University hall · Phase 1',
   'Club juvenil': 'Youth club', 'Vestuarios y gradas': 'Changing rooms and stands', 'De coliving a 5 viviendas de alquiler': 'From coliving to 5 rental homes',
   'De oficinas a 5 viviendas': 'From offices to 5 homes', Headquarters: 'Headquarters', 'Showroom y oficinas': 'Showroom and offices', 'Estudio de arquitectura': 'Architecture studio',
 };
-const client = { 'Fondo de inversión Relanza': 'Relanza investment fund' };
+const client = { 'Escuela Deportiva Brafa': 'Brafa Sports School', 'Fondo de inversión Relanza': 'Relanza investment fund' };
 export const allProjects = es.allProjects.map((p) => ({ ...p, use: use[p.use] ?? p.use, client: client[p.client] ?? p.client }));

@@ -37,7 +37,7 @@ const listLd = {
             : <div class="pj__ph"><span>{st(p.status) ?? t.project}</span>{p.m2 && <strong>{fmt(p.m2)} m²</strong>}</div>}
           <h2>{p.use}{m2(p)}</h2>
           <p>{p.client}</p>
-          {(p.heritage || (p.img && p.status)) && <span class="lbl">{[p.img && st(p.status), p.heritage && t.heritage].filter(Boolean).join(' · ')}</span>}
+          {(p.heritage || p.tag || (p.img && p.status)) && <span class="lbl">{[p.img && st(p.status), p.tag && st(p.tag), p.heritage && t.heritage].filter(Boolean).join(' · ')}</span>}
         </article>
       ))}
     </div>

@@ -33,10 +33,10 @@ export const usp = {
   text: "Coneixem a fons la normativa urbanística i patrimonial de Catalunya, els criteris de cada ajuntament i els seus marges d'interpretació. Això ens permet maximitzar, sempre dins de la legalitat, l'aprofitament i la rendibilitat de cada edifici, i que les llicències avancin sense bloquejos.",
   image: { src: es.usp.image.src, alt: "Visita tècnica de l'equip DTRES en un edifici en rehabilitació" },
   proofs: [
-    { tag: 'Patrimoni catalogat · IESE Business School', title: 'Campus universitari · 1.022 m²', text: "Reforma integral i interiorisme que transmet els valors de la institució, amb el campus en funcionament." },
-    { tag: 'Patrimoni catalogat · Fundació Familiar Catalana', title: 'Oficines · 1.225 m²', text: "Seu de les oficines de la UIC. Pla especial integral, llicències, obra i interiorisme. A més, llicències per a 5.163 m² d'obra nova a la parcel·la." },
+    { tag: 'Patrimoni catalogat · IESE Business School', title: 'Campus universitari · 1.000 m²', text: "Reforma integral i interiorisme que transmet els valors de la institució, amb el campus en funcionament." },
+    { tag: 'Patrimoni catalogat · Fundació Familiar Catalana', title: 'Oficines · 1.200 m²', text: "Seu de les oficines de la UIC. Pla especial integral, llicències, obra i interiorisme. A més, llicències per a 5.000 m² d'obra nova a la parcel·la." },
     { tag: 'Patrimoni catalogat · Associació Col·laborativa Montroig', title: 'Residència sènior · 1.000 m²', text: "Transformació integral i interiorisme de l'àtic i el sobreàtic, amb la residència en funcionament." },
-    { tag: "Canvi d'ús · Fundació Privada Montseny", title: 'Habitatges de lloguer · 577 m²', text: "D'un coliving en desús a 5 habitatges: segregació, projecte, llicències i obra." },
+    { tag: "Canvi d'ús · Fundació Privada Montseny", title: 'Habitatges de lloguer · 600 m²', text: "D'un coliving en desús a 5 habitatges: segregació, projecte, llicències i obra." },
   ],
 };
 
@@ -88,20 +88,20 @@ export const featured = {
 };
 
 export const moreProjects = [
-  { tag: 'Residència sènior · 716 m²', client: 'Associació Cultural Carena', img: '/img/carena-residencia.jpg' },
-  { tag: 'Club juvenil · 3.000 m²', client: 'Fundación Padua', img: '/img/padua.jpg' },
-  { tag: 'Oficines · 1.000 m²', client: 'Aloalto', img: '/img/aloalto.jpg' },
-  { tag: 'Showroom i oficines · 800 m²', client: 'Papiol', img: '/img/papiol.jpg' },
-  { tag: 'Residència universitària · 1a fase · 350 m²', client: 'Colegio Mayor Universitario Pedralbes', img: '/img/cmu-pedralbes.jpg' },
-  { tag: 'Oficines · 200 m²', client: 'Mier Giralt Abogados', img: '/img/mier-giralt.jpg' },
+  { tag: 'Residència sènior · 716 m²', client: 'Associació Cultural Carena', img: '/img/pj-carena-residencia.jpg' },
+  { tag: 'Club juvenil · 3.000 m²', client: 'Fundación Padua', img: '/img/pj-padua.jpg' },
+  { tag: 'Oficines · 1.000 m²', client: 'Aloalto', img: '/img/pj-aloalto.jpg' },
+  { tag: 'Showroom i oficines · 800 m²', client: 'Papiol', img: '/img/pj-papiol.jpg' },
+  { tag: 'Residència universitària · 1.500 m²', client: 'Colegio Mayor Universitario Pedralbes', img: '/img/pj-cmu.jpg' },
+  { tag: 'Oficines · 200 m²', client: 'Mier Giralt Abogados', img: '/img/pj-mier.jpg' },
 ];
 
 export const wip = es.wip.map((w, i) => ({ ...w, ...[
   { use: 'Residència universitària · 4.000 m²', text: 'Rehabilitació integral i interiorisme de la residència.' },
-  { use: "D'equipament cultural a 5 habitatges · 577 m²", text: "Canvi d'ús i segregació en 5 habitatges de lloguer." },
-  { use: 'De residència sènior a oficina institucional · 1.225 m²', text: "Edifici catalogat transformat en les oficines de la UIC, interiorisme inclòs. En licitació d'obra." },
-  { use: "D'oficines a 5 habitatges · 490 m²", client: "Fons d'inversió Relanza", text: "Due diligence tècnica i urbanística per convertir cinc oficines en habitatges abans d'invertir." },
-  { use: 'Oficines · 210 m²', text: "Local de dues plantes amb pati per a una empresa de 18 persones que preveu doblar la plantilla. Estudi de distribució, llicència d'activitat i auditoria del pressupost d'obra." },
+  { use: "D'equipament cultural a 5 habitatges · 600 m²", text: "Canvi d'ús i segregació en 5 habitatges de lloguer." },
+  { use: 'De residència sènior a oficina institucional · 1.200 m²', text: "Edifici catalogat transformat en les oficines de la UIC, interiorisme inclòs. En licitació d'obra." },
+  { use: "D'oficines a 5 habitatges · 500 m²", client: "Fons d'inversió Relanza", text: "Due diligence tècnica i urbanística per convertir cinc oficines en habitatges abans d'invertir." },
+  { use: 'Oficines · 200 m²', text: "Local de dues plantes amb pati per a una empresa de 18 persones que preveu doblar la plantilla. Estudi de distribució, llicència d'activitat i auditoria del pressupost d'obra." },
 ][i] }));
 
 export const reviews = es.reviews.map((r, i) => ({ ...r, lang: r.lang || 'es', context: ["Reforma integral d'un Flexliving", "Reforma d'un hotel", 'Tres reformes integrals'][i] }));
@@ -128,14 +128,15 @@ export const clients = es.clients;
 const peopleRole = {'Directora de Proyecto y Producción': 'Directora de Projecte i Producció', 'Director de Proyecto y Diseño': 'Director de Projecte i Disseny', 'Director de Proyecto y BIM Manager': 'Director de Projecte i BIM Manager', 'Constructor consultor': 'Constructor consultor', 'Responsable de BIM y Estudios de Viabilidad': 'Responsable de BIM i Estudis de Viabilitat', 'Responsable de Diseño de Interiores': 'Responsable de Disseny d’Interiors', 'BIM Manager y Estudios de Viabilidad': 'BIM Manager i Estudis de Viabilitat', 'Arquitectura y diseño de interiores': 'Arquitectura i disseny d’interiors', 'Responsable de Planificación y Procesos': 'Responsable de Planificació i Processos', 'Responsable de Calidad y Trámites': 'Responsable de Qualitat i Tràmits', 'Arquitecto senior': 'Arquitecte sènior', 'Profesor de la Escuela de Arquitectura UIC': "Professor de l'Escola d'Arquitectura UIC", 'Project Manager': 'Project Manager', 'Arquitecta senior': 'Arquitecta sènior', 'Arquitecto senior': 'Arquitecte sènior', 'Interiorista': 'Interiorista', 'Arquitecta junior': 'Arquitecta júnior', 'Modeladora 3D': 'Modeladora 3D', 'Ingeniero': 'Enginyer', 'Arquitecta técnica': 'Arquitecta tècnica', 'Constructor': 'Constructor'};
 export const people = { staff: es.people.staff.map((x) => ({ ...x, role: peopleRole[x.role] ?? x.role, sub: x.sub && (peopleRole[x.sub] ?? x.sub), note: x.note && (peopleRole[x.note] ?? x.note) })), partners: es.people.partners.map((x) => ({ ...x, role: peopleRole[x.role] ?? x.role })) };
 
-export const statusLabels = { 'En obra': 'En obra', 'En licitación': 'En licitació', 'En viabilidad': 'En viabilitat' };
+export const statusLabels = { 'Cambio de uso': "Canvi d'ús", 'En obra': 'En obra', 'En licitación': 'En licitació', 'En viabilidad': 'En viabilitat' };
 
 const use = {
+  'Docencia': 'Docència', '5 viviendas': '5 habitatges', 'Nuestro estudio': 'El nostre estudi',
   'Vestuarios': 'Vestidors', 'Graderías': 'Graderies', 'Oficinas en edificio de 1910': 'Oficines en un edifici de 1910', Oficinas: 'Oficines', 'Oficinas de la UIC': 'Oficines de la UIC',
   'Plan especial y licencias de obra nueva': "Pla especial i llicències d'obra nova", 'Residencia senior': 'Residència sènior',
   'Residencia universitaria': 'Residència universitària', 'Residencia universitaria · 1ª fase': 'Residència universitària · 1a fase',
   'Club juvenil': 'Club juvenil', 'Vestuarios y gradas': 'Vestidors i graderies', 'De coliving a 5 viviendas de alquiler': "De coliving a 5 habitatges de lloguer",
   'De oficinas a 5 viviendas': "D'oficines a 5 habitatges", Headquarters: 'Seu corporativa', 'Showroom y oficinas': 'Showroom i oficines', 'Estudio de arquitectura': "Estudi d'arquitectura",
 };
-const client = { 'Fondo de inversión Relanza': "Fons d'inversió Relanza" };
+const client = { 'Escuela Deportiva Brafa': "Escola Esportiva Brafa", 'Fondo de inversión Relanza': "Fons d'inversió Relanza" };
 export const allProjects = es.allProjects.map((p) => ({ ...p, use: use[p.use] ?? p.use, client: client[p.client] ?? p.client }));
