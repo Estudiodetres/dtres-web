@@ -98,11 +98,8 @@ export const moreProjects = [
 
 export const wip = es.wip.map((w, i) => ({ ...w, ...[
   { use: 'Residència universitària · 4.000 m²', text: 'Rehabilitació integral i interiorisme de la residència.' },
-  { use: '5 habitatges · 600 m²', text: "Canvi d'ús i segregació en 5 habitatges de lloguer." },
   { use: 'Oficines · 1.200 m²', text: "Edifici catalogat transformat en les oficines de la UIC, interiorisme inclòs. En licitació d'obra." },
   { use: '5 habitatges · 500 m²', client: "Fons d'inversió Relanza", text: "Due diligence tècnica i urbanística per convertir cinc oficines en habitatges abans d'invertir." },
-  { use: 'Oficines · 200 m²', text: "Local de dues plantes amb pati per a una empresa de 18 persones que preveu doblar la plantilla. Estudi de distribució, llicència d'activitat i auditoria del pressupost d'obra." },
-  { use: 'Oficines · 1.000 m²', text: 'Estudi de viabilitat per a la nova seu del despatx.' },
   { use: 'Centre juvenil · 500 m²', text: "Canvi d'ús d'un edifici protegit de Joan Rubió i Bellver per a un projecte socioeducatiu. Due diligence, distribució i llicències." },
 ][i] }));
 

@@ -98,11 +98,8 @@ export const moreProjects = [
 
 export const wip = es.wip.map((w, i) => ({ ...w, ...[
   { use: 'University hall · 4,000 m²', text: 'Full rehabilitation and interior design of the residence.' },
-  { use: '5 homes · 600 m²', text: 'Change of use and subdivision into 5 rental homes.' },
   { use: 'Offices · 1,200 m²', text: 'A listed building transformed into offices for UIC Barcelona, interiors included. Out to tender.' },
   { use: '5 homes · 500 m²', client: 'Relanza investment fund', text: 'Technical and planning due diligence to turn five offices into homes before investing.' },
-  { use: 'Offices · 200 m²', text: 'Two-storey premises with a courtyard for an 18-person company planning to double in size. Space planning, activity licence and audit of the construction budget.' },
-  { use: 'Offices · 1,000 m²', text: "Feasibility study for the firm's new headquarters." },
   { use: 'Youth centre · 500 m²', text: 'Change of use of a listed Joan Rubió i Bellver building for a socio-educational project. Due diligence, space planning and permits.' },
 ][i] }));
 
