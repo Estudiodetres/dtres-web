@@ -11,6 +11,12 @@ import { ui, routes, phasePath, langs, fmt } from '../i18n/index.js';
 const { lang = 'es' } = Astro.props;
 const { hero, audiences, stats, usp, phases, featured, reviews, team, faqs, meta, clients, allProjects, home2, site } = getContent(lang);
 const moreProjects = moreImgs.map((img) => allProjects.find((p) => p.img === img)).filter(Boolean).map((p) => ({ ...p, tag: `${p.use} · ${fmt(p.m2, lang)} m²` }));
+const phaseIcons = {
+  viabilidad: '<path d="M6 40V18l10-7 10 7v22z" class="f"/><path d="M6 40V18l10-7 10 7v22M12 24h3M17 24h3M12 30h3M17 30h3M12 36h8"/><circle cx="31" cy="28" r="7" class="f2"/><circle cx="31" cy="28" r="7"/><path d="M36 33l7 7"/>',
+  'proyecto-y-licencias': '<path d="M8 4h22l8 8v32H8z" class="f"/><path d="M8 4h22l8 8v32H8zM30 4v8h8"/><path d="M14 20h18M14 26h18M14 32h10"/><circle cx="31" cy="36" r="5" class="f2"/><circle cx="31" cy="36" r="5"/><path d="M28.8 36l1.6 1.6 3-3.2"/>',
+  obra: '<path d="M10 44V8h4v36" class="f"/><path d="M10 44V8h4v36M6 44h12M14 8h28l-4 6H14M38 14v9"/><path d="M34 23h8v7h-8z" class="f2"/><path d="M34 23h8v7h-8zM10 8l4 6M14 8l-4 6"/>',
+  entrega: '<circle cx="16" cy="24" r="10" class="f"/><circle cx="16" cy="24" r="10"/><circle cx="16" cy="24" r="3.5" class="f2"/><path d="M26 24h18M38 24v6M43 24v5"/>',
+};
 const icons = {
   split: '<rect x="3" y="3" width="11" height="11"/><rect x="18" y="3" width="11" height="11"/><rect x="3" y="18" width="11" height="11"/><rect x="18" y="18" width="11" height="11" stroke-dasharray="3 2.5"/>',
   route: '<circle cx="6" cy="6" r="3"/><circle cx="26" cy="9" r="3"/><circle cx="26" cy="23" r="3"/><circle cx="6" cy="26" r="3"/><path d="M9 6h7v17h7M16 9h7M9 26h7"/>',
@@ -80,7 +86,7 @@ const caseLd = {
       <ol class="jr__list">
         {phases.map((f) => (
           <li class="jr__row">
-            <div class="jr__phase"><span class="jr__n">{f.n}</span><h3>{f.title}</h3></div>
+            <div class="jr__phase"><svg class="jr__icon" viewBox="0 0 48 48" aria-hidden="true" set:html={phaseIcons[f.id]} /><span class="jr__n">{f.n}</span><h3>{f.title}</h3></div>
             <div class="jr__pain"><span class="lbl">{home2.journey.problem}</span><p>{home2.journey.pains[f.id]}</p></div>
             <div class="jr__fix"><span class="lbl">{home2.journey.solution}</span><p>{home2.journey.fix?.[f.id] ?? f.get}</p><a href={phasePath(lang, f.slug)}>{t.startHere}</a></div>
           </li>
@@ -347,6 +353,8 @@ const caseLd = {
   .jr__row { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.3fr) minmax(0, 1.2fr); gap: 24px 48px; padding-block: 32px; border-bottom: 1px solid rgba(234,234,228,.25); align-items: start; }
   .jr__phase { display: flex; flex-direction: column; gap: 8px; }
   .jr__n { font-size: 14px; color: var(--sage); }
+  .jr__icon { width: 64px; height: 64px; margin-bottom: 8px; fill: none; stroke: #eaeae4; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+  .jr__icon :global(.f) { fill: rgba(163,162,142,.45); stroke: none; } .jr__icon :global(.f2) { fill: var(--sage); stroke: none; }
   .jr__phase h3 { font-size: clamp(22px, 2.2vw, 30px); text-transform: uppercase; letter-spacing: .06em; font-weight: 500; }
   .jr__pain, .jr__fix { display: flex; flex-direction: column; gap: 10px; }
   .jr .lbl { color: var(--sage); }
