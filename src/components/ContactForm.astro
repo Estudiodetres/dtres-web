@@ -2,8 +2,15 @@
 import { ui, routes, code } from '../i18n/index.js';
 const { origen = 'home', lang = 'es' } = Astro.props;
 const t = ui[lang].form;
+// Mientras no haya conexión con Notion, los contactos se recogen con Netlify Forms (aviso por email).
+// En cuanto se añada NOTION_TOKEN en Netlify, el formulario vuelve a guardar en Notion automáticamente.
+const useNotion = Boolean(import.meta.env.NOTION_TOKEN);
+const formAttrs = useNotion
+  ? { action: '/api/contacto' }
+  : { name: 'contacto', action: routes.thanks[lang], 'data-netlify': 'true', 'netlify-honeypot': 'website' };
 ---
-<form class="cf" method="post" action="/api/contacto">
+<form class="cf" method="post" {...formAttrs}>
+  {!useNotion && <input type="hidden" name="form-name" value="contacto" />}
   <input type="hidden" name="origen" value={origen} />
   <input type="hidden" name="idioma" value={code[lang]} />
   <label class="cf__hp" aria-hidden="true">{t.hp} <input name="website" tabindex="-1" autocomplete="off" /></label>
