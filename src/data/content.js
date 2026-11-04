@@ -268,5 +268,20 @@ export const home2 = {
     "proyecto-y-licencias": "Diseño en 3D y permiso de obra concedido.",
     "obra": "Plazo, coste y calidad bajo control, con un solo interlocutor.",
     "entrega": "Equipado y listo para operar, alquilar o vender."
+  },
+  "journey": {
+    "eyebrow": "De la due diligence a la entrega de llaves",
+    "title": "Cada fase tiene su riesgo. Lo resolvemos antes de que te cueste dinero.",
+    "problem": "El problema",
+    "solution": "Cómo lo resolvemos",
+    "pains": {
+      "viabilidad": "No sabes si lo que quieres hacer es posible en ese edificio, ni si la operación será rentable.",
+      "proyecto-y-licencias": "La licencia no llega o Patrimonio bloquea el proyecto. Cada mes es rentabilidad que dejas de ganar y tu tesis empieza a tambalearse.",
+      "obra": "La obra se alarga, el presupuesto se dispara y nadie te da respuestas claras.",
+      "entrega": "Termina la obra, pero faltan boletines y legalizaciones: el edificio no puede abrir."
+    },
+    "fix": {
+      "entrega": "Tramitamos boletines y legalizaciones durante la obra. El edificio, equipado y listo para operar, alquilar o vender el día que acaba."
+    }
   }
 };

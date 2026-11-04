@@ -175,5 +175,20 @@ export const home2 = {
     "proyecto-y-licencias": "Disseny en 3D i permís d'obra concedit.",
     "obra": "Termini, cost i qualitat sota control, amb un sol interlocutor.",
     "entrega": "Equipat i a punt per operar, llogar o vendre."
+  },
+  "journey": {
+    "eyebrow": "De la due diligence al lliurament de claus",
+    "title": "Cada fase té el seu risc. El resolem abans que et costi diners.",
+    "problem": "El problema",
+    "solution": "Com el resolem",
+    "pains": {
+      "viabilidad": "No saps si el que vols fer és possible en aquest edifici, ni si l'operació serà rendible.",
+      "proyecto-y-licencias": "La llicència no arriba o Patrimoni bloqueja el projecte. Cada mes és rendibilitat que deixes de guanyar i la teva tesi comença a trontollar.",
+      "obra": "L'obra s'allarga, el pressupost es dispara i ningú et dona respostes clares.",
+      "entrega": "Acaba l'obra, però falten butlletins i legalitzacions: l'edifici no pot obrir."
+    },
+    "fix": {
+      "entrega": "Tramitem butlletins i legalitzacions durant l'obra. L'edifici, equipat i a punt per operar, llogar o vendre el dia que acaba."
+    }
   }
 };

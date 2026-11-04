@@ -175,5 +175,20 @@ export const home2 = {
     "proyecto-y-licencias": "3D design and building permit granted.",
     "obra": "Time, cost and quality under control, with one point of contact.",
     "entrega": "Fitted out and ready to operate, let or sell."
+  },
+  "journey": {
+    "eyebrow": "From due diligence to handover",
+    "title": "Every phase has its risk. We solve it before it costs you money.",
+    "problem": "The problem",
+    "solution": "How we solve it",
+    "pains": {
+      "viabilidad": "You don't know whether what you want is possible in that building, or whether the deal will pay off.",
+      "proyecto-y-licencias": "The permit never arrives or the heritage authority blocks the project. Every month is return you aren't earning, and your thesis starts to wobble.",
+      "obra": "Works drag on, the budget spirals and nobody gives you clear answers.",
+      "entrega": "Works are finished, but certificates and sign-offs are missing: the building can't open."
+    },
+    "fix": {
+      "entrega": "We process certificates and sign-offs during construction. The building is fitted out and ready to operate, let or sell the day works finish."
+    }
   }
 };
