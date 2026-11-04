@@ -42,6 +42,10 @@ const faqLd = {
   <section class="wrap hero">
     <p class="lbl">{hero.eyebrow}</p>
     <h1>{hero.title}</h1>
+    <ul class="chips" aria-label={t.for}>
+      <li class="chips__lbl">{t.for}</li>
+      {audiences.items.map((a) => <li class="chip"><svg viewBox="0 0 32 32" aria-hidden="true" set:html={icons[a.icon]} />{a.title}</li>)}
+    </ul>
     <div class="hero__row">
       <p class="hero__sub">{hero.subtitle}</p>
       <div class="hero__cta">
@@ -49,10 +53,6 @@ const faqLd = {
         <a class="btn btn--ghost" href={routes.projects[lang]}>{T.seeProjects}</a>
       </div>
     </div>
-    <ul class="chips" aria-label={t.for}>
-      <li class="chips__lbl">{t.for}</li>
-      {audiences.items.map((a) => <li class="chip"><svg viewBox="0 0 32 32" aria-hidden="true" set:html={icons[a.icon]} />{a.title}</li>)}
-    </ul>
   </section>
   <div class="wrap"><img class="ph hero__img" src={hero.image.src} srcset={srcset(hero.image.src)} sizes="(min-width: 1680px) 1520px, (min-width: 1280px) 1280px, 100vw" fetchpriority="high" alt={hero.image.alt} width="1600" height="800" /></div>
   <div class="wrap logos">
@@ -293,7 +293,8 @@ const faqLd = {
   .cta__text { font-size: 19px; max-width: 44ch; color: #c9c8bb; }
 
   /* Home v2 */
-  .chips { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  .chips { list-style: none; margin: -12px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  @media (max-width: 600px) { .chips { gap: 6px; } .chip { font-size: 13px; padding: 6px 10px; } .chips__lbl { width: 100%; } }
   .chips__lbl { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-right: 6px; }
   .chip { display: inline-flex; align-items: center; gap: 8px; border: 1px solid rgba(32,33,36,.25); padding: 7px 12px; font-size: 14px; }
   .chip svg { width: 18px; height: 18px; fill: none; stroke: var(--ink); stroke-width: 1.6; }
