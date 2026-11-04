@@ -40,6 +40,7 @@ const ld = {
           <p class="tm-role">{p.title}</p>
           <p>{p.role}</p>
           {p.note && <p class="tm-note">{p.note}</p>}
+          {p.linkedin && <a class="tm-in" href={p.linkedin} target="_blank" rel="noopener me">LinkedIn ↗</a>}
         </article>
       ))}
     </div>
@@ -104,6 +105,7 @@ const ld = {
   .tm-grid p { font-size: 15px; color: var(--text2); }
   .tm-grid .tm-role { color: var(--ink); font-weight: 500; }
   .tm-note { color: var(--muted) !important; font-size: 14px !important; }
+  .tm-in { font-size: 14px; color: var(--ink); text-underline-offset: 3px; padding-block: 4px; align-self: flex-start; }
   .tm-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 24px; border-top: 1px solid var(--line); }
   .tm-list li { display: flex; flex-direction: column; gap: 4px; padding: 20px 16px 20px 0; border-bottom: 1px solid var(--line); min-width: 0; }
   .tm-list strong { font-weight: 500; font-size: 19px; }

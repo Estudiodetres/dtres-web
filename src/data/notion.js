@@ -23,7 +23,7 @@ export async function getStats() {
   try {
     const rows = await queryAll(db, { property: 'Contar en web', checkbox: { equals: true } });
     const m2 = rows.reduce((s, r) => s + (r.properties['m²']?.number || 0), 0);
-    return { ...baseStats, m2: m2 || baseStats.m2 };
+    return { ...baseStats, m2: Math.max(m2 || 0, baseStats.m2) };
   } catch (e) {
     console.warn('[notion] getStats fallback:', e.message);
     return baseStats;
@@ -34,7 +34,7 @@ export async function getStats() {
 export function formatStats(s, lang = 'es') {
   const sep = lang === 'en' ? ',' : '.';
   const m2Floor = Math.floor(s.m2 / 1000) * 1000;
-  const eur = Math.floor((s.m2 * s.pricePerM2) / 1e6);
+  const eur = s.obraM ?? Math.floor((s.m2 * s.pricePerM2) / 1e6);
   return {
     m2: lang === 'en' ? `${String(m2Floor).replace(/\B(?=(\d{3})+(?!\d))/g, sep)}+ m²` : `+${String(m2Floor).replace(/\B(?=(\d{3})+(?!\d))/g, sep)} m²`,
     obra: lang === 'en' ? `€${eur}M+` : `+${eur} M€`,

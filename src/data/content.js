@@ -42,7 +42,8 @@ export const stats = {
   yearsLabel: '+15 años',
   yearsText: 'De experiencia en arquitectura, interiorismo y obra',
   projects: '+100',
-  m2: 20642,
+  m2: 30000, // m² transformados (mínimo mostrado en la web)
+  obraM: 24, // M€ de obra gestionada (fijo)
   pricePerM2: 1200,
 };
 
@@ -176,9 +177,9 @@ export const team = {
   text: 'Hablas con una sola persona de principio a fin. Detrás, un equipo de 12 personas en Barcelona: arquitectos, interioristas y modeladores 3D, con ingeniería, arquitectura técnica y constructora de confianza. Diseñamos, tramitamos y dirigimos la obra, de la primera visita a la entrega de llaves.',
   image: { src: '/img/equipo.jpg', alt: 'Equipo de DTRES trabajando en el estudio de Barcelona' },
   partners: [
-    { name: 'Nacho Vallhonrat', role: 'Arquitecto, socio cofundador', title: 'Director de Estrategia y Adquisición', note: 'Profesor de la Escuela de Arquitectura UIC', img: '/img/nacho.jpg' },
-    { name: 'Pablo Notario', role: 'Arquitecto, socio cofundador', title: 'Director de Operaciones y Finanzas', note: 'Profesor de la Escuela de Arquitectura UIC', img: '/img/pablo.jpg' },
-    { name: 'Iñigo Ugalde', role: 'Doctor arquitecto, socio', title: 'Director de Calidad', note: 'Director de la Escuela de Arquitectura UIC', img: '/img/inigo.jpg' },
+    { name: 'Nacho Vallhonrat', role: 'Arquitecto, socio cofundador', title: 'Director de Estrategia y Adquisición', note: 'Profesor de la Escuela de Arquitectura UIC', img: '/img/nacho.jpg', linkedin: 'https://www.linkedin.com/in/nacho-vallhonrat-garcia-valdecasas' },
+    { name: 'Pablo Notario', role: 'Arquitecto, socio cofundador', title: 'Director de Operaciones y Finanzas', note: 'Profesor de la Escuela de Arquitectura UIC', img: '/img/pablo.jpg', linkedin: 'https://www.linkedin.com/in/pablo-notario-602436253' },
+    { name: 'Iñigo Ugalde', role: 'Doctor arquitecto, socio', title: 'Director de Calidad', note: 'Director de la Escuela de Arquitectura UIC', img: '/img/inigo.jpg', linkedin: 'https://www.linkedin.com/in/i%C3%B1igo-ugalde-a7b49317' },
   ],
 };
 

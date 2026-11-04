@@ -51,8 +51,8 @@ const org = {
   description: 'Estudio de arquitectura e interiorismo en Barcelona especializado en transformar edificios para un nuevo uso: due diligence técnica, cambio de uso, rehabilitación de edificios catalogados, licencias, interiorismo y dirección de obra.',
   numberOfEmployees: { '@type': 'QuantitativeValue', value: 12 },
   audience: ['Inversores y fondos inmobiliarios', 'Fundaciones e instituciones', 'Propietarios y family offices', 'Empresas'].map((a) => ({ '@type': 'BusinessAudience', audienceType: a })),
-  founder: esTeam.partners.filter((p) => /cofundador/.test(p.role)).map((p) => ({ '@type': 'Person', name: p.name, jobTitle: p.title, description: `${p.role}. ${p.note}` })),
-  employee: esTeam.partners.map((p) => ({ '@type': 'Person', name: p.name, jobTitle: p.title, worksFor: { '@id': `${site.url}/#org` }, affiliation: { '@type': 'CollegeOrUniversity', name: 'Escuela de Arquitectura UIC Barcelona' } })),
+  founder: esTeam.partners.filter((p) => /cofundador/.test(p.role)).map((p) => ({ '@type': 'Person', name: p.name, jobTitle: p.title, description: `${p.role}. ${p.note}`, sameAs: p.linkedin ? [p.linkedin] : undefined })),
+  employee: esTeam.partners.map((p) => ({ '@type': 'Person', name: p.name, jobTitle: p.title, worksFor: { '@id': `${site.url}/#org` }, affiliation: { '@type': 'CollegeOrUniversity', name: 'Escuela de Arquitectura UIC Barcelona' }, sameAs: p.linkedin ? [p.linkedin] : undefined })),
   review: esReviews.map((r) => ({ '@type': 'Review', reviewRating: { '@type': 'Rating', ratingValue: r.rating, bestRating: 5 }, author: { '@type': 'Person', name: r.author }, reviewBody: r.quote, publisher: { '@type': 'Organization', name: 'Google' } })),
   sameAs: [`https://www.google.com/maps/place/?q=place_id:${site.placeId}`, ...(site.social || [])],
 };
