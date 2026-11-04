@@ -43,7 +43,7 @@ export const stats = {
   yearsText: 'De experiencia en arquitectura, interiorismo y obra',
   projects: '+100',
   m2: 30000, // m² transformados (mínimo mostrado en la web)
-  obraM: 24, // M€ de obra gestionada (fijo)
+  obraM: 36, // M€ de obra gestionada (fijo)
   pricePerM2: 1200,
 };
 
