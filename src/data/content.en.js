@@ -11,8 +11,8 @@ export const meta = {
 
 export const hero = {
   eyebrow: 'Architecture and interior design · Barcelona and Catalonia · Since 2017',
-  title: 'Architecture and design that raise the value of your investment.',
-  subtitle: 'We transform buildings for a new use, with distinctive interiors, fast-moving permits and construction without surprises. From due diligence to handover.',
+  title: "Your building could be worth much more.",
+  subtitle: "Architecture and design that raise the value of your investment: fast-moving permits, distinctive interiors and construction at a fixed time and cost.",
   image: { src: '/img/hero-papiol.jpg', alt: 'Papiol showroom and offices in Barcelona, with a double-height space and staircase' },
 };
 
@@ -140,3 +140,44 @@ const use = {
 };
 const client = { 'Le Mirath · El Cairo': 'Le Mirath · Cairo', 'Inversor particular': 'Private investor', 'Escuela Deportiva Brafa': 'Brafa Sports School', 'Fondo de inversión Relanza': 'Relanza investment fund' };
 export const allProjects = es.allProjects.map((p) => ({ ...p, use: use[p.use] ?? p.use, client: client[p.client] ?? p.client }));
+
+// Home v2: bloques nuevos (dolores, bonus, método corto)
+export const home2 = {
+  "pains": {
+    "eyebrow": "What holds a deal back",
+    "title": "Sound familiar?",
+    "items": [
+      {
+        "icon": "doubt",
+        "text": "You don't know whether what you want is possible in that building, or whether the deal will pay off."
+      },
+      {
+        "icon": "clock",
+        "text": "The permit never arrives and the building sits empty."
+      },
+      {
+        "icon": "blocked",
+        "text": "The heritage authority blocks what you wanted to do."
+      },
+      {
+        "icon": "cost",
+        "text": "Works drag on and the budget spirals."
+      }
+    ]
+  },
+  "bonus": {
+    "eyebrow": "Free audit · 30 min",
+    "title": "Your first feasibility check, in 30 minutes.",
+    "text": "A partner architect reviews your building or idea and tells you whether it is feasible, what the risks are and how to move on to a due diligence.",
+    "cta": "Book my free audit"
+  },
+  "methodTitle": "Four phases. One point of contact.",
+  "methodCta": "Start with feasibility",
+  "authority": "Who we are",
+  "phaseShort": {
+    "viabilidad": "Risks, cost and timelines before you invest.",
+    "proyecto-y-licencias": "3D design and building permit granted.",
+    "obra": "Time, cost and quality under control, with one point of contact.",
+    "entrega": "Fitted out and ready to operate, let or sell."
+  }
+};

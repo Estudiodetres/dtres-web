@@ -20,9 +20,8 @@ export const meta = {
 
 export const hero = {
   eyebrow: 'Arquitectura e interiorismo · Barcelona y Catalunya · Desde 2017',
-  title: 'Arquitectura y diseño que elevan el valor de tu inversión.',
-  subtitle:
-    'Transformamos edificios para darles un nuevo uso, con interiorismo de carácter, licencias ágiles y una obra sin sorpresas. De la due diligence a la entrega de llaves.',
+  title: "Tu edificio puede valer mucho más.",
+  subtitle: "Arquitectura y diseño que elevan el valor de tu inversión: licencias ágiles, interiorismo con carácter y obra con plazo y coste cerrados.",
   image: { src: '/img/hero-papiol.jpg', alt: 'Showroom y oficinas de Papiol en Barcelona, con doble altura y escalera' },
 };
 
@@ -234,3 +233,44 @@ export const clients = [
   { name: 'Papiol Alfombres', logo: '/img/clientes/papiol.png' },
   { name: 'Entrelazadogs', logo: '/img/clientes/entrelazadogs.png' },
 ];
+
+// Home v2: bloques nuevos (dolores, bonus, método corto)
+export const home2 = {
+  "pains": {
+    "eyebrow": "Lo que frena una operación",
+    "title": "¿Te suena?",
+    "items": [
+      {
+        "icon": "doubt",
+        "text": "No sabes si lo que quieres hacer es posible en ese edificio, ni si la operación será rentable."
+      },
+      {
+        "icon": "clock",
+        "text": "La licencia no llega y el edificio sigue vacío."
+      },
+      {
+        "icon": "blocked",
+        "text": "Patrimonio bloquea lo que querías hacer."
+      },
+      {
+        "icon": "cost",
+        "text": "La obra se alarga y el presupuesto se dispara."
+      }
+    ]
+  },
+  "bonus": {
+    "eyebrow": "Auditoría gratuita · 30 min",
+    "title": "Tu primera viabilidad, en 30 minutos.",
+    "text": "Un socio arquitecto revisa tu edificio o tu idea y te dice si es viable, qué riesgos tiene y cómo seguir con una due diligence.",
+    "cta": "Reservar mi auditoría gratuita"
+  },
+  "methodTitle": "Cuatro fases. Un solo interlocutor.",
+  "methodCta": "Empezar por la viabilidad",
+  "authority": "Quiénes somos",
+  "phaseShort": {
+    "viabilidad": "Riesgos, coste y plazos antes de invertir.",
+    "proyecto-y-licencias": "Diseño en 3D y permiso de obra concedido.",
+    "obra": "Plazo, coste y calidad bajo control, con un solo interlocutor.",
+    "entrega": "Equipado y listo para operar, alquilar o vender."
+  }
+};

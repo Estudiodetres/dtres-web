@@ -11,8 +11,8 @@ export const meta = {
 
 export const hero = {
   eyebrow: 'Arquitectura i interiorisme · Barcelona i Catalunya · Des de 2017',
-  title: 'Arquitectura i disseny que eleven el valor de la teva inversió.',
-  subtitle: "Transformem edificis per donar-los un nou ús, amb interiorisme de caràcter, llicències àgils i una obra sense sorpreses. De la due diligence al lliurament de claus.",
+  title: "El teu edifici pot valer molt més.",
+  subtitle: "Arquitectura i disseny que eleven el valor de la teva inversió: llicències àgils, interiorisme amb caràcter i obra amb termini i cost tancats.",
   image: { src: '/img/hero-papiol.jpg', alt: 'Showroom i oficines de Papiol a Barcelona, amb doble alçada i escala' },
 };
 
@@ -140,3 +140,44 @@ const use = {
 };
 const client = { 'Le Mirath · El Cairo': 'Le Mirath · El Caire', 'Inversor particular': 'Inversor particular', 'Escuela Deportiva Brafa': "Escola Esportiva Brafa", 'Fondo de inversión Relanza': "Fons d'inversió Relanza" };
 export const allProjects = es.allProjects.map((p) => ({ ...p, use: use[p.use] ?? p.use, client: client[p.client] ?? p.client }));
+
+// Home v2: bloques nuevos (dolores, bonus, método corto)
+export const home2 = {
+  "pains": {
+    "eyebrow": "El que frena una operació",
+    "title": "Et sona?",
+    "items": [
+      {
+        "icon": "doubt",
+        "text": "No saps si el que vols fer és possible en aquest edifici, ni si l'operació serà rendible."
+      },
+      {
+        "icon": "clock",
+        "text": "La llicència no arriba i l'edifici continua buit."
+      },
+      {
+        "icon": "blocked",
+        "text": "Patrimoni bloqueja el que volies fer."
+      },
+      {
+        "icon": "cost",
+        "text": "L'obra s'allarga i el pressupost es dispara."
+      }
+    ]
+  },
+  "bonus": {
+    "eyebrow": "Auditoria gratuïta · 30 min",
+    "title": "La teva primera viabilitat, en 30 minuts.",
+    "text": "Un soci arquitecte revisa el teu edifici o la teva idea i et diu si és viable, quins riscos té i com continuar amb una due diligence.",
+    "cta": "Reservar la meva auditoria gratuïta"
+  },
+  "methodTitle": "Quatre fases. Un sol interlocutor.",
+  "methodCta": "Començar per la viabilitat",
+  "authority": "Qui som",
+  "phaseShort": {
+    "viabilidad": "Riscos, cost i terminis abans d'invertir.",
+    "proyecto-y-licencias": "Disseny en 3D i permís d'obra concedit.",
+    "obra": "Termini, cost i qualitat sota control, amb un sol interlocutor.",
+    "entrega": "Equipat i a punt per operar, llogar o vendre."
+  }
+};

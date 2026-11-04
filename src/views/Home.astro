@@ -9,7 +9,7 @@ import { srcset } from '../lib/img.js';
 import { ui, routes, phasePath, langs, fmt } from '../i18n/index.js';
 
 const { lang = 'es' } = Astro.props;
-const { hero, audiences, stats, usp, phases, featured, wip, reviews, team, faqs, meta, clients, allProjects } = getContent(lang);
+const { hero, audiences, stats, usp, phases, featured, reviews, team, faqs, meta, clients, allProjects, home2 } = getContent(lang);
 const moreProjects = moreImgs.map((img) => allProjects.find((p) => p.img === img)).filter(Boolean).map((p) => ({ ...p, tag: `${p.use} · ${fmt(p.m2, lang)} m²` }));
 const icons = {
   split: '<rect x="3" y="3" width="11" height="11"/><rect x="18" y="3" width="11" height="11"/><rect x="3" y="18" width="11" height="11"/><rect x="18" y="18" width="11" height="11" stroke-dasharray="3 2.5"/>',
@@ -19,6 +19,10 @@ const icons = {
   owner: '<circle cx="10" cy="16" r="6"/><path d="M16 16h13M24 16v5M28 16v4"/>',
   institution: '<path d="M6 28V9h20v19M3 28h26M13 28v-6a3 3 0 0 1 6 0v6M10 13h3M19 13h3M10 18h3M19 18h3M16 9V3h5v3h-5"/>',
   company: '<rect x="6" y="5" width="20" height="13"/><path d="M13 22h6M16 18v4M3 26h26M7 26v3M25 26v3"/>',
+  doubt: '<circle cx="16" cy="16" r="12"/><path d="M12.5 12.5a3.5 3.5 0 1 1 5 3.2c-1 .5-1.5 1.2-1.5 2.3v1"/><path d="M16 23v.5"/>',
+  clock: '<circle cx="16" cy="16" r="12"/><path d="M16 9v7l5 3"/>',
+  blocked: '<path d="M3 12 16 4l13 8z"/><path d="M3 28h26M8 14v11M13 14v11M19 14v11M24 14v11"/><path d="M4 4l24 24"/>',
+  cost: '<path d="M4 4v24h24"/><path d="M8 22l6-4 5 3 9-13"/><path d="M22 8h6v6"/>',
   ready: '<rect x="4" y="6" width="24" height="22"/><path d="M4 12h24M10 3v6M22 3v6M11 20l4 4 7-8"/>',
 };
 const t = ui[lang].home;
@@ -34,7 +38,7 @@ const faqLd = {
 };
 ---
 <Base title={meta.homeTitle} description={meta.homeDesc} jsonLd={[faqLd]} lang={lang} alternates={routes.home}>
-  <!-- HERO -->
+  <!-- 1. DESTINO -->
   <section class="wrap hero">
     <p class="lbl">{hero.eyebrow}</p>
     <h1>{hero.title}</h1>
@@ -45,72 +49,30 @@ const faqLd = {
         <a class="btn btn--ghost" href={routes.projects[lang]}>{T.seeProjects}</a>
       </div>
     </div>
-  </section>
-  <div class="wrap"><img class="ph hero__img" src={hero.image.src} srcset={srcset(hero.image.src)} sizes="(min-width: 1680px) 1520px, (min-width: 1280px) 1280px, 100vw" fetchpriority="high" alt={hero.image.alt} width="1600" height="800" /></div>
-
-  <!-- TRABAJAMOS PARA -->
-  <section class="wrap aud">
-    <div class="aud__head"><p class="lbl">{t.for}</p><h2 class="aud__title">{audiences.title}</h2></div>
-    <ul class="aud__list">
-      {audiences.items.map((a) => (
-        <li class="aud__item"><div class="aud__name">{a.icon && <svg class="aud__icon" viewBox="0 0 32 32" aria-hidden="true" set:html={icons[a.icon]} />}<h3>{a.title}</h3></div><p>{a.text}</p></li>
-      ))}
+    <ul class="chips" aria-label={t.for}>
+      <li class="chips__lbl">{t.for}</li>
+      {audiences.items.map((a) => <li class="chip"><svg viewBox="0 0 32 32" aria-hidden="true" set:html={icons[a.icon]} />{a.title}</li>)}
     </ul>
   </section>
+  <div class="wrap"><img class="ph hero__img" src={hero.image.src} srcset={srcset(hero.image.src)} sizes="(min-width: 1680px) 1520px, (min-width: 1280px) 1280px, 100vw" fetchpriority="high" alt={hero.image.alt} width="1600" height="800" /></div>
+  <div class="wrap logos">
+    <p class="lbl">{t.clientsTitle}</p>
+    <ul class="logos__row">
+      {clients.map((c) => <li><img src={c.logo} alt={c.name} title={c.name} loading="lazy" /></li>)}
+    </ul>
+  </div>
 
-  <!-- CIFRAS -->
+  <!-- 2. DOLORES -->
   <section class="dark">
-    <div class="wrap stats">
-      <div><span class="stats__n">{stats.yearsLabel}</span><span class="stats__t">{stats.yearsText}</span></div>
-      <div><span class="stats__n">{stats.projects}</span><span class="stats__t">{t.projectsDone}</span></div>
-      <div><span class="stats__n">{s.obra}</span><span class="stats__t">{t.works}</span></div>
-      <div><span class="stats__n">{s.m2}</span><span class="stats__t">{t.m2}</span></div>
-    </div>
-    <div class="wrap logos">
-      <p class="lbl">{t.clientsTitle}</p>
-      <ul class="logos__row">
-        {clients.map((c) => <li><img src={c.logo} alt={c.name} title={c.name} loading="lazy" /></li>)}
+    <div class="wrap pains">
+      <div><p class="lbl">{home2.pains.eyebrow}</p><h2 class="h2">{home2.pains.title}</h2></div>
+      <ul class="pains__grid">
+        {home2.pains.items.map((x) => <li><svg viewBox="0 0 32 32" aria-hidden="true" set:html={icons[x.icon]} /><p>{x.text}</p></li>)}
       </ul>
     </div>
   </section>
 
-  <!-- PATRIMONIO -->
-  <section class="wrap usp">
-    <img class="ph usp__img" src={usp.image.src} srcset={srcset(usp.image.src)} sizes="(min-width: 900px) 50vw, 100vw" alt={usp.image.alt} width="800" height="1000" loading="lazy" />
-    <div class="usp__body">
-      <p class="lbl">{usp.eyebrow}</p>
-      <h2 class="h2">{usp.title}</h2>
-      <p class="usp__text">{usp.text}</p>
-      <div class="usp__proofs">
-        {usp.proofs.map((p) => (
-          <div>{p.icon && <svg class="usp__icon" viewBox="0 0 32 32" aria-hidden="true" set:html={icons[p.icon]} />}<strong>{p.title}</strong><span class="lbl">{p.tag}</span><span>{p.text}</span></div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- MÉTODO -->
-  <section id="metodo" class="stone">
-    <div class="wrap method">
-      <div class="method__head">
-        <div><p class="lbl">{t.methodEyebrow}</p><h2 class="h2">{t.methodTitle}</h2></div>
-        <p>{t.methodNote}</p>
-      </div>
-      <div class="method__grid">
-        {phases.map((f) => (
-          <a class="method__card" href={phasePath(lang, f.slug)}>
-            <span class="method__n">{f.n}</span>
-            <h3>{f.title}</h3>
-            <p class="method__sub">{f.sub}</p>
-            <p class="method__get"><span class="lbl">{t.youGet}</span>{f.get}</p>
-            <span class="method__go">{t.startHere}</span>
-          </a>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- CASO DESTACADO -->
+  <!-- 3. PRUEBA: CASO -->
   <section id="proyectos" class="wrap feat">
     <div><p class="lbl">{featured.eyebrow}</p><h2 class="feat__title">{featured.title}</h2></div>
     <div class="feat__imgs">
@@ -122,40 +84,75 @@ const faqLd = {
       <div><span class="lbl">{t.transformation}</span><p>{featured.transformation}</p></div>
       <div><span class="lbl">{t.result}</span><p><strong class="feat__fig">{featured.resultFigure}</strong>{featured.result}</p></div>
     </div>
-    {featured.testimonial && (
-      <blockquote class="feat__quote"><p>“{featured.testimonial.quote}”</p><footer>{featured.testimonial.author} · {featured.testimonial.role}</footer></blockquote>
-    )}
   </section>
 
-  <!-- MÁS PROYECTOS -->
-  <section class="wrap more">
-    <div class="rev__head"><h2>{t.more}</h2><a href={routes.projects[lang]}>{t.allProjects}</a></div>
-    <div class="more__grid">
-      {moreProjects.map((p) => (
-        <article><img class={p.bw ? "ph bw" : "ph"} src={p.img} srcset={srcset(p.img)} sizes="(min-width: 860px) 33vw, (min-width: 520px) 50vw, 100vw" alt={`${p.tag} · ${p.client}`} width="600" height="750" loading="lazy" /><h3>{p.tag}</h3><span class="lbl">{p.client}</span></article>
-      ))}
+  <!-- 4. SERVICIO + CTA -->
+  <section id="metodo" class="stone">
+    <div class="wrap method">
+      <div class="method__head">
+        <div><p class="lbl">{t.methodEyebrow}</p><h2 class="h2">{home2.methodTitle}</h2></div>
+        <p>{t.methodNote}</p>
+      </div>
+      <div class="method__grid">
+        {phases.map((f) => (
+          <a class="method__card" href={phasePath(lang, f.slug)}>
+            <span class="method__n">{f.n}</span>
+            <h3>{f.title}</h3>
+            <p class="method__short">{home2.phaseShort[f.id]}</p>
+            <span class="method__go">{t.startHere}</span>
+          </a>
+        ))}
+      </div>
+      <a class="btn method__cta" href="#contacto">{home2.methodCta}</a>
     </div>
   </section>
 
-  <!-- EN CURSO -->
-  <section class="dark">
-    <div class="wrap wip">
-      <div><p class="lbl">{t.wipEyebrow}</p><h2 class="h2">{t.wipTitle}</h2></div>
-      <div class="wip__grid">
-        {wip.map((w) => (
-          <article class="wip__card">
-            {w.img ? <img class="ph wip__img" src={w.img} srcset={srcset(w.img)} sizes="(min-width: 1100px) 25vw, (min-width: 520px) 50vw, 100vw" alt={`${w.use} · ${w.client}`} width="600" height="450" loading="lazy" /> : <div class="wip__img wip__ph" aria-hidden="true"></div>}
-            <h3>{w.use.split(' · ')[0]}</h3>
-            <span class="wip__m2">{w.use.split(' · ')[1]}</span>
-            <span class="lbl">{w.client} · {t.phaseLabel} {phases.find((f) => f.id === w.phase)?.title}</span>
-            <p>{w.text}</p>
-          </article>
+  <!-- 5-6. BENEFICIOS: LICENCIAS -->
+  <section class="wrap usp">
+    <img class="ph usp__img" src={usp.image.src} srcset={srcset(usp.image.src)} sizes="(min-width: 900px) 50vw, 100vw" alt={usp.image.alt} width="800" height="1000" loading="lazy" />
+    <div class="usp__body">
+      <p class="lbl">{usp.eyebrow}</p>
+      <h2 class="h2">{usp.title}</h2>
+      <div class="usp__proofs">
+        {usp.proofs.map((p) => (
+          <div>{p.icon && <svg class="usp__icon" viewBox="0 0 32 32" aria-hidden="true" set:html={icons[p.icon]} />}<strong>{p.title}</strong><span class="lbl">{p.tag}</span><span>{p.text}</span></div>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- RESEÑAS -->
+  <!-- 7. BONUS + CTA -->
+  <section class="wrap">
+    <div class="bonus">
+      <div><p class="lbl">{home2.bonus.eyebrow}</p><h2>{home2.bonus.title}</h2><p>{home2.bonus.text}</p></div>
+      <a class="btn" href="#contacto">{home2.bonus.cta}</a>
+    </div>
+  </section>
+
+  <!-- 8. AUTORIDAD: CIFRAS + EQUIPO -->
+  <section id="equipo" class="stone">
+    <div class="wrap auth">
+      <p class="lbl">{home2.authority}</p>
+      <div class="stats">
+        <div><span class="stats__n">{stats.yearsLabel}</span><span class="stats__t">{stats.yearsText}</span></div>
+        <div><span class="stats__n">{stats.projects}</span><span class="stats__t">{t.projectsDone}</span></div>
+        <div><span class="stats__n">{s.obra}</span><span class="stats__t">{t.works}</span></div>
+        <div><span class="stats__n">{s.m2}</span><span class="stats__t">{t.m2}</span></div>
+      </div>
+      <div class="team">
+        <div class="team__body"><h2 class="h2">{team.title}</h2><p>{team.text}</p><a class="team__more" href={routes.team[lang]}>{ui[lang].teamPage.more}</a></div>
+        <img class="ph" src={team.image.src} srcset={srcset(team.image.src)} sizes="(min-width: 860px) 60vw, 100vw" alt={team.image.alt} width="900" height="600" loading="lazy" />
+        <div class="team__partners">
+          {team.partners.map((p) => (
+            <div class="team__p">{p.img && <img class="ph" src={p.img} alt={p.name} width="72" height="72" loading="lazy" />}
+              <div><strong>{p.name}</strong><span>{p.role}</span>{p.title && <span class="team__role">{p.title}</span>}{p.note && <span class="team__note">{p.note}</span>}</div></div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. TESTIMONIOS + PROYECTOS -->
   <section class="wrap rev">
     <div class="rev__head"><div><p class="lbl">{t.revEyebrow}</p><h2>{t.revTitle}</h2></div>
       <a href="https://search.google.com/local/reviews?placeid=ChIJv3MWA6yXpBIRj6tO7BPYQxA" rel="noopener" target="_blank">{t.revAll}</a></div>
@@ -165,22 +162,16 @@ const faqLd = {
       ))}
     </div>
   </section>
-
-  <!-- EQUIPO -->
-  <section id="equipo" class="stone">
-    <div class="wrap team">
-      <div class="team__body"><p class="lbl">{t.about}</p><h2 class="h2">{team.title}</h2><p>{team.text}</p><a class="team__more" href={routes.team[lang]}>{ui[lang].teamPage.more}</a></div>
-      <img class="ph" src={team.image.src} srcset={srcset(team.image.src)} sizes="(min-width: 860px) 60vw, 100vw" alt={team.image.alt} width="900" height="600" loading="lazy" />
-      <div class="team__partners">
-        {team.partners.map((p) => (
-          <div class="team__p">{p.img && <img class="ph" src={p.img} alt={p.name} width="72" height="72" loading="lazy" />}
-            <div><strong>{p.name}</strong><span>{p.role}</span>{p.title && <span class="team__role">{p.title}</span>}{p.note && <span class="team__note">{p.note}</span>}</div></div>
-        ))}
-      </div>
+  <section class="wrap more">
+    <div class="rev__head"><h2>{t.more}</h2><a href={routes.projects[lang]}>{t.allProjects}</a></div>
+    <div class="more__grid">
+      {moreProjects.map((p) => (
+        <article><img class={p.bw ? "ph bw" : "ph"} src={p.img} srcset={srcset(p.img)} sizes="(min-width: 860px) 33vw, (min-width: 520px) 50vw, 100vw" alt={`${p.tag} · ${p.client}`} width="600" height="750" loading="lazy" /><h3>{p.tag}</h3><span class="lbl">{p.client}</span></article>
+      ))}
     </div>
   </section>
 
-  <!-- FAQ -->
+  <!-- FAQ (objeciones) -->
   <section class="wrap faq">
     <div><p class="lbl">{t.faqEyebrow}</p><h2>{t.faqTitle}</h2></div>
     <div>
@@ -190,17 +181,7 @@ const faqLd = {
     </div>
   </section>
 
-  <!-- BLOG -->
-  {blog.length > 0 && <section class="wrap blog">
-    <div class="rev__head"><h2>{t.blogTitle}</h2><a href={routes.blog[lang]}>{t.blogAll}</a></div>
-    <div class="blog__grid">
-      {blog.map((b) => (
-        <a href={`${routes.blog[lang]}${b.slug}/`}><span class="lbl">{b.phase}</span><h3>{b.title}</h3></a>
-      ))}
-    </div>
-  </section>}
-
-  <!-- CONTACTO -->
+  <!-- 10. DESTINO + CTA FINAL -->
   <section id="contacto" class="dark">
     <div class="wrap cta">
       <p class="lbl">{t.ctaEyebrow}</p>
@@ -264,7 +245,7 @@ const faqLd = {
   .method__head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px; }
   .method__head .h2 { max-width: 20ch; margin-top: 16px; } .method__head > p { max-width: 36ch; }
   .method__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr)); gap: 16px; }
-  .method__card { display: flex; flex-direction: column; gap: 16px; padding: 32px 28px 36px; background: var(--bone); text-decoration: none; min-height: 380px; }
+  .method__card { display: flex; flex-direction: column; gap: 16px; padding: 32px 28px 36px; background: var(--bone); text-decoration: none; min-height: 240px; }
   .method__card h3 { font-size: 24px; text-transform: uppercase; letter-spacing: .06em; } .method__n { font-size: 14px; color: var(--muted); }
   .method__sub { font-weight: 600; font-size: 15px; line-height: 1.4; color: var(--ink); }
   .method__get { font-size: 15px; border-top: 1px solid var(--line); padding-top: 14px; } .method__get .lbl { display: block; margin-bottom: 6px; }
@@ -324,4 +305,30 @@ const faqLd = {
   .cta { padding-block: clamp(64px, 10vw, 128px); display: flex; flex-direction: column; gap: 32px; align-items: flex-start; }
   .cta__title { font-size: clamp(38px, 5.6vw, 80px); line-height: 1; letter-spacing: -.02em; max-width: 16ch; }
   .cta__text { font-size: 19px; max-width: 44ch; color: #c9c8bb; }
+
+  /* Home v2 */
+  .chips { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  .chips__lbl { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-right: 6px; }
+  .chip { display: inline-flex; align-items: center; gap: 8px; border: 1px solid rgba(32,33,36,.25); padding: 7px 12px; font-size: 14px; }
+  .chip svg { width: 18px; height: 18px; fill: none; stroke: var(--ink); stroke-width: 1.6; }
+  .logos { padding-block: clamp(40px, 6vw, 64px); display: flex; flex-direction: column; gap: 24px; }
+  .pains { padding-block: clamp(64px, 9vw, 104px); display: flex; flex-direction: column; gap: 40px; }
+  .pains__grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; }
+  @media (max-width: 980px) { .pains__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  .pains__grid li { border-top: 1px solid var(--sage); padding-top: 22px; display: flex; flex-direction: column; gap: 14px; }
+  .pains__grid li:first-child { border-top-width: 3px; }
+  .pains__grid svg { width: 34px; height: 34px; fill: none; stroke: #eaeae4; stroke-width: 1.5; }
+  .pains__grid p { font-size: clamp(17px, 1.7vw, 22px); line-height: 1.3; }
+  .method__short { color: var(--text2); font-size: 16px; line-height: 1.4; }
+  .method__cta { align-self: flex-start; }
+  .bonus { margin-block: clamp(16px, 4vw, 48px) clamp(64px, 9vw, 104px); background: var(--sage); padding: clamp(28px, 4vw, 56px); display: flex; justify-content: space-between; align-items: center; gap: 28px; flex-wrap: wrap; }
+  .bonus > div { display: flex; flex-direction: column; gap: 12px; max-width: 52ch; }
+  .bonus .lbl { color: var(--ink); }
+  .bonus h2 { font-size: clamp(26px, 3vw, 40px); line-height: 1.1; }
+  .bonus p:last-child { font-size: 17px; }
+  .auth { padding-block: clamp(64px, 10vw, 112px); display: flex; flex-direction: column; gap: 40px; }
+  .auth .stats { padding-block: 0 40px; border-bottom: 1px solid rgba(32,33,36,.2); }
+  .auth .stats__t { color: var(--text2); }
+  .auth .stats__n { font-size: clamp(32px, 3.2vw, 52px); }
+  .auth .team { padding-block: 0; }
 </style>
