@@ -341,8 +341,8 @@ const faqLd = {
 
   .aud2 { padding-block: clamp(64px, 9vw, 104px) 0; display: flex; flex-direction: column; gap: 32px; }
   .aud2__grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
-  .aud2__grid li { background: var(--sage); color: var(--ink); padding: 22px 24px; display: flex; align-items: center; gap: 14px; font-size: 18px; font-weight: 500; line-height: 1.2; }
-  .aud2__grid svg { flex: none; width: 30px; height: 30px; fill: none; stroke: var(--ink); stroke-width: 1.5; }
-  @media (max-width: 760px) { .aud2__grid { grid-template-columns: 1fr; gap: 8px; } .aud2__grid li { padding: 18px 20px; } }
+  .aud2__grid li { background: rgba(163, 162, 142, .35); color: var(--ink); padding: 32px 24px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 14px; font-size: 22px; font-weight: 500; line-height: 1.2; }
+  .aud2__grid svg { flex: none; width: 34px; height: 34px; fill: none; stroke: var(--ink); stroke-width: 1.5; }
+  @media (max-width: 760px) { .aud2__grid { grid-template-columns: 1fr; gap: 8px; } .aud2__grid li { padding: 18px 20px; flex-direction: row; justify-content: flex-start; text-align: left; font-size: 18px; } }
   .cta__wa { color: #c9c8bb; } .cta__wa a { color: #eaeae4; text-decoration: underline; text-underline-offset: 4px; }
 </style>
