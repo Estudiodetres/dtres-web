@@ -51,7 +51,7 @@ const caseLd = {
   inLanguage: lang,
 };
 ---
-<Base title={meta.homeTitle} description={meta.homeDesc} ogTitle={`${hero.title.replace(/\.$/, '')} · DTRES`} ogDescription={hero.subtitle} jsonLd={[faqLd, caseLd]} lang={lang} alternates={routes.home}>
+<Base title={meta.homeTitle} description={meta.homeDesc} jsonLd={[faqLd, caseLd]} lang={lang} alternates={routes.home}>
   <!-- 1. DESTINO -->
   <section class="wrap hero">
     <p class="lbl">{hero.eyebrow}</p>
