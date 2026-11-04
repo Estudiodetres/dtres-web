@@ -84,6 +84,45 @@ export const featured = {
   transformation: "Due diligence, informe favorable de Patrimoni, canvi d'ús a oficines, projecte i interiorisme, i obra a preu i termini tancats. Façana, coberta, fusta i paviments restaurats.",
   resultFigure: 'Renda anual x2',
   result: 'Superfície útil de 500 a 743 m², capacitat de 20 a 50 persones i amortització en 8,8 anys.',
+  case: {
+    "eyebrow": "Cas d'èxit",
+    "title": "Patrimoni catalogat de 1910 · IESE Business School",
+    "subtitle": "Un edifici mig en desús convertit en oficines per a 50 persones. El doble de renda, sense tocar el patrimoni.",
+    "steps": [
+      {
+        "label": "Inici",
+        "text": "Sense llicència d'activitat, el 30% dels metres quadrats quedava fora de normativa i no es podia fer servir.",
+        "img": "/img/iese-l-inicio.jpg",
+        "alt": "IESE Edifici L abans de l'obra"
+      },
+      {
+        "label": "Transformació",
+        "text": "Due diligence per fixar cost, terminis, permisos i capacitat. Permís d'obra amb Patrimoni i obra a preu i termini tancats amb el constructor.",
+        "img": "/img/iese-l-obra.jpg",
+        "alt": "IESE Edifici L durant l'obra"
+      },
+      {
+        "label": "Resultat",
+        "text": "Oficines per a 50 persones amb instal·lacions noves, domòtica i ventilació amb recuperador de calor. Més aïllament, paviment original recuperat i millor qualificació energètica.",
+        "img": "/img/iese-l-resultado.jpg",
+        "alt": "IESE Edifici L acabat"
+      }
+    ],
+    "figures": [
+      {
+        "n": "x2",
+        "t": "Renda anual"
+      },
+      {
+        "n": "+49%",
+        "t": "Superfície útil (de 500 a 743 m²)"
+      },
+      {
+        "n": "20 → 50",
+        "t": "Llocs de treball"
+      }
+    ]
+  },
 };
 
 export const moreProjects = [

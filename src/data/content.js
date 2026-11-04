@@ -103,6 +103,45 @@ export const featured = {
   resultFigure: 'Renta anual x2',
   result: 'Superficie útil de 500 a 743 m², capacidad de 20 a 50 personas y amortización en 8,8 años.',
   testimonial: null, // { quote, author, role }
+  case: {
+    "eyebrow": "Caso de éxito",
+    "title": "Patrimonio catalogado de 1910 · IESE Business School",
+    "subtitle": "Un edificio a medio usar convertido en oficinas para 50 personas. El doble de renta, sin tocar el patrimonio.",
+    "steps": [
+      {
+        "label": "Inicio",
+        "text": "Sin licencia de actividad, el 30% de los metros cuadrados quedaba fuera de normativa y no se podía usar.",
+        "img": "/img/iese-l-inicio.jpg",
+        "alt": "IESE Edificio L antes de la obra"
+      },
+      {
+        "label": "Transformación",
+        "text": "Due diligence para fijar coste, plazos, permisos y capacidad. Permiso de obra con Patrimonio y obra a precio y plazo cerrados con la constructora.",
+        "img": "/img/iese-l-obra.jpg",
+        "alt": "IESE Edificio L durante la obra"
+      },
+      {
+        "label": "Resultado",
+        "text": "Oficinas para 50 personas con instalaciones nuevas, domótica y ventilación con recuperador de calor. Más aislamiento, pavimento original recuperado y mejor calificación energética.",
+        "img": "/img/iese-l-resultado.jpg",
+        "alt": "IESE Edificio L terminado"
+      }
+    ],
+    "figures": [
+      {
+        "n": "x2",
+        "t": "Renta anual"
+      },
+      {
+        "n": "+49%",
+        "t": "Superficie útil (de 500 a 743 m²)"
+      },
+      {
+        "n": "20 → 50",
+        "t": "Puestos de trabajo"
+      }
+    ]
+  },
 };
 
 // Más proyectos destacados en la home (por imagen de allProjects, en este orden)

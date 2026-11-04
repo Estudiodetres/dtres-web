@@ -84,6 +84,45 @@ export const featured = {
   transformation: 'Due diligence, favourable heritage report, change of use to offices, design and interiors, and construction at a fixed price and timeline. Façade, roof, timber and floors restored.',
   resultFigure: 'Annual rent x2',
   result: 'Usable area from 500 to 743 m², capacity from 20 to 50 people and payback in 8.8 years.',
+  case: {
+    "eyebrow": "Success story",
+    "title": "Listed 1910 building · IESE Business School",
+    "subtitle": "A half-used building turned into offices for 50 people. Twice the rent, with the heritage intact.",
+    "steps": [
+      {
+        "label": "Starting point",
+        "text": "With no activity licence, 30% of the floor area did not meet regulations and could not be used.",
+        "img": "/img/iese-l-inicio.jpg",
+        "alt": "IESE Building L before works"
+      },
+      {
+        "label": "Transformation",
+        "text": "Due diligence to set cost, timelines, permits and capacity. Building permit with the heritage authority and construction at a fixed price and timeline with the builder.",
+        "img": "/img/iese-l-obra.jpg",
+        "alt": "IESE Building L during works"
+      },
+      {
+        "label": "Result",
+        "text": "Offices for 50 people with new building services, smart controls and heat-recovery ventilation. More insulation, original flooring restored and a better energy rating.",
+        "img": "/img/iese-l-resultado.jpg",
+        "alt": "IESE Building L completed"
+      }
+    ],
+    "figures": [
+      {
+        "n": "x2",
+        "t": "Annual rent"
+      },
+      {
+        "n": "+49%",
+        "t": "Usable area (from 500 to 743 m²)"
+      },
+      {
+        "n": "20 → 50",
+        "t": "Workstations"
+      }
+    ]
+  },
 };
 
 export const moreProjects = [
