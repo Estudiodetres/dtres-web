@@ -109,8 +109,8 @@ const org = {
     --muted: #5c5b50; --text2: #3d3e40; --card: #f3f3ee; --line: rgba(32,33,36,.15);
   }
   *, *::before, *::after { box-sizing: border-box; }
-  html { -webkit-text-size-adjust: 100%; }
-  body { margin: 0; background: var(--bone); color: var(--ink); font: 400 17px/1.5 'Schibsted Grotesk', 'Helvetica Neue', Arial, sans-serif; }
+  html { -webkit-text-size-adjust: 100%; overscroll-behavior-y: none; background: linear-gradient(var(--bone) 50%, var(--ink) 50%); }
+  body { margin: 0; overscroll-behavior-y: none; background: var(--bone); color: var(--ink); font: 400 17px/1.5 'Schibsted Grotesk', 'Helvetica Neue', Arial, sans-serif; }
   img { max-width: 100%; display: block; }
   [hidden] { display: none !important; }
   @media (max-width: 520px) { .cf button { align-self: stretch; justify-content: center; } }
