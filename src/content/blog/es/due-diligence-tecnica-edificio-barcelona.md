@@ -1,4 +1,5 @@
 ---
+seoTitle: "Due diligence técnica de un edificio en Barcelona"
 title: "Due diligence técnica de un edificio en Barcelona: qué revisar antes de comprar"
 description: "Qué analiza una due diligence técnica, urbanística y patrimonial de un edificio en Barcelona, qué documentos pedir y cómo convertirla en una decisión de compra."
 keyword: "due diligence técnica edificio Barcelona"

@@ -68,7 +68,7 @@ export const phases = [
     id: 'entrega', slug: 'lliurament', n: '04', title: 'Lliurament', sub: "Equipament i legalitzacions", alt: ['Lliurament'],
     what: "Disseny i selecció de mobiliari i equipament (FF&E), coordinació de proveïdors, legalitzacions i documentació final.",
     get: "L'edifici equipat i a punt per operar, llogar o vendre.",
-    seoTitle: "FF&E, legalització i lliurament d'edificis rehabilitats",
+    seoTitle: "Legalització, FF&E i lliurament d'edificis",
     intro: "Dissenyem i seleccionem el mobiliari i l'equipament (FF&E), coordinem els proveïdors fins a la instal·lació i tanquem tota la documentació perquè l'edifici operi des del primer dia.",
     includes: ['Disseny i selecció de mobiliari i equipament (FF&E)', 'Coordinació de proveïdors i instal·lació', "Certificat final d'obra, legalitzacions i inspeccions", "Cèdules d'habitabilitat i llicències d'activitat", "Llibre de l'edifici i acompanyament en la posada en marxa"],
   },

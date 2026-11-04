@@ -1,4 +1,5 @@
 ---
+seoTitle: "Edifici catalogat a Barcelona: què fer abans de comprar-lo"
 title: "Edifici catalogat a Barcelona: què cal fer abans de comprar-lo o transformar-lo"
 description: "Què vol dir que un edifici estigui catalogat, què s'hi pot canviar, com funciona l'informe de Patrimoni i com convertir la protecció en valor."
 keyword: "edifici catalogat Barcelona"

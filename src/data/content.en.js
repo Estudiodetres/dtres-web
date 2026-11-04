@@ -68,7 +68,7 @@ export const phases = [
     id: 'entrega', slug: 'handover', n: '04', title: 'Handover', sub: "Fit-out and legal sign-offs", alt: ['Handover'],
     what: 'Furniture, fixtures and equipment (FF&E) design and selection, supplier coordination, legal sign-offs and final documentation.',
     get: "The building fitted out and ready to operate, let or sell.",
-    seoTitle: 'FF&E, legal sign-off and handover of rehabilitated buildings',
+    seoTitle: 'Legal sign-off, FF&E and building handover',
     intro: 'We design and select furniture, fixtures and equipment (FF&E), coordinate suppliers through installation, and close all documentation so the building can operate from day one.',
     includes: ['FF&E design and selection', 'Supplier coordination and installation', 'Completion certificate, legal sign-offs and inspections', 'Habitability certificates and activity licences', 'Building logbook and support during start-up'],
   },

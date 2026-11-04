@@ -1,4 +1,5 @@
 ---
+seoTitle: "Listed building in Barcelona: what to do before buying"
 title: "Listed building in Barcelona: what to do before buying or transforming it"
 description: "What it means for a building to be listed, what can be changed, how the heritage report works and how to turn protection into value."
 keyword: "listed building Barcelona"

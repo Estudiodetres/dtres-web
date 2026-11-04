@@ -1,4 +1,5 @@
 ---
+seoTitle: "Canvi d'ús a habitatge a Barcelona: requisits i terminis"
 title: "Canvi d'ús a habitatge a Barcelona: requisits i terminis"
 description: "Què cal per convertir oficines, locals o equipaments en habitatges a Barcelona: planejament, densitat, habitabilitat, llicències i terminis reals."
 keyword: "canvi d'ús a habitatge Barcelona"

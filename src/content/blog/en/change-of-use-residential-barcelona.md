@@ -1,4 +1,5 @@
 ---
+seoTitle: "Change of use to residential in Barcelona: requirements"
 title: "Converting a building to residential use in Barcelona: requirements and timelines"
 description: "What it takes to turn offices, commercial premises or facilities into homes in Barcelona: planning, density, habitability, permits and realistic timelines."
 keyword: "change of use to residential Barcelona"

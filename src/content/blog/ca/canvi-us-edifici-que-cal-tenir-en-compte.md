@@ -1,6 +1,7 @@
 ---
+seoTitle: "Canvi d'ús d'un edifici: què revisar abans d'invertir"
 title: "Canviar l'ús d'un edifici: què cal tenir en compte abans d'invertir"
-description: "Les sis preguntes que cal respondre abans de canviar l'ús d'un edifici a Barcelona: planejament, normativa del nou ús, estructura, instal·lacions, terminis i rendibilitat."
+description: "Les sis preguntes abans de canviar l'ús d'un edifici a Barcelona: planejament, normativa, estructura, instal·lacions, terminis i rendibilitat."
 keyword: "canvi d'ús edifici Barcelona"
 phase: "Viabilitat"
 author: "Nacho Vallhonrat"

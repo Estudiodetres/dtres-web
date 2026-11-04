@@ -9,6 +9,7 @@ export const site = {
   phone: '+34 931 255 444',
   phoneDisplay: '931 255 444',
   whatsapp: '34655307513', // WhatsApp de Nacho
+  social: [], // TODO: LinkedIn del estudio, Instagram… (https://…)
   address: { street: "Carrer d'Osi 23, baixos 2a", postalCode: '08034', city: 'Barcelona', region: 'Catalunya', country: 'ES' },
   placeId: 'ChIJv3MWA6yXpBIRj6tO7BPYQxA',
   areaServed: ['Barcelona', 'Catalunya'],
@@ -87,7 +88,7 @@ export const phases = [
     id: 'entrega', slug: 'entrega', n: '04', title: 'Entrega', sub: "Equipamiento y legalizaciones", alt: ['Entrega', 'FF&E y entrega'],
     what: 'Diseño y selección de mobiliario y equipamiento (FF&E), coordinación de proveedores, legalizaciones y documentación final.',
     get: "El edificio equipado y listo para operar, alquilar o vender.",
-    seoTitle: 'FF&E, legalización y entrega de edificios rehabilitados',
+    seoTitle: 'Legalización, FF&E y entrega de edificios',
     intro: 'Diseñamos y seleccionamos el mobiliario y el equipamiento (FF&E), coordinamos a los proveedores hasta la instalación y cerramos toda la documentación para que el edificio opere desde el primer día.',
     includes: ['Diseño y selección de mobiliario y equipamiento (FF&E)', 'Coordinación de proveedores e instalación', 'Certificado final de obra, legalizaciones e inspecciones', 'Cédulas de habitabilidad y licencias de actividad', 'Libro del edificio y acompañamiento en la puesta en marcha'],
   },

@@ -36,8 +36,16 @@ const faqLd = {
   '@type': 'FAQPage',
   mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
 };
+const caseLd = {
+  '@context': 'https://schema.org', '@type': 'CreativeWork', '@id': 'https://detres.eu/#caso-iese',
+  name: featured.case.title, headline: `${featured.case.eyebrow}: ${featured.case.title}`, description: featured.case.subtitle,
+  creator: { '@id': 'https://detres.eu/#org' }, about: { '@type': 'Place', name: 'IESE Business School, Edificio L', address: 'Barcelona' },
+  image: featured.case.steps.map((x) => new URL(x.img, 'https://detres.eu').href),
+  text: [...featured.case.steps.map((x) => `${x.label}: ${x.text}`), `Resultados: ${featured.case.figures.map((f) => `${f.n} ${f.t}`).join('; ')}.`].join(' '),
+  inLanguage: lang,
+};
 ---
-<Base title={meta.homeTitle} description={meta.homeDesc} jsonLd={[faqLd]} lang={lang} alternates={routes.home}>
+<Base title={meta.homeTitle} description={meta.homeDesc} jsonLd={[faqLd, caseLd]} lang={lang} alternates={routes.home}>
   <!-- 1. DESTINO -->
   <section class="wrap hero">
     <p class="lbl">{hero.eyebrow}</p>

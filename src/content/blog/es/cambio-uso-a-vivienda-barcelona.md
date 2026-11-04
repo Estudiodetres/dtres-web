@@ -1,4 +1,5 @@
 ---
+seoTitle: "Cambio de uso a vivienda en Barcelona: requisitos y plazos"
 title: "Cambio de uso a vivienda en Barcelona: requisitos y plazos"
 description: "Qué hace falta para convertir oficinas, locales o equipamientos en viviendas en Barcelona: planeamiento, densidad, habitabilidad, licencias y plazos reales."
 keyword: "cambio de uso a vivienda Barcelona"

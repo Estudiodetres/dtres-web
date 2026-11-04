@@ -1,6 +1,7 @@
 ---
+seoTitle: "Cambio de uso de un edificio: qué revisar antes de invertir"
 title: "Cambiar el uso de un edificio: qué tener en cuenta antes de invertir"
-description: "Las seis preguntas que hay que responder antes de cambiar el uso de un edificio en Barcelona: planeamiento, normativa del nuevo uso, estructura, instalaciones, plazos y rentabilidad."
+description: "Las seis preguntas antes de cambiar el uso de un edificio en Barcelona: planeamiento, normativa, estructura, instalaciones, plazos y rentabilidad."
 keyword: "cambio de uso edificio Barcelona"
 phase: "Viabilidad"
 author: "Nacho Vallhonrat"

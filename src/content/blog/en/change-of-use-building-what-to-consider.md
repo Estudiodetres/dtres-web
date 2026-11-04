@@ -1,4 +1,5 @@
 ---
+seoTitle: "Change of use of a building: what to check before investing"
 title: "Changing a building's use: what to consider before you invest"
 description: "The six questions to answer before changing the use of a building in Barcelona: planning, rules for the new use, structure, services, timelines and returns."
 keyword: "change of use building Barcelona"

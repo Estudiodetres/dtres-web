@@ -1,4 +1,5 @@
 ---
+seoTitle: "Segregar una vivienda en Barcelona: requisitos y rentabilidad"
 title: "Segregar una vivienda en varias en Barcelona: requisitos y rentabilidad"
 description: "Cuándo se puede dividir una vivienda grande en varias en Barcelona, qué requisitos urbanísticos y de habitabilidad hay que cumplir y cómo calcular si compensa."
 keyword: "segregar vivienda Barcelona"

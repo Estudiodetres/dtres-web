@@ -1,4 +1,5 @@
 ---
+seoTitle: "Subdividing an apartment in Barcelona: rules and returns"
 title: "Subdividing an apartment into several in Barcelona: requirements and returns"
 description: "When a large apartment in Barcelona can be split into several, which planning and habitability requirements apply, and how to work out whether it pays off."
 keyword: "subdivide apartment Barcelona"

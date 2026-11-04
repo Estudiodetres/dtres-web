@@ -1,7 +1,7 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { site } from '../data/content.js';
+import { site, team as esTeam, reviews as esReviews } from '../data/content.js';
 import { htmlLang, ogLocale, langs } from '../i18n/index.js';
 import '@fontsource/schibsted-grotesk/400.css';
 import '@fontsource/schibsted-grotesk/500.css';
@@ -43,8 +43,18 @@ const org = {
     'Licencias de obra y actividad en Barcelona',
     'Interiorismo',
     'Dirección de obra',
+    'Cambio de uso de edificios',
+    'Transformación de activos inmobiliarios',
+    'Licencias de obra por fases',
   ],
-  sameAs: [`https://www.google.com/maps/place/?q=place_id:${site.placeId}`],
+  slogan: 'Transformamos edificios para darles un nuevo uso.',
+  description: 'Estudio de arquitectura e interiorismo en Barcelona especializado en transformar edificios para un nuevo uso: due diligence técnica, cambio de uso, rehabilitación de edificios catalogados, licencias, interiorismo y dirección de obra.',
+  numberOfEmployees: { '@type': 'QuantitativeValue', value: 12 },
+  audience: ['Inversores y fondos inmobiliarios', 'Fundaciones e instituciones', 'Propietarios y family offices', 'Empresas'].map((a) => ({ '@type': 'BusinessAudience', audienceType: a })),
+  founder: esTeam.partners.filter((p) => /cofundador/.test(p.role)).map((p) => ({ '@type': 'Person', name: p.name, jobTitle: p.title, description: `${p.role}. ${p.note}` })),
+  employee: esTeam.partners.map((p) => ({ '@type': 'Person', name: p.name, jobTitle: p.title, worksFor: { '@id': `${site.url}/#org` }, affiliation: { '@type': 'CollegeOrUniversity', name: 'Escuela de Arquitectura UIC Barcelona' } })),
+  review: esReviews.map((r) => ({ '@type': 'Review', reviewRating: { '@type': 'Rating', ratingValue: r.rating, bestRating: 5 }, author: { '@type': 'Person', name: r.author }, reviewBody: r.quote, publisher: { '@type': 'Organization', name: 'Google' } })),
+  sameAs: [`https://www.google.com/maps/place/?q=place_id:${site.placeId}`, ...(site.social || [])],
 };
 ---
 <!doctype html>

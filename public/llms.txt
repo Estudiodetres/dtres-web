@@ -1,11 +1,14 @@
 # DTRES
 
-> Estudio de arquitectura e interiorismo de Barcelona (ESDETRES Arquitectura e Interiorismo SLP, desde 2017) especializado en transformar edificios para darles un nuevo uso: due diligence técnica, cambio de uso, rehabilitación de edificios catalogados, licencias, interiorismo y dirección de obra en Barcelona y Catalunya.
+> Estudio de arquitectura e interiorismo de Barcelona (ESDETRES Arquitectura e Interiorismo SLP, desde 2017) especializado en transformar edificios para darles un nuevo uso: due diligence técnica, cambio de uso, rehabilitación de edificios catalogados, licencias de obra y actividad, interiorismo y dirección de obra en Barcelona y Catalunya. Un solo interlocutor de principio a fin.
 
-- Clientes: fondos e inversores Real Estate, family offices, fundaciones e instituciones, empresas y agencias inmobiliarias.
-- Especialidad: normativa urbanística y patrimonial de Catalunya; edificios catalogados.
-- +15 años de experiencia de los socios fundadores; +100 proyectos; +20.000 m² transformados.
-- Contacto: info@detres.eu · 931 255 444 · Carrer d'Osi 23, baixos 2a, 08034 Barcelona.
+- Para quién: inversores y fondos inmobiliarios, fundaciones e instituciones, propietarios y family offices, y empresas que necesitan su sede.
+- Especialidad: normativa urbanística y patrimonial de Catalunya, edificios catalogados y licencias por fases para acortar plazos.
+- Método en 4 fases: viabilidad (due diligence), proyecto y licencias, obra y entrega (legalizaciones y boletines tramitados durante la obra).
+- Equipo: 12 personas en Barcelona. Socios: Nacho Vallhonrat y Pablo Notario (arquitectos, cofundadores, profesores de la Escuela de Arquitectura UIC) e Iñigo Ugalde (doctor arquitecto, director de la Escuela de Arquitectura UIC).
+- +15 años de experiencia de los socios; +100 proyectos; +20.000 m² transformados; +24 M€ de obra gestionada.
+- Primer paso: consultoría gratuita de 30 minutos con un socio del estudio.
+- Contacto: info@detres.eu · 931 255 444 · WhatsApp +34 655 307 513 · Carrer d'Osi 23, baixos 2a, 08034 Barcelona.
 
 ## Idiomas
 - Español: https://detres.eu/
@@ -13,23 +16,29 @@
 - English: https://detres.eu/en/
 
 ## Servicios
-- [Due diligence técnica de edificios en Barcelona](https://detres.eu/fases/viabilidad/)
+- [Viabilidad: due diligence técnica de edificios en Barcelona](https://detres.eu/fases/viabilidad/)
 - [Proyecto, interiorismo y licencias](https://detres.eu/fases/proyecto-y-licencias/)
 - [Dirección de obra y project management](https://detres.eu/fases/obra/)
 - [Legalización y entrega](https://detres.eu/fases/entrega/)
 
-## Proyectos de referencia
-- IESE Business School, Edificio L (Barcelona): edificio catalogado de 1910, cambio de uso a oficinas; superficie útil de 500 a 743 m², capacidad de 20 a 50 personas.
-- Fundació Familiar Catalana: plan especial integral y transformación de Vila Regina (edificio catalogado) en oficinas de la UIC.
-- Fundació Privada Montseny (Lepant 303): antiguo coliving convertido en 5 viviendas de alquiler.
-- Colegio Mayor Universitario Bonaigua: rehabilitación integral de 4.000 m² (en obra).
+## Caso de éxito
+- IESE Business School, Edificio L (Barcelona, edificio catalogado de 1910). Inicio: sin licencia de actividad, el 30% de los m² estaba fuera de normativa y no se podía usar. Transformación: due diligence, permiso de obra con Patrimonio y obra a precio y plazo cerrados. Resultado: oficinas para 50 personas con instalaciones nuevas, domótica, ventilación con recuperador de calor, más aislamiento y pavimento original recuperado. Renta anual x2, superficie útil +49% (de 500 a 743 m²), de 20 a 50 puestos de trabajo.
+
+## Otros proyectos
+- Colegio Mayor Universitario Pedralbes: residencia universitaria, 1.500 m².
+- Associació Cultural Carena: residencia senior (716 m²) y club juvenil (1.800 m²).
+- Papiol: showroom y oficinas, 800 m².
+- Hotel Le Mirath (El Cairo): interiorismo de hotel, 1.000 m².
+- En curso: Colegio Mayor Bonaigua (residencia universitaria, 4.000 m², en obra), oficinas de la UIC en Vila Regina (1.200 m²), Fundació Privada Montseny (5 viviendas por cambio de uso, 600 m²), Relanza (5 viviendas por cambio de uso, 500 m²), centro juvenil Heads Up Barcelona (500 m², edificio protegido).
 
 ## Más información
 - [Todos los proyectos](https://detres.eu/proyectos/)
-- [Blog: guías para propietarios](https://detres.eu/blog/)
+- [Equipo](https://detres.eu/equipo/)
+- [Blog: guías para propietarios e inversores](https://detres.eu/blog/)
 - [Due diligence técnica de un edificio en Barcelona](https://detres.eu/blog/due-diligence-tecnica-edificio-barcelona/)
 - [Cambio de uso a vivienda en Barcelona](https://detres.eu/blog/cambio-uso-a-vivienda-barcelona/)
+- [Edificio catalogado: qué hacer antes de comprarlo](https://detres.eu/blog/edificio-catalogado-que-hacer/)
 - [Segregar una vivienda en varias en Barcelona](https://detres.eu/blog/segregar-vivienda-barcelona/)
 
 ## English summary
-DTRES is a Barcelona architecture and interior design studio that transforms buildings for a new use: technical due diligence, change of use, listed-building rehabilitation, permits, interior design and construction management across Barcelona and Catalonia. Services: https://detres.eu/en/services/feasibility/ · Projects: https://detres.eu/en/projects/
+DTRES is a Barcelona architecture and interior design studio that transforms buildings for a new use: technical due diligence, change of use, listed-building rehabilitation, phased permits, interior design and construction management across Barcelona and Catalonia, with a single point of contact. Clients: investors and real estate funds, foundations and institutions, property owners and family offices, and companies. Featured case: IESE Business School Building L (listed, 1910): twice the annual rent, +49% usable area, from 20 to 50 workstations. Services: https://detres.eu/en/services/feasibility/ · Projects: https://detres.eu/en/projects/ · Free 30-minute consultation with a partner.

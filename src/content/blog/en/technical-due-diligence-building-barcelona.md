@@ -1,4 +1,5 @@
 ---
+seoTitle: "Technical due diligence of a building in Barcelona"
 title: "Technical due diligence on a building in Barcelona: what to check before you buy"
 description: "What technical, planning and heritage due diligence on a Barcelona building covers, which documents to request and how to turn it into a buying decision."
 keyword: "building due diligence Barcelona"

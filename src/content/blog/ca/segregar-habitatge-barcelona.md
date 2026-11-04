@@ -1,4 +1,5 @@
 ---
+seoTitle: "Segregar un habitatge a Barcelona: requisits i rendibilitat"
 title: "Segregar un habitatge en diversos a Barcelona: requisits i rendibilitat"
 description: "Quan es pot dividir un habitatge gran en diversos a Barcelona, quins requisits urbanístics i d'habitabilitat cal complir i com calcular si compensa."
 keyword: "segregar habitatge Barcelona"
