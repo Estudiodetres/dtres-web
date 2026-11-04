@@ -153,15 +153,11 @@ export const home2 = {
       },
       {
         "icon": "clock",
-        "text": "The permit never arrives and the building sits empty."
+        "text": "Every month that goes by is return your building isn't earning, and your investment thesis starts to wobble."
       },
       {
         "icon": "blocked",
         "text": "The heritage authority blocks what you wanted to do."
-      },
-      {
-        "icon": "cost",
-        "text": "Works drag on and the budget spirals."
       }
     ]
   },

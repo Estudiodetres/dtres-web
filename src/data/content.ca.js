@@ -153,15 +153,11 @@ export const home2 = {
       },
       {
         "icon": "clock",
-        "text": "La llicència no arriba i l'edifici continua buit."
+        "text": "Cada mes que passa és rendibilitat que deixes de guanyar amb el teu edifici, i la teva tesi d'inversió comença a trontollar."
       },
       {
         "icon": "blocked",
         "text": "Patrimoni bloqueja el que volies fer."
-      },
-      {
-        "icon": "cost",
-        "text": "L'obra s'allarga i el pressupost es dispara."
       }
     ]
   },

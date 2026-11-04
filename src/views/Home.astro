@@ -313,8 +313,8 @@ const faqLd = {
   .chip svg { width: 18px; height: 18px; fill: none; stroke: var(--ink); stroke-width: 1.6; }
   .logos { padding-block: clamp(40px, 6vw, 64px); display: flex; flex-direction: column; gap: 24px; }
   .pains { padding-block: clamp(64px, 9vw, 104px); display: flex; flex-direction: column; gap: 40px; }
-  .pains__grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; }
-  @media (max-width: 980px) { .pains__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  .pains__grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+  @media (max-width: 760px) { .pains__grid { grid-template-columns: 1fr; } }
   .pains__grid li { border-top: 1px solid var(--sage); padding-top: 22px; display: flex; flex-direction: column; gap: 14px; }
   .pains__grid li:first-child { border-top-width: 3px; }
   .pains__grid svg { width: 34px; height: 34px; fill: none; stroke: #eaeae4; stroke-width: 1.5; }

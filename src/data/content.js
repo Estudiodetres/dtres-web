@@ -246,15 +246,11 @@ export const home2 = {
       },
       {
         "icon": "clock",
-        "text": "La licencia no llega y el edificio sigue vacío."
+        "text": "Cada mes que pasa es rentabilidad que dejas de ganar con tu edificio, y tu tesis de inversión empieza a tambalearse."
       },
       {
         "icon": "blocked",
         "text": "Patrimonio bloquea lo que querías hacer."
-      },
-      {
-        "icon": "cost",
-        "text": "La obra se alarga y el presupuesto se dispara."
       }
     ]
   },
