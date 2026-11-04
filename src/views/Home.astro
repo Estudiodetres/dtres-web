@@ -365,12 +365,13 @@ const faqLd = {
   .case__steps li { display: flex; flex-direction: column; gap: 12px; }
   .case__steps figure { margin: 0; display: flex; flex-direction: column; gap: 12px; }
   .case__steps img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; }
-  .case__steps h3 { font-size: clamp(22px, 2.2vw, 30px); font-weight: 600; text-transform: uppercase; letter-spacing: .04em; display: flex; align-items: baseline; gap: 10px; }
-  .case__steps h3 span { font-size: 14px; font-weight: 500; color: var(--muted); }
+  .case__steps h3 { font-size: clamp(18px, 1.6vw, 22px); font-weight: 600; text-transform: uppercase; letter-spacing: .04em; display: flex; align-items: baseline; gap: 10px; }
+  .case__steps h3 span { font-size: inherit; font-weight: 500; color: var(--muted); }
   .case__steps figcaption { font-size: 15px; line-height: 1.45; color: var(--text2); }
-  .case__figs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px; border-top: 1px solid var(--ink); padding-top: 28px; }
-  .case__figs div { display: flex; flex-direction: column; gap: 6px; }
+  .case__figs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; background: var(--sage); padding: clamp(28px, 4vw, 48px) 0; }
+  .case__figs div { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 8px; padding-inline: 16px; }
+  .case__figs div + div { border-left: 1px solid rgba(32,33,36,.18); }
   .case__figs strong { font-size: clamp(40px, 5vw, 72px); font-weight: 500; letter-spacing: -.02em; line-height: 1; }
-  .case__figs span { font-size: 16px; color: var(--text2); }
-  @media (max-width: 860px) { .case__steps { grid-template-columns: 1fr; gap: 40px; } .case__figs { grid-template-columns: 1fr; gap: 20px; } }
+  .case__figs span { font-size: 16px; color: var(--ink); }
+  @media (max-width: 860px) { .case__steps { grid-template-columns: 1fr; gap: 40px; } .case__figs { grid-template-columns: 1fr; gap: 24px; } .case__figs div + div { border-left: 0; border-top: 1px solid rgba(32,33,36,.18); padding-top: 24px; } }
 </style>
