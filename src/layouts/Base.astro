@@ -97,7 +97,8 @@ const org = {
     .wa { position: fixed; right: max(16px, env(safe-area-inset-right, 0px)); bottom: calc(16px + env(safe-area-inset-bottom, 0px)); z-index: 50; display: inline-flex; align-items: center; gap: 10px; background: #a3a28e; color: #202124; padding: 12px 18px 12px 14px; text-decoration: none; font-size: 15px; font-weight: 500; box-shadow: 0 6px 20px rgba(0,0,0,.18); }
     .wa:hover { background: #8f8e7a; color: #202124; }
     .wa svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linejoin: round; }
-    @media (max-width: 600px) { .wa span { display: none; } .wa { padding: 14px; border-radius: 50%; } }
+    .wa { padding: 15px; border-radius: 50%; } .wa span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+    .wa svg { width: 28px; height: 28px; }
   </style>
 </body>
 </html>
