@@ -166,10 +166,10 @@ export const home2 = {
     ]
   },
   "bonus": {
-    "eyebrow": "Free audit · 30 min",
+    "eyebrow": "Free consultation · 30 min with a partner",
     "title": "Your first feasibility check, in 30 minutes.",
     "text": "A partner architect reviews your building or idea and tells you whether it is feasible, what the risks are and how to move on to a due diligence.",
-    "cta": "Book my free audit"
+    "cta": "Book my free consultation"
   },
   "methodTitle": "Four phases. One point of contact.",
   "methodCta": "Start with feasibility",

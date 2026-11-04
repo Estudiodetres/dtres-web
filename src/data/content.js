@@ -259,10 +259,10 @@ export const home2 = {
     ]
   },
   "bonus": {
-    "eyebrow": "Auditoría gratuita · 30 min",
+    "eyebrow": "Consultoría gratuita · 30 min con un socio",
     "title": "Tu primera viabilidad, en 30 minutos.",
     "text": "Un socio arquitecto revisa tu edificio o tu idea y te dice si es viable, qué riesgos tiene y cómo seguir con una due diligence.",
-    "cta": "Reservar mi auditoría gratuita"
+    "cta": "Reservar mi consultoría gratuita"
   },
   "methodTitle": "Cuatro fases. Un solo interlocutor.",
   "methodCta": "Empezar por la viabilidad",

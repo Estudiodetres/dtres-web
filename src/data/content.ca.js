@@ -166,10 +166,10 @@ export const home2 = {
     ]
   },
   "bonus": {
-    "eyebrow": "Auditoria gratuïta · 30 min",
+    "eyebrow": "Consultoria gratuïta · 30 min amb un soci",
     "title": "La teva primera viabilitat, en 30 minuts.",
     "text": "Un soci arquitecte revisa el teu edifici o la teva idea i et diu si és viable, quins riscos té i com continuar amb una due diligence.",
-    "cta": "Reservar la meva auditoria gratuïta"
+    "cta": "Reservar la meva consultoria gratuïta"
   },
   "methodTitle": "Quatre fases. Un sol interlocutor.",
   "methodCta": "Començar per la viabilitat",
