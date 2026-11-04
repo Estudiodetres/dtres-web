@@ -190,5 +190,9 @@ export const home2 = {
     "fix": {
       "entrega": "We process certificates and sign-offs during construction. The building is fitted out and ready to operate, let or sell the day works finish."
     }
+  },
+  "wa": {
+    "pre": "Prefer to talk now?",
+    "link": "Message us on WhatsApp →"
   }
 };

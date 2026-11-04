@@ -190,5 +190,9 @@ export const home2 = {
     "fix": {
       "entrega": "Tramitem butlletins i legalitzacions durant l'obra. L'edifici, equipat i a punt per operar, llogar o vendre el dia que acaba."
     }
+  },
+  "wa": {
+    "pre": "Prefereixes parlar ara?",
+    "link": "Escriu-nos per WhatsApp →"
   }
 };

@@ -8,6 +8,7 @@ export const site = {
   email: 'info@detres.eu',
   phone: '+34 931 255 444',
   phoneDisplay: '931 255 444',
+  whatsapp: '34655307513', // WhatsApp de Nacho
   address: { street: "Carrer d'Osi 23, baixos 2a", postalCode: '08034', city: 'Barcelona', region: 'Catalunya', country: 'ES' },
   placeId: 'ChIJv3MWA6yXpBIRj6tO7BPYQxA',
   areaServed: ['Barcelona', 'Catalunya'],
@@ -283,5 +284,9 @@ export const home2 = {
     "fix": {
       "entrega": "Tramitamos boletines y legalizaciones durante la obra. El edificio, equipado y listo para operar, alquilar o vender el día que acaba."
     }
+  },
+  "wa": {
+    "pre": "¿Prefieres hablar ahora?",
+    "link": "Escríbenos por WhatsApp →"
   }
 };

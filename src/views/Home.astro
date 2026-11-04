@@ -9,7 +9,7 @@ import { srcset } from '../lib/img.js';
 import { ui, routes, phasePath, langs, fmt } from '../i18n/index.js';
 
 const { lang = 'es' } = Astro.props;
-const { hero, audiences, stats, usp, phases, featured, reviews, team, faqs, meta, clients, allProjects, home2 } = getContent(lang);
+const { hero, audiences, stats, usp, phases, featured, reviews, team, faqs, meta, clients, allProjects, home2, site } = getContent(lang);
 const moreProjects = moreImgs.map((img) => allProjects.find((p) => p.img === img)).filter(Boolean).map((p) => ({ ...p, tag: `${p.use} · ${fmt(p.m2, lang)} m²` }));
 const icons = {
   split: '<rect x="3" y="3" width="11" height="11"/><rect x="18" y="3" width="11" height="11"/><rect x="3" y="18" width="11" height="11"/><rect x="18" y="18" width="11" height="11" stroke-dasharray="3 2.5"/>',
@@ -42,10 +42,6 @@ const faqLd = {
   <section class="wrap hero">
     <p class="lbl">{hero.eyebrow}</p>
     <h1>{hero.title}</h1>
-    <ul class="chips" aria-label={t.for}>
-      <li class="chips__lbl">{t.for}</li>
-      {audiences.items.map((a) => <li class="chip"><svg viewBox="0 0 32 32" aria-hidden="true" set:html={icons[a.icon]} />{a.title}</li>)}
-    </ul>
     <div class="hero__row">
       <p class="hero__sub">{hero.subtitle}</p>
       <div class="hero__cta">
@@ -55,6 +51,13 @@ const faqLd = {
     </div>
   </section>
   <div class="wrap"><img class="ph hero__img" src={hero.image.src} srcset={srcset(hero.image.src)} sizes="(min-width: 1680px) 1520px, (min-width: 1280px) 1280px, 100vw" fetchpriority="high" alt={hero.image.alt} width="1600" height="800" /></div>
+  <!-- PARA QUIÉN -->
+  <section class="wrap aud2">
+    <div><p class="lbl">{t.for}</p><h2 class="aud__title">{audiences.title}</h2></div>
+    <ul class="aud2__grid">
+      {audiences.items.map((a) => <li><svg viewBox="0 0 32 32" aria-hidden="true" set:html={icons[a.icon]} /><span>{a.title}</span></li>)}
+    </ul>
+  </section>
   <div class="wrap logos">
     <p class="lbl">{t.clientsTitle}</p>
     <ul class="logos__row">
@@ -174,6 +177,7 @@ const faqLd = {
       <h2 class="cta__title">{t.ctaTitle}</h2>
       <p class="cta__text">{t.ctaText}</p>
       <ContactForm origen="home" lang={lang} />
+      <p class="cta__wa">{home2.wa.pre} <a href={`https://wa.me/${site.whatsapp}`} target="_blank" rel="noopener">{home2.wa.link}</a></p>
     </div>
   </section>
 </Base>
@@ -334,4 +338,11 @@ const faqLd = {
   .jr__fix a { color: #eaeae4; font-weight: 500; text-decoration: underline; text-underline-offset: 4px; align-self: flex-start; padding-block: 6px; }
   .jr__cta { align-self: flex-start; background: #eaeae4 !important; color: #202124 !important; }
   @media (max-width: 860px) { .jr__row { grid-template-columns: 1fr; gap: 16px; } }
+
+  .aud2 { padding-block: clamp(64px, 9vw, 104px) 0; display: flex; flex-direction: column; gap: 32px; }
+  .aud2__grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+  .aud2__grid li { background: var(--sage); color: var(--ink); padding: 22px 24px; display: flex; align-items: center; gap: 14px; font-size: 18px; font-weight: 500; line-height: 1.2; }
+  .aud2__grid svg { flex: none; width: 30px; height: 30px; fill: none; stroke: var(--ink); stroke-width: 1.5; }
+  @media (max-width: 760px) { .aud2__grid { grid-template-columns: 1fr; gap: 8px; } .aud2__grid li { padding: 18px 20px; } }
+  .cta__wa { color: #c9c8bb; } .cta__wa a { color: #eaeae4; text-decoration: underline; text-underline-offset: 4px; }
 </style>
