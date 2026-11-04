@@ -14,8 +14,8 @@ const moreProjects = moreImgs.map((img) => allProjects.find((p) => p.img === img
 const phaseIcons = {
   viabilidad: '<path fill-rule="evenodd" d="M4 42V17l12-9 12 9v25zM9 20h4v4H9zm7 0h4v4h-4zM9 27h4v4H9zm7 0h4v4h-4zM9 34h4v4H9z"/><path fill-rule="evenodd" stroke="#202124" stroke-width="3" d="M33 21a10 10 0 1 1 0 20 10 10 0 0 1 0-20zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/><path d="M39.5 37.5l3-3 5 5-3 3z"/>',
   'proyecto-y-licencias': '<path fill-rule="evenodd" d="M8 3h22l10 10v32H8zM29 6v9h9zM13 20h22v3H13zm0 7h22v3H13zm0 7h13v3H13z"/>',
-  obra: '<path fill-rule="evenodd" d="M9 9h7v31H9zm2 6h3v4h-3zm0 8h3v4h-3zm0 8h3v4h-3zM9 4h35v6H9zM36 10h2v8h-2zM31 18h12v10H31zm3 3v4h6v-4zM5 40h15v5H5z"/>',
-  entrega: '<path fill-rule="evenodd" d="M15 12a12 12 0 1 1 0 24 12 12 0 0 1 0-24zm0 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zM26 21h20v6H26zm10 6h5v7h-5zm7 0h3v5h-3z"/>',
+  obra: '<path d="M9 10h6v30H9zM5 4h39v6H5zM37 10h2v9h-2zM32 19h12v9H32zM4 40h14v5H4z"/>',
+  entrega: '<circle cx="14" cy="24" r="11"/><path d="M22 21h24v6H22zM36 27h5v7h-5zM43 27h3v5h-3z"/>',
 };
 const icons = {
   split: '<rect x="3" y="3" width="11" height="11"/><rect x="18" y="3" width="11" height="11"/><rect x="3" y="18" width="11" height="11"/><rect x="18" y="18" width="11" height="11" stroke-dasharray="3 2.5"/>',
@@ -99,8 +99,8 @@ const caseLd = {
   <!-- 3. PRUEBA: CASO DE ÉXITO -->
   <section id="proyectos" class="wrap case">
     <div class="case__head">
-      <p class="case__eyebrow">{featured.case.eyebrow}</p>
-      <h2 class="case__title">{featured.case.title}</h2>
+      <p class="lbl">{featured.case.eyebrow}</p>
+      <h2 class="case__title">{featured.case.title.split(' · ').map((t, i) => <span class={i ? 'case__title-sub' : 'case__title-main'}>{t}</span>)}</h2>
       <p class="case__sub">{featured.case.subtitle}</p>
     </div>
     <ol class="case__steps">
@@ -363,18 +363,18 @@ const caseLd = {
   .jr__cta { align-self: flex-start; background: #eaeae4 !important; color: #202124 !important; }
   @media (max-width: 860px) { .jr__row { grid-template-columns: 1fr; gap: 16px; } }
 
-  .aud2 { padding-block: clamp(64px, 9vw, 104px) 0; display: flex; flex-direction: column; gap: 32px; }
-  .aud2__grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
-  .aud2__grid li { background: rgba(163, 162, 142, .35); color: var(--ink); padding: 32px 24px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 14px; font-size: 22px; font-weight: 500; line-height: 1.2; }
-  .aud2__grid svg { flex: none; width: 34px; height: 34px; fill: none; stroke: var(--ink); stroke-width: 1.5; }
-  @media (max-width: 760px) { .aud2__grid { grid-template-columns: 1fr; gap: 8px; } .aud2__grid li { padding: 18px 20px; flex-direction: row; justify-content: flex-start; text-align: left; font-size: 18px; } }
+  .aud2 { padding-block: clamp(64px, 9vw, 104px) 0; display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 32px clamp(32px, 6vw, 96px); align-items: end; }
+  .aud2__grid { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; border-top: 1px solid var(--line, rgba(32,33,36,.18)); }
+  .aud2__grid li { display: flex; align-items: center; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--line, rgba(32,33,36,.18)); font-size: 20px; font-weight: 500; line-height: 1.2; color: var(--ink); }
+  .aud2__grid svg { flex: none; width: 26px; height: 26px; fill: none; stroke: var(--ink); stroke-width: 1.5; }
+  @media (max-width: 860px) { .aud2 { grid-template-columns: 1fr; } .aud2__grid li { font-size: 17px; padding: 12px 0; } }
   .cta__wa { color: #c9c8bb; } .cta__wa a { color: #eaeae4; text-decoration: underline; text-underline-offset: 4px; }
 
   /* v4: caso de éxito */
   .case { padding-block: clamp(72px, 10vw, 120px); display: flex; flex-direction: column; gap: 48px; }
-  .case__head { display: flex; flex-direction: column; gap: 18px; max-width: 900px; }
-  .case__eyebrow { display: inline-block; align-self: flex-start; background: var(--ink); color: #eaeae4; font-size: 13px; letter-spacing: .14em; text-transform: uppercase; padding: 8px 14px; }
-  .case__title { font-size: clamp(34px, 5vw, 68px); line-height: 1.02; letter-spacing: -.02em; font-weight: 500; text-wrap: balance; }
+  .case__head { display: flex; flex-direction: column; gap: 18px; max-width: 1100px; }
+  .case__title { font-size: clamp(34px, 5vw, 68px); line-height: 1.02; letter-spacing: -.02em; font-weight: 500; text-wrap: balance; display: flex; flex-direction: column; }
+  @media (min-width: 861px) { .case__title-main { white-space: nowrap; } }
   .case__sub { font-size: clamp(18px, 1.8vw, 22px); line-height: 1.4; color: var(--text2); max-width: 52ch; }
   .case__steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px; counter-reset: none; }
   .case__steps li { display: flex; flex-direction: column; gap: 12px; }
@@ -385,8 +385,8 @@ const caseLd = {
   .case__steps figcaption { font-size: 15px; line-height: 1.45; color: var(--text2); }
   .case__figs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(12px, 3vw, 40px); max-width: 900px; margin-inline: auto; width: 100%; }
   .case__figs > div { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 14px; }
-  .case__ball { width: 100%; max-width: 200px; aspect-ratio: 1 / 1; border-radius: 50%; background: var(--ink); color: #eaeae4; display: grid; place-items: center; }
-  .case__ball strong { font-size: clamp(26px, 5vw, 58px); font-weight: 500; letter-spacing: -.02em; line-height: 1; }
+  .case__ball { width: 100%; max-width: 150px; aspect-ratio: 1 / 1; border-radius: 50%; border: 1px solid var(--sage); color: var(--ink); display: grid; place-items: center; }
+  .case__ball strong { font-size: clamp(24px, 3.6vw, 44px); font-weight: 500; letter-spacing: -.02em; line-height: 1; }
   .case__figs p { font-size: clamp(13px, 1.4vw, 16px); line-height: 1.35; color: var(--text2); max-width: 22ch; }
   .case__figs p b { display: block; color: var(--ink); font-weight: 500; }
   @media (max-width: 860px) { .case__steps { grid-template-columns: 1fr; gap: 40px; } }
