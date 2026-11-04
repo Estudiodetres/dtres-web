@@ -129,20 +129,7 @@ export const featured = {
         "alt": "IESE Edificio L terminado"
       }
     ],
-    "figures": [
-      {
-        "n": "x2",
-        "t": "Renta anual"
-      },
-      {
-        "n": "+49%",
-        "t": "Superficie útil (de 500 a 743 m²)"
-      },
-      {
-        "n": "20 → 50",
-        "t": "Puestos de trabajo"
-      }
-    ]
+    "figures": [{"n": "x2€", "t": "Renta anual", "s": "El doble que antes"}, {"n": "+49%", "t": "Superficie útil", "s": "De 500 a 743 m²"}, {"n": "+30p", "t": "Puestos de trabajo", "s": "De 20 a 50 personas"}]
   },
 };
 

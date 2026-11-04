@@ -108,20 +108,7 @@ export const featured = {
         "alt": "IESE Building L completed"
       }
     ],
-    "figures": [
-      {
-        "n": "x2",
-        "t": "Annual rent"
-      },
-      {
-        "n": "+49%",
-        "t": "Usable area (from 500 to 743 m²)"
-      },
-      {
-        "n": "20 → 50",
-        "t": "Workstations"
-      }
-    ]
+    "figures": [{"n": "x2€", "t": "Annual rent", "s": "Twice as much as before"}, {"n": "+49%", "t": "Usable area", "s": "From 500 to 743 m²"}, {"n": "+30p", "t": "Workstations", "s": "From 20 to 50 people"}]
   },
 };
 

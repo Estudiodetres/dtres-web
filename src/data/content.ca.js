@@ -108,20 +108,7 @@ export const featured = {
         "alt": "IESE Edifici L acabat"
       }
     ],
-    "figures": [
-      {
-        "n": "x2",
-        "t": "Renda anual"
-      },
-      {
-        "n": "+49%",
-        "t": "Superfície útil (de 500 a 743 m²)"
-      },
-      {
-        "n": "20 → 50",
-        "t": "Llocs de treball"
-      }
-    ]
+    "figures": [{"n": "x2€", "t": "Renda anual", "s": "El doble que abans"}, {"n": "+49%", "t": "Superfície útil", "s": "De 500 a 743 m²"}, {"n": "+30p", "t": "Llocs de treball", "s": "De 20 a 50 persones"}]
   },
 };
 
