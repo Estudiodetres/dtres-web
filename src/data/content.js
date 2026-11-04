@@ -106,7 +106,7 @@ export const featured = {
   case: {
     "eyebrow": "Caso de éxito",
     "title": "Patrimonio catalogado de 1910 · IESE Business School",
-    "subtitle": "Un edificio a medio usar convertido en oficinas para 50 personas. El doble de renta, sin tocar el patrimonio.",
+    "subtitle": "Un edificio a medio usar convertido en oficinas para 50 personas. El doble de renta, devolviendo el edificio a su estado original patrimonial.",
     "steps": [
       {
         "label": "Inicio",

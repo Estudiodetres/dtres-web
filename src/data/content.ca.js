@@ -87,7 +87,7 @@ export const featured = {
   case: {
     "eyebrow": "Cas d'èxit",
     "title": "Patrimoni catalogat de 1910 · IESE Business School",
-    "subtitle": "Un edifici mig en desús convertit en oficines per a 50 persones. El doble de renda, sense tocar el patrimoni.",
+    "subtitle": "Un edifici mig en desús convertit en oficines per a 50 persones. El doble de renda, retornant l'edifici al seu estat original patrimonial.",
     "steps": [
       {
         "label": "Inici",

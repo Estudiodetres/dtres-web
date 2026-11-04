@@ -87,7 +87,7 @@ export const featured = {
   case: {
     "eyebrow": "Success story",
     "title": "Listed 1910 building · IESE Business School",
-    "subtitle": "A half-used building turned into offices for 50 people. Twice the rent, with the heritage intact.",
+    "subtitle": "A half-used building turned into offices for 50 people. Twice the rent, restoring the building to its original heritage state.",
     "steps": [
       {
         "label": "Starting point",
