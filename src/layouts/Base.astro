@@ -7,7 +7,7 @@ import '@fontsource/schibsted-grotesk/400.css';
 import '@fontsource/schibsted-grotesk/500.css';
 import '@fontsource/schibsted-grotesk/600.css';
 
-const { title, description, jsonLd = [], lang = 'es', alternates = null, noindex = false } = Astro.props;
+const { title, description, jsonLd = [], lang = 'es', alternates = null, noindex = false, hideWa = false } = Astro.props;
 const waText = { es: 'Hola Nacho, tengo un edificio y me gustaría saber si podéis ayudarme.', ca: "Hola Nacho, tinc un edifici i m'agradaria saber si em podeu ajudar.", en: 'Hi Nacho, I have a building and would like to know if you can help.' };
 const waUrl = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(waText[lang] || waText.es)}`;
 const waLabel = { es: 'Escríbenos por WhatsApp', ca: 'Escriu-nos per WhatsApp', en: 'Message us on WhatsApp' }[lang] || 'WhatsApp';
@@ -89,10 +89,12 @@ const org = {
   <Header lang={lang} alternates={alternates} />
   <main><slot /></main>
   <Footer lang={lang} />
+  {!hideWa && (
   <a class="wa" href={waUrl} target="_blank" rel="noopener" aria-label={waLabel}>
     <svg viewBox="0 0 32 32" aria-hidden="true"><path class="wa__b" d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3z"/><path class="wa__p" d="M11.5 10.5c.4-.8 1.2-.8 1.5-.1l1.2 2.6c.2.4 0 .9-.3 1.2l-.8.8c.9 1.9 2.4 3.4 4.3 4.3l.8-.8c.3-.3.8-.5 1.2-.3l2.6 1.2c.7.3.7 1.1-.1 1.5-1.2.7-2.6.9-3.9.4-3.4-1.3-6-3.9-7.3-7.3-.5-1.3-.3-2.7.4-3.9z"/></svg>
     <span>WhatsApp</span>
   </a>
+  )}
   <style is:global>
     .wa { position: fixed; right: max(16px, env(safe-area-inset-right, 0px)); bottom: calc(16px + env(safe-area-inset-bottom, 0px)); z-index: 50; display: inline-flex; align-items: center; gap: 10px; background: #25d366; color: #fff; padding: 12px 18px 12px 14px; text-decoration: none; font-size: 15px; font-weight: 500; box-shadow: 0 6px 20px rgba(0,0,0,.18); }
     .wa:hover { background: #1ebe5b; color: #fff; }

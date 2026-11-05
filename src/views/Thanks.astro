@@ -7,7 +7,7 @@ const t = ui[lang].thanks;
 const waText = { es: 'Hola Nacho, acabo de reservar una llamada desde la web.', ca: "Hola Nacho, acabo de reservar una trucada des del web.", en: 'Hi Nacho, I have just booked a call on the website.' }[lang];
 const waUrl = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(waText)}`;
 ---
-<Base title={`${t.eyebrow} · DTRES`} description={t.title} lang={lang} alternates={routes.thanks} noindex>
+<Base title={`${t.eyebrow} · DTRES`} description={t.title} lang={lang} alternates={routes.thanks} noindex hideWa>
   <section class="wrap ty">
     <p class="lbl">{t.eyebrow}</p>
     <h1>{t.title}</h1>
@@ -15,7 +15,7 @@ const waUrl = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(waText)}
     <div class="ty__steps">
       <div class="ty__step">
         <p class="lbl">{t.step1}</p>
-        <a class="btn" href={site.booking} target="_blank" rel="noopener">{t.book} →</a>
+        <a class="ty__cal" href={site.booking} target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h2v2h6V2h2v2h2a2 2 0 0 1 2 2v13a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2V2zM5 9v10h14V9H5zm2 2h3v3H7v-3z"/></svg>{t.book}</a>
       </div>
       <div class="ty__step">
         <p class="lbl">{t.step2}</p>
@@ -37,6 +37,9 @@ const waUrl = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(waText)}
   .ty__step { border: 1px solid rgba(32,33,36,.18); padding: 28px; display: flex; flex-direction: column; gap: 14px; align-items: flex-start; min-width: 0; }
   .ty__step p { margin: 0; font-size: 17px; }
   .ty__wa { display: inline-flex; align-items: center; gap: 10px; background: #25d366; color: #fff; padding: 13px 20px; border-radius: 999px; font-weight: 500; text-decoration: none; }
+  .ty__cal { display: inline-flex; align-items: center; gap: 10px; background: #1a73e8; color: #fff; padding: 13px 22px; border-radius: 999px; font-weight: 500; text-decoration: none; }
+  .ty__cal:hover { background: #1765cc; }
+  .ty__cal svg { width: 20px; height: 20px; fill: currentColor; }
   .ty__wa:hover { background: #1ebe5b; }
   .ty__wa svg { width: 22px; height: 22px; }
   .ty__wa .b { fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linejoin: round; }
