@@ -52,7 +52,7 @@ export const usp = {
   eyebrow: 'Normativa y patrimonio en Catalunya',
   title: 'Licencias más rápidas. Edificios más rentables.',
   text: 'Conocemos a fondo la normativa urbanística y patrimonial de Catalunya, los criterios de cada ayuntamiento y sus márgenes de interpretación. Eso nos permite maximizar, siempre dentro de la legalidad, el aprovechamiento y la rentabilidad de cada edificio, y que las licencias avancen sin bloqueos.',
-  image: { src: '/img/usp-obra.jpg', alt: 'Visita técnica del equipo DTRES en un edificio en rehabilitación' },
+  image: { src: '/img/usp-obra.jpg', alt: 'Arquitecto de DTRES revisa los planos con el cliente durante la obra' },
   proofs: [
     { icon: 'split', title: 'Licencias por fases', tag: 'Estrategia de tramitación', text: 'Sabemos qué licencias pedir y en qué orden. Dividimos el expediente en partes que avanzan en paralelo, en lugar de una sola licencia que lo bloquea todo.' },
     { icon: 'route', title: 'El recorrido del expediente', tag: 'Del visado de la ECA al ayuntamiento', text: 'Conocemos cómo viaja el proyecto desde que lo visa la ECA hasta que el ayuntamiento lo reparte entre sus departamentos. Así planificamos plazos y estrategia desde el primer día.' },
