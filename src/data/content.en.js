@@ -11,7 +11,7 @@ export const meta = {
 
 export const hero = {
   eyebrow: 'Architecture and interior design · Barcelona and Catalonia · Since 2017',
-  title: "Your building could be worth much more.",
+  title: "A new life for your building.",
   subtitle: "Architecture and design that raise the value of your investment: fast-moving permits, distinctive interiors and construction at a fixed time and cost.",
   image: { src: '/img/hero-papiol.jpg', alt: 'Papiol showroom and offices in Barcelona, with a double-height space and staircase' },
 };

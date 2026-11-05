@@ -11,7 +11,7 @@ export const meta = {
 
 export const hero = {
   eyebrow: 'Arquitectura i interiorisme · Barcelona i Catalunya · Des de 2017',
-  title: "El teu edifici pot valer molt més.",
+  title: "Una nova vida per al teu edifici.",
   subtitle: "Arquitectura i disseny que eleven el valor de la teva inversió: llicències àgils, interiorisme amb caràcter i obra amb termini i cost tancats.",
   image: { src: '/img/hero-papiol.jpg', alt: 'Showroom i oficines de Papiol a Barcelona, amb doble alçada i escala' },
 };
