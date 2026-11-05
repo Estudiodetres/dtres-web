@@ -7,7 +7,7 @@ import '@fontsource/schibsted-grotesk/400.css';
 import '@fontsource/schibsted-grotesk/500.css';
 import '@fontsource/schibsted-grotesk/600.css';
 
-const { title, description, jsonLd = [], lang = 'es', alternates = null, noindex = false, hideWa = false } = Astro.props;
+const { title, description, jsonLd = [], lang = 'es', alternates = null, noindex = false, hideWa = true } = Astro.props;
 const waText = { es: 'Hola Nacho, tengo un edificio y me gustaría saber si podéis ayudarme.', ca: "Hola Nacho, tinc un edifici i m'agradaria saber si em podeu ajudar.", en: 'Hi Nacho, I have a building and would like to know if you can help.' };
 const waUrl = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(waText[lang] || waText.es)}`;
 const waLabel = { es: 'Escríbenos por WhatsApp', ca: 'Escriu-nos per WhatsApp', en: 'Message us on WhatsApp' }[lang] || 'WhatsApp';
