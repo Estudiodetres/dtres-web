@@ -43,7 +43,7 @@ export const ui = {
       metaDesc: (n, m2) => `Edificios catalogados, residencias, oficinas y equipamientos transformados en Barcelona y Catalunya. ${n} proyectos, más de ${m2} m².` },
     blog: { eyebrow: 'Blog · Guías para inversores', title: 'Lo que hay que saber antes de transformar un edificio.', sub: 'Normativa, licencias, costes y plazos en Barcelona y Catalunya, explicados por los arquitectos que lo tramitan cada semana.',
       by: 'Por', read: 'Leer →', back: '← Todas las guías', related: 'Fase relacionada', ctaTitle: '¿Quieres saber qué permite tu edificio?', metaTitle: 'Blog · Guías de edificios, licencias y obra · DTRES', empty: 'Pronto publicaremos las primeras guías.' },
-    thanks: { eyebrow: 'Mensaje recibido', title: 'Gracias. Te llamamos en menos de 48 horas.', text: 'Si es urgente,', wa: 'escríbenos por WhatsApp →', back: 'Volver al inicio' },
+    thanks: { eyebrow: 'Mensaje recibido', title: 'Gracias. Ahora elige el día de tu llamada.', text: '30 minutos con un socio del estudio. Reserva el hueco que mejor te vaya y llegaremos con tu caso ya estudiado.', book: 'Elegir día y hora', step1: 'Paso 1 · Reserva tu llamada', step2: 'Paso 2 · ¿Ya has reservado y tienes prisa?', waText: 'Escríbeme directamente y lo vemos.', wa: 'Escribir por WhatsApp', back: 'Volver al inicio' },
     updated: 'Última actualización',
   },
   ca: {
@@ -67,7 +67,7 @@ export const ui = {
       metaDesc: (n, m2) => `Edificis catalogats, residències, oficines i equipaments transformats a Barcelona i Catalunya. ${n} projectes, més de ${m2} m².` },
     blog: { eyebrow: 'Blog · Guies per a inversors', title: 'El que cal saber abans de transformar un edifici.', sub: 'Normativa, llicències, costos i terminis a Barcelona i Catalunya, explicats pels arquitectes que els tramiten cada setmana.',
       by: 'Per', read: 'Llegir →', back: '← Totes les guies', related: 'Fase relacionada', ctaTitle: 'Vols saber què permet el teu edifici?', metaTitle: "Blog · Guies d'edificis, llicències i obra · DTRES", empty: 'Aviat publicarem les primeres guies en català.' },
-    thanks: { eyebrow: 'Missatge rebut', title: 'Gràcies. Et trucarem en menys de 48 hores.', text: 'Si és urgent,', wa: 'escriu-nos per WhatsApp →', back: "Tornar a l'inici" },
+    thanks: { eyebrow: 'Missatge rebut', title: 'Gràcies. Ara tria el dia de la teva trucada.', text: "30 minuts amb un soci de l'estudi. Reserva el moment que et vagi millor i arribarem amb el teu cas ja estudiat.", book: 'Triar dia i hora', step1: 'Pas 1 · Reserva la teva trucada', step2: 'Pas 2 · Ja has reservat i tens pressa?', waText: "Escriu-me directament i ho mirem.", wa: 'Escriure per WhatsApp', back: "Tornar a l'inici" },
     updated: 'Darrera actualització',
   },
   en: {
@@ -91,7 +91,7 @@ export const ui = {
       metaDesc: (n, m2) => `Listed buildings, residences, offices and facilities transformed in Barcelona and Catalonia. ${n} projects, over ${m2} m².` },
     blog: { eyebrow: 'Blog · Guides for investors', title: 'What to know before transforming a building.', sub: 'Planning rules, permits, costs and timelines in Barcelona and Catalonia, explained by the architects who handle them every week.',
       by: 'By', read: 'Read →', back: '← All guides', related: 'Related phase', ctaTitle: 'Want to know what your building allows?', metaTitle: 'Blog · Guides on buildings, permits and works · DTRES', empty: 'Our first English guides are coming soon.' },
-    thanks: { eyebrow: 'Message received', title: 'Thank you. We will call you within 48 hours.', text: 'If it is urgent,', wa: 'message us on WhatsApp →', back: 'Back to home' },
+    thanks: { eyebrow: 'Message received', title: 'Thank you. Now pick a day for your call.', text: '30 minutes with a partner of the studio. Book the slot that suits you and we will come with your case already reviewed.', book: 'Choose day and time', step1: 'Step 1 · Book your call', step2: 'Step 2 · Already booked and in a hurry?', waText: 'Message me directly and we will look at it.', wa: 'Message on WhatsApp', back: 'Back to home' },
     updated: 'Last updated',
   },
 };

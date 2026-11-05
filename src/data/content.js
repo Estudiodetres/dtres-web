@@ -8,7 +8,8 @@ export const site = {
   email: 'info@detres.eu',
   phone: '+34 931 255 444',
   phoneDisplay: '931 255 444',
-  whatsapp: '34655307513', // WhatsApp de Nacho
+  whatsapp: '34655307513',
+  booking: 'https://calendar.app.google/aw8RtuQPvH932VrBA', // WhatsApp de Nacho
   social: [], // TODO: LinkedIn del estudio, Instagram… (https://…)
   address: { street: "Carrer d'Osi 23, baixos 2a", postalCode: '08034', city: 'Barcelona', region: 'Catalunya', country: 'ES' },
   placeId: 'ChIJv3MWA6yXpBIRj6tO7BPYQxA',
