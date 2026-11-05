@@ -12,7 +12,7 @@ export const meta = {
 export const hero = {
   eyebrow: 'Architecture and interior design · Barcelona and Catalonia · Since 2017',
   title: "We give your building a new life.",
-  subtitle: "Architecture and design that raise its value and its identity, with permits that move forward and construction at a fixed time and cost.",
+  subtitle: "Architecture and design that raise its value and its identity, with the certainty of a clear process from day one: permits that move forward and construction at a fixed time and cost.",
   image: { src: '/img/hero-papiol.jpg', alt: 'Papiol showroom and offices in Barcelona, with a double-height space and staircase' },
 };
 

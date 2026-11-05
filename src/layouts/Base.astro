@@ -15,7 +15,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href;
 const abs = (p) => new URL(p, Astro.site).href;
 // Imagen para compartir: usa la URL real del despliegue (Netlify) para que funcione antes de apuntar el dominio
 const ogBase = process.env.URL || Astro.site;
-const ogImage = new URL('/img/og.jpg?v=4', ogBase).href;
+const ogImage = new URL('/img/og.jpg?v=5', ogBase).href;
 
 const org = {
   '@context': 'https://schema.org',
