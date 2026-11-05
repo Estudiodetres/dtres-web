@@ -57,7 +57,7 @@ export const usp = {
     { icon: 'split', title: 'Licencias por fases', tag: 'Estrategia de tramitación', text: 'Sabemos qué licencias pedir y en qué orden. Dividimos el expediente en partes que avanzan en paralelo, en lugar de una sola licencia que lo bloquea todo.' },
     { icon: 'route', title: 'El recorrido del expediente', tag: 'Del visado de la ECA al ayuntamiento', text: 'Conocemos cómo viaja el proyecto desde que lo visa la ECA hasta que el ayuntamiento lo reparte entre sus departamentos. Así planificamos plazos y estrategia desde el primer día.' },
     { icon: 'heritage', title: 'Patrimonio, sin sorpresas', tag: 'Experiencia en edificios catalogados', text: 'Sabemos qué acepta Patrimonio, qué no y qué se puede negociar. Antes de que compres un edificio, te decimos si tu proyecto se puede hacer.' },
-    { icon: 'ready', title: 'Listo el día que acaba la obra', tag: 'Legalizaciones en paralelo', text: 'Durante la obra tramitamos legalizaciones, boletines de electricidad y el resto de permisos. Si hay requerimientos, aparecen con la obra en marcha, cuando la constructora puede resolverlos rápido. El edificio queda listo para operar, alquilar o vender el mismo día que terminan los trabajos.' },
+    { icon: 'ready', title: 'Listo el día que acaba la obra', tag: 'Legalizaciones en paralelo', text: "Tramitamos legalizaciones y boletines durante la obra. El edificio queda listo para operar, alquilar o vender el mismo día que terminan los trabajos." },
   ],
 };
 

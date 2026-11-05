@@ -35,7 +35,7 @@ export const usp = {
     { icon: 'split', title: 'Phased permits', tag: 'Permitting strategy', text: 'We know which permits to apply for and in what order. We split the application into parts that move in parallel, instead of one single permit that blocks everything.' },
     { icon: 'route', title: 'How the file travels', tag: 'From ECA review to the city council', text: "We know how a project moves from the ECA's review until the city council assigns it to its departments. So we plan timelines and strategy from day one." },
     { icon: 'heritage', title: 'Heritage, no surprises', tag: 'Experience with listed buildings', text: "We know what the heritage authority accepts, what it rejects and what can be negotiated. Before you buy a building, we tell you whether your project can be done." },
-    { icon: 'ready', title: 'Ready the day works finish', tag: 'Sign-offs in parallel', text: 'During construction we process the legalisations, electrical certificates and other permits. Any requests surface while works are under way, when the builder can solve them fast. The building is ready to operate, let or sell the day works finish.' },
+    { icon: 'ready', title: 'Ready the day works finish', tag: 'Sign-offs in parallel', text: "We process legalisations and certificates during construction. The building is ready to operate, let or sell the day works finish." },
   ],
 };
 

@@ -35,7 +35,7 @@ export const usp = {
     { icon: 'split', title: 'Llicències per fases', tag: 'Estratègia de tramitació', text: "Sabem quines llicències demanar i en quin ordre. Dividim l'expedient en parts que avancen en paral·lel, en lloc d'una sola llicència que ho bloqueja tot." },
     { icon: 'route', title: "El recorregut de l'expedient", tag: "Del visat de l'ECA a l'ajuntament", text: "Coneixem com viatja el projecte des que el visa l'ECA fins que l'ajuntament el reparteix entre els seus departaments. Així planifiquem terminis i estratègia des del primer dia." },
     { icon: 'heritage', title: 'Patrimoni, sense sorpreses', tag: 'Experiència en edificis catalogats', text: "Sabem què accepta Patrimoni, què no i què es pot negociar. Abans que compris un edifici, et diem si el teu projecte es pot fer." },
-    { icon: 'ready', title: "A punt el dia que acaba l'obra", tag: 'Legalitzacions en paral·lel', text: "Durant l'obra tramitem legalitzacions, butlletins d'electricitat i la resta de permisos. Si hi ha requeriments, apareixen amb l'obra en marxa, quan el constructor els pot resoldre ràpid. L'edifici queda a punt per operar, llogar o vendre el mateix dia que acaben els treballs." },
+    { icon: 'ready', title: "A punt el dia que acaba l'obra", tag: 'Legalitzacions en paral·lel', text: "Tramitem legalitzacions i butlletins durant l'obra. L'edifici queda a punt per operar, llogar o vendre el mateix dia que acaben els treballs." },
   ],
 };
 
