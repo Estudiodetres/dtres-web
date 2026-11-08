@@ -32,13 +32,13 @@ const listLd = {
     </div>
     <div class="pj__wp" hidden>
       <div><strong>{t.wp.title}</strong><span>{t.wp.text}</span></div>
-      <a class="btn" href={site.workplace}>{t.wp.cta} ↗</a>
+      <a class="btn" href={site.workplace}>{t.wp.cta}</a>
     </div>
     <div class="pj__grid">
       {allProjects.map((p) => (
         <article data-cat={p.cat} data-heritage={p.heritage ? '1' : '0'} data-cambio={p.tag === 'Cambio de uso' ? '1' : '0'} data-curso={p.status ? '1' : '0'} class={p.img ? '' : 'noimg'}>
           {p.img && p.slug
-            ? <a class="pj__link" href={`${routes.projects[lang]}${p.slug}/`}><img class={p.bw ? "ph bw" : "ph"} src={p.img} srcset={srcset(p.img)} sizes="(min-width: 860px) 33vw, 50vw" alt={`${p.use} · ${p.client}`} width="600" height="750" loading="lazy" /><span class="pj__ba">{p.ba ? projectDetail[lang].ba : projectDetail[lang].gallery}</span></a>
+            ? <div class={p.ba ? 'pj__media ba' : 'pj__media'}><a class="pj__link" href={`${routes.projects[lang]}${p.slug}/`}><img class={p.bw ? "ph bw" : "ph"} src={p.img} srcset={srcset(p.img)} sizes="(min-width: 860px) 33vw, 50vw" alt={`${p.use} · ${p.client}`} width="600" height="750" loading="lazy" />{p.ba && <img class="ph ba__before" src={`/img/wpc-${p.ba}-antes.jpg`} srcset={srcset(`/img/wpc-${p.ba}-antes.jpg`)} sizes="(min-width: 860px) 33vw, 50vw" alt={`${projectDetail[lang].before} · ${p.client}`} width="600" height="750" loading="lazy" />}</a>{p.ba && <button class="ba__toggle" type="button" aria-pressed="false"><span>{projectDetail[lang].before}</span><span>{projectDetail[lang].after}</span></button>}</div>
             : p.img
             ? <img class={p.bw ? "ph bw" : "ph"} src={p.img} srcset={srcset(p.img)} sizes="(min-width: 860px) 33vw, 50vw" alt={`${p.use} · ${p.client}`} width="600" height="750" loading="lazy" />
             : <div class="pj__ph"><span>{st(p.status) ?? t.project}</span>{p.m2 && <strong>{fmt(p.m2)} m²</strong>}</div>}
@@ -70,6 +70,11 @@ const listLd = {
     const wp = document.querySelector('.pj__wp');
     if (wp) wp.hidden = f !== 'oficinas';
   }));
+  document.querySelectorAll('.ba__toggle').forEach((b) => b.addEventListener('click', () => {
+    const on = b.getAttribute('aria-pressed') !== 'true';
+    b.setAttribute('aria-pressed', String(on));
+    b.closest('.ba').classList.toggle('is-before', on);
+  }));
 </script>
 <style>
   .pj-hero { padding-block: clamp(48px, 8vw, 96px) 56px; display: flex; flex-direction: column; gap: 24px; }
@@ -78,7 +83,14 @@ const listLd = {
   .pj { padding-block: 0 clamp(72px, 10vw, 120px); display: flex; flex-direction: column; gap: 40px; }
   .pj__grid [data-curso="1"] .ph, .pj__grid .bw { filter: grayscale(1); }
   .pj__link { position: relative; display: block; }
-  .pj__ba { position: absolute; left: 12px; bottom: 12px; background: rgba(234,234,228,.92); color: var(--ink); font-size: 12px; letter-spacing: .04em; padding: 6px 12px; border-radius: 999px; }
+  .pj__media { position: relative; }
+  .ba__before { position: absolute; inset: 0; height: 100%; object-fit: cover; opacity: 0; transition: opacity .35s ease; }
+  .ba.is-before .ba__before { opacity: 1; }
+  .ba__toggle { position: absolute; left: 12px; bottom: 12px; display: inline-flex; border: 0; padding: 3px; border-radius: 999px; background: rgba(234,234,228,.92); color: var(--ink); font: inherit; font-size: 13px; cursor: pointer; }
+  .ba__toggle span { padding: 6px 12px; border-radius: 999px; }
+  .ba__toggle span:last-child, .ba.is-before .ba__toggle span:first-child { background: #202124; color: #eaeae4; }
+  .ba.is-before .ba__toggle span:last-child { background: transparent; color: #202124; }
+  @media (max-width: 520px) { .ba__toggle { left: 8px; bottom: 8px; font-size: 12px; } .ba__toggle span { padding: 5px 9px; } }
   .pj__grid h2 a { text-decoration: none; }
   .pj__wp { display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding-block: 22px; margin-top: 24px; }
   .pj__wp div { display: flex; flex-direction: column; gap: 4px; min-width: 0; }

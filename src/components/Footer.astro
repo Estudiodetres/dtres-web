@@ -6,7 +6,7 @@ const t = ui[lang].footer;
 ---
 <footer class="ftr dark">
   <div class="wrap ftr__in">
-    <div class="ftr__col"><span class="ftr__logo">DTRES</span><span>{t.tagline}</span><a class="ftr__wp" href={site.workplace}>{wpLabels[lang].footer} ↗</a></div>
+    <div class="ftr__col"><span class="ftr__logo">DTRES</span><span>{t.tagline}</span><a class="ftr__wp" href={site.workplace}>{wpLabels[lang].footer}</a></div>
     <div class="ftr__col"><span class="lbl">{t.studio}</span><span>{site.address.street}</span><span>{site.address.postalCode} {site.address.city}</span></div>
     <div class="ftr__col"><span class="lbl">{t.contact}</span><a href={`mailto:${site.email}`}>{site.email}</a><a href={`tel:${site.phone.replace(/\s/g, '')}`}>{site.phoneDisplay}</a></div>
     <div class="ftr__col"><span class="lbl">{t.legal}</span><a href={routes.legal[lang]}>{t.legalNotice}</a><a href={routes.privacy[lang]}>{t.privacy}</a><a href={routes.cookies[lang]}>{t.cookies}</a></div>

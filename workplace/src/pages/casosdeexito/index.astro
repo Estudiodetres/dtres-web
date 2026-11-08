@@ -10,20 +10,41 @@ import { srcset } from '../../lib/img.js';
   </section>
   <section class="wrap pj-grid">
     {projects.map((p, i) => (
-      <a href={`/casosdeexito/${p.slug}/`}>
-        {p.img ? <img class="ph" src={p.img} srcset={srcset(p.img)} sizes="(min-width: 860px) 33vw, 100vw" alt={`Oficina ${p.name}`} width="600" height="750" loading={i < 3 ? "eager" : "lazy"} fetchpriority={i === 0 ? "high" : undefined} /> : <div class="pj-ph"><span>{p.name}</span></div>}
-        <h2>{p.name}</h2>
+      <article class={p.key ? 'ba' : undefined}>
+        <div class="pj-media">
+          <a href={`/casosdeexito/${p.slug}/`}>
+            {p.img ? <img class="ph" src={p.img} srcset={srcset(p.img)} sizes="(min-width: 860px) 33vw, 100vw" alt={`Oficina ${p.name}`} width="600" height="750" loading={i < 3 ? "eager" : "lazy"} fetchpriority={i === 0 ? "high" : undefined} /> : <div class="pj-ph"><span>{p.name}</span></div>}
+            {p.key && <img class="ph ba__before" src={`/img/wpc-${p.key}-antes.jpg`} srcset={srcset(`/img/wpc-${p.key}-antes.jpg`)} sizes="(min-width: 860px) 33vw, 100vw" alt={`Antes · ${p.name}`} width="600" height="750" loading="lazy" />}
+          </a>
+          {p.key && <button class="ba__toggle" type="button" aria-pressed="false"><span>Antes</span><span>Después</span></button>}
+        </div>
+        <h2><a href={`/casosdeexito/${p.slug}/`}>{p.name}</a></h2>
         <p>{p.meta}</p>
-      </a>
+      </article>
     ))}
   </section>
 </Base>
+<script>
+  document.querySelectorAll('.ba__toggle').forEach((b) => b.addEventListener('click', () => {
+    const on = b.getAttribute('aria-pressed') !== 'true';
+    b.setAttribute('aria-pressed', String(on));
+    b.closest('.ba').classList.toggle('is-before', on);
+  }));
+</script>
 <style>
   .pj-hero { padding-block: clamp(56px, 8vw, 96px) 48px; display: flex; flex-direction: column; gap: 20px; }
   .pj-hero h1 { font-size: clamp(40px, 6vw, 84px); line-height: 1; letter-spacing: -.02em; max-width: 16ch; }
   .pj-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr)); gap: 40px 24px; padding-bottom: clamp(64px, 9vw, 120px); }
-  .pj-grid a { display: flex; flex-direction: column; gap: 6px; text-decoration: none; }
-  .pj-grid img, .pj-ph { aspect-ratio: 4 / 5; margin-bottom: 10px; }
+  .pj-grid article { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+  .pj-grid a { display: block; text-decoration: none; }
+  .pj-media { position: relative; margin-bottom: 10px; }
+  .pj-grid img, .pj-ph { aspect-ratio: 4 / 5; width: 100%; display: block; }
+  .ba__before { position: absolute; inset: 0; height: 100%; object-fit: cover; opacity: 0; transition: opacity .35s ease; }
+  .ba.is-before .ba__before { opacity: 1; }
+  .ba__toggle { position: absolute; left: 12px; bottom: 12px; display: inline-flex; border: 0; padding: 3px; border-radius: 999px; background: rgba(234,234,228,.92); color: var(--ink); font: inherit; font-size: 13px; cursor: pointer; }
+  .ba__toggle span { padding: 6px 12px; border-radius: 999px; }
+  .ba__toggle span:last-child, .ba.is-before .ba__toggle span:first-child { background: var(--ink); color: var(--bone); }
+  .ba.is-before .ba__toggle span:last-child { background: transparent; color: var(--ink); }
   .pj-ph { background: var(--stone); display: grid; place-items: center; font-size: 22px; color: var(--muted); }
   .pj-grid h2 { font-size: 22px; }
   .pj-grid p { color: var(--text2); }

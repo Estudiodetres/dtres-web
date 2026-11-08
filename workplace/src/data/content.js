@@ -114,8 +114,8 @@ export const projects = [
   { slug: 'detres', key: 'dtres', name: 'DTRES', title: 'Nuestro estudio', meta: '15 personas · 100 m²', img: '/img/pj-dtres.jpg' },
   { slug: 'aieliahub-l8l3p', name: 'Brafa', title: 'Brafa', meta: 'Diseño de oficinas', img: '/img/pj-brafa-vestuarios.jpg' },
   { slug: 'oip', name: 'OIP', title: 'Oficinas de OIP', meta: 'Diseño de oficinas', img: '/img/pj-oip.jpg' },
-  { slug: 'aloalto', name: 'Aloalto', title: 'Oficinas de Aloalto', meta: 'Diseño de oficinas', img: '/img/pj-aloalto.jpg' },
-  { slug: 'delaire', name: 'Delaire', title: 'Oficinas de Delaire', meta: 'Diseño de oficinas', img: '/img/pj-delaire.jpg' },
+  { slug: 'aloalto', key: 'aloalto', name: 'Aloalto', title: 'Oficinas de Aloalto', meta: 'Diseño de oficinas', img: '/img/pj-aloalto.jpg' },
+  { slug: 'delaire', key: 'delaire', name: 'Delaire', title: 'Oficinas de Delaire', meta: 'Diseño de oficinas', img: '/img/pj-delaire.jpg' },
 ];
 
 export const team = {

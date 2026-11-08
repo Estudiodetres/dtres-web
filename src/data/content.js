@@ -229,11 +229,11 @@ export const allProjects = [
   { use: 'Oficinas', client: 'Mafer.ai', m2: 200, cat: 'oficinas', img: '/img/pj-mafer.jpg', status: 'En viabilidad', place: 'Barcelona' },
   { use: 'Hotel', client: 'Le Mirath · El Cairo', m2: 1000, cat: 'residencias', img: '/img/pj-hotel-cairo.jpg', place: 'El Cairo' },
   { use: 'Oficinas', slug: 'amelia-hub', gal: 'ameliahub', ba: 'amelia', client: 'Amelia Hub', m2: 2000, cat: 'oficinas', img: '/img/pj-amelia.jpg', place: 'Barcelona' },
-  { use: 'Oficinas', slug: 'aloalto', gal: 'aloalto', client: 'Aloalto', m2: 1000, cat: 'oficinas', img: '/img/pj-aloalto.jpg', place: 'Barcelona' },
+  { use: 'Oficinas', slug: 'aloalto', ba: 'aloalto', gal: 'aloalto', client: 'Aloalto', m2: 1000, cat: 'oficinas', img: '/img/pj-aloalto.jpg', place: 'Barcelona' },
   { use: 'Showroom y oficinas', slug: 'papiol', gal: 'papiol', ba: 'papiol', client: 'Papiol', m2: 800, cat: 'oficinas', img: '/img/pj-papiol.jpg', place: 'Barcelona' },
   { use: 'Oficinas', slug: 'triple-a', gal: 'triples', client: 'Triple A Risk Finance', m2: 400, cat: 'oficinas', img: '/img/pj-frankie.jpg', place: 'Barcelona' },
   { use: 'Oficinas', slug: 'mier-giralt-abogados', gal: 'miergiraltlaboralistas', ba: 'mier', client: 'Mier Giralt Abogados', m2: 200, cat: 'oficinas', img: '/img/pj-mier.jpg', place: 'Barcelona' },
-  { use: 'Oficinas', slug: 'delaire', gal: 'delaire', client: 'Delaire', m2: 100, cat: 'oficinas', img: '/img/pj-delaire.jpg', place: 'Barcelona' },
+  { use: 'Oficinas', slug: 'delaire', ba: 'delaire', gal: 'delaire', client: 'Delaire', m2: 100, cat: 'oficinas', img: '/img/pj-delaire.jpg', place: 'Barcelona' },
   { use: 'Nuestro estudio', slug: 'estudio-dtres', gal: 'detres', ba: 'dtres', client: 'DTRES', cat: 'oficinas', img: '/img/pj-dtres.jpg', place: 'Barcelona' },
 ];
 
