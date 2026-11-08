@@ -6,7 +6,7 @@ import { moreImgs } from '../data/content.js';
 import { getStats, formatStats } from '../data/notion.js';
 import { getPosts } from '../data/blog.js';
 import { srcset, dims } from '../lib/img.js';
-import { ui, routes, phasePath, langs, fmt } from '../i18n/index.js';
+import { ui, routes, phasePath, langs, fmt, projectDetail } from '../i18n/index.js';
 
 const { lang = 'es' } = Astro.props;
 const { hero, audiences, stats, usp, phases, featured, reviews, team, faqs, meta, clients, allProjects, home2, site } = getContent(lang);
@@ -178,7 +178,7 @@ const caseLd = {
     <div class="rev__head"><h2>{t.more}</h2><a href={routes.projects[lang]}>{t.allProjects}</a></div>
     <div class="more__grid">
       {moreProjects.map((p) => (
-        <article><img class={p.bw ? "ph bw" : "ph"} src={p.img} srcset={srcset(p.img)} sizes="(min-width: 860px) 33vw, (min-width: 520px) 50vw, 100vw" alt={`${p.tag} · ${p.client}`} width="600" height="750" loading="lazy" /><h3>{p.tag}</h3><span class="lbl">{p.client}</span></article>
+        <article class={p.ba ? 'ba' : undefined}><div class="more__media"><a href={p.slug ? `${routes.projects[lang]}${p.slug}/` : undefined}><img class={p.bw ? "ph bw" : "ph"} src={p.img} srcset={srcset(p.img)} sizes="(min-width: 860px) 33vw, (min-width: 520px) 50vw, 100vw" alt={`${p.tag} · ${p.client}`} width="600" height="750" loading="lazy" />{p.ba && <img class="ph ba__before" src={`/img/wpc-${p.ba}-antes.jpg`} srcset={srcset(`/img/wpc-${p.ba}-antes.jpg`)} sizes="(min-width: 860px) 33vw, (min-width: 520px) 50vw, 100vw" alt={`${projectDetail[lang].before} · ${p.client}`} width="600" height="750" loading="lazy" />}</a>{p.ba && <button class="ba__toggle" type="button" aria-pressed="false"><span>{projectDetail[lang].before}</span><span>{projectDetail[lang].after}</span></button>}</div><h3>{p.tag}</h3><span class="lbl">{p.client}</span></article>
       ))}
     </div>
   </section>
@@ -204,6 +204,13 @@ const caseLd = {
   </section>
 </Base>
 
+<script>
+  document.querySelectorAll('.ba__toggle').forEach((b) => b.addEventListener('click', () => {
+    const on = b.getAttribute('aria-pressed') !== 'true';
+    b.setAttribute('aria-pressed', String(on));
+    b.closest('.ba').classList.toggle('is-before', on);
+  }));
+</script>
 <style>
   .hero { padding-block: clamp(48px, 8vw, 96px) 64px; display: flex; flex-direction: column; gap: 40px; }
   .hero h1 { font-size: clamp(44px, 7.5vw, 112px); line-height: .98; letter-spacing: -.025em; max-width: 16ch; }
@@ -275,6 +282,13 @@ const caseLd = {
   .more__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px 24px; }
   @media (max-width: 860px) { .more__grid { grid-template-columns: repeat(2, 1fr); } }
   @media (max-width: 520px) { .more__grid { grid-template-columns: 1fr; } }
+  .more__media { position: relative; } .more__media a { display: block; } .more__grid img { width: 100%; }
+  .ba__before { position: absolute; inset: 0; height: 100%; object-fit: cover; opacity: 0; transition: opacity .35s ease; }
+  .ba.is-before .ba__before { opacity: 1; }
+  .ba__toggle { position: absolute; left: 12px; bottom: 12px; display: inline-flex; border: 0; padding: 3px; border-radius: 999px; background: rgba(234,234,228,.92); color: #202124; font: inherit; font-size: 13px; cursor: pointer; }
+  .ba__toggle span { padding: 6px 12px; border-radius: 999px; }
+  .ba__toggle span:last-child, .ba.is-before .ba__toggle span:first-child { background: #202124; color: #eaeae4; }
+  .ba.is-before .ba__toggle span:last-child { background: transparent; color: #202124; }
   .more__grid article { display: flex; flex-direction: column; gap: 12px; } .more__grid img { aspect-ratio: 4 / 5; } .more__grid .bw { filter: grayscale(1); } .more__grid h3 { font-size: 20px; line-height: 1.25; }
 
   .wip { padding-block: clamp(64px, 10vw, 112px); display: flex; flex-direction: column; gap: 48px; } .wip .h2 { max-width: 22ch; margin-top: 16px; }
