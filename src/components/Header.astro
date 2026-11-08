@@ -1,5 +1,6 @@
 ---
-import { ui, routes, phasePath, langs, code } from '../i18n/index.js';
+import { ui, routes, phasePath, langs, code, wpLabels } from '../i18n/index.js';
+import { site } from '../data/content.js';
 import { getContent } from '../data/i18n-content.js';
 const { lang = 'es', alternates = null } = Astro.props;
 const t = ui[lang];
@@ -18,6 +19,7 @@ const langHref = (l) => (alternates && alternates[l]) || routes.home[l];
     <a href={home} class="hdr__logo" aria-label="DTRES">DTRES</a>
     <nav class="hdr__nav" aria-label="Principal">
       {links.map(([h, l]) => <a href={h}>{l}</a>)}
+      <a href={site.workplace} class="hdr__wp">{wpLabels[lang].nav} <span aria-hidden="true">↗</span></a>
     </nav>
     <div class="hdr__right">
       <span class="hdr__lang">
@@ -30,6 +32,7 @@ const langHref = (l) => (alternates && alternates[l]) || routes.home[l];
         <summary aria-label="Menú"><span></span><span></span></summary>
         <div class="hdr__drawer">
           {links.map(([h, l]) => <a href={h}>{l}</a>)}
+          <a href={site.workplace}>{wpLabels[lang].nav} ↗</a>
           <div class="hdr__drawer-lang">
             {langs.map((l) => (l === lang ? <span>{code[l]}</span> : <a href={langHref(l)} hreflang={l}>{code[l]}</a>))}
           </div>
@@ -49,6 +52,8 @@ const langHref = (l) => (alternates && alternates[l]) || routes.home[l];
   .hdr__logo { font-size: 24px; font-weight: 600; letter-spacing: .06em; text-decoration: none; }
   .hdr__nav { display: flex; gap: 28px; font-size: 15px; }
   .hdr__nav a { text-decoration: none; padding-block: 12px; }
+  .hdr__wp { color: var(--muted); }
+  .hdr__wp span { font-size: 12px; }
   .hdr__lang a, .hdr__lang span { display: inline-block; padding: 12px 2px; }
   .hdr__right { display: flex; align-items: center; gap: 20px; }
   .hdr__lang { font-size: 13px; letter-spacing: .08em; }

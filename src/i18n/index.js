@@ -39,6 +39,7 @@ export const ui = {
     phase: { label: 'Fase', integral: 'Transformación integral', includes: 'Qué incluye', youGet: 'Recibes', note: 'Puedes empezar por aquí. Te acompañamos hasta el final.', others: 'Las otras fases', ctaPre: '¿Empezamos por' },
     projects: { eyebrow: 'Proyectos · Barcelona y Catalunya', title: 'Edificios que han cambiado de vida.', sub: 'Patrimonio catalogado, residencias, oficinas y equipamientos para fundaciones, inversores y empresas. De la due diligence a la entrega de llaves.',
       filters: { todos: 'Todos', patrimonio: 'Patrimonio catalogado', cambio: 'Cambio de uso', residencias: 'Residencias', oficinas: 'Oficinas', equipamientos: 'Equipamientos', curso: 'En curso' },
+      wp: { title: "¿Buscas oficina para tu empresa?", text: "Tenemos una web dedicada solo a oficinas: proyectos, método y precios orientativos.", cta: "Ver DTRES Workplace", card: "Ver en Workplace" },
       heritage: 'Patrimonio catalogado', project: 'Proyecto', filterLabel: 'Filtrar proyectos', metaTitle: 'Proyectos · Transformación de edificios en Barcelona · DTRES',
       metaDesc: (n, m2) => `Edificios catalogados, residencias, oficinas y equipamientos transformados en Barcelona y Catalunya. ${n} proyectos, más de ${m2} m².` },
     blog: { eyebrow: 'Blog · Guías para inversores', title: 'Lo que hay que saber antes de transformar un edificio.', sub: 'Normativa, licencias, costes y plazos en Barcelona y Catalunya, explicados por los arquitectos que lo tramitan cada semana.',
@@ -63,6 +64,7 @@ export const ui = {
     phase: { label: 'Fase', integral: 'Transformació integral', includes: 'Què inclou', youGet: 'Reps', note: 'Pots començar per aquí. T’acompanyem fins al final.', others: 'Les altres fases', ctaPre: 'Comencem per' },
     projects: { eyebrow: 'Projectes · Barcelona i Catalunya', title: 'Edificis que han canviat de vida.', sub: 'Patrimoni catalogat, residències, oficines i equipaments per a fundacions, inversors i empreses. De la due diligence al lliurament de claus.',
       filters: { todos: 'Tots', patrimonio: 'Patrimoni catalogat', cambio: "Canvi d'ús", residencias: 'Residències', oficinas: 'Oficines', equipamientos: 'Equipaments', curso: 'En curs' },
+      wp: { title: "Busques oficina per a la teva empresa?", text: "Tenim un web dedicat només a oficines: projectes, mètode i preus orientatius.", cta: "Veure DTRES Workplace", card: "Veure a Workplace" },
       heritage: 'Patrimoni catalogat', project: 'Projecte', filterLabel: 'Filtrar projectes', metaTitle: "Projectes · Transformació d'edificis a Barcelona · DTRES",
       metaDesc: (n, m2) => `Edificis catalogats, residències, oficines i equipaments transformats a Barcelona i Catalunya. ${n} projectes, més de ${m2} m².` },
     blog: { eyebrow: 'Blog · Guies per a inversors', title: 'El que cal saber abans de transformar un edifici.', sub: 'Normativa, llicències, costos i terminis a Barcelona i Catalunya, explicats pels arquitectes que els tramiten cada setmana.',
@@ -87,6 +89,7 @@ export const ui = {
     phase: { label: 'Phase', integral: 'End-to-end transformation', includes: 'What it includes', youGet: 'You get', note: 'You can start here. We stay with you to the end.', others: 'The other phases', ctaPre: 'Shall we start with' },
     projects: { eyebrow: 'Projects · Barcelona and Catalonia', title: 'Buildings with a new life.', sub: 'Listed heritage buildings, residences, offices and facilities for foundations, investors and companies. From due diligence to handover.',
       filters: { todos: 'All', patrimonio: 'Listed heritage', cambio: 'Change of use', residencias: 'Residences', oficinas: 'Offices', equipamientos: 'Facilities', curso: 'In progress' },
+      wp: { title: "Looking for an office for your company?", text: "We have a website just for offices: projects, method and guide prices.", cta: "See DTRES Workplace", card: "See on Workplace" },
       heritage: 'Listed heritage', project: 'Project', filterLabel: 'Filter projects', metaTitle: 'Projects · Building transformation in Barcelona · DTRES',
       metaDesc: (n, m2) => `Listed buildings, residences, offices and facilities transformed in Barcelona and Catalonia. ${n} projects, over ${m2} m².` },
     blog: { eyebrow: 'Blog · Guides for investors', title: 'What to know before transforming a building.', sub: 'Planning rules, permits, costs and timelines in Barcelona and Catalonia, explained by the architects who handle them every week.',
@@ -98,3 +101,5 @@ export const ui = {
 
 // Formato numérico 1.000 / 1,000
 export const fmt = (n, lang = 'es') => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, lang === 'en' ? ',' : '.');
+
+export const wpLabels = { es: { nav: 'Oficinas', footer: 'Oficinas para empresas' }, ca: { nav: 'Oficines', footer: 'Oficines per a empreses' }, en: { nav: 'Offices', footer: 'Offices for companies' } };

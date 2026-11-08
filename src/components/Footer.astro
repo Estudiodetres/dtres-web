@@ -1,12 +1,12 @@
 ---
 import { site } from '../data/content.js';
-import { ui, routes } from '../i18n/index.js';
+import { ui, routes, wpLabels } from '../i18n/index.js';
 const { lang = 'es' } = Astro.props;
 const t = ui[lang].footer;
 ---
 <footer class="ftr dark">
   <div class="wrap ftr__in">
-    <div class="ftr__col"><span class="ftr__logo">DTRES</span><span>{t.tagline}</span></div>
+    <div class="ftr__col"><span class="ftr__logo">DTRES</span><span>{t.tagline}</span><a class="ftr__wp" href={site.workplace}>{wpLabels[lang].footer} ↗</a></div>
     <div class="ftr__col"><span class="lbl">{t.studio}</span><span>{site.address.street}</span><span>{site.address.postalCode} {site.address.city}</span></div>
     <div class="ftr__col"><span class="lbl">{t.contact}</span><a href={`mailto:${site.email}`}>{site.email}</a><a href={`tel:${site.phone.replace(/\s/g, '')}`}>{site.phoneDisplay}</a></div>
     <div class="ftr__col"><span class="lbl">{t.legal}</span><a href={routes.legal[lang]}>{t.legalNotice}</a><a href={routes.privacy[lang]}>{t.privacy}</a><a href={routes.cookies[lang]}>{t.cookies}</a></div>
@@ -22,6 +22,7 @@ const t = ui[lang].footer;
   .ftr__col { display: flex; flex-direction: column; gap: 6px; }
   .ftr__col a { color: #c9c8bb; text-decoration: none; }
   @media (hover: none), (max-width: 760px) { .ftr__col { gap: 2px; } .ftr__col a { padding-block: 8px; } }
+  .ftr__wp { margin-top: 10px; color: var(--bone) !important; text-decoration: underline !important; text-underline-offset: 4px; }
   .ftr__logo { font-size: 22px; font-weight: 600; letter-spacing: .06em; color: var(--bone); }
   .ftr__base { padding-block: 0 40px; font-size: 13px; color: #8f8e82; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
   .ftr__mark { width: 36px; height: 36px; color: #8f8e82; flex: none; }
