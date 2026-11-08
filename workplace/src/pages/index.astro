@@ -154,10 +154,25 @@ const caseLd = {
     <div class="rev__head"><h2>Casos de éxito</h2><a href="/casosdeexito/">Ver todos →</a></div>
     <div class="more__grid">
       {cases.map((c) => (
-        <article>{c.slug ? <a href={`/casosdeexito/${c.slug}/`}><img class="ph" src={c.img} srcset={srcset(c.img)} sizes="(min-width: 860px) 33vw, (min-width: 520px) 50vw, 100vw" alt={`Oficina ${c.name}`} width="600" height="750" loading="lazy" /></a> : <img class="ph" src={c.img} srcset={srcset(c.img)} sizes="(min-width: 860px) 33vw, (min-width: 520px) 50vw, 100vw" alt={`Oficina ${c.name}`} width="600" height="750" loading="lazy" />}<h3>{c.name}</h3><span class="lbl">{c.meta}</span></article>
+        <article class="ba">
+          <div class="ba__media">
+            <img class="ph ba__after" src={c.img} srcset={srcset(c.img)} sizes="(min-width: 860px) 33vw, (min-width: 520px) 50vw, 100vw" alt={`Oficina ${c.name} después de la transformación`} width="600" height="750" loading="lazy" decoding="async" />
+            <img class="ph ba__before" src={c.before} srcset={srcset(c.before)} sizes="(min-width: 860px) 33vw, (min-width: 520px) 50vw, 100vw" alt={`Oficina ${c.name} antes de la transformación`} width="600" height="750" loading="lazy" decoding="async" />
+            <button class="ba__toggle" type="button" aria-pressed="false"><span>Antes</span><span>Después</span></button>
+          </div>
+          <h3>{c.slug ? <a href={`/casosdeexito/${c.slug}/`}>{c.name}</a> : c.name}</h3><span class="lbl">{c.meta}</span>
+        </article>
       ))}
     </div>
   </section>
+
+  <script>
+    document.querySelectorAll('.ba__toggle').forEach((b) => b.addEventListener('click', () => {
+      const on = b.getAttribute('aria-pressed') !== 'true';
+      b.setAttribute('aria-pressed', String(on));
+      b.closest('.ba').classList.toggle('is-before', on);
+    }));
+  </script>
 
   <!-- 8. CTA FINAL -->
   <section id="contacto" class="dark">
@@ -171,6 +186,15 @@ const caseLd = {
 </Base>
 
 <style>
+  .ba__media { position: relative; }
+  .ba__before { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; transition: opacity .35s ease; }
+  .ba.is-before .ba__before { opacity: 1; }
+  .ba__toggle { position: absolute; left: 12px; bottom: 12px; display: inline-flex; border: 0; padding: 3px; border-radius: 999px; background: rgba(234,234,228,.92); font: inherit; font-size: 13px; cursor: pointer; }
+  .ba__toggle span { padding: 6px 12px; border-radius: 999px; }
+  .ba__toggle span:last-child, .ba.is-before .ba__toggle span:first-child { background: var(--ink); color: var(--bone); }
+  .ba.is-before .ba__toggle span:last-child { background: transparent; color: var(--ink); }
+  .ba h3 a { text-decoration: none; }
+
   .hero { padding-block: clamp(48px, 8vw, 96px) 64px; display: flex; flex-direction: column; gap: 40px; }
   .hero h1 { font-size: clamp(44px, 7.5vw, 112px); line-height: .98; letter-spacing: -.025em; max-width: 16ch; }
   .hero__row { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 32px; }

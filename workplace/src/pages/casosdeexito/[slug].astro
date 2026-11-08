@@ -15,7 +15,13 @@ const ld = { '@context': 'https://schema.org', '@type': 'CreativeWork', name: `$
     <p class="cs-sub">{p.title}</p>
     <p class="lbl">{p.meta}</p>
   </section>
-  {p.img && <section class="wrap"><img class="ph cs-img" src={p.img} srcset={srcset(p.img)} sizes="100vw" alt={`Oficina ${p.name} diseñada por DTRES`} width="2000" height="1300" /></section>}
+  {p.key && (
+    <section class="wrap cs-ba">
+      <figure><img class="ph" src={`/img/wpc-${p.key}-antes.jpg`} srcset={srcset(`/img/wpc-${p.key}-antes.jpg`)} sizes="(min-width: 760px) 50vw, 100vw" alt={`${p.name} antes`} width="600" height="750" /><figcaption class="lbl">Antes</figcaption></figure>
+      <figure><img class="ph" src={`/img/wpc-${p.key}-despues.jpg`} srcset={srcset(`/img/wpc-${p.key}-despues.jpg`)} sizes="(min-width: 760px) 50vw, 100vw" alt={`${p.name} después`} width="600" height="750" /><figcaption class="lbl">Después</figcaption></figure>
+    </section>
+  )}
+  {p.img && <section class="wrap" style="margin-top: 24px"><img class="ph cs-img" src={p.img} srcset={srcset(p.img)} sizes="100vw" alt={`Oficina ${p.name} diseñada por DTRES`} width="2000" height="1300" /></section>}
   <nav class="wrap cs-nav">
     <a href={`/casosdeexito/${prev.slug}/`}>← {prev.name}</a>
     <a href="/contacto/" class="btn">Quiero una oficina así</a>
@@ -27,6 +33,10 @@ const ld = { '@context': 'https://schema.org', '@type': 'CreativeWork', name: `$
   .cs-hero a.lbl { text-decoration: none; }
   .cs-hero h1 { font-size: clamp(40px, 6vw, 84px); line-height: 1; letter-spacing: -.02em; }
   .cs-sub { font-size: clamp(19px, 1.8vw, 24px); line-height: 1.4; max-width: 46ch; color: var(--text2); }
+  .cs-ba { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+  .cs-ba figure { margin: 0; display: flex; flex-direction: column; gap: 8px; }
+  .cs-ba img { aspect-ratio: 4 / 5; }
+  @media (max-width: 520px) { .cs-ba { gap: 8px; } }
   .cs-img { aspect-ratio: 16 / 10; }
   .cs-nav { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; padding-block: 48px clamp(64px, 9vw, 120px); }
   .cs-nav > a:not(.btn) { text-underline-offset: 4px; }

@@ -86,32 +86,32 @@ export const benefits = {
 export const testimonials = {
   title: 'Lo que dicen algunos de nuestros clientes',
   items: [
-    { tag: 'Pertenencia y rendimiento', quote: 'La oficina se nos quedó pequeña por lo rápido que crecimos. Ya no nos representaba. Conseguimos una oficina ordenada y funcional.', name: 'David Ferré', role: 'Cofundador de Amelia Hub' },
-    { tag: 'Concentración y ruido', quote: 'Las personas preferían quedarse en casa porque no tenían privacidad y había mucho ruido. Ahora, con una oficina que nos representa y pensada para socializar y concentrarse, el equipo vuelve con ganas.', name: 'Xavier Mier', role: 'Fundador de Mier Giralt Abogados' },
-    { tag: 'Desperdicio de m² y oficina antigua', quote: 'Nuestra oficina era antigua y teníamos mucho espacio dedicado al stock de material. DTRES la transformó, ahorrando muchos m² y convirtiéndola en un espacio que transmite nuestra cultura.', name: 'Rosalía García', role: 'CEO de Delaire' },
+    { tag: 'Pertenencia y rendimiento', quote: 'La oficina se nos quedó pequeña por lo rápido que crecimos. Ya no nos representaba. Conseguimos una oficina ordenada y funcional. Hoy el equipo está más enfocado.', name: 'David Ferré', role: 'Cofundador de Amelia Hub' },
+    { tag: 'Concentración y ruido', quote: 'Las personas preferían quedarse en casa porque no tenían privacidad y había mucho ruido. Ahora, con una oficina que nos representa y pensada para socializar y concentrarse, el equipo vuelve con ganas y se nota en la energía.', name: 'Xavier Mier', role: 'Fundador de Mier Giralt Abogados' },
+    { tag: 'Desperdicio de m² y oficina antigua', quote: 'Nuestra oficina era antigua y teníamos mucho espacio dedicado al stock de material. DTRES la transformó, ahorrando muchos m² y convirtiéndola en un espacio que transmite nuestra cultura y que representa nuestra forma de tratar al cliente al 100 %.', name: 'Rosalía García', role: 'CEO de Delaire' },
   ],
 };
 
 // Casos de éxito de la home (antes / después). Las fotos de "antes" se añadirán desde la web anterior.
 export const cases = [
-  { name: 'DTRES', meta: '15 personas en 100 m²', slug: 'detres', img: '/img/pj-dtres.jpg' },
-  { name: 'Mier Giralt', meta: '20 personas en 200 m²', slug: 'miergiraltlaboralistas', img: '/img/pj-mier.jpg' },
-  { name: 'Carena', meta: '20 personas en 380 m²', slug: null, img: '/img/carena-club.jpg' },
-  { name: 'IESE Barcelona', meta: '30 personas en 300 m²', slug: 'iese', img: '/img/pj-iese-a.jpg', before: '/img/iese-l-antes2.jpg' },
-  { name: 'CMU Pedralbes', meta: '80 personas en 3.000 m²', slug: null, img: '/img/pj-cmu.jpg' },
-  { name: 'Amelia Hub', meta: '100 personas en 1.000 m²', slug: 'ameliahub', img: '/img/pj-amelia.jpg' },
-  { name: 'Papiol', meta: 'Showroom + oficina 800 m²', slug: 'papiol', img: '/img/pj-papiol.jpg' },
-];
+  { name: 'DTRES', meta: '15 personas en 100 m²', slug: 'detres', key: 'dtres' },
+  { name: 'Mier Giralt', meta: '20 personas en 200 m²', slug: 'miergiraltlaboralistas', key: 'mier' },
+  { name: 'Carena', meta: '20 personas en 380 m²', slug: null, key: 'carena' },
+  { name: 'IESE Barcelona', meta: '30 personas en 300 m²', slug: 'iese', key: 'iese' },
+  { name: 'CMU Pedralbes', meta: '80 personas en 3.000 m²', slug: null, key: 'cmu' },
+  { name: 'Amelia Hub', meta: '100 personas en 1.000 m²', slug: 'ameliahub', key: 'amelia' },
+  { name: 'Papiol', meta: 'Showroom + oficina 800 m²', slug: 'papiol', key: 'papiol' },
+].map((c) => ({ ...c, img: `/img/wpc-${c.key}-despues.jpg`, before: `/img/wpc-${c.key}-antes.jpg` }));
 
 // Páginas de casos de éxito (mismas direcciones que la web anterior)
 export const projects = [
-  { slug: 'papiol', name: 'Papiol', title: 'Showroom y oficinas de Papiol', meta: 'Showroom + oficina · 800 m²', img: '/img/pj-papiol.jpg' },
-  { slug: 'ameliahub', name: 'Amelia Hub', title: 'Oficinas de Amelia Hub', meta: '100 personas · 1.000 m²', img: '/img/pj-amelia.jpg' },
-  { slug: 'iese', name: 'IESE Barcelona', title: 'Transformación del espacio de recepción de invitados del edificio de Dirección General del campus de Barcelona del IESE.', meta: '30 personas · 300 m²', img: '/img/pj-iese-a.jpg', desc: 'IESE Barcelona: diseño del espacio de trabajo de la Dirección General.' },
+  { slug: 'papiol', key: 'papiol', name: 'Papiol', title: 'Showroom y oficinas de Papiol', meta: 'Showroom + oficina · 800 m²', img: '/img/pj-papiol.jpg' },
+  { slug: 'ameliahub', key: 'amelia', name: 'Amelia Hub', title: 'Oficinas de Amelia Hub', meta: '100 personas · 1.000 m²', img: '/img/pj-amelia.jpg' },
+  { slug: 'iese', key: 'iese', name: 'IESE Barcelona', title: 'Transformación del espacio de recepción de invitados del edificio de Dirección General del campus de Barcelona del IESE.', meta: '30 personas · 300 m²', img: '/img/pj-iese-a.jpg', desc: 'IESE Barcelona: diseño del espacio de trabajo de la Dirección General.' },
   { slug: 'padua', name: 'Pádua', title: 'Centro Pádua', meta: 'Oficinas y espacios de trabajo', img: '/img/pj-padua.jpg' },
-  { slug: 'miergiraltlaboralistas', name: 'Mier Giralt Laboralistas', title: 'Oficinas de Mier Giralt Laboralistas', meta: '20 personas · 200 m²', img: '/img/pj-mier.jpg' },
+  { slug: 'miergiraltlaboralistas', key: 'mier', name: 'Mier Giralt Laboralistas', title: 'Oficinas de Mier Giralt Laboralistas', meta: '20 personas · 200 m²', img: '/img/pj-mier.jpg' },
   { slug: 'triples', name: 'Triple A', title: 'Oficinas de Triple A', meta: 'Diseño de oficinas', img: null },
-  { slug: 'detres', name: 'DTRES', title: 'Nuestro estudio', meta: '15 personas · 100 m²', img: '/img/pj-dtres.jpg' },
+  { slug: 'detres', key: 'dtres', name: 'DTRES', title: 'Nuestro estudio', meta: '15 personas · 100 m²', img: '/img/pj-dtres.jpg' },
   { slug: 'aieliahub-l8l3p', name: 'Brafa', title: 'Brafa', meta: 'Diseño de oficinas', img: '/img/pj-brafa-vestuarios.jpg' },
   { slug: 'oip', name: 'OIP', title: 'Oficinas de OIP', meta: 'Diseño de oficinas', img: '/img/pj-oip.jpg' },
   { slug: 'aloalto', name: 'Aloalto', title: 'Oficinas de Aloalto', meta: 'Diseño de oficinas', img: '/img/pj-aloalto.jpg' },
@@ -387,9 +387,9 @@ export const usp = {
   title: 'Una oficina que acelera el crecimiento.',
   image: { src: '/img/pj-mier.jpg', alt: 'Oficinas de Mier Giralt Abogados diseñadas por DTRES' },
   proofs: [
-    { icon: 'heritage', title: 'Transmite vuestro prestigio y valores', tag: 'Cultura e imagen', text: 'La coherencia entre lo que decís que sois y lo que habla vuestro espacio es lo que atrae al talento.' },
-    { icon: 'split', title: 'Cada m² tiene sentido', tag: '+30% optimización', text: 'Metros que funcionan para el foco y la colaboración. Sin despachos vacíos ni pasillos oscuros.' },
-    { icon: 'company', title: 'El equipo quiere estar', tag: '+35% foco · +25% retención', text: 'Menos ruido e interrupciones. El equipo vuelve a la oficina con ganas.' },
+    { icon: 'heritage', title: 'Transmite vuestro prestigio y valores', tag: 'Cultura e imagen', text: 'Diseñamos entornos que proyectan tu éxito y atraen a los mejores perfiles. Convertimos tu oficina en el lugar donde tu equipo quiere estar, asegurando el relevo generacional.' },
+    { icon: 'split', title: 'Cada m² tiene sentido', tag: '+30% optimización', text: 'Distribución según el tipo de trabajo para aprovechar los m² que hoy están vacíos por el teletrabajo. Eliminamos ruido, interrupciones, aire viciado y climatización que no funciona.' },
+    { icon: 'company', title: 'El equipo quiere estar', tag: '+35% foco · +25% retención', text: 'El talento necesita espacios que no solo funcionen, sino que tengan sentido y estén alineados con el propósito de la empresa.' },
     { icon: 'route', title: 'Escoge con certeza', tag: 'Local según crecimiento', text: 'Te ayudamos a elegir un local que acompañe el crecimiento de la empresa en los próximos años.' },
   ],
 };
