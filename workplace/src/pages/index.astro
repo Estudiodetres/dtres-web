@@ -2,7 +2,7 @@
 import Base from '../layouts/Base.astro';
 import ContactForm from '../components/ContactForm.astro';
 import { hero, audiences, clients, journey, phases, featuredCase as fc, usp, bonus, dtresTeam as team, stats, testimonials, cases, contact, site } from '../data/content.js';
-import { srcset } from '../lib/img.js';
+import { srcset, dims } from '../lib/img.js';
 const phaseIcons = {
   viabilidad: '<path fill-rule="evenodd" d="M4 42V17l12-9 12 9v25zM9 20h4v4H9zm7 0h4v4h-4zM9 27h4v4H9zm7 0h4v4h-4zM9 34h4v4H9z"/><path fill-rule="evenodd" stroke="#202124" stroke-width="3" d="M33 21a10 10 0 1 1 0 20 10 10 0 0 1 0-20zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/><path d="M39.5 37.5l3-3 5 5-3 3z"/>',
   'proyecto-y-licencias': '<path fill-rule="evenodd" d="M8 3h22l10 10v32H8zM29 6v9h9zM13 20h22v3H13zm0 7h22v3H13zm0 7h13v3H13z"/>',
@@ -28,7 +28,7 @@ const caseLd = {
   creator: { '@id': 'https://workplace.detres.eu/#org' }, image: fc.steps.map((x) => new URL(x.img, 'https://workplace.detres.eu').href),
 };
 ---
-<Base title="Diseño y reforma de oficinas en Barcelona · DTRES Workplace" description="Ayudamos a empresas en crecimiento a encontrar y transformar sus próximas oficinas en Barcelona. Un único interlocutor, a precio y plazo cerrado." jsonLd={[caseLd]}>
+<Base title="Diseño y reforma de oficinas en Barcelona · DTRES Workplace" description="Ayudamos a empresas en crecimiento a encontrar y transformar sus próximas oficinas en Barcelona. Un único interlocutor, a precio y plazo cerrado." jsonLd={[caseLd]} preload={{ srcset: srcset(hero.image.src), sizes: '(min-width: 1680px) 1520px, (min-width: 1280px) 1280px, 100vw' }}>
   <!-- 1. DESTINO -->
   <section class="wrap hero">
     <p class="lbl">{hero.eyebrow}</p>
@@ -52,7 +52,7 @@ const caseLd = {
   <div class="wrap logos">
     <p class="lbl">Han confiado en nosotros</p>
     <ul class="logos__row">
-      {clients.map((c) => <li><img src={c.logo} alt={c.name} title={c.name} loading="lazy" /></li>)}
+      {clients.map((c) => <li><img src={c.logo} {...dims(c.logo)} alt={c.name} title={c.name} loading="lazy" decoding="async" /></li>)}
     </ul>
   </div>
 
@@ -133,7 +133,7 @@ const caseLd = {
         <img class="ph" src={team.image.src} srcset={srcset(team.image.src)} sizes="(min-width: 860px) 60vw, 100vw" alt={team.image.alt} width="900" height="600" loading="lazy" />
         <div class="team__partners">
           {team.partners.map((p) => (
-            <div class="team__p">{p.img && <img class="ph" src={p.img} alt={p.name} width="72" height="72" loading="lazy" />}
+            <div class="team__p">{p.img && <img class="ph" src={p.img} srcset={srcset(p.img)} alt={p.name} width="72" height="72" loading="lazy" decoding="async" />}
               <div><strong>{p.name}</strong><span>{p.role}</span>{p.title && <span class="team__role">{p.title}</span>}{p.note && <span class="team__note">{p.note}</span>}</div></div>
           ))}
         </div>
@@ -196,7 +196,6 @@ const caseLd = {
   .aud__item h3 { font-size: 21px; line-height: 1.25; } .aud__item p { color: var(--text2); font-size: 16px; }
 
   .logos { padding-block: 0 clamp(48px, 8vw, 80px); display: flex; flex-direction: column; gap: 28px; border-top: 1px solid rgba(234,234,228,.15); padding-top: 40px; }
-  .logos .lbl { color: #8f8e82; }
   .logos__row { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 20px 36px; align-items: center; }
   @media (max-width: 1100px) { .logos__row { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
   .logos__row li { display: flex; justify-content: center; }

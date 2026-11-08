@@ -7,7 +7,7 @@ import '@fontsource/schibsted-grotesk/400.css';
 import '@fontsource/schibsted-grotesk/500.css';
 import '@fontsource/schibsted-grotesk/600.css';
 
-const { title, description, jsonLd = [], lang = 'es', alternates = null, noindex = false, hideWa = true } = Astro.props;
+const { title, description, jsonLd = [], lang = 'es', alternates = null, noindex = false, preload = null, hideWa = true } = Astro.props;
 const waText = { es: 'Hola Nacho, tengo un edificio y me gustaría saber si podéis ayudarme.', ca: "Hola Nacho, tinc un edifici i m'agradaria saber si em podeu ajudar.", en: 'Hi Nacho, I have a building and would like to know if you can help.' };
 const waUrl = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(waText[lang] || waText.es)}`;
 const waLabel = { es: 'Escríbenos por WhatsApp', ca: 'Escriu-nos per WhatsApp', en: 'Message us on WhatsApp' }[lang] || 'WhatsApp';
@@ -47,7 +47,8 @@ const org = {
     'Transformación de activos inmobiliarios',
     'Licencias de obra por fases',
   ],
-  slogan: 'Transformamos edificios para darles un nuevo uso.',
+  slogan: 'Damos una nueva vida a tu edificio.',
+  image: new URL('/img/og.jpg', 'https://detres.eu').href,
   description: 'Estudio de arquitectura e interiorismo en Barcelona especializado en transformar edificios para un nuevo uso: due diligence técnica, cambio de uso, rehabilitación de edificios catalogados, licencias, interiorismo y dirección de obra.',
   numberOfEmployees: { '@type': 'QuantitativeValue', value: 12 },
   audience: ['Inversores y fondos inmobiliarios', 'Fundaciones e instituciones', 'Propietarios y family offices', 'Empresas'].map((a) => ({ '@type': 'BusinessAudience', audienceType: a })),
@@ -83,8 +84,10 @@ const org = {
   <meta property="og:image:alt" content="DTRES · Damos una nueva vida a tu edificio" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content={ogImage} />
+  {preload && <link rel="preload" as="image" imagesrcset={preload.srcset} imagesizes={preload.sizes} fetchpriority="high" />}
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-  <script type="application/ld+json" set:html={JSON.stringify([org, ...jsonLd])} />
+  <meta name="theme-color" content="#eaeae4" />
+  <script type="application/ld+json" set:html={JSON.stringify([org, { '@context': 'https://schema.org', '@type': 'WebSite', '@id': `${site.url}/#web`, name: 'DTRES', url: site.url, inLanguage: ['es', 'ca', 'en'], publisher: { '@id': `${site.url}/#org` } }, ...jsonLd])} />
 </head>
 <body>
   <Header lang={lang} alternates={alternates} />

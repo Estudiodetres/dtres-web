@@ -8,7 +8,7 @@ export function getStaticPaths() {
 const { p, prev, next } = Astro.props;
 const ld = { '@context': 'https://schema.org', '@type': 'CreativeWork', name: `${p.name} · DTRES Workplace`, about: p.title, creator: { '@id': 'https://workplace.detres.eu/#org' }, ...(p.img ? { image: new URL(p.img, Astro.site).href } : {}) };
 ---
-<Base title={`${p.name} · Casos de éxito · DTRES Workplace`} description={p.desc ?? `${p.title}. ${p.meta}. Oficina diseñada y construida por DTRES en Barcelona.`} jsonLd={[ld]}>
+<Base title={`${p.name} · Casos de éxito · DTRES Workplace`} description={p.desc ?? `${p.title}. ${p.meta}. Oficina diseñada y construida por DTRES en Barcelona.`} jsonLd={[ld, { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://workplace.detres.eu/' }, { '@type': 'ListItem', position: 2, name: 'Casos de éxito', item: 'https://workplace.detres.eu/casosdeexito/' }, { '@type': 'ListItem', position: 3, name: p.name }] }]}>
   <section class="wrap cs-hero">
     <a class="lbl" href="/casosdeexito/">← Casos de éxito</a>
     <h1>{p.name}</h1>

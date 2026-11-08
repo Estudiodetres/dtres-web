@@ -35,7 +35,7 @@ const ld = {
     <div class="tm-grid">
       {team.partners.map((p) => (
         <article>
-          <img class="ph" src={photo(p.name)} alt={p.name} width="600" height="600" loading="lazy" />
+          <img class="ph" src={photo(p.name)} srcset={srcset(photo(p.name))} alt={p.name} width="600" height="600" loading="lazy" decoding="async" />
           <h3>{p.name}</h3>
           <p class="tm-role">{p.title}</p>
           <p>{p.role}</p>
@@ -52,7 +52,7 @@ const ld = {
       {people.staff.map((p) => (
         <article>
           {photo(p.name)
-            ? <img class="ph" src={photo(p.name)} alt={p.name} width="600" height="600" loading="lazy" />
+            ? <img class="ph" src={photo(p.name)} srcset={srcset(photo(p.name))} alt={p.name} width="600" height="600" loading="lazy" decoding="async" />
             : <div class="tm-ph" aria-hidden="true">{initials(p.name)}</div>}
           <h3>{p.name}</h3>
           <p class="tm-role">{p.role}</p>

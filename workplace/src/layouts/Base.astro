@@ -5,7 +5,7 @@ import { site } from '../data/content.js';
 import '@fontsource/schibsted-grotesk/400.css';
 import '@fontsource/schibsted-grotesk/500.css';
 import '@fontsource/schibsted-grotesk/600.css';
-const { title, description, jsonLd = [], noindex = false } = Astro.props;
+const { title, description, jsonLd = [], noindex = false, preload = null } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
 const ogBase = process.env.URL || Astro.site;
 const ogImage = new URL('/img/pj-amelia-w1200.jpg', ogBase).href;
@@ -19,6 +19,8 @@ const org = {
   telephone: site.phone,
   description: 'Línea de oficinas de DTRES Arquitectura: búsqueda de local, diseño, licencias y obra de oficinas para empresas en crecimiento en Barcelona, a precio y plazo cerrados.',
   slogan: 'Creamos oficinas que aceleran el crecimiento.',
+  image: `${site.url}/img/pj-amelia-w1200.jpg`,
+  founder: [{ '@type': 'Person', name: 'Nacho Vallhonrat', sameAs: 'https://www.linkedin.com/in/nacho-vallhonrat-garcia-valdecasas' }, { '@type': 'Person', name: 'Pablo Notario', sameAs: 'https://www.linkedin.com/in/pablo-notario-602436253' }],
   address: { '@type': 'PostalAddress', streetAddress: site.address.street, postalCode: site.address.postalCode, addressLocality: site.address.city, addressCountry: 'ES' },
   areaServed: 'Barcelona',
   knowsAbout: ['Diseño de oficinas', 'Reforma de oficinas', 'Interiorismo corporativo', 'Búsqueda de oficinas', 'Licencias de actividad', 'Obra llave en mano a precio cerrado'],
@@ -43,8 +45,10 @@ const org = {
   <meta property="og:site_name" content="DTRES Workplace" />
   <meta property="og:image" content={ogImage} />
   <meta name="twitter:card" content="summary_large_image" />
+  {preload && <link rel="preload" as="image" imagesrcset={preload.srcset} imagesizes={preload.sizes} fetchpriority="high" />}
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-  <script type="application/ld+json" set:html={JSON.stringify([org, ...jsonLd])} />
+  <meta name="theme-color" content="#eaeae4" />
+  <script type="application/ld+json" set:html={JSON.stringify([org, { '@context': 'https://schema.org', '@type': 'WebSite', '@id': `${site.url}/#web`, name: 'DTRES Workplace', url: site.url, inLanguage: 'es', publisher: { '@id': `${site.url}/#org` }, isPartOf: { '@id': `${site.parent}/#web` } }, ...jsonLd])} />
 </head>
 <body>
   <Header />

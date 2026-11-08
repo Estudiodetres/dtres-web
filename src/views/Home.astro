@@ -5,7 +5,7 @@ import { getContent } from '../data/i18n-content.js';
 import { moreImgs } from '../data/content.js';
 import { getStats, formatStats } from '../data/notion.js';
 import { getPosts } from '../data/blog.js';
-import { srcset } from '../lib/img.js';
+import { srcset, dims } from '../lib/img.js';
 import { ui, routes, phasePath, langs, fmt } from '../i18n/index.js';
 
 const { lang = 'es' } = Astro.props;
@@ -51,7 +51,7 @@ const caseLd = {
   inLanguage: lang,
 };
 ---
-<Base title={meta.homeTitle} description={meta.homeDesc} jsonLd={[faqLd, caseLd]} lang={lang} alternates={routes.home}>
+<Base title={meta.homeTitle} description={meta.homeDesc} jsonLd={[faqLd, caseLd]} lang={lang} alternates={routes.home} preload={{ srcset: srcset(hero.image.src), sizes: '(min-width: 1680px) 1520px, (min-width: 1280px) 1280px, 100vw' }}>
   <!-- 1. DESTINO -->
   <section class="wrap hero">
     <p class="lbl">{hero.eyebrow}</p>
@@ -75,7 +75,7 @@ const caseLd = {
   <div class="wrap logos">
     <p class="lbl">{t.clientsTitle}</p>
     <ul class="logos__row">
-      {clients.map((c) => <li><img src={c.logo} alt={c.name} title={c.name} loading="lazy" /></li>)}
+      {clients.map((c) => <li><img src={c.logo} {...dims(c.logo)} alt={c.name} title={c.name} loading="lazy" decoding="async" /></li>)}
     </ul>
   </div>
 
@@ -156,7 +156,7 @@ const caseLd = {
         <img class="ph" src={team.image.src} srcset={srcset(team.image.src)} sizes="(min-width: 860px) 60vw, 100vw" alt={team.image.alt} width="900" height="600" loading="lazy" />
         <div class="team__partners">
           {team.partners.map((p) => (
-            <div class="team__p">{p.img && <img class="ph" src={p.img} alt={p.name} width="72" height="72" loading="lazy" />}
+            <div class="team__p">{p.img && <img class="ph" src={p.img} srcset={srcset(p.img)} alt={p.name} width="72" height="72" loading="lazy" decoding="async" />}
               <div><strong>{p.name}</strong><span>{p.role}</span>{p.title && <span class="team__role">{p.title}</span>}{p.note && <span class="team__note">{p.note}</span>}</div></div>
           ))}
         </div>
@@ -230,7 +230,6 @@ const caseLd = {
   .aud__item h3 { font-size: 21px; line-height: 1.25; } .aud__item p { color: var(--text2); font-size: 16px; }
 
   .logos { padding-block: 0 clamp(48px, 8vw, 80px); display: flex; flex-direction: column; gap: 28px; border-top: 1px solid rgba(234,234,228,.15); padding-top: 40px; }
-  .logos .lbl { color: #8f8e82; }
   .logos__row { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 20px 36px; align-items: center; }
   @media (max-width: 1100px) { .logos__row { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
   .logos__row li { display: flex; justify-content: center; }

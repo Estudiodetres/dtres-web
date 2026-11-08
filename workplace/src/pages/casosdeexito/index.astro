@@ -9,9 +9,9 @@ import { srcset } from '../../lib/img.js';
     <h1>Creamos oficinas que aceleran el crecimiento</h1>
   </section>
   <section class="wrap pj-grid">
-    {projects.map((p) => (
+    {projects.map((p, i) => (
       <a href={`/casosdeexito/${p.slug}/`}>
-        {p.img ? <img class="ph" src={p.img} srcset={srcset(p.img)} sizes="(min-width: 860px) 33vw, 100vw" alt={`Oficina ${p.name}`} width="600" height="750" loading="lazy" /> : <div class="pj-ph"><span>{p.name}</span></div>}
+        {p.img ? <img class="ph" src={p.img} srcset={srcset(p.img)} sizes="(min-width: 860px) 33vw, 100vw" alt={`Oficina ${p.name}`} width="600" height="750" loading={i < 3 ? "eager" : "lazy"} fetchpriority={i === 0 ? "high" : undefined} /> : <div class="pj-ph"><span>{p.name}</span></div>}
         <h2>{p.name}</h2>
         <p>{p.meta}</p>
       </a>
