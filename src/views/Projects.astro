@@ -43,7 +43,6 @@ const listLd = {
           <h2>{p.use}{m2(p)}</h2>
           <p>{p.client}</p>
           {(p.heritage || p.tag || (p.img && p.status)) && <span class="lbl">{[p.img && st(p.status), p.tag && st(p.tag), p.heritage && t.heritage].filter(Boolean).join(' · ')}</span>}
-          {p.cat === 'oficinas' && <a class="pj__wplink" href={site.workplace}>{t.wp.card} ↗</a>}
         </article>
       ))}
     </div>
@@ -80,7 +79,6 @@ const listLd = {
   .pj__wp div { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
   .pj__wp strong { font-weight: 500; font-size: 20px; }
   .pj__wp span { color: var(--text2); font-size: 15px; }
-  .pj__wplink { font-size: 14px; color: var(--ink); text-underline-offset: 4px; margin-top: 4px; }
   .pj__filters { display: flex; flex-wrap: wrap; gap: 8px; }
   .pj__filters button { font: inherit; font-size: 14px; padding: 10px 16px; border: 1px solid var(--line); background: transparent; color: inherit; cursor: pointer; }
   .pj__filters button[aria-pressed="true"] { background: #202124; color: #eaeae4; border-color: #202124; }

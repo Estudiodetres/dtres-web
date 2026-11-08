@@ -54,6 +54,7 @@ const org = {
   founder: esTeam.partners.filter((p) => /cofundador/.test(p.role)).map((p) => ({ '@type': 'Person', name: p.name, jobTitle: p.title, description: `${p.role}. ${p.note}`, sameAs: p.linkedin ? [p.linkedin] : undefined })),
   employee: esTeam.partners.map((p) => ({ '@type': 'Person', name: p.name, jobTitle: p.title, worksFor: { '@id': `${site.url}/#org` }, affiliation: { '@type': 'CollegeOrUniversity', name: 'Escuela de Arquitectura UIC Barcelona' }, sameAs: p.linkedin ? [p.linkedin] : undefined })),
   review: esReviews.map((r) => ({ '@type': 'Review', reviewRating: { '@type': 'Rating', ratingValue: r.rating, bestRating: 5 }, author: { '@type': 'Person', name: r.author }, reviewBody: r.quote, publisher: { '@type': 'Organization', name: 'Google' } })),
+  department: { '@type': 'ProfessionalService', '@id': `${site.workplace}/#org`, name: 'DTRES Workplace', url: site.workplace, description: 'Línea de DTRES especializada en diseño, reforma y construcción de oficinas para empresas en Barcelona.', parentOrganization: { '@id': `${site.url}/#org` }, areaServed: 'Barcelona' },
   sameAs: [`https://www.google.com/maps/place/?q=place_id:${site.placeId}`, ...(site.social || [])],
 };
 ---
