@@ -1,13 +1,13 @@
 ---
 import { site } from '../data/content.js';
-const links = [['/casosdeexito/', 'Casos de éxito'], ['/#metodo', 'Método'], ['/#equipo', 'Equipo']];
+const links = [['/#metodo', 'Servicios'], ['/casosdeexito/', 'Proyectos'], ['/#equipo', 'Nosotros'], ['/blog/', 'Blog']];
 ---
 <header class="hdr">
   <div class="wrap hdr__in">
     <a href="/" class="hdr__logo" aria-label="DTRES Workplace">DTRES <span>Workplace</span></a>
     <nav class="hdr__nav" aria-label="Principal">
       {links.map(([h, l]) => <a href={h}>{l}</a>)}
-      <a class="hdr__parent" href={site.parent}>Parte de DTRES</a>
+      <a class="hdr__parent" href={site.parent}>Volver a DTRES</a>
     </nav>
     <div class="hdr__right">
       <a class="btn hdr__cta" href="/contacto/">Consultoría gratuita</a>
@@ -16,7 +16,7 @@ const links = [['/casosdeexito/', 'Casos de éxito'], ['/#metodo', 'Método'], [
         <div class="hdr__drawer">
           {links.map(([h, l]) => <a href={h}>{l}</a>)}
           <a href="/contacto/">Contacto</a>
-          <a href={site.parent}>Parte de DTRES</a>
+          <a href={site.parent}>Volver a DTRES</a>
         </div>
       </details>
     </div>
