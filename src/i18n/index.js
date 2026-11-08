@@ -105,7 +105,7 @@ export const fmt = (n, lang = 'es') => String(n).replace(/\B(?=(\d{3})+(?!\d))/g
 export const wpLabels = { es: { nav: 'Oficinas', footer: 'Oficinas para empresas' }, ca: { nav: 'Oficines', footer: 'Oficines per a empreses' }, en: { nav: 'Offices', footer: 'Offices for companies' } };
 
 export const projectDetail = {
-  es: { before: 'Antes', after: 'Después', back: 'Proyectos', ba: 'Antes / Después', cta: '¿Quieres un resultado así?' },
-  ca: { before: 'Abans', after: 'Després', back: 'Projectes', ba: 'Abans / Després', cta: 'Vols un resultat així?' },
-  en: { before: 'Before', after: 'After', back: 'Projects', ba: 'Before / After', cta: 'Want a result like this?' },
+  es: { gallery: 'Galería del proceso', before: 'Antes', after: 'Después', back: 'Proyectos', ba: 'Antes / Después', cta: '¿Quieres un resultado así?' },
+  ca: { gallery: 'Galeria del procés', before: 'Abans', after: 'Després', back: 'Projectes', ba: 'Abans / Després', cta: 'Vols un resultat així?' },
+  en: { gallery: 'Project gallery', before: 'Before', after: 'After', back: 'Projects', ba: 'Before / After', cta: 'Want a result like this?' },
 };

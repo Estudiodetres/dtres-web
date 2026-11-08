@@ -38,7 +38,7 @@ const listLd = {
       {allProjects.map((p) => (
         <article data-cat={p.cat} data-heritage={p.heritage ? '1' : '0'} data-cambio={p.tag === 'Cambio de uso' ? '1' : '0'} data-curso={p.status ? '1' : '0'} class={p.img ? '' : 'noimg'}>
           {p.img && p.slug
-            ? <a class="pj__link" href={`${routes.projects[lang]}${p.slug}/`}><img class={p.bw ? "ph bw" : "ph"} src={p.img} srcset={srcset(p.img)} sizes="(min-width: 860px) 33vw, 50vw" alt={`${p.use} · ${p.client}`} width="600" height="750" loading="lazy" /><span class="pj__ba">{projectDetail[lang].ba}</span></a>
+            ? <a class="pj__link" href={`${routes.projects[lang]}${p.slug}/`}><img class={p.bw ? "ph bw" : "ph"} src={p.img} srcset={srcset(p.img)} sizes="(min-width: 860px) 33vw, 50vw" alt={`${p.use} · ${p.client}`} width="600" height="750" loading="lazy" /><span class="pj__ba">{p.ba ? projectDetail[lang].ba : projectDetail[lang].gallery}</span></a>
             : p.img
             ? <img class={p.bw ? "ph bw" : "ph"} src={p.img} srcset={srcset(p.img)} sizes="(min-width: 860px) 33vw, 50vw" alt={`${p.use} · ${p.client}`} width="600" height="750" loading="lazy" />
             : <div class="pj__ph"><span>{st(p.status) ?? t.project}</span>{p.m2 && <strong>{fmt(p.m2)} m²</strong>}</div>}
