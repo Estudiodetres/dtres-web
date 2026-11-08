@@ -1,0 +1,68 @@
+---
+import Base from '../layouts/Base.astro';
+import ContactForm from '../components/ContactForm.astro';
+import { getContent } from '../data/i18n-content.js';
+import { ui, routes, fmt as fmtL, projectDetail } from '../i18n/index.js';
+import { srcset } from '../lib/img.js';
+const { lang = 'es', p } = Astro.props;
+const { allProjects } = getContent(lang);
+const t = projectDetail[lang];
+const list = allProjects.filter((x) => x.slug);
+const i = list.findIndex((x) => x.slug === p.slug);
+const prev = list[(i - 1 + list.length) % list.length];
+const next = list[(i + 1) % list.length];
+const base = routes.projects[lang];
+const alternates = Object.fromEntries(Object.entries(routes.projects).map(([l, r]) => [l, `${r}${p.slug}/`]));
+const title = `${p.use} · ${p.client}`;
+const meta = [p.m2 && `${fmtL(p.m2, lang)} m²`, p.place].filter(Boolean).join(' · ');
+const desc = `${title}${p.m2 ? `, ${fmtL(p.m2, lang)} m²` : ''} en ${p.place ?? 'Barcelona'}. ${t.ba}: proyecto de DTRES Arquitectura.`;
+const imgs = [`/img/wpc-${p.ba}-antes.jpg`, `/img/wpc-${p.ba}-despues.jpg`];
+const abs = (u) => new URL(u, 'https://detres.eu').href;
+const ld = [
+  { '@context': 'https://schema.org', '@type': 'CreativeWork', name: title, about: p.use, locationCreated: p.place, creator: { '@id': 'https://detres.eu/#org' }, image: [...imgs, p.img].filter(Boolean).map(abs) },
+  { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'DTRES', item: abs(routes.home[lang]) },
+    { '@type': 'ListItem', position: 2, name: t.back, item: abs(base) },
+    { '@type': 'ListItem', position: 3, name: title },
+  ] },
+];
+---
+<Base title={`${title} · DTRES`} description={desc} jsonLd={ld} lang={lang} alternates={alternates} preload={{ srcset: srcset(imgs[1]), sizes: '(min-width: 760px) 50vw, 100vw' }}>
+  <section class="wrap pd-hero">
+    <a class="lbl" href={base}>← {t.back}</a>
+    <h1>{p.use}</h1>
+    <p class="pd-sub">{p.client}</p>
+    {meta && <p class="lbl">{meta}</p>}
+  </section>
+  <section class="wrap pd-ba">
+    <figure><img class="ph" src={imgs[0]} srcset={srcset(imgs[0])} sizes="(min-width: 760px) 50vw, 100vw" alt={`${title} · ${t.before}`} width="1200" height="1500" /><figcaption class="lbl">{t.before}</figcaption></figure>
+    <figure><img class="ph" src={imgs[1]} srcset={srcset(imgs[1])} sizes="(min-width: 760px) 50vw, 100vw" alt={`${title} · ${t.after}`} width="1200" height="1500" fetchpriority="high" /><figcaption class="lbl">{t.after}</figcaption></figure>
+  </section>
+  {p.img && <section class="wrap pd-main"><img class={p.bw ? 'ph bw' : 'ph'} src={p.img} srcset={srcset(p.img)} sizes="100vw" alt={title} width="2000" height="1300" loading="lazy" /></section>}
+  <nav class="wrap pd-nav">
+    <a href={`${base}${prev.slug}/`}>← {prev.client}</a>
+    <a href={`${base}${next.slug}/`}>{next.client} →</a>
+  </nav>
+  <section id="contacto" class="dark">
+    <div class="wrap pd-cta">
+      <h2>{t.cta}</h2>
+      <ContactForm origen={`proyecto-${p.slug}`} lang={lang} />
+    </div>
+  </section>
+</Base>
+<style>
+  .pd-hero { padding-block: clamp(48px, 7vw, 88px) 40px; display: flex; flex-direction: column; gap: 16px; }
+  .pd-hero a.lbl { text-decoration: none; }
+  .pd-hero h1 { font-size: clamp(40px, 6vw, 84px); line-height: 1; letter-spacing: -.02em; }
+  .pd-sub { font-size: clamp(20px, 2vw, 26px); color: var(--text2); }
+  .pd-ba { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+  .pd-ba figure { margin: 0; display: flex; flex-direction: column; gap: 10px; }
+  .pd-ba img { aspect-ratio: 4 / 5; }
+  @media (max-width: 520px) { .pd-ba { gap: 8px; } }
+  .pd-main { margin-top: 24px; }
+  .pd-main img { aspect-ratio: 16 / 10; }
+  .pd-nav { display: flex; justify-content: space-between; gap: 16px; padding-block: 40px clamp(56px, 8vw, 96px); }
+  .pd-nav a { text-underline-offset: 4px; }
+  .pd-cta { padding-block: clamp(64px, 9vw, 112px); display: flex; flex-direction: column; gap: 28px; }
+  .pd-cta h2 { font-size: clamp(32px, 4vw, 56px); line-height: 1.05; font-weight: 500; }
+</style>

@@ -2,7 +2,7 @@
 import Base from '../layouts/Base.astro';
 import ContactForm from '../components/ContactForm.astro';
 import { getContent } from '../data/i18n-content.js';
-import { ui, routes, fmt as fmtL } from '../i18n/index.js';
+import { ui, routes, fmt as fmtL, projectDetail } from '../i18n/index.js';
 import { srcset } from '../lib/img.js';
 import { site } from '../data/content.js';
 
@@ -37,10 +37,12 @@ const listLd = {
     <div class="pj__grid">
       {allProjects.map((p) => (
         <article data-cat={p.cat} data-heritage={p.heritage ? '1' : '0'} data-cambio={p.tag === 'Cambio de uso' ? '1' : '0'} data-curso={p.status ? '1' : '0'} class={p.img ? '' : 'noimg'}>
-          {p.img
+          {p.img && p.slug
+            ? <a class="pj__link" href={`${routes.projects[lang]}${p.slug}/`}><img class={p.bw ? "ph bw" : "ph"} src={p.img} srcset={srcset(p.img)} sizes="(min-width: 860px) 33vw, 50vw" alt={`${p.use} · ${p.client}`} width="600" height="750" loading="lazy" /><span class="pj__ba">{projectDetail[lang].ba}</span></a>
+            : p.img
             ? <img class={p.bw ? "ph bw" : "ph"} src={p.img} srcset={srcset(p.img)} sizes="(min-width: 860px) 33vw, 50vw" alt={`${p.use} · ${p.client}`} width="600" height="750" loading="lazy" />
             : <div class="pj__ph"><span>{st(p.status) ?? t.project}</span>{p.m2 && <strong>{fmt(p.m2)} m²</strong>}</div>}
-          <h2>{p.use}{m2(p)}</h2>
+          <h2>{p.slug ? <a href={`${routes.projects[lang]}${p.slug}/`}>{p.use}{m2(p)}</a> : <>{p.use}{m2(p)}</>}</h2>
           <p>{p.client}</p>
           {(p.heritage || p.tag || (p.img && p.status)) && <span class="lbl">{[p.img && st(p.status), p.tag && st(p.tag), p.heritage && t.heritage].filter(Boolean).join(' · ')}</span>}
         </article>
@@ -75,6 +77,9 @@ const listLd = {
   .pj-hero__sub { font-size: 21px; line-height: 1.45; max-width: 52ch; }
   .pj { padding-block: 0 clamp(72px, 10vw, 120px); display: flex; flex-direction: column; gap: 40px; }
   .pj__grid [data-curso="1"] .ph, .pj__grid .bw { filter: grayscale(1); }
+  .pj__link { position: relative; display: block; }
+  .pj__ba { position: absolute; left: 12px; bottom: 12px; background: rgba(234,234,228,.92); color: var(--ink); font-size: 12px; letter-spacing: .04em; padding: 6px 12px; border-radius: 999px; }
+  .pj__grid h2 a { text-decoration: none; }
   .pj__wp { display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding-block: 22px; margin-top: 24px; }
   .pj__wp div { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
   .pj__wp strong { font-weight: 500; font-size: 20px; }

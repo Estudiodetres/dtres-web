@@ -209,16 +209,16 @@ export const blog = [
 // Todos los proyectos (no vivienda). cat: patrimonio | residencias | oficinas | equipamientos. status: null | 'En obra' | 'En licitación' | 'En viabilidad'
 export const allProjects = [
   { use: 'Oficinas', client: 'IESE Business School', m2: 1000, cat: 'patrimonio', heritage: true, img: '/img/pj-iese-l.jpg', place: 'Barcelona' },
-  { use: 'Oficinas', client: 'IESE Business School', m2: 279, cat: 'oficinas', heritage: true, img: '/img/pj-iese-a.jpg', place: 'Barcelona' },
+  { use: 'Oficinas', slug: 'iese-direccion-general', ba: 'iese', client: 'IESE Business School', m2: 279, cat: 'oficinas', heritage: true, img: '/img/pj-iese-a.jpg', place: 'Barcelona' },
   { use: 'Oficinas', client: 'Fundació Familiar Catalana', m2: 1200, cat: 'patrimonio', heritage: true, img: '/img/pj-vila-regina.jpg', status: 'En licitación', place: 'Barcelona' },
   { use: 'Docencia', client: 'Fundació Familiar Catalana', m2: 5000, status: 'En obra', cat: 'equipamientos', img: '/img/ffc-plantada.jpg', place: 'Barcelona' },
   { use: 'Oficinas', client: 'OIP', m2: 1000, cat: 'oficinas', heritage: true, img: '/img/pj-oip.jpg', place: 'Barcelona' },
   { use: 'Residencia senior', client: 'Associació Col·laborativa Montroig', m2: 1000, cat: 'residencias', heritage: true, img: '/img/pj-lesseps.jpg', place: 'Barcelona' },
   { use: 'Residencia senior', client: 'Associació Cultural Carena', m2: 716, cat: 'residencias', img: '/img/pj-carena-residencia.jpg', place: 'Barcelona' },
   { use: 'Residencia universitaria', client: 'Colegio Mayor Universitario Bonaigua', m2: 4000, cat: 'residencias', img: '/img/pj-bonaigua.jpg', status: 'En obra', place: 'Barcelona' },
-  { use: 'Residencia universitaria', client: 'Colegio Mayor Universitario Pedralbes', m2: 1500, cat: 'residencias', img: '/img/pj-cmu.jpg', place: 'Barcelona' },
+  { use: 'Residencia universitaria', slug: 'colegio-mayor-pedralbes', ba: 'cmu', client: 'Colegio Mayor Universitario Pedralbes', m2: 1500, cat: 'residencias', img: '/img/pj-cmu.jpg', place: 'Barcelona' },
   { use: 'Club juvenil', client: 'Fundación Padua', m2: 3000, cat: 'equipamientos', img: '/img/pj-padua.jpg', place: 'Barcelona' },
-  { use: 'Club juvenil', client: 'Associació Cultural Carena', m2: 1800, cat: 'equipamientos', img: '/img/carena-club.jpg', place: 'Barcelona' },
+  { use: 'Club juvenil', slug: 'carena', ba: 'carena', client: 'Associació Cultural Carena', m2: 1800, cat: 'equipamientos', img: '/img/carena-club.jpg', place: 'Barcelona' },
   { use: 'Vestuarios', client: 'Escuela Deportiva Brafa', m2: 1300, cat: 'equipamientos', img: '/img/pj-brafa-vestuarios.jpg', place: 'Barcelona' },
   { use: 'Graderías', client: 'Escuela Deportiva Brafa', m2: 700, cat: 'equipamientos', img: '/img/pj-brafa-graderias.jpg', place: 'Barcelona' },
   { use: '5 viviendas', client: 'Fundació Privada Montseny', m2: 600, tag: 'Cambio de uso', cat: 'residencias', img: '/img/pj-lepant.jpg', status: 'En obra', place: 'Barcelona' },
@@ -228,13 +228,13 @@ export const allProjects = [
   { use: 'Centro juvenil', client: 'Heads Up Barcelona', m2: 500, cat: 'equipamientos', heritage: true, tag: 'Cambio de uso', status: 'En viabilidad', img: '/img/pj-headsup.jpg', place: 'Barcelona' },
   { use: 'Oficinas', client: 'Mafer.ai', m2: 200, cat: 'oficinas', img: '/img/pj-mafer.jpg', status: 'En viabilidad', place: 'Barcelona' },
   { use: 'Hotel', client: 'Le Mirath · El Cairo', m2: 1000, cat: 'residencias', img: '/img/pj-hotel-cairo.jpg', place: 'El Cairo' },
-  { use: 'Oficinas', client: 'Amelia Hub', m2: 2000, cat: 'oficinas', img: '/img/pj-amelia.jpg', place: 'Barcelona' },
+  { use: 'Oficinas', slug: 'amelia-hub', ba: 'amelia', client: 'Amelia Hub', m2: 2000, cat: 'oficinas', img: '/img/pj-amelia.jpg', place: 'Barcelona' },
   { use: 'Oficinas', client: 'Aloalto', m2: 1000, cat: 'oficinas', img: '/img/pj-aloalto.jpg', place: 'Barcelona' },
-  { use: 'Showroom y oficinas', client: 'Papiol', m2: 800, cat: 'oficinas', img: '/img/pj-papiol.jpg', place: 'Barcelona' },
+  { use: 'Showroom y oficinas', slug: 'papiol', ba: 'papiol', client: 'Papiol', m2: 800, cat: 'oficinas', img: '/img/pj-papiol.jpg', place: 'Barcelona' },
   { use: 'Oficinas', client: 'Triple A Risk Finance', m2: 400, cat: 'oficinas', img: '/img/pj-frankie.jpg', place: 'Barcelona' },
-  { use: 'Oficinas', client: 'Mier Giralt Abogados', m2: 200, cat: 'oficinas', img: '/img/pj-mier.jpg', place: 'Barcelona' },
+  { use: 'Oficinas', slug: 'mier-giralt-abogados', ba: 'mier', client: 'Mier Giralt Abogados', m2: 200, cat: 'oficinas', img: '/img/pj-mier.jpg', place: 'Barcelona' },
   { use: 'Oficinas', client: 'Delaire', m2: 100, cat: 'oficinas', img: '/img/pj-delaire.jpg', place: 'Barcelona' },
-  { use: 'Nuestro estudio', client: 'DTRES', cat: 'oficinas', img: '/img/pj-dtres.jpg', place: 'Barcelona' },
+  { use: 'Nuestro estudio', slug: 'estudio-dtres', ba: 'dtres', client: 'DTRES', cat: 'oficinas', img: '/img/pj-dtres.jpg', place: 'Barcelona' },
 ];
 
 // Logos de clientes (blancos, para fondo oscuro)

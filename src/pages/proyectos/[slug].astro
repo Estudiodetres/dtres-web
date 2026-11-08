@@ -1,0 +1,9 @@
+---
+import ProjectDetail from '../../views/ProjectDetail.astro';
+import { getContent } from '../../data/i18n-content.js';
+export function getStaticPaths() {
+  return getContent('es').allProjects.filter((p) => p.slug).map((p) => ({ params: { slug: p.slug }, props: { p } }));
+}
+const { p } = Astro.props;
+---
+<ProjectDetail lang="es" p={p} />
