@@ -1,0 +1,81 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { site } from '../data/content.js';
+import '@fontsource/schibsted-grotesk/400.css';
+import '@fontsource/schibsted-grotesk/500.css';
+import '@fontsource/schibsted-grotesk/600.css';
+const { title, description, jsonLd = [], noindex = false } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const ogBase = process.env.URL || Astro.site;
+const ogImage = new URL('/img/pj-amelia-w1200.jpg', ogBase).href;
+const org = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  '@id': `${site.url}/#org`,
+  name: site.name,
+  url: site.url,
+  email: site.email,
+  telephone: site.phone,
+  description: 'Línea de oficinas de DTRES Arquitectura: búsqueda de local, diseño, licencias y obra de oficinas para empresas en crecimiento en Barcelona, a precio y plazo cerrados.',
+  slogan: 'Creamos oficinas que aceleran el crecimiento.',
+  address: { '@type': 'PostalAddress', streetAddress: site.address.street, postalCode: site.address.postalCode, addressLocality: site.address.city, addressCountry: 'ES' },
+  areaServed: 'Barcelona',
+  knowsAbout: ['Diseño de oficinas', 'Reforma de oficinas', 'Interiorismo corporativo', 'Búsqueda de oficinas', 'Licencias de actividad', 'Obra llave en mano a precio cerrado'],
+  parentOrganization: { '@type': 'ProfessionalService', '@id': `${site.parent}/#org`, name: 'DTRES', url: site.parent },
+  sameAs: [site.linkedin, site.instagram],
+};
+---
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+  {noindex && <meta name="robots" content="noindex" />}
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:site_name" content="DTRES Workplace" />
+  <meta property="og:image" content={ogImage} />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <script type="application/ld+json" set:html={JSON.stringify([org, ...jsonLd])} />
+</head>
+<body>
+  <Header />
+  <main><slot /></main>
+  <Footer />
+</body>
+</html>
+
+<style is:global>
+  :root {
+    --ink: #202124; --sage: #a3a28e; --bone: #eaeae4; --stone: #dcdbd2;
+    --muted: #5c5b50; --text2: #3d3e40; --card: #f3f3ee; --line: rgba(32,33,36,.15);
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; overscroll-behavior-y: none; background: linear-gradient(var(--bone) 50%, var(--ink) 50%); }
+  body { margin: 0; overscroll-behavior-y: none; background: var(--bone); color: var(--ink); font: 400 17px/1.5 'Schibsted Grotesk', 'Helvetica Neue', Arial, sans-serif; }
+  img { max-width: 100%; display: block; }
+  [hidden] { display: none !important; }
+  @media (max-width: 520px) { .cf button { align-self: stretch; justify-content: center; } }
+  a { color: inherit; }
+  h1, h2, h3 { text-wrap: balance; font-weight: 500; margin: 0; overflow-wrap: break-word; }
+  p { margin: 0; }
+  .wrap { max-width: 1280px; margin: 0 auto; padding-left: max(24px, 4vw); padding-right: max(24px, 4vw); }
+  @media (min-width: 1680px) { .wrap { max-width: 1520px; } }
+  .lbl { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+  .btn { display: inline-flex; align-items: center; min-height: 52px; padding: 0 28px; background: var(--ink); color: var(--bone); text-decoration: none; font-weight: 500; }
+  .btn--ghost { background: transparent; color: var(--ink); border: 1px solid var(--ink); }
+  .btn--light { background: var(--bone); color: var(--ink); }
+  .ph { background: #c9c8bb; object-fit: cover; width: 100%; height: auto; }
+  .h2 { font-size: clamp(32px, 3.4vw, 48px); line-height: 1.08; }
+  .dark { background: var(--ink); color: var(--bone); }
+  .dark .lbl { color: var(--sage); }
+  .stone { background: var(--stone); }
+</style>

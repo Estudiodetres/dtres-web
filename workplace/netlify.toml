@@ -1,0 +1,27 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+[build.environment]
+  NODE_VERSION = "22"
+
+# Redirecciones de la web antigua (Squarespace)
+[[redirects]]
+  from = "/experiencia"
+  to = "/casosdeexito/"
+  status = 301
+[[redirects]]
+  from = "/avisolegal"
+  to = "https://detres.eu/aviso-legal/"
+  status = 301
+[[redirects]]
+  from = "/poltica-de-privacidad"
+  to = "https://detres.eu/privacidad/"
+  status = 301
+[[redirects]]
+  from = "/politicadecookies"
+  to = "https://detres.eu/cookies/"
+  status = 301
+[[redirects]]
+  from = "/cart"
+  to = "/"
+  status = 301

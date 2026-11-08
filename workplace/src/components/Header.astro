@@ -1,0 +1,47 @@
+---
+import { site } from '../data/content.js';
+const links = [['/casosdeexito/', 'Casos de éxito'], ['/#metodo', 'Método'], ['/#equipo', 'Equipo']];
+---
+<header class="hdr">
+  <div class="wrap hdr__in">
+    <a href="/" class="hdr__logo" aria-label="DTRES Workplace">DTRES <span>Workplace</span></a>
+    <nav class="hdr__nav" aria-label="Principal">
+      {links.map(([h, l]) => <a href={h}>{l}</a>)}
+      <a class="hdr__parent" href={site.parent}>Parte de DTRES ↗</a>
+    </nav>
+    <div class="hdr__right">
+      <a class="btn hdr__cta" href="/contacto/">Consultoría gratuita</a>
+      <details class="hdr__menu">
+        <summary aria-label="Menú"><span></span><span></span></summary>
+        <div class="hdr__drawer">
+          {links.map(([h, l]) => <a href={h}>{l}</a>)}
+          <a href="/contacto/">Contacto</a>
+          <a href={site.parent}>Parte de DTRES ↗</a>
+        </div>
+      </details>
+    </div>
+  </div>
+</header>
+<script>
+  const menu = document.querySelector('.hdr__menu');
+  menu?.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => menu.removeAttribute('open')));
+</script>
+<style>
+  .hdr { border-bottom: 1px solid var(--line); position: relative; }
+  .hdr__in { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding-block: 18px; }
+  .hdr__logo { font-size: 24px; font-weight: 600; letter-spacing: .06em; text-decoration: none; white-space: nowrap; }
+  .hdr__logo span { font-weight: 400; letter-spacing: .02em; color: var(--muted); }
+  .hdr__nav { display: flex; gap: 28px; font-size: 15px; }
+  .hdr__nav a { text-decoration: none; padding-block: 12px; }
+  .hdr__parent { color: var(--muted); }
+  .hdr__right { display: flex; align-items: center; gap: 20px; }
+  .hdr__cta { min-height: 44px; padding: 0 20px; font-size: 15px; }
+  .hdr__menu { display: none; }
+  .hdr__menu summary { list-style: none; cursor: pointer; width: 44px; height: 44px; display: flex; flex-direction: column; justify-content: center; gap: 7px; padding: 0 10px; }
+  .hdr__menu summary::-webkit-details-marker { display: none; }
+  .hdr__menu summary span { height: 1.5px; background: var(--ink); display: block; }
+  .hdr__drawer { position: absolute; left: 0; right: 0; top: 100%; background: var(--bone); border-bottom: 1px solid var(--line); padding: 8px max(24px, 4vw) 24px; display: flex; flex-direction: column; z-index: 20; }
+  .hdr__drawer a { padding: 14px 0; border-bottom: 1px solid var(--line); text-decoration: none; font-size: 18px; }
+  @media (max-width: 900px) { .hdr__nav { display: none; } .hdr__menu { display: block; } }
+  @media (max-width: 520px) { .hdr__cta { display: none; } }
+</style>

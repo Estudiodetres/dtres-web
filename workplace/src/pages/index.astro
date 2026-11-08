@@ -1,0 +1,179 @@
+---
+import Base from '../layouts/Base.astro';
+import ContactForm from '../components/ContactForm.astro';
+import { hero, problem, quote1, pains, quote2, gains, method, benefits, testimonials, cases, team, contact } from '../data/content.js';
+import { srcset } from '../lib/img.js';
+const ld = {
+  '@context': 'https://schema.org', '@type': 'ItemList', name: 'Casos de éxito de DTRES Workplace',
+  itemListElement: cases.map((c, i) => ({ '@type': 'ListItem', position: i + 1, name: `${c.name} · ${c.meta}` })),
+};
+---
+<Base title="Diseño y reforma de oficinas en Barcelona · DTRES Workplace" description="Ayudamos a empresas en crecimiento a encontrar y transformar sus próximas oficinas en Barcelona. Un único interlocutor, a precio y plazo cerrado." jsonLd={[ld]}>
+  <!-- HERO -->
+  <section class="wrap hero">
+    <p class="lbl">{hero.eyebrow}</p>
+    <h1>{hero.title}</h1>
+    <p class="hero__sub">{hero.subtitle}</p>
+    <div class="hero__ctas"><a class="btn" href="#contacto">Consultoría gratuita</a><a class="btn btn--ghost" href="/casosdeexito/">Ver casos de éxito</a></div>
+  </section>
+  <section class="wrap"><img class="ph hero__img" src={hero.image.src} srcset={srcset(hero.image.src)} sizes="100vw" alt={hero.image.alt} width="2000" height="1100" /></section>
+  <section class="wrap promises">
+    {hero.promises.map((p) => <div><strong>{p.title}</strong><span>{p.text}</span></div>)}
+  </section>
+
+  <!-- PROBLEMA -->
+  <section class="wrap block">
+    <h2 class="h2">{problem.title}</h2>
+    <div class="steps3">
+      {problem.steps.map((s) => <div><p class="lbl">{s.label}</p><p>{s.text}</p></div>)}
+    </div>
+  </section>
+
+  <!-- CITA 1 -->
+  <section class="dark">
+    <div class="wrap quote">
+      <blockquote>“{quote1.text}”</blockquote>
+      <p>{quote1.sub}</p>
+    </div>
+  </section>
+
+  <!-- DOLORES -->
+  <section class="wrap block">
+    <h2 class="h2">{pains.title}</h2>
+    <div class="cards3">
+      {pains.items.map((p) => <div class="card"><strong>{p.title}</strong><span>{p.text}</span></div>)}
+    </div>
+  </section>
+
+  <!-- CITA 2 -->
+  <section class="stone">
+    <div class="wrap quote quote--light">
+      <blockquote>“{quote2.text}”</blockquote>
+      <p>{quote2.sub}</p>
+    </div>
+  </section>
+
+  <!-- GANANCIAS -->
+  <section class="wrap block">
+    <h2 class="h2">{gains.title}</h2>
+    <div class="cards3">
+      {gains.items.map((p) => <div class="card"><strong>{p.title}</strong><span>{p.text}</span></div>)}
+    </div>
+  </section>
+
+  <!-- MÉTODO -->
+  <section id="metodo" class="dark">
+    <div class="wrap block">
+      <p class="lbl">{method.eyebrow}</p>
+      <h2 class="h2">{method.title}</h2>
+      <ol class="method">
+        {method.steps.map((s) => <li><span class="method__n">{s.n}</span><strong>{s.title}</strong><span>{s.text}</span></li>)}
+      </ol>
+      <a class="btn btn--light" href="#contacto">Empezar con el estudio de viabilidad</a>
+    </div>
+  </section>
+
+  <!-- BENEFICIOS -->
+  <section class="wrap block">
+    <h2 class="h2">{benefits.title}</h2>
+    <div class="figs">
+      {benefits.items.map((b) => <div class="fig"><div class="fig__ball"><strong>{b.n}</strong></div><p><b>{b.title}</b>{b.text}</p></div>)}
+    </div>
+  </section>
+
+  <!-- TESTIMONIOS -->
+  <section class="stone">
+    <div class="wrap block">
+      <h2 class="h2">{testimonials.title}</h2>
+      <div class="cards3">
+        {testimonials.items.map((r) => <figure class="rev"><p class="lbl">{r.tag}</p><blockquote>“{r.quote}”</blockquote><figcaption><strong>{r.name}</strong><span>{r.role}</span></figcaption></figure>)}
+      </div>
+    </div>
+  </section>
+
+  <!-- CASOS -->
+  <section class="wrap block">
+    <div class="head-row"><h2 class="h2">Casos de éxito</h2><a href="/casosdeexito/">Ver todos →</a></div>
+    <div class="cases">
+      {cases.map((c) => {
+        const inner = <><img class="ph" src={c.img} srcset={srcset(c.img)} sizes="(min-width: 860px) 33vw, 100vw" alt={`Oficina ${c.name}`} width="600" height="750" loading="lazy" /><h3>{c.name}</h3><p>{c.meta}</p></>;
+        return c.slug ? <a class="case" href={`/casosdeexito/${c.slug}/`}>{inner}</a> : <div class="case">{inner}</div>;
+      })}
+    </div>
+  </section>
+
+  <!-- EQUIPO -->
+  <section id="equipo" class="wrap block">
+    <h2 class="h2">{team.title}</h2>
+    <div class="team">
+      {team.members.map((m) => <figure><img class="ph" src={m.img} alt={m.name} width="400" height="500" loading="lazy" /><figcaption><strong>{m.name}</strong><span>{m.role}</span></figcaption></figure>)}
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="dark">
+    <div class="wrap block cta">
+      <p class="lbl">{contact.eyebrow}</p>
+      <h2 class="h2">{contact.title}</h2>
+      <p class="cta__text">{contact.text}</p>
+      <ContactForm origen="home" />
+    </div>
+  </section>
+</Base>
+
+<style>
+  .hero { padding-block: clamp(56px, 9vw, 112px) 48px; display: flex; flex-direction: column; gap: 24px; }
+  .hero h1 { font-size: clamp(40px, 6.2vw, 92px); line-height: 1; letter-spacing: -.02em; max-width: 17ch; }
+  .hero__sub { font-size: clamp(19px, 1.8vw, 24px); line-height: 1.4; max-width: 46ch; color: var(--text2); }
+  .hero__ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
+  .hero__img { aspect-ratio: 16 / 8; }
+  @media (max-width: 760px) { .hero__img { aspect-ratio: 4 / 3; } }
+  .promises { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; padding-block: 32px; border-bottom: 1px solid var(--line); }
+  .promises div { display: flex; flex-direction: column; gap: 4px; }
+  .promises strong { font-weight: 500; font-size: 18px; }
+  .promises span { color: var(--text2); }
+  @media (max-width: 760px) { .promises { grid-template-columns: 1fr; } }
+  .block { padding-block: clamp(64px, 9vw, 120px); display: flex; flex-direction: column; gap: 40px; align-items: flex-start; }
+  .steps3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; border-top: 1px solid var(--line); padding-top: 28px; width: 100%; }
+  .steps3 div { display: flex; flex-direction: column; gap: 10px; font-size: 18px; line-height: 1.5; }
+  .cards3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; width: 100%; }
+  .card { background: var(--card); padding: 28px; display: flex; flex-direction: column; gap: 10px; }
+  .card strong { font-weight: 500; font-size: 21px; line-height: 1.2; }
+  .card span { color: var(--text2); }
+  @media (max-width: 860px) { .steps3, .cards3 { grid-template-columns: 1fr; } }
+  .quote { padding-block: clamp(72px, 10vw, 136px); display: flex; flex-direction: column; gap: 24px; }
+  .quote blockquote { margin: 0; font-size: clamp(30px, 4vw, 56px); line-height: 1.1; letter-spacing: -.015em; max-width: 22ch; font-weight: 500; text-wrap: balance; }
+  .quote p { font-size: 19px; line-height: 1.5; max-width: 52ch; color: #c9c8bb; }
+  .quote--light p { color: var(--text2); }
+  .method { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; width: 100%; border-top: 1px solid rgba(234,234,228,.2); padding-top: 28px; }
+  .method li { display: flex; flex-direction: column; gap: 10px; }
+  .method__n { font-size: 48px; line-height: 1; color: var(--sage); }
+  .method strong { font-weight: 500; font-size: 22px; }
+  .method span:last-child { color: #c9c8bb; }
+  @media (max-width: 860px) { .method { grid-template-columns: 1fr; } }
+  .figs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(12px, 3vw, 40px); width: 100%; max-width: 900px; align-self: center; }
+  .fig { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 14px; }
+  .fig__ball { width: 100%; max-width: 150px; aspect-ratio: 1 / 1; border-radius: 50%; border: 1px solid var(--sage); display: grid; place-items: center; }
+  .fig__ball strong { font-size: clamp(24px, 3.6vw, 44px); font-weight: 500; letter-spacing: -.02em; }
+  .fig p { font-size: clamp(13px, 1.4vw, 16px); line-height: 1.35; color: var(--text2); max-width: 22ch; }
+  .fig p b { display: block; color: var(--ink); font-weight: 500; }
+  .rev { margin: 0; background: var(--bone); padding: 28px; display: flex; flex-direction: column; gap: 16px; }
+  .rev blockquote { margin: 0; font-size: 17px; line-height: 1.5; }
+  .rev figcaption { display: flex; flex-direction: column; margin-top: auto; }
+  .rev figcaption strong { font-weight: 500; }
+  .rev figcaption span { color: var(--muted); font-size: 14px; }
+  .head-row { display: flex; justify-content: space-between; align-items: baseline; width: 100%; gap: 16px; }
+  .head-row a { text-underline-offset: 4px; }
+  .cases { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr)); gap: 32px 24px; width: 100%; }
+  .case { display: flex; flex-direction: column; gap: 8px; text-decoration: none; }
+  .case img { aspect-ratio: 4 / 5; margin-bottom: 8px; }
+  .case h3 { font-size: 22px; }
+  .case p { color: var(--text2); }
+  .team { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(200px, 46%), 1fr)); gap: 32px 20px; width: 100%; }
+  .team figure { margin: 0; display: flex; flex-direction: column; gap: 12px; }
+  .team img { aspect-ratio: 4 / 5; filter: grayscale(1); }
+  .team figcaption { display: flex; flex-direction: column; }
+  .team strong { font-weight: 500; }
+  .team span { color: var(--muted); font-size: 14px; }
+  .cta__text { font-size: 19px; line-height: 1.5; max-width: 52ch; color: #c9c8bb; }
+</style>

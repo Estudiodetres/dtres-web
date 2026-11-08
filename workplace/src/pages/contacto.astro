@@ -1,0 +1,20 @@
+---
+import Base from '../layouts/Base.astro';
+import ContactForm from '../components/ContactForm.astro';
+import { contact } from '../data/content.js';
+---
+<Base title="Consultoría estratégica de oficinas · DTRES Workplace" description={contact.text}>
+  <section class="dark">
+    <div class="wrap ct">
+      <p class="lbl">{contact.eyebrow}</p>
+      <h1>Consultoría</h1>
+      <p class="ct__text">{contact.text}</p>
+      <ContactForm origen="contacto" />
+    </div>
+  </section>
+</Base>
+<style>
+  .ct { padding-block: clamp(64px, 9vw, 120px); display: flex; flex-direction: column; gap: 28px; }
+  .ct h1 { font-size: clamp(40px, 6vw, 84px); line-height: 1; letter-spacing: -.02em; }
+  .ct__text { font-size: 19px; line-height: 1.5; max-width: 52ch; color: #c9c8bb; }
+</style>

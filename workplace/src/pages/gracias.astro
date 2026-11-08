@@ -1,0 +1,47 @@
+---
+import Base from '../layouts/Base.astro';
+import { site } from '../data/content.js';
+const t = { eyebrow: 'Mensaje recibido', title: 'Gracias. Ahora elige el día de tu llamada.', text: '30 minutos con un socio del estudio. Reserva el hueco que mejor te vaya.', book: 'Elegir día y hora', step1: 'Paso 1 · Reserva tu llamada', step2: 'Paso 2 · ¿Ya has reservado y tienes prisa?', waText: 'Escríbeme directamente y lo vemos.', wa: 'Escribir por WhatsApp', back: 'Volver al inicio' };
+const waText = 'Hola Nacho, acabo de reservar una llamada desde la web de Workplace.';
+const waUrl = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(waText)}`;
+---
+<Base title={`${t.eyebrow} · DTRES Workplace`} description={t.title} noindex>
+  <section class="wrap ty">
+    <p class="lbl">{t.eyebrow}</p>
+    <h1>{t.title}</h1>
+    <p class="ty__text">{t.text}</p>
+    <div class="ty__steps">
+      <div class="ty__step">
+        <p class="lbl">{t.step1}</p>
+        <a class="ty__cal" href={site.booking} target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h2v2h6V2h2v2h2a2 2 0 0 1 2 2v13a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2V2zM5 9v10h14V9H5zm2 2h3v3H7v-3z"/></svg>{t.book}</a>
+      </div>
+      <div class="ty__step">
+        <p class="lbl">{t.step2}</p>
+        <p>{t.waText}</p>
+        <a class="ty__wa" href={waUrl} target="_blank" rel="noopener">
+          <svg viewBox="0 0 32 32" aria-hidden="true"><path class="b" d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3z"/><path class="p" d="M11.5 10.5c.4-.8 1.2-.8 1.5-.1l1.2 2.6c.2.4 0 .9-.3 1.2l-.8.8c.9 1.9 2.4 3.4 4.3 4.3l.8-.8c.3-.3.8-.5 1.2-.3l2.6 1.2c.7.3.7 1.1-.1 1.5-1.2.7-2.6.9-3.9.4-3.4-1.3-6-3.9-7.3-7.3-.5-1.3-.3-2.7.4-3.9z"/></svg>
+          {t.wa}
+        </a>
+      </div>
+    </div>
+    <a class="ty__back" href="/">{t.back}</a>
+  </section>
+</Base>
+<style>
+  .ty { padding-block: clamp(96px, 12vw, 140px); display: flex; flex-direction: column; gap: 24px; align-items: flex-start; }
+  .ty h1 { font-size: clamp(40px, 6vw, 80px); line-height: 1; letter-spacing: -.02em; font-weight: 500; max-width: 18ch; margin: 0; text-wrap: balance; }
+  .ty__text { font-size: 19px; line-height: 1.45; max-width: 46ch; margin: 0; color: var(--text2); }
+  .ty__steps { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; width: 100%; max-width: 900px; margin-top: 16px; }
+  .ty__step { border: 1px solid rgba(32,33,36,.18); padding: 28px; display: flex; flex-direction: column; gap: 14px; align-items: flex-start; min-width: 0; }
+  .ty__step p { margin: 0; font-size: 17px; }
+  .ty__wa { display: inline-flex; align-items: center; gap: 10px; background: #25d366; color: #fff; padding: 13px 20px; border-radius: 999px; font-weight: 500; text-decoration: none; }
+  .ty__cal { display: inline-flex; align-items: center; gap: 10px; background: #1a73e8; color: #fff; padding: 13px 22px; border-radius: 999px; font-weight: 500; text-decoration: none; }
+  .ty__cal:hover { background: #1765cc; }
+  .ty__cal svg { width: 20px; height: 20px; fill: currentColor; }
+  .ty__wa:hover { background: #1ebe5b; }
+  .ty__wa svg { width: 22px; height: 22px; }
+  .ty__wa .b { fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linejoin: round; }
+  .ty__wa .p { fill: currentColor; }
+  .ty__back { color: var(--ink); font-size: 15px; text-underline-offset: 4px; margin-top: 8px; }
+  @media (max-width: 760px) { .ty__steps { grid-template-columns: 1fr; } .ty__step { padding: 22px; } }
+</style>

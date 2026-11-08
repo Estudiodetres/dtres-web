@@ -1,0 +1,33 @@
+---
+import Base from '../../layouts/Base.astro';
+import { projects } from '../../data/content.js';
+import { srcset } from '../../lib/img.js';
+export function getStaticPaths() {
+  return projects.map((p, i) => ({ params: { slug: p.slug }, props: { p, prev: projects[(i - 1 + projects.length) % projects.length], next: projects[(i + 1) % projects.length] } }));
+}
+const { p, prev, next } = Astro.props;
+const ld = { '@context': 'https://schema.org', '@type': 'CreativeWork', name: `${p.name} · DTRES Workplace`, about: p.title, creator: { '@id': 'https://workplace.detres.eu/#org' }, ...(p.img ? { image: new URL(p.img, Astro.site).href } : {}) };
+---
+<Base title={`${p.name} · Casos de éxito · DTRES Workplace`} description={p.desc ?? `${p.title}. ${p.meta}. Oficina diseñada y construida por DTRES en Barcelona.`} jsonLd={[ld]}>
+  <section class="wrap cs-hero">
+    <a class="lbl" href="/casosdeexito/">← Casos de éxito</a>
+    <h1>{p.name}</h1>
+    <p class="cs-sub">{p.title}</p>
+    <p class="lbl">{p.meta}</p>
+  </section>
+  {p.img && <section class="wrap"><img class="ph cs-img" src={p.img} srcset={srcset(p.img)} sizes="100vw" alt={`Oficina ${p.name} diseñada por DTRES`} width="2000" height="1300" /></section>}
+  <nav class="wrap cs-nav">
+    <a href={`/casosdeexito/${prev.slug}/`}>← {prev.name}</a>
+    <a href="/contacto/" class="btn">Quiero una oficina así</a>
+    <a href={`/casosdeexito/${next.slug}/`}>{next.name} →</a>
+  </nav>
+</Base>
+<style>
+  .cs-hero { padding-block: clamp(48px, 7vw, 88px) 40px; display: flex; flex-direction: column; gap: 18px; }
+  .cs-hero a.lbl { text-decoration: none; }
+  .cs-hero h1 { font-size: clamp(40px, 6vw, 84px); line-height: 1; letter-spacing: -.02em; }
+  .cs-sub { font-size: clamp(19px, 1.8vw, 24px); line-height: 1.4; max-width: 46ch; color: var(--text2); }
+  .cs-img { aspect-ratio: 16 / 10; }
+  .cs-nav { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; padding-block: 48px clamp(64px, 9vw, 120px); }
+  .cs-nav > a:not(.btn) { text-underline-offset: 4px; }
+</style>
