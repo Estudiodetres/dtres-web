@@ -1,120 +1,169 @@
 ---
 import Base from '../layouts/Base.astro';
 import ContactForm from '../components/ContactForm.astro';
-import { hero, problem, quote1, pains, quote2, gains, method, benefits, testimonials, cases, team, contact } from '../data/content.js';
+import { hero, audiences, clients, journey, phases, featuredCase as fc, usp, bonus, dtresTeam as team, stats, testimonials, cases, contact, site } from '../data/content.js';
 import { srcset } from '../lib/img.js';
-const ld = {
-  '@context': 'https://schema.org', '@type': 'ItemList', name: 'Casos de éxito de DTRES Workplace',
-  itemListElement: cases.map((c, i) => ({ '@type': 'ListItem', position: i + 1, name: `${c.name} · ${c.meta}` })),
+const phaseIcons = {
+  viabilidad: '<path fill-rule="evenodd" d="M4 42V17l12-9 12 9v25zM9 20h4v4H9zm7 0h4v4h-4zM9 27h4v4H9zm7 0h4v4h-4zM9 34h4v4H9z"/><path fill-rule="evenodd" stroke="#202124" stroke-width="3" d="M33 21a10 10 0 1 1 0 20 10 10 0 0 1 0-20zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/><path d="M39.5 37.5l3-3 5 5-3 3z"/>',
+  'proyecto-y-licencias': '<path fill-rule="evenodd" d="M8 3h22l10 10v32H8zM29 6v9h9zM13 20h22v3H13zm0 7h22v3H13zm0 7h13v3H13z"/>',
+  obra: '<path d="M9 10h6v30H9zM5 4h39v6H5zM37 10h2v9h-2zM32 19h12v9H32zM4 40h14v5H4z"/>',
+  entrega: '<circle cx="14" cy="24" r="11"/><path d="M22 21h24v6H22zM36 27h5v7h-5zM43 27h3v5h-3z"/>',
+};
+const icons = {
+  split: '<rect x="3" y="3" width="11" height="11"/><rect x="18" y="3" width="11" height="11"/><rect x="3" y="18" width="11" height="11"/><rect x="18" y="18" width="11" height="11" stroke-dasharray="3 2.5"/>',
+  route: '<circle cx="6" cy="6" r="3"/><circle cx="26" cy="9" r="3"/><circle cx="26" cy="23" r="3"/><circle cx="6" cy="26" r="3"/><path d="M9 6h7v17h7M16 9h7M9 26h7"/>',
+  heritage: '<path d="M3 12 16 4l13 8z"/><path d="M3 28h26M5 25h22M8 14v11M13 14v11M19 14v11M24 14v11"/>',
+  invest: '<path d="M4 4v24h24"/><path d="M8 22l6-7 5 4 8-10"/><path d="M21 9h6v6"/>',
+  owner: '<circle cx="10" cy="16" r="6"/><path d="M16 16h13M24 16v5M28 16v4"/>',
+  institution: '<path d="M6 28V9h20v19M3 28h26M13 28v-6a3 3 0 0 1 6 0v6M10 13h3M19 13h3M10 18h3M19 18h3M16 9V3h5v3h-5"/>',
+  company: '<rect x="6" y="5" width="20" height="13"/><path d="M13 22h6M16 18v4M3 26h26M7 26v3M25 26v3"/>',
+  doubt: '<circle cx="16" cy="16" r="12"/><path d="M12.5 12.5a3.5 3.5 0 1 1 5 3.2c-1 .5-1.5 1.2-1.5 2.3v1"/><path d="M16 23v.5"/>',
+  clock: '<circle cx="16" cy="16" r="12"/><path d="M16 9v7l5 3"/>',
+  blocked: '<path d="M3 12 16 4l13 8z"/><path d="M3 28h26M8 14v11M13 14v11M19 14v11M24 14v11"/><path d="M4 4l24 24"/>',
+  cost: '<path d="M4 4v24h24"/><path d="M8 22l6-4 5 3 9-13"/><path d="M22 8h6v6"/>',
+  ready: '<rect x="4" y="6" width="24" height="22"/><path d="M4 12h24M10 3v6M22 3v6M11 20l4 4 7-8"/>',
+};
+const caseLd = {
+  '@context': 'https://schema.org', '@type': 'CreativeWork', name: fc.title, headline: `${fc.eyebrow}: ${fc.title}`, description: fc.subtitle,
+  creator: { '@id': 'https://workplace.detres.eu/#org' }, image: fc.steps.map((x) => new URL(x.img, 'https://workplace.detres.eu').href),
 };
 ---
-<Base title="Diseño y reforma de oficinas en Barcelona · DTRES Workplace" description="Ayudamos a empresas en crecimiento a encontrar y transformar sus próximas oficinas en Barcelona. Un único interlocutor, a precio y plazo cerrado." jsonLd={[ld]}>
-  <!-- HERO -->
+<Base title="Diseño y reforma de oficinas en Barcelona · DTRES Workplace" description="Ayudamos a empresas en crecimiento a encontrar y transformar sus próximas oficinas en Barcelona. Un único interlocutor, a precio y plazo cerrado." jsonLd={[caseLd]}>
+  <!-- 1. DESTINO -->
   <section class="wrap hero">
     <p class="lbl">{hero.eyebrow}</p>
     <h1>{hero.title}</h1>
-    <p class="hero__sub">{hero.subtitle}</p>
-    <div class="hero__ctas"><a class="btn" href="#contacto">Consultoría gratuita</a><a class="btn btn--ghost" href="/casosdeexito/">Ver casos de éxito</a></div>
-  </section>
-  <section class="wrap"><img class="ph hero__img" src={hero.image.src} srcset={srcset(hero.image.src)} sizes="100vw" alt={hero.image.alt} width="2000" height="1100" /></section>
-  <section class="wrap promises">
-    {hero.promises.map((p) => <div><strong>{p.title}</strong><span>{p.text}</span></div>)}
-  </section>
-
-  <!-- PROBLEMA -->
-  <section class="wrap block">
-    <h2 class="h2">{problem.title}</h2>
-    <div class="steps3">
-      {problem.steps.map((s) => <div><p class="lbl">{s.label}</p><p>{s.text}</p></div>)}
+    <div class="hero__row">
+      <p class="hero__sub">{hero.subtitle}</p>
+      <div class="hero__cta">
+        <a class="btn" href="#contacto">Consultoría gratuita</a>
+        <a class="btn btn--ghost" href="/casosdeexito/">Ver casos de éxito</a>
+      </div>
     </div>
   </section>
-
-  <!-- CITA 1 -->
-  <section class="dark">
-    <div class="wrap quote">
-      <blockquote>“{quote1.text}”</blockquote>
-      <p>{quote1.sub}</p>
-    </div>
+  <div class="wrap"><img class="ph hero__img" src={hero.image.src} srcset={srcset(hero.image.src)} sizes="(min-width: 1680px) 1520px, (min-width: 1280px) 1280px, 100vw" fetchpriority="high" alt={hero.image.alt} width="1600" height="800" /></div>
+  <!-- PARA QUIÉN -->
+  <section class="wrap aud2">
+    <div><p class="lbl">{audiences.eyebrow}</p><h2 class="aud__title">{audiences.title}</h2></div>
+    <ul class="aud2__grid">
+      {audiences.items.map((a) => <li><svg viewBox="0 0 32 32" aria-hidden="true" set:html={icons[a.icon]} /><span>{a.title}</span></li>)}
+    </ul>
   </section>
+  <div class="wrap logos">
+    <p class="lbl">Han confiado en nosotros</p>
+    <ul class="logos__row">
+      {clients.map((c) => <li><img src={c.logo} alt={c.name} title={c.name} loading="lazy" /></li>)}
+    </ul>
+  </div>
 
-  <!-- DOLORES -->
-  <section class="wrap block">
-    <h2 class="h2">{pains.title}</h2>
-    <div class="cards3">
-      {pains.items.map((p) => <div class="card"><strong>{p.title}</strong><span>{p.text}</span></div>)}
-    </div>
-  </section>
-
-  <!-- CITA 2 -->
-  <section class="stone">
-    <div class="wrap quote quote--light">
-      <blockquote>“{quote2.text}”</blockquote>
-      <p>{quote2.sub}</p>
-    </div>
-  </section>
-
-  <!-- GANANCIAS -->
-  <section class="wrap block">
-    <h2 class="h2">{gains.title}</h2>
-    <div class="cards3">
-      {gains.items.map((p) => <div class="card"><strong>{p.title}</strong><span>{p.text}</span></div>)}
-    </div>
-  </section>
-
-  <!-- MÉTODO -->
+  <!-- 2. MÉTODO: PROBLEMA Y SOLUCIÓN POR FASE -->
   <section id="metodo" class="dark">
-    <div class="wrap block">
-      <p class="lbl">{method.eyebrow}</p>
-      <h2 class="h2">{method.title}</h2>
-      <ol class="method">
-        {method.steps.map((s) => <li><span class="method__n">{s.n}</span><strong>{s.title}</strong><span>{s.text}</span></li>)}
+    <div class="wrap jr">
+      <div class="jr__head"><p class="lbl">{journey.eyebrow}</p><h2 class="h2">{journey.title}</h2></div>
+      <ol class="jr__list">
+        {phases.map((f) => (
+          <li class="jr__row">
+            <div class="jr__phase"><svg class="jr__icon" viewBox="0 0 48 48" aria-hidden="true" set:html={phaseIcons[f.id]} /><span class="jr__n">{f.n}</span><h3>{f.title}</h3></div>
+            <div class="jr__pain"><span class="lbl">{journey.problem}</span><p>{journey.pains[f.id]}</p></div>
+            <div class="jr__fix"><span class="lbl">{journey.solution}</span><p>{journey.fix?.[f.id] ?? f.get}</p><a href="#contacto">{journey.start}</a></div>
+          </li>
+        ))}
       </ol>
-      <a class="btn btn--light" href="#contacto">Empezar con el estudio de viabilidad</a>
+      <a class="btn btn--light jr__cta" href="#contacto">{journey.cta}</a>
     </div>
   </section>
 
-  <!-- BENEFICIOS -->
-  <section class="wrap block">
-    <h2 class="h2">{benefits.title}</h2>
-    <div class="figs">
-      {benefits.items.map((b) => <div class="fig"><div class="fig__ball"><strong>{b.n}</strong></div><p><b>{b.title}</b>{b.text}</p></div>)}
+  <!-- 3. PRUEBA: CASO DE ÉXITO -->
+  <section id="proyectos" class="wrap case">
+    <div class="case__head">
+      <p class="lbl">{fc.eyebrow}</p>
+      <h2 class="case__title">{fc.title.split(' · ').map((t, i) => <span class={i ? 'case__title-sub' : 'case__title-main'}>{t}</span>)}</h2>
+      <p class="case__sub">{fc.subtitle}</p>
+    </div>
+    <ol class="case__steps">
+      {fc.steps.map((x, i) => (
+        <li>
+          <h3><span>{String(i + 1).padStart(2, '0')}</span>{x.label}</h3>
+          <figure>
+            <img class="ph" src={x.img} srcset={srcset(x.img)} sizes="(min-width: 900px) 30vw, 100vw" alt={x.alt} width="600" height="600" loading="lazy" />
+            <figcaption>{x.text}</figcaption>
+          </figure>
+        </li>
+      ))}
+    </ol>
+    <div class="case__figs">
+      {fc.figures.map((f) => <div><span class="case__ball"><strong>{f.n}</strong></span><p><b>{f.t}</b>{f.s}</p></div>)}
     </div>
   </section>
 
-  <!-- TESTIMONIOS -->
-  <section class="stone">
-    <div class="wrap block">
-      <h2 class="h2">{testimonials.title}</h2>
-      <div class="cards3">
-        {testimonials.items.map((r) => <figure class="rev"><p class="lbl">{r.tag}</p><blockquote>“{r.quote}”</blockquote><figcaption><strong>{r.name}</strong><span>{r.role}</span></figcaption></figure>)}
+  <!-- 4. BENEFICIOS -->
+  <section class="wrap usp">
+    <img class="ph usp__img" src={usp.image.src} srcset={srcset(usp.image.src)} sizes="(min-width: 900px) 50vw, 100vw" alt={usp.image.alt} width="800" height="1000" loading="lazy" />
+    <div class="usp__body">
+      <p class="lbl">{usp.eyebrow}</p>
+      <h2 class="h2">{usp.title}</h2>
+      <div class="usp__proofs">
+        {usp.proofs.map((p) => (
+          <div>{p.icon && <svg class="usp__icon" viewBox="0 0 32 32" aria-hidden="true" set:html={icons[p.icon]} />}<strong>{p.title}</strong><span class="lbl">{p.tag}</span><span>{p.text}</span></div>
+        ))}
       </div>
     </div>
   </section>
 
-  <!-- CASOS -->
-  <section class="wrap block">
-    <div class="head-row"><h2 class="h2">Casos de éxito</h2><a href="/casosdeexito/">Ver todos →</a></div>
-    <div class="cases">
-      {cases.map((c) => {
-        const inner = <><img class="ph" src={c.img} srcset={srcset(c.img)} sizes="(min-width: 860px) 33vw, 100vw" alt={`Oficina ${c.name}`} width="600" height="750" loading="lazy" /><h3>{c.name}</h3><p>{c.meta}</p></>;
-        return c.slug ? <a class="case" href={`/casosdeexito/${c.slug}/`}>{inner}</a> : <div class="case">{inner}</div>;
-      })}
+  <!-- 5. BONUS + CTA -->
+  <section class="wrap">
+    <div class="bonus">
+      <div><p class="lbl">{bonus.eyebrow}</p><h2>{bonus.title}</h2><p>{bonus.text}</p></div>
+      <a class="btn" href="#contacto">{bonus.cta}</a>
     </div>
   </section>
 
-  <!-- EQUIPO -->
-  <section id="equipo" class="wrap block">
-    <h2 class="h2">{team.title}</h2>
-    <div class="team">
-      {team.members.map((m) => <figure><img class="ph" src={m.img} alt={m.name} width="400" height="500" loading="lazy" /><figcaption><strong>{m.name}</strong><span>{m.role}</span></figcaption></figure>)}
+  <!-- 6. AUTORIDAD: CIFRAS + EQUIPO (igual que detres.eu) -->
+  <section id="equipo" class="stone">
+    <div class="wrap auth">
+      <p class="lbl">Quiénes somos</p>
+      <div class="stats">
+        <div><span class="stats__n">{stats.yearsLabel}</span><span class="stats__t">{stats.yearsText}</span></div>
+        <div><span class="stats__n">{stats.projects}</span><span class="stats__t">Proyectos realizados</span></div>
+        <div><span class="stats__n">+{stats.obraM} M€</span><span class="stats__t">En obra gestionada</span></div>
+        <div><span class="stats__n">+{stats.m2.toLocaleString('es-ES')} m²</span><span class="stats__t">Transformados</span></div>
+      </div>
+      <div class="team">
+        <div class="team__body"><h2 class="h2">{team.title}</h2><p>{team.text}</p><a class="team__more" href={`${site.parent}/equipo/`}>Conoce al equipo →</a></div>
+        <img class="ph" src={team.image.src} srcset={srcset(team.image.src)} sizes="(min-width: 860px) 60vw, 100vw" alt={team.image.alt} width="900" height="600" loading="lazy" />
+        <div class="team__partners">
+          {team.partners.map((p) => (
+            <div class="team__p">{p.img && <img class="ph" src={p.img} alt={p.name} width="72" height="72" loading="lazy" />}
+              <div><strong>{p.name}</strong><span>{p.role}</span>{p.title && <span class="team__role">{p.title}</span>}{p.note && <span class="team__note">{p.note}</span>}</div></div>
+          ))}
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- CONTACTO -->
+  <!-- 7. TESTIMONIOS + PROYECTOS -->
+  <section class="wrap rev">
+    <div class="rev__head"><div><p class="lbl">Testimonios</p><h2>{testimonials.title}</h2></div></div>
+    <div class="rev__grid">
+      {testimonials.items.map((r) => (
+        <figure><span class="lbl">{r.tag}</span><blockquote>“{r.quote}”</blockquote><figcaption>{r.name} · {r.role}</figcaption></figure>
+      ))}
+    </div>
+  </section>
+  <section class="wrap more">
+    <div class="rev__head"><h2>Casos de éxito</h2><a href="/casosdeexito/">Ver todos →</a></div>
+    <div class="more__grid">
+      {cases.map((c) => (
+        <article>{c.slug ? <a href={`/casosdeexito/${c.slug}/`}><img class="ph" src={c.img} srcset={srcset(c.img)} sizes="(min-width: 860px) 33vw, (min-width: 520px) 50vw, 100vw" alt={`Oficina ${c.name}`} width="600" height="750" loading="lazy" /></a> : <img class="ph" src={c.img} srcset={srcset(c.img)} sizes="(min-width: 860px) 33vw, (min-width: 520px) 50vw, 100vw" alt={`Oficina ${c.name}`} width="600" height="750" loading="lazy" />}<h3>{c.name}</h3><span class="lbl">{c.meta}</span></article>
+      ))}
+    </div>
+  </section>
+
+  <!-- 8. CTA FINAL -->
   <section id="contacto" class="dark">
-    <div class="wrap block cta">
+    <div class="wrap cta">
       <p class="lbl">{contact.eyebrow}</p>
-      <h2 class="h2">{contact.title}</h2>
+      <h2 class="cta__title">{contact.title}</h2>
       <p class="cta__text">{contact.text}</p>
       <ContactForm origen="home" />
     </div>
@@ -122,58 +171,188 @@ const ld = {
 </Base>
 
 <style>
-  .hero { padding-block: clamp(56px, 9vw, 112px) 48px; display: flex; flex-direction: column; gap: 24px; }
-  .hero h1 { font-size: clamp(40px, 6.2vw, 92px); line-height: 1; letter-spacing: -.02em; max-width: 17ch; }
-  .hero__sub { font-size: clamp(19px, 1.8vw, 24px); line-height: 1.4; max-width: 46ch; color: var(--text2); }
-  .hero__ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
-  .hero__img { aspect-ratio: 16 / 8; }
-  @media (max-width: 760px) { .hero__img { aspect-ratio: 4 / 3; } }
-  .promises { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; padding-block: 32px; border-bottom: 1px solid var(--line); }
-  .promises div { display: flex; flex-direction: column; gap: 4px; }
-  .promises strong { font-weight: 500; font-size: 18px; }
-  .promises span { color: var(--text2); }
-  @media (max-width: 760px) { .promises { grid-template-columns: 1fr; } }
-  .block { padding-block: clamp(64px, 9vw, 120px); display: flex; flex-direction: column; gap: 40px; align-items: flex-start; }
-  .steps3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; border-top: 1px solid var(--line); padding-top: 28px; width: 100%; }
-  .steps3 div { display: flex; flex-direction: column; gap: 10px; font-size: 18px; line-height: 1.5; }
-  .cards3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; width: 100%; }
-  .card { background: var(--card); padding: 28px; display: flex; flex-direction: column; gap: 10px; }
-  .card strong { font-weight: 500; font-size: 21px; line-height: 1.2; }
-  .card span { color: var(--text2); }
-  @media (max-width: 860px) { .steps3, .cards3 { grid-template-columns: 1fr; } }
-  .quote { padding-block: clamp(72px, 10vw, 136px); display: flex; flex-direction: column; gap: 24px; }
-  .quote blockquote { margin: 0; font-size: clamp(30px, 4vw, 56px); line-height: 1.1; letter-spacing: -.015em; max-width: 22ch; font-weight: 500; text-wrap: balance; }
-  .quote p { font-size: 19px; line-height: 1.5; max-width: 52ch; color: #c9c8bb; }
-  .quote--light p { color: var(--text2); }
-  .method { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; width: 100%; border-top: 1px solid rgba(234,234,228,.2); padding-top: 28px; }
-  .method li { display: flex; flex-direction: column; gap: 10px; }
-  .method__n { font-size: 48px; line-height: 1; color: var(--sage); }
-  .method strong { font-weight: 500; font-size: 22px; }
-  .method span:last-child { color: #c9c8bb; }
-  @media (max-width: 860px) { .method { grid-template-columns: 1fr; } }
-  .figs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(12px, 3vw, 40px); width: 100%; max-width: 900px; align-self: center; }
-  .fig { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 14px; }
-  .fig__ball { width: 100%; max-width: 150px; aspect-ratio: 1 / 1; border-radius: 50%; border: 1px solid var(--sage); display: grid; place-items: center; }
-  .fig__ball strong { font-size: clamp(24px, 3.6vw, 44px); font-weight: 500; letter-spacing: -.02em; }
-  .fig p { font-size: clamp(13px, 1.4vw, 16px); line-height: 1.35; color: var(--text2); max-width: 22ch; }
-  .fig p b { display: block; color: var(--ink); font-weight: 500; }
-  .rev { margin: 0; background: var(--bone); padding: 28px; display: flex; flex-direction: column; gap: 16px; }
-  .rev blockquote { margin: 0; font-size: 17px; line-height: 1.5; }
-  .rev figcaption { display: flex; flex-direction: column; margin-top: auto; }
-  .rev figcaption strong { font-weight: 500; }
-  .rev figcaption span { color: var(--muted); font-size: 14px; }
-  .head-row { display: flex; justify-content: space-between; align-items: baseline; width: 100%; gap: 16px; }
-  .head-row a { text-underline-offset: 4px; }
-  .cases { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr)); gap: 32px 24px; width: 100%; }
-  .case { display: flex; flex-direction: column; gap: 8px; text-decoration: none; }
-  .case img { aspect-ratio: 4 / 5; margin-bottom: 8px; }
-  .case h3 { font-size: 22px; }
-  .case p { color: var(--text2); }
-  .team { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(200px, 46%), 1fr)); gap: 32px 20px; width: 100%; }
-  .team figure { margin: 0; display: flex; flex-direction: column; gap: 12px; }
-  .team img { aspect-ratio: 4 / 5; filter: grayscale(1); }
-  .team figcaption { display: flex; flex-direction: column; }
-  .team strong { font-weight: 500; }
-  .team span { color: var(--muted); font-size: 14px; }
-  .cta__text { font-size: 19px; line-height: 1.5; max-width: 52ch; color: #c9c8bb; }
+  .hero { padding-block: clamp(48px, 8vw, 96px) 64px; display: flex; flex-direction: column; gap: 40px; }
+  .hero h1 { font-size: clamp(44px, 7.5vw, 112px); line-height: .98; letter-spacing: -.025em; max-width: 16ch; }
+  .hero__row { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 32px; }
+  .hero__sub { font-size: clamp(19px, 1.8vw, 24px); line-height: 1.4; max-width: 40ch; }
+  .hero__cta { display: flex; gap: 12px; flex-wrap: wrap; }
+  .hero__img { aspect-ratio: 2 / 1; object-fit: cover; }
+  @media (max-width: 700px) { .hero__img { aspect-ratio: 4 / 5; object-position: 60% center; } }
+
+  .aud { padding-block: clamp(64px, 10vw, 120px) clamp(56px, 8vw, 96px); display: grid; grid-template-columns: 1fr; gap: 40px; }
+  @media (min-width: 900px) { .aud { grid-template-columns: 1fr 1.15fr; gap: 80px; align-items: start; } }
+  .aud__title { font-size: clamp(28px, 3.4vw, 44px); line-height: 1.1; margin-top: 16px; max-width: 18ch; }
+  .aud__list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--ink); }
+  .aud__item { border-bottom: 1px solid var(--line); padding-block: 22px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); gap: 8px 32px; align-items: center; }
+  @media (max-width: 600px) {
+    .aud__list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 16px; }
+    .aud__item { grid-template-columns: 1fr; padding-block: 16px; gap: 6px; align-content: start; align-items: start; }
+    .aud__item h3 { font-size: 16px !important; } .aud__item p { font-size: 13.5px !important; line-height: 1.4; }
+    .aud__title { font-size: 26px; }
+  }
+  @media (max-width: 340px) { .aud__list { grid-template-columns: 1fr; } }
+  .aud__name { display: flex; align-items: center; gap: 14px; } .aud__icon { flex: none; width: 32px; height: 32px; fill: none; stroke: var(--ink); stroke-width: 1.5; stroke-linecap: square; stroke-linejoin: miter; }
+  @media (max-width: 600px) { .aud__name { flex-direction: column; align-items: flex-start; gap: 10px; } .aud__icon { width: 28px; height: 28px; } }
+  .aud__item h3 { font-size: 21px; line-height: 1.25; } .aud__item p { color: var(--text2); font-size: 16px; }
+
+  .logos { padding-block: 0 clamp(48px, 8vw, 80px); display: flex; flex-direction: column; gap: 28px; border-top: 1px solid rgba(234,234,228,.15); padding-top: 40px; }
+  .logos .lbl { color: #8f8e82; }
+  .logos__row { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 20px 36px; align-items: center; }
+  @media (max-width: 1100px) { .logos__row { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+  .logos__row li { display: flex; justify-content: center; }
+  .logos__row img { width: 100%; max-width: 168px; height: auto; }
+  @media (max-width: 620px) { .logos__row { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; } }
+  .stats { padding-block: clamp(48px, 8vw, 80px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr)); gap: 40px; }
+  .stats div { display: flex; flex-direction: column; gap: 8px; }
+  .stats__n { font-size: clamp(34px, 3.7vw, 60px); font-weight: 500; line-height: 1; letter-spacing: -.02em; white-space: nowrap; }
+  .stats__t { color: var(--sage); }
+
+  .usp { padding-block: clamp(64px, 10vw, 128px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: 64px; align-items: center; }
+  .usp__img { aspect-ratio: 4 / 5; }
+  @media (max-width: 900px) { .usp { grid-template-columns: 1fr; gap: 28px; } .usp .usp__body { display: contents; } .usp__body > .lbl { order: 1; } .usp__body > .h2 { order: 2; } .usp__img { order: 3; aspect-ratio: 3 / 2; object-position: center 35%; } .usp__proofs { order: 4; } }
+  @media (min-width: 521px) and (max-width: 1000px) { .stats { grid-template-columns: repeat(2, 1fr); } }
+  .usp__body { display: flex; flex-direction: column; gap: 28px; min-width: 0; }
+  .usp__text { font-size: 19px; line-height: 1.55; max-width: 46ch; }
+  .usp__proofs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; border-top: 1px solid rgba(32,33,36,.2); padding-top: 24px; }
+  @media (max-width: 520px) { .usp__proofs { grid-template-columns: 1fr; } }
+  .usp__proofs div { display: flex; flex-direction: column; gap: 6px; }
+  .usp__icon { width: 32px; height: 32px; margin-bottom: 8px; fill: none; stroke: var(--ink); stroke-width: 1.5; stroke-linecap: square; stroke-linejoin: miter; }
+  .usp__proofs strong { font-weight: 500; font-size: 16px; line-height: 1.3; } .usp__proofs .lbl { font-size: 11px; line-height: 1.45; } .usp__proofs span:last-child { color: var(--text2); font-size: 15px; margin-top: 4px; }
+
+  .method { padding-block: clamp(64px, 10vw, 120px); display: flex; flex-direction: column; gap: 56px; }
+  .method__head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px; }
+  .method__head .h2 { max-width: 20ch; margin-top: 16px; } .method__head > p { max-width: 36ch; }
+  .method__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr)); gap: 16px; }
+  .method__card { display: flex; flex-direction: column; gap: 16px; padding: 32px 28px 36px; background: var(--bone); text-decoration: none; min-height: 240px; }
+  .method__card h3 { font-size: 24px; text-transform: uppercase; letter-spacing: .06em; } .method__n { font-size: 14px; color: var(--muted); }
+  .method__sub { font-weight: 600; font-size: 15px; line-height: 1.4; color: var(--ink); }
+  .method__get { font-size: 15px; border-top: 1px solid var(--line); padding-top: 14px; } .method__get .lbl { display: block; margin-bottom: 6px; }
+  .method__go { margin-top: auto; font-size: 14px; font-weight: 500; }
+
+  .feat { padding-block: clamp(64px, 10vw, 128px) 64px; display: flex; flex-direction: column; gap: 48px; }
+  .feat__title { font-size: clamp(34px, 4.4vw, 64px); line-height: 1.02; letter-spacing: -.02em; margin-top: 16px; }
+  .feat__imgs { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 12px; }
+  .feat__imgs figure { margin: 0; display: flex; flex-direction: column; gap: 8px; } .feat__imgs img { aspect-ratio: 4 / 3; }
+  .feat__cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 40px; }
+  .feat__cols div { border-top: 1px solid var(--ink); padding-top: 18px; display: flex; flex-direction: column; gap: 10px; }
+  .feat__fig { display: block; font-size: 28px; font-weight: 500; line-height: 1.1; }
+  .feat__quote { margin: 0; border-top: 1px solid var(--line); padding-top: 40px; } .feat__quote p { font-size: clamp(22px, 2.4vw, 32px); max-width: 40ch; }
+
+  .more { padding-block: 32px clamp(72px, 10vw, 120px); display: flex; flex-direction: column; gap: 40px; } .more > h2 { font-size: 36px; }
+  .more__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px 24px; }
+  @media (max-width: 860px) { .more__grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 520px) { .more__grid { grid-template-columns: 1fr; } }
+  .more__grid article { display: flex; flex-direction: column; gap: 12px; } .more__grid img { aspect-ratio: 4 / 5; } .more__grid .bw { filter: grayscale(1); } .more__grid h3 { font-size: 20px; line-height: 1.25; }
+
+  .wip { padding-block: clamp(64px, 10vw, 112px); display: flex; flex-direction: column; gap: 48px; } .wip .h2 { max-width: 22ch; margin-top: 16px; }
+  .wip__grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 40px 20px; }
+  @media (max-width: 1100px) { .wip__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  @media (max-width: 900px) { .wip__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 520px) { .wip__grid { grid-template-columns: 1fr; } }
+  .wip__card { display: grid; grid-template-rows: subgrid; grid-row: span 5; gap: 10px; align-content: start; }
+  .wip__card > h3 { padding-top: 14px; } .wip__m2 { font-size: 17px; color: var(--bone); margin-top: -4px; }
+  .wip__ph { background: #2c2d31; width: 100%; }
+  .wip__img { aspect-ratio: 4 / 3; filter: grayscale(1) contrast(1.05); }
+  .wip__card h3 { font-size: 21px; line-height: 1.25; text-wrap: balance; } .wip__card p { color: #c9c8bb; }
+
+  .rev { padding-block: clamp(64px, 10vw, 120px); display: flex; flex-direction: column; gap: 48px; }
+  .rev__head { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap; } .rev__head h2 { font-size: clamp(28px, 6vw, 36px); margin-top: 16px; }
+  .rev__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 24px; }
+  .rev__grid figure { margin: 0; display: flex; flex-direction: column; gap: 20px; padding: 32px; background: var(--card); border: 1px solid rgba(32,33,36,.12); }
+  .rev__stars { color: #b8963e; letter-spacing: .12em; font-size: 16px; }
+  .rev__grid blockquote { margin: 0; font-size: 18px; } .rev__grid figcaption { margin-top: auto; font-size: 14px; color: var(--muted); }
+
+  .team { padding-block: clamp(64px, 10vw, 112px); display: grid; grid-template-columns: 1fr 1.5fr; gap: 56px; align-items: center; }
+  @media (max-width: 860px) { .team { grid-template-columns: 1fr; } }
+  .team__body { display: flex; flex-direction: column; gap: 24px; } .team__body > p:last-child { font-size: 18px; max-width: 44ch; }
+  .team > img { aspect-ratio: 3 / 2; }
+  .team__partners { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 24px; border-top: 1px solid rgba(32,33,36,.2); padding-top: 32px; }
+  .team__p { display: flex; gap: 16px; align-items: center; } .team__p img { width: 72px; height: 72px; border-radius: 50%; flex: none; }
+  .team__p div { display: flex; flex-direction: column; gap: 4px; } .team__p strong { font-weight: 500; font-size: 18px; } .team__p span { font-size: 14px; color: var(--text2); } .team__role { font-weight: 500; color: var(--ink) !important; }
+  .team__more { font-weight: 500; text-decoration: underline; text-underline-offset: 4px; align-self: flex-start; padding-block: 10px; }
+  .team__note { color: var(--muted) !important; font-size: 13px !important; }
+
+  .faq { padding-block: clamp(64px, 10vw, 120px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 56px; } .faq h2 { font-size: 36px; margin-top: 16px; }
+  .faq details { border-top: 1px solid var(--ink); padding-block: 22px; } .faq details:last-child { border-bottom: 1px solid var(--ink); }
+  .faq summary { font-size: 19px; font-weight: 500; cursor: pointer; } .faq details p { margin-top: 14px; color: var(--text2); }
+
+  .blog { padding-block: clamp(64px, 10vw, 112px); display: flex; flex-direction: column; gap: 40px; border-top: 1px solid var(--line); } .blog h2 { font-size: 36px; }
+  .blog__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: 32px; }
+  .blog__grid a { display: flex; flex-direction: column; gap: 12px; text-decoration: none; border-top: 1px solid var(--ink); padding-top: 18px; } .blog__grid h3 { font-size: 21px; line-height: 1.3; }
+
+  .cta { padding-block: clamp(64px, 10vw, 128px); display: flex; flex-direction: column; gap: 32px; align-items: flex-start; }
+  .cta__title { font-size: clamp(38px, 5.6vw, 80px); line-height: 1; letter-spacing: -.02em; max-width: 16ch; }
+  .cta__text { font-size: 19px; max-width: 44ch; color: #c9c8bb; }
+
+  /* Home v2 */
+  .chips { list-style: none; margin: -12px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  @media (max-width: 600px) { .chips { gap: 6px; } .chip { font-size: 13px; padding: 6px 10px; } .chips__lbl { width: 100%; } }
+  .chips__lbl { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-right: 6px; }
+  .chip { display: inline-flex; align-items: center; gap: 8px; border: 1px solid rgba(32,33,36,.25); padding: 7px 12px; font-size: 14px; }
+  .chip svg { width: 18px; height: 18px; fill: none; stroke: var(--ink); stroke-width: 1.6; }
+  .logos { padding-block: clamp(40px, 6vw, 64px); display: flex; flex-direction: column; gap: 24px; }
+  .pains { padding-block: clamp(64px, 9vw, 104px); display: flex; flex-direction: column; gap: 40px; }
+  .pains__grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+  @media (max-width: 760px) { .pains__grid { grid-template-columns: 1fr; } }
+  .pains__grid li { border-top: 1px solid var(--sage); padding-top: 22px; display: flex; flex-direction: column; gap: 14px; }
+  .pains__grid li:first-child { border-top-width: 3px; }
+  .pains__grid svg { width: 34px; height: 34px; fill: none; stroke: #eaeae4; stroke-width: 1.5; }
+  .pains__grid p { font-size: clamp(17px, 1.7vw, 22px); line-height: 1.3; }
+  .method__short { color: var(--text2); font-size: 16px; line-height: 1.4; }
+  .method__cta { align-self: flex-start; }
+  .bonus { margin-block: clamp(16px, 4vw, 48px) clamp(64px, 9vw, 104px); background: var(--sage); padding: clamp(28px, 4vw, 56px); display: flex; justify-content: space-between; align-items: center; gap: 28px; flex-wrap: wrap; }
+  .bonus > div { display: flex; flex-direction: column; gap: 12px; max-width: 52ch; }
+  .bonus .lbl { color: var(--ink); }
+  .bonus h2 { font-size: clamp(26px, 3vw, 40px); line-height: 1.1; }
+  .bonus p:last-child { font-size: 17px; }
+  .auth { padding-block: clamp(64px, 10vw, 112px); display: flex; flex-direction: column; gap: 40px; }
+  .auth .stats { padding-block: 0 40px; border-bottom: 1px solid rgba(32,33,36,.2); }
+  .auth .stats__t { color: var(--text2); }
+  .auth .stats__n { font-size: clamp(32px, 3.2vw, 52px); }
+  .auth .team { padding-block: 0; }
+
+  /* v3: recorrido por fases */
+  .jr { padding-block: clamp(64px, 10vw, 120px); display: flex; flex-direction: column; gap: 48px; }
+  .jr__head { display: flex; flex-direction: column; gap: 16px; } .jr__head .h2 { max-width: 22ch; }
+  .jr__list { list-style: none; margin: 0; padding: 0; border-top: 1px solid rgba(234,234,228,.25); }
+  .jr__row { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.3fr) minmax(0, 1.2fr); gap: 24px 48px; padding-block: 32px; border-bottom: 1px solid rgba(234,234,228,.25); align-items: start; }
+  .jr__phase { display: flex; flex-direction: column; gap: 8px; }
+  .jr__n { font-size: 14px; color: var(--sage); }
+  .jr__icon { width: 44px; height: 44px; margin-bottom: 8px; fill: var(--sage); }
+  .jr__phase h3 { font-size: clamp(22px, 2.2vw, 30px); text-transform: uppercase; letter-spacing: .06em; font-weight: 500; }
+  .jr__pain, .jr__fix { display: flex; flex-direction: column; gap: 10px; }
+  .jr .lbl { color: var(--sage); }
+  .jr__pain p { font-size: clamp(18px, 1.8vw, 23px); line-height: 1.3; }
+  .jr__fix p { color: #c9c8bb; font-size: 16px; line-height: 1.45; }
+  .jr__fix a { color: #eaeae4; font-weight: 500; text-decoration: underline; text-underline-offset: 4px; align-self: flex-start; padding-block: 6px; }
+  .jr__cta { align-self: flex-start; background: #eaeae4 !important; color: #202124 !important; }
+  @media (max-width: 860px) { .jr__row { grid-template-columns: 1fr; gap: 16px; } }
+
+  .aud2 { padding-block: clamp(64px, 9vw, 104px) 0; display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 32px clamp(32px, 6vw, 96px); align-items: end; }
+  .aud2__grid { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; border-top: 1px solid var(--line, rgba(32,33,36,.18)); }
+  .aud2__grid li { display: flex; align-items: center; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--line, rgba(32,33,36,.18)); font-size: 20px; font-weight: 500; line-height: 1.2; color: var(--ink); }
+  .aud2__grid svg { flex: none; width: 26px; height: 26px; fill: none; stroke: var(--ink); stroke-width: 1.5; }
+  @media (max-width: 860px) { .aud2 { grid-template-columns: 1fr; } .aud2__grid li { font-size: 17px; padding: 12px 0; } }
+  .cta__wa { color: #c9c8bb; } .cta__wa a { color: #eaeae4; text-decoration: underline; text-underline-offset: 4px; }
+
+  /* v4: caso de éxito */
+  .case { padding-block: clamp(72px, 10vw, 120px); display: flex; flex-direction: column; gap: 48px; }
+  .case__head { display: flex; flex-direction: column; gap: 18px; max-width: 1100px; }
+  .case__title { font-size: clamp(34px, 5vw, 68px); line-height: 1.02; letter-spacing: -.02em; font-weight: 500; text-wrap: balance; display: flex; flex-direction: column; }
+  @media (min-width: 861px) { .case__title-main { white-space: nowrap; } }
+  .case__sub { font-size: clamp(18px, 1.8vw, 22px); line-height: 1.4; color: var(--text2); max-width: 52ch; }
+  .case__steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px; counter-reset: none; }
+  .case__steps li { display: flex; flex-direction: column; gap: 12px; }
+  .case__steps figure { margin: 0; display: flex; flex-direction: column; gap: 12px; }
+  .case__steps img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; }
+  .case__steps h3 { font-size: clamp(18px, 1.6vw, 22px); font-weight: 600; text-transform: uppercase; letter-spacing: .04em; display: flex; align-items: baseline; gap: 10px; }
+  .case__steps h3 span { font-size: inherit; font-weight: 500; color: var(--muted); }
+  .case__steps figcaption { font-size: 15px; line-height: 1.45; color: var(--text2); }
+  .case__figs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(12px, 3vw, 40px); max-width: 900px; margin-inline: auto; width: 100%; }
+  .case__figs > div { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 14px; }
+  .case__ball { width: 100%; max-width: 150px; aspect-ratio: 1 / 1; border-radius: 50%; border: 1px solid var(--sage); color: var(--ink); display: grid; place-items: center; }
+  .case__ball strong { font-size: clamp(24px, 3.6vw, 44px); font-weight: 500; letter-spacing: -.02em; line-height: 1; }
+  .case__figs p { font-size: clamp(13px, 1.4vw, 16px); line-height: 1.35; color: var(--text2); max-width: 22ch; }
+  .case__figs p b { display: block; color: var(--ink); font-weight: 500; }
+  @media (max-width: 860px) { .case__steps { grid-template-columns: 1fr; gap: 40px; } }
 </style>
