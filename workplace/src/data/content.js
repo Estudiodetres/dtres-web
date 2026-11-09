@@ -10,7 +10,7 @@ export const site = {
   booking: 'https://calendar.app.google/aw8RtuQPvH932VrBA',
   address: { street: "Carrer d'Osi 23, baixos 2a", postalCode: '08034', city: 'Barcelona' },
   legalName: 'ESDETRES Arquitectura e Interiorismo SLP',
-  linkedin: 'https://www.linkedin.com/company/estudiodetres/',
+  linkedin: 'https://www.linkedin.com/company/86421055/',
   instagram: 'https://www.instagram.com/estudio_detres/',
 };
 

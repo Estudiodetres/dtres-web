@@ -6,12 +6,14 @@ export const site = {
   registry: { tomo: '46912', folio: '216', hoja: 'B-535114' }, // Registro Mercantil de Barcelona
   url: 'https://detres.eu',
   email: 'info@detres.eu',
+  linkedin: 'https://www.linkedin.com/company/86421055/',
+  instagram: 'https://www.instagram.com/estudio_detres/',
   phone: '+34 931 255 444',
   phoneDisplay: '931 255 444',
   whatsapp: '34655307513',
   booking: 'https://calendar.app.google/aw8RtuQPvH932VrBA',
   workplace: 'https://workplace.detres.eu', // WhatsApp de Nacho
-  social: [], // TODO: LinkedIn del estudio, Instagram… (https://…)
+  social: ['https://www.linkedin.com/company/86421055/', 'https://www.instagram.com/estudio_detres/'],
   address: { street: "Carrer d'Osi 23, baixos 2a", postalCode: '08034', city: 'Barcelona', region: 'Catalunya', country: 'ES' },
   placeId: 'ChIJv3MWA6yXpBIRj6tO7BPYQxA',
   areaServed: ['Barcelona', 'Catalunya'],
