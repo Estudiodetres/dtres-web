@@ -1,4 +1,5 @@
 ---
+import { site } from '../data/content.js';
 import { ui, routes, phasePath, langs, code } from '../i18n/index.js';
 import { getContent } from '../data/i18n-content.js';
 const { lang = 'es', alternates = null } = Astro.props;
@@ -20,6 +21,7 @@ const langHref = (l) => (alternates && alternates[l]) || routes.home[l];
       {links.map(([h, l]) => <a href={h}>{l}</a>)}
     </nav>
     <div class="hdr__right">
+      <span class="hdr__social"><a href={site.instagram} aria-label="Instagram @estudio_detres" rel="noopener" target="_blank"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.3" cy="6.7" r="1.2" fill="currentColor"/></svg></a><a href={site.linkedin} aria-label="LinkedIn DTRES" rel="noopener" target="_blank"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4v11H3v-11Zm6.5 0h3.8v1.6h.06c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.77 2.65 4.77 6.1v5.35h-4v-4.74c0-1.13-.02-2.59-1.58-2.59-1.58 0-1.82 1.23-1.82 2.5v4.83h-4v-11Z"/></svg></a></span>
       <span class="hdr__lang">
         {langs.map((l, i) => (
           <>{i > 0 && ' · '}{l === lang ? <span aria-current="true">{code[l]}</span> : <a href={langHref(l)} hreflang={l} lang={l}>{code[l]}</a>}</>
@@ -30,6 +32,7 @@ const langHref = (l) => (alternates && alternates[l]) || routes.home[l];
         <summary aria-label="Menú"><span></span><span></span></summary>
         <div class="hdr__drawer">
           {links.map(([h, l]) => <a href={h}>{l}</a>)}
+          <span class="hdr__drawer-social"><a href={site.instagram} aria-label="Instagram @estudio_detres" rel="noopener" target="_blank"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.3" cy="6.7" r="1.2" fill="currentColor"/></svg></a><a href={site.linkedin} aria-label="LinkedIn DTRES" rel="noopener" target="_blank"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4v11H3v-11Zm6.5 0h3.8v1.6h.06c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.77 2.65 4.77 6.1v5.35h-4v-4.74c0-1.13-.02-2.59-1.58-2.59-1.58 0-1.82 1.23-1.82 2.5v4.83h-4v-11Z"/></svg></a></span>
           <div class="hdr__drawer-lang">
             {langs.map((l) => (l === lang ? <span>{code[l]}</span> : <a href={langHref(l)} hreflang={l}>{code[l]}</a>))}
           </div>
@@ -66,4 +69,9 @@ const langHref = (l) => (alternates && alternates[l]) || routes.home[l];
   .hdr__drawer-lang span { color: var(--ink); }
   @media (max-width: 900px) { .hdr__nav, .hdr__lang { display: none; } .hdr__menu { display: block; } }
   @media (max-width: 420px) { .hdr__cta { display: none; } }
+  .hdr__social { display: flex; gap: 2px; }
+  .hdr__social a, .hdr__drawer-social a { display: grid; place-items: center; width: 40px; height: 44px; color: var(--ink); border: 0 !important; padding: 0 !important; }
+  .hdr__social a:hover { opacity: .6; }
+  .hdr__drawer-social { display: flex; gap: 8px; padding-top: 8px; margin-left: -10px; }
+  @media (max-width: 900px) { .hdr__social { display: none; } }
 </style>
