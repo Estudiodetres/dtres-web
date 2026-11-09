@@ -1,6 +1,8 @@
 [build]
   command = "npm run build"
   publish = "dist"
+  # Solo despliega si cambia algo dentro de workplace/ (ahorra créditos de Netlify)
+  ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF -- ."
 [build.environment]
   NODE_VERSION = "22"
 
