@@ -152,7 +152,7 @@ export const clients = es.clients;
 const peopleRole = {'Directora de Proyecto y Producción': 'Directora de Projecte i Producció', 'Director de Proyecto y Diseño': 'Director de Projecte i Disseny', 'Director de Proyecto y BIM Manager': 'Director de Projecte i BIM Manager', 'Constructor consultor': 'Constructor consultor', 'Responsable de BIM y Estudios de Viabilidad': 'Responsable de BIM i Estudis de Viabilitat', 'Responsable de Diseño de Interiores': 'Responsable de Disseny d’Interiors', 'BIM Manager y Estudios de Viabilidad': 'BIM Manager i Estudis de Viabilitat', 'Arquitectura y diseño de interiores': 'Arquitectura i disseny d’interiors', 'Responsable de Planificación y Procesos': 'Responsable de Planificació i Processos', 'Responsable de Calidad y Trámites': 'Responsable de Qualitat i Tràmits', 'Arquitecto senior': 'Arquitecte sènior', 'Profesor de la Escuela de Arquitectura UIC': "Professor de l'Escola d'Arquitectura UIC", 'Project Manager': 'Project Manager', 'Arquitecta senior': 'Arquitecta sènior', 'Arquitecto senior': 'Arquitecte sènior', 'Interiorista': 'Interiorista', 'Arquitecta junior': 'Arquitecta júnior', 'Modeladora 3D': 'Modeladora 3D', 'Ingeniero': 'Enginyer', 'Arquitecta técnica': 'Arquitecta tècnica', 'Constructor': 'Constructor'};
 export const people = { staff: es.people.staff.map((x) => ({ ...x, role: peopleRole[x.role] ?? x.role, sub: x.sub && (peopleRole[x.sub] ?? x.sub), note: x.note && (peopleRole[x.note] ?? x.note) })), partners: es.people.partners.map((x) => ({ ...x, role: peopleRole[x.role] ?? x.role })) };
 
-export const statusLabels = { 'Cambio de uso': "Canvi d'ús", 'En obra': 'En obra', 'En licitación': 'En licitació', 'En viabilidad': 'En viabilitat' };
+export const statusLabels = { 'Cambio de uso': "Canvi d'ús", 'En obra': 'En curs', 'En licitación': 'En curs', 'En viabilidad': 'En curs' };
 
 const use = {
   'Vivienda': 'Habitatge',
@@ -189,7 +189,7 @@ export const home2 = {
   },
   "bonus": {
     "eyebrow": "Consultoria gratuïta · 30 min amb un soci",
-    "title": "La teva primera viabilitat, en 30 minuts.",
+    "title": "Descobreix si és viable en 30 minuts.",
     "text": "Un soci arquitecte revisa el teu edifici o la teva idea i et diu si és viable, quins riscos té i com continuar amb una due diligence.",
     "cta": "Reservar la meva consultoria gratuïta"
   },

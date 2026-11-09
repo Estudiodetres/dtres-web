@@ -152,7 +152,7 @@ export const clients = es.clients;
 const peopleRole = {'Directora de Proyecto y Producción': 'Project and Production Director', 'Director de Proyecto y Diseño': 'Project and Design Director', 'Director de Proyecto y BIM Manager': 'Project Director and BIM Manager', 'Constructor consultor': 'Consulting contractor', 'Responsable de BIM y Estudios de Viabilidad': 'Head of BIM and Feasibility Studies', 'Responsable de Diseño de Interiores': 'Head of Interior Design', 'BIM Manager y Estudios de Viabilidad': 'BIM Manager and Feasibility Studies', 'Arquitectura y diseño de interiores': 'Architecture and interior design', 'Responsable de Planificación y Procesos': 'Head of Planning and Processes', 'Responsable de Calidad y Trámites': 'Head of Quality and Permitting', 'Arquitecto senior': 'Senior architect', 'Profesor de la Escuela de Arquitectura UIC': 'Lecturer at the UIC School of Architecture', 'Project Manager': 'Project Manager', 'Arquitecta senior': 'Senior architect', 'Arquitecto senior': 'Senior architect', 'Interiorista': 'Interior designer', 'Arquitecta junior': 'Junior architect', 'Modeladora 3D': '3D modeller', 'Ingeniero': 'Engineer', 'Arquitecta técnica': 'Building surveyor', 'Constructor': 'Contractor'};
 export const people = { staff: es.people.staff.map((x) => ({ ...x, role: peopleRole[x.role] ?? x.role, sub: x.sub && (peopleRole[x.sub] ?? x.sub), note: x.note && (peopleRole[x.note] ?? x.note) })), partners: es.people.partners.map((x) => ({ ...x, role: peopleRole[x.role] ?? x.role })) };
 
-export const statusLabels = { 'Cambio de uso': 'Change of use', 'En obra': 'Under construction', 'En licitación': 'Out to tender', 'En viabilidad': 'Feasibility' };
+export const statusLabels = { 'Cambio de uso': 'Change of use', 'En obra': 'Ongoing', 'En licitación': 'Ongoing', 'En viabilidad': 'Ongoing' };
 
 const use = {
   'Vivienda': 'Home',
@@ -189,7 +189,7 @@ export const home2 = {
   },
   "bonus": {
     "eyebrow": "Free consultation · 30 min with a partner",
-    "title": "Your first feasibility check, in 30 minutes.",
+    "title": "Find out if it is viable in 30 minutes.",
     "text": "A partner architect reviews your building or idea and tells you whether it is feasible, what the risks are and how to move on to a due diligence.",
     "cta": "Book my free consultation"
   },

@@ -10,7 +10,7 @@ const { lang = 'es' } = Astro.props;
 const { allProjects, statusLabels } = getContent(lang);
 const t = ui[lang].projects;
 const fmt = (n) => fmtL(n, lang);
-const st = (s) => (s && statusLabels ? statusLabels[s] ?? s : s);
+const st = (s) => (s && statusLabels ? statusLabels[s] ?? s : s === 'En obra' || s === 'En licitación' || s === 'En viabilidad' ? 'En curso' : s);
 const filters = Object.entries(t.filters);
 const total = allProjects.reduce((a, p) => a + (p.m2 || 0), 0);
 const m2 = (p) => (p.m2 ? ` · ${fmt(p.m2)} m²` : '');
