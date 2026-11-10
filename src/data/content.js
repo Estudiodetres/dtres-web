@@ -29,6 +29,7 @@ export const hero = {
   title: "Damos una nueva vida a tu edificio.",
   subtitle: "Arquitectura y diseño que elevan su valor y su identidad, con la certeza de un proceso claro desde el primer día: licencias que avanzan y obra con plazo y coste cerrados.",
   image: { src: '/img/hero-iese.jpg', alt: 'Edificio L del IESE en Barcelona, patrimonio catalogado de 1910 rehabilitado por DTRES' },
+  inside: { src: '/img/g/iese-09.jpg', alt: 'Interior del Edificio L del IESE tras la rehabilitación de DTRES' },
 };
 
 export const audiences = {
