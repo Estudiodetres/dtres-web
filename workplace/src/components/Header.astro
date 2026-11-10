@@ -46,9 +46,13 @@ const links = [['/#metodo', 'Servicios'], ['/casosdeexito/', 'Proyectos'], ['/#e
   .hdr__drawer a { padding: 14px 0; border-bottom: 1px solid var(--line); text-decoration: none; font-size: 18px; }
   @media (max-width: 900px) { .hdr__nav { display: none; } .hdr__menu { display: block; } }
   @media (max-width: 520px) { .hdr__cta { display: none; } }
-  .hdr__social { display: flex; gap: 2px; }
+  .hdr__social { display: flex; gap: 8px; }
+  .hdr__social a { width: 36px !important; height: 36px !important; border-radius: 50%; background: var(--ink); color: var(--bone) !important; }
+  .hdr__social svg { width: 17px; height: 17px; }
   .hdr__social a, .hdr__drawer-social a { display: grid; place-items: center; width: 40px; height: 44px; color: var(--ink); border: 0 !important; padding: 0 !important; }
   .hdr__social a:hover { opacity: .6; }
-  .hdr__drawer-social { display: flex; gap: 8px; padding-top: 8px; margin-left: -10px; }
+  .hdr__drawer-social { display: flex; gap: 10px; padding-top: 12px; }
+  .hdr__drawer-social a { width: 40px !important; height: 40px !important; border-radius: 50%; background: var(--ink); color: var(--bone) !important; }
+  .hdr__drawer-social svg { width: 18px; height: 18px; }
   @media (max-width: 900px) { .hdr__social { display: none; } }
 </style>
