@@ -79,8 +79,8 @@ export const phases = [
     what: 'Arquitectura e interiorismo, proyecto básico y ejecutivo con instalaciones, permiso de obra, cambio de uso y licencia de actividad.',
     get: "Un proyecto diseñado y construido en 3D para vivirlo antes de construirlo, definido al detalle en BIM y con el permiso de obra concedido.",
     seoTitle: 'Proyecto, interiorismo y licencias en Barcelona',
-    intro: 'Diseñamos el edificio y su interiorismo, y tramitamos todo lo necesario para que la obra empiece cuanto antes: permisos de obra, cambio de uso, licencia de actividad y consultas con Patrimonio.',
-    includes: ['Arquitectura e interiorismo', 'Proyecto básico y ejecutivo con instalaciones', 'Consulta previa e informe de Patrimonio', 'Permiso de obra, cambio de uso y licencia de actividad', 'Licitación y presupuesto cerrado con constructora'],
+    intro: 'Diseñamos el edificio y su interiorismo, y tramitamos todo lo necesario para que la obra empiece cuanto antes: permisos de obra, cambio de uso, licencia de actividad y consultas con Patrimonio. Modelamos el edificio en BIM y creamos su gemelo digital: así controlamos al detalle toda la reforma y trabajamos con ingenierías, constructoras y el cliente en un entorno colaborativo BIM.',
+    includes: ['Arquitectura e interiorismo', 'Modelo BIM y gemelo digital del edificio, en entorno colaborativo', 'Proyecto básico y ejecutivo con instalaciones', 'Consulta previa e informe de Patrimonio', 'Permiso de obra, cambio de uso y licencia de actividad', 'Licitación y presupuesto cerrado con constructora'],
   },
   {
     id: 'obra', slug: 'obra', n: '03', title: 'Obra', sub: "Project management y dirección de obra con arquitecto, aparejador, ingeniero e interiorista", alt: ['Obra'],

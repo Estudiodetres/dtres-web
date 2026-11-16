@@ -54,8 +54,8 @@ export const phases = [
     what: 'Architecture and interior design, basic and detailed design with services, building permit, change of use and activity licence.',
     get: "A design built in 3D so you can experience it before it is built, detailed in BIM and with the building permit granted.",
     seoTitle: 'Architecture, interior design and permits in Barcelona',
-    intro: 'We design the building and its interiors, and handle everything needed to start construction as soon as possible: building permits, change of use, activity licence and heritage consultations.',
-    includes: ['Architecture and interior design', 'Basic and detailed design with services', 'Heritage pre-consultation and report', 'Building permit, change of use and activity licence', 'Tendering and fixed-price contract with the builder'],
+    intro: 'We design the building and its interiors, and handle everything needed to start construction as soon as possible: building permits, change of use, activity licence and heritage consultations. We model the building in BIM and create its digital twin, so we control every detail of the renovation and work with engineers, builders and the client in a collaborative BIM environment.',
+    includes: ['Architecture and interior design', 'BIM model and digital twin of the building, in a collaborative environment', 'Basic and detailed design with services', 'Heritage pre-consultation and report', 'Building permit, change of use and activity licence', 'Tendering and fixed-price contract with the builder'],
   },
   {
     id: 'obra', slug: 'construction', n: '03', title: 'Construction', sub: "Project management and site supervision by architect, building surveyor, engineer and interior designer", alt: ['Construction'],

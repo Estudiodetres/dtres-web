@@ -54,8 +54,8 @@ export const phases = [
     what: "Arquitectura i interiorisme, projecte bàsic i executiu amb instal·lacions, permís d'obra, canvi d'ús i llicència d'activitat.",
     get: "Un projecte dissenyat i construït en 3D per viure'l abans de construir-lo, definit al detall en BIM i amb el permís d'obra concedit.",
     seoTitle: 'Projecte, interiorisme i llicències a Barcelona',
-    intro: "Dissenyem l'edifici i el seu interiorisme, i tramitem tot el necessari perquè l'obra comenci com més aviat millor: permisos d'obra, canvi d'ús, llicència d'activitat i consultes amb Patrimoni.",
-    includes: ['Arquitectura i interiorisme', 'Projecte bàsic i executiu amb instal·lacions', 'Consulta prèvia i informe de Patrimoni', "Permís d'obra, canvi d'ús i llicència d'activitat", 'Licitació i pressupost tancat amb constructora'],
+    intro: "Dissenyem l'edifici i el seu interiorisme, i tramitem tot el necessari perquè l'obra comenci com més aviat millor: permisos d'obra, canvi d'ús, llicència d'activitat i consultes amb Patrimoni. Modelem l'edifici en BIM i en creem el bessó digital: així controlem al detall tota la reforma i treballem amb enginyeries, constructores i el client en un entorn col·laboratiu BIM.",
+    includes: ['Arquitectura i interiorisme', "Model BIM i bessó digital de l'edifici, en entorn col·laboratiu", 'Projecte bàsic i executiu amb instal·lacions', 'Consulta prèvia i informe de Patrimoni', "Permís d'obra, canvi d'ús i llicència d'activitat", 'Licitació i pressupost tancat amb constructora'],
   },
   {
     id: 'obra', slug: 'obra', n: '03', title: 'Obra', sub: "Project management i direcció d'obra amb arquitecte, aparellador, enginyer i interiorista", alt: ['Obra'],
