@@ -311,7 +311,7 @@ export const phases = [
 ];
 export const dtresTeam = {
   "title": "Un solo interlocutor. Un equipo completo detrás.",
-  "text": "Hablas con una sola persona de principio a fin. Detrás, un equipo de 12 personas en Barcelona: arquitectos, interioristas y modeladores 3D, con ingeniería, arquitectura técnica y constructora de confianza. Diseñamos, tramitamos y dirigimos la obra, de la primera visita a la entrega de llaves.",
+  "text": "Hablas con una sola persona de principio a fin. Detrás, un equipo de 12 personas en Barcelona: arquitectos, interioristas, modeladores 3D y un BIM manager, con ingeniería, arquitectura técnica y constructora de confianza. Todo el equipo trabaja en BIM: lo usamos para modelar el edificio y como fuente de información para el diseño y la construcción. Diseñamos, tramitamos y dirigimos la obra, de la primera visita a la entrega de llaves.",
   "image": {
     "src": "/img/equipo.jpg",
     "alt": "Equipo de DTRES trabajando en el estudio de Barcelona"
