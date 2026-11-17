@@ -13,8 +13,8 @@ export const hero = {
   eyebrow: 'Architecture and interior design · Barcelona and Catalonia · Since 2017',
   title: "We give your building a new life.",
   subtitle: "Architecture and design that raise its value and its identity, with the certainty of a clear process from day one: permits that move forward and construction at a fixed time and cost.",
-  image: { src: '/img/hero-iese.jpg', alt: 'IESE Building L in Barcelona, a listed 1910 building rehabilitated by DTRES' },
-  inside: { src: '/img/hero-iese-in2.jpg', alt: 'Inside IESE Building L after the DTRES rehabilitation' },
+  image: { src: '/img/hero-iese-d.jpg', alt: 'IESE Building L in Barcelona, a listed 1910 building rehabilitated by DTRES' },
+  inside: { src: '/img/hero-iese-in2-d.jpg', alt: 'Inside IESE Building L after the DTRES rehabilitation' },
 };
 
 export const audiences = {

@@ -7,7 +7,7 @@ const t = ui[lang].thanks;
 const waText = { es: 'Hola Nacho, acabo de reservar una llamada desde la web.', ca: "Hola Nacho, acabo de reservar una trucada des del web.", en: 'Hi Nacho, I have just booked a call on the website.' }[lang];
 const waUrl = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(waText)}`;
 ---
-<Base title={`${t.eyebrow} · DTRES`} description={t.title} lang={lang} alternates={routes.thanks} noindex hideWa>
+<Base title={`${t.eyebrow} · DTRES`} description={t.title} lang={lang} alternates={routes.thanks} noindex>
   <section class="wrap ty">
     <p class="lbl">{t.eyebrow}</p>
     <h1>{t.title}</h1>

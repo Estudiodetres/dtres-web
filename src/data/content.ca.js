@@ -13,8 +13,8 @@ export const hero = {
   eyebrow: 'Arquitectura i interiorisme · Barcelona i Catalunya · Des de 2017',
   title: "Donem una nova vida al teu edifici.",
   subtitle: "Arquitectura i disseny que n'eleven el valor i la identitat, amb la certesa d'un procés clar des del primer dia: llicències que avancen i obra amb termini i cost tancats.",
-  image: { src: '/img/hero-iese.jpg', alt: 'Edifici L de l’IESE a Barcelona, patrimoni catalogat de 1910 rehabilitat per DTRES' },
-  inside: { src: '/img/hero-iese-in2.jpg', alt: 'Interior de l’Edifici L de l’IESE després de la rehabilitació de DTRES' },
+  image: { src: '/img/hero-iese-d.jpg', alt: 'Edifici L de l’IESE a Barcelona, patrimoni catalogat de 1910 rehabilitat per DTRES' },
+  inside: { src: '/img/hero-iese-in2-d.jpg', alt: 'Interior de l’Edifici L de l’IESE després de la rehabilitació de DTRES' },
 };
 
 export const audiences = {

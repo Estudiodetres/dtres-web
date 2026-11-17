@@ -38,15 +38,15 @@ const ld = [
     {meta && <p class="lbl">{meta}</p>}
   </section>
   {imgs.length > 0 && <section class="wrap pd-ba">
-    <figure><img class="ph" src={imgs[0]} srcset={srcset(imgs[0])} sizes="(min-width: 760px) 50vw, 100vw" alt={`${title} · ${t.before}`} width="1200" height="1500" /><figcaption class="lbl">{t.before}</figcaption></figure>
-    <figure><img class="ph" src={imgs[1]} srcset={srcset(imgs[1])} sizes="(min-width: 760px) 50vw, 100vw" alt={`${title} · ${t.after}`} width="1200" height="1500" fetchpriority="high" /><figcaption class="lbl">{t.after}</figcaption></figure>
+    <figure><img class="ph" src={imgs[0]} srcset={srcset(imgs[0])} sizes="(min-width: 760px) 50vw, calc(100vw - 48px)" alt={`${title} · ${t.before}`} width="1200" height="1500" /><figcaption class="lbl">{t.before}</figcaption></figure>
+    <figure><img class="ph" src={imgs[1]} srcset={srcset(imgs[1])} sizes="(min-width: 760px) 50vw, calc(100vw - 48px)" alt={`${title} · ${t.after}`} width="1200" height="1500" fetchpriority="high" /><figcaption class="lbl">{t.after}</figcaption></figure>
   </section>}
-  {p.img && <section class="wrap pd-main"><img class={p.bw ? 'ph bw' : 'ph'} src={p.img} srcset={srcset(p.img)} sizes="100vw" alt={title} width="2000" height="1300" loading="lazy" /></section>}
+  {p.img && <section class="wrap pd-main"><img class={p.bw ? 'ph bw' : 'ph'} src={p.img} srcset={srcset(p.img)} sizes="(min-width: 1680px) 1520px, (min-width: 1280px) 1232px, calc(100vw - 48px)" alt={title} width="2000" height="1300" loading="lazy" /></section>}
   {gal.length > 0 && (
     <section class="wrap pd-gal">
       <p class="lbl">{t.gallery} · {gal.length}</p>
       <div class="pd-gal__grid">
-        {gal.map((g, k) => <a href={g.src.replace('.jpg', '-w1200.webp')} target="_blank" rel="noopener"><img class="ph" src={g.src} srcset={gset(g.src)} sizes="(min-width: 1100px) 33vw, (min-width: 600px) 50vw, 100vw" alt={`${title} · ${k + 1}`} width={g.w} height={g.h} loading="lazy" decoding="async" /></a>)}
+        {gal.map((g, k) => <a href={g.src.replace('.jpg', '-w1200.webp')} target="_blank" rel="noopener"><img class="ph" src={g.src} srcset={gset(g.src)} sizes="(min-width: 1100px) 33vw, (min-width: 600px) 50vw, calc(100vw - 48px)" alt={`${title} · ${k + 1}`} width={g.w} height={g.h} loading="lazy" decoding="async" /></a>)}
       </div>
     </section>
   )}

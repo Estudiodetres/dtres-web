@@ -21,16 +21,16 @@ const ld = { '@context': 'https://schema.org', '@type': 'CreativeWork', name: `$
   </section>
   {p.key && (
     <section class="wrap cs-ba">
-      <figure><img class="ph" src={`/img/wpc-${p.key}-antes.jpg`} srcset={srcset(`/img/wpc-${p.key}-antes.jpg`)} sizes="(min-width: 760px) 50vw, 100vw" alt={`${p.name} antes`} width="600" height="750" /><figcaption class="lbl">Antes</figcaption></figure>
-      <figure><img class="ph" src={`/img/wpc-${p.key}-despues.jpg`} srcset={srcset(`/img/wpc-${p.key}-despues.jpg`)} sizes="(min-width: 760px) 50vw, 100vw" alt={`${p.name} después`} width="600" height="750" /><figcaption class="lbl">Después</figcaption></figure>
+      <figure><img class="ph" src={`/img/wpc-${p.key}-antes.jpg`} srcset={srcset(`/img/wpc-${p.key}-antes.jpg`)} sizes="(min-width: 760px) 50vw, calc(100vw - 48px)" alt={`${p.name} antes`} width="600" height="750" /><figcaption class="lbl">Antes</figcaption></figure>
+      <figure><img class="ph" src={`/img/wpc-${p.key}-despues.jpg`} srcset={srcset(`/img/wpc-${p.key}-despues.jpg`)} sizes="(min-width: 760px) 50vw, calc(100vw - 48px)" alt={`${p.name} después`} width="600" height="750" /><figcaption class="lbl">Después</figcaption></figure>
     </section>
   )}
-  {p.img && <section class="wrap" style="margin-top: 24px"><img class="ph cs-img" src={p.img} srcset={srcset(p.img)} sizes="100vw" alt={`Oficina ${p.name} diseñada por DTRES`} width="2000" height="1300" /></section>}
+  {p.img && <section class="wrap" style="margin-top: 24px"><img class="ph cs-img" src={p.img} srcset={srcset(p.img)} sizes="(min-width: 1680px) 1520px, (min-width: 1280px) 1232px, calc(100vw - 48px)" alt={`Oficina ${p.name} diseñada por DTRES`} width="2000" height="1300" /></section>}
   {gal.length > 0 && (
     <section class="wrap cs-gal">
       <p class="lbl">Galería del proceso · {gal.length} fotos</p>
       <div class="cs-gal__grid">
-        {gal.map((g, k) => <a href={`${CDN}${g.src.replace('.jpg', '-w1200.webp')}`} target="_blank" rel="noopener"><img class="ph" src={`${CDN}${g.src}`} srcset={gset(g.src)} sizes="(min-width: 1100px) 33vw, (min-width: 600px) 50vw, 100vw" alt={`${p.name} · ${k + 1}`} width={g.w} height={g.h} loading="lazy" decoding="async" /></a>)}
+        {gal.map((g, k) => <a href={`${CDN}${g.src.replace('.jpg', '-w1200.webp')}`} target="_blank" rel="noopener"><img class="ph" src={`${CDN}${g.src}`} srcset={gset(g.src)} sizes="(min-width: 1100px) 33vw, (min-width: 600px) 50vw, calc(100vw - 48px)" alt={`${p.name} · ${k + 1}`} width={g.w} height={g.h} loading="lazy" decoding="async" /></a>)}
       </div>
     </section>
   )}
