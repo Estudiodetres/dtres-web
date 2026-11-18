@@ -1,10 +1,11 @@
 ---
+import Logo from './Logo.astro';
 import { site } from '../data/content.js';
 const links = [['/#metodo', 'Servicios'], ['/casosdeexito/', 'Proyectos'], ['/#equipo', 'Nosotros'], ['/blog/', 'Blog']];
 ---
 <header class="hdr">
   <div class="wrap hdr__in">
-    <a href="/" class="hdr__logo" aria-label="DTRES Workplace">DTRES <span>Workplace</span></a>
+    <a href="/" class="hdr__logo" aria-label="DTRES Workplace"><Logo /> <span>Workplace</span></a>
     <nav class="hdr__nav" aria-label="Principal">
       {links.map(([h, l]) => <a href={h}>{l}</a>)}
       <a class="hdr__parent" href={site.parent}>Volver a DTRES</a>
@@ -31,7 +32,8 @@ const links = [['/#metodo', 'Servicios'], ['/casosdeexito/', 'Proyectos'], ['/#e
 <style>
   .hdr { border-bottom: 1px solid var(--line); position: relative; }
   .hdr__in { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding-block: 18px; }
-  .hdr__logo { font-size: 24px; font-weight: 600; letter-spacing: .06em; text-decoration: none; white-space: nowrap; }
+  .hdr__logo { display: flex; align-items: center; gap: 8px; font-size: 24px; letter-spacing: .06em; text-decoration: none; white-space: nowrap; color: var(--ink); }
+  .hdr__logo :global(svg) { height: 20px; width: auto; display: block; }
   .hdr__logo span { font-weight: 400; letter-spacing: .02em; color: var(--muted); }
   .hdr__nav { display: flex; gap: 28px; font-size: 15px; }
   .hdr__nav a { text-decoration: none; padding-block: 12px; }

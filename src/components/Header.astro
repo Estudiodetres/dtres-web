@@ -1,4 +1,5 @@
 ---
+import Logo from './Logo.astro';
 import { site } from '../data/content.js';
 import { ui, routes, phasePath, langs, code } from '../i18n/index.js';
 import { getContent } from '../data/i18n-content.js';
@@ -16,7 +17,7 @@ const langHref = (l) => (alternates && alternates[l]) || routes.home[l];
 ---
 <header class="hdr">
   <div class="wrap hdr__in">
-    <a href={home} class="hdr__logo" aria-label="DTRES">DTRES</a>
+    <a href={home} class="hdr__logo" aria-label="DTRES"><Logo /></a>
     <nav class="hdr__nav" aria-label="Principal">
       {links.map(([h, l]) => <a href={h}>{l}</a>)}
     </nav>
@@ -51,7 +52,8 @@ const langHref = (l) => (alternates && alternates[l]) || routes.home[l];
 <style>
   .hdr { border-bottom: 1px solid var(--line); position: relative; }
   .hdr__in { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding-block: 18px; }
-  .hdr__logo { font-size: 24px; font-weight: 600; letter-spacing: .06em; text-decoration: none; }
+  .hdr__logo { display: flex; align-items: center; text-decoration: none; color: var(--ink); }
+  .hdr__logo :global(svg) { height: 20px; width: auto; display: block; }
   .hdr__nav { display: flex; gap: 28px; font-size: 15px; }
   .hdr__nav a { text-decoration: none; padding-block: 12px; }
   .hdr__right { display: flex; align-items: center; gap: 16px; }

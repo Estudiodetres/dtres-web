@@ -1,9 +1,10 @@
 ---
+import Logo from './Logo.astro';
 import { site } from '../data/content.js';
 ---
 <footer class="ftr dark">
   <div class="wrap ftr__in">
-    <div class="ftr__col"><span class="ftr__logo">DTRES Workplace</span><span>Diseño y construcción de oficinas para empresas en crecimiento en Barcelona.</span><a class="ftr__parent" href={site.parent}>Volver a DTRES</a></div>
+    <div class="ftr__col"><span class="ftr__logo"><Logo /> <span>Workplace</span></span><span>Diseño y construcción de oficinas para empresas en crecimiento en Barcelona.</span><a class="ftr__parent" href={site.parent}>Volver a DTRES</a></div>
     <div class="ftr__col"><span class="lbl">Estudio</span><span>{site.address.street}</span><span>{site.address.postalCode} {site.address.city}</span></div>
     <div class="ftr__col"><span class="lbl">Contacto</span><a href={`mailto:${site.email}`}>{site.email}</a><a href={`tel:${site.phone.replace(/\s/g, '')}`}>{site.phoneDisplay}</a><div class="ftr__social"><a href={site.instagram} aria-label="Instagram @estudio_detres" rel="noopener" target="_blank"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.3" cy="6.7" r="1.2" fill="currentColor"/></svg></a><a href={site.linkedin} aria-label="LinkedIn DTRES" rel="noopener" target="_blank"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4v11H3v-11Zm6.5 0h3.8v1.6h.06c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.77 2.65 4.77 6.1v5.35h-4v-4.74c0-1.13-.02-2.59-1.58-2.59-1.58 0-1.82 1.23-1.82 2.5v4.83h-4v-11Z"/></svg></a></div></div>
     <div class="ftr__col"><span class="lbl">Legal</span><a href={`${site.parent}/aviso-legal/`}>Aviso legal</a><a href={`${site.parent}/privacidad/`}>Privacidad</a><a href={`${site.parent}/cookies/`}>Cookies</a></div>
@@ -15,7 +16,7 @@ import { site } from '../data/content.js';
   .ftr__in { padding-block: 56px 32px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr)); gap: 32px; font-size: 15px; }
   .ftr__col { display: flex; flex-direction: column; gap: 6px; }
   .ftr__col a { color: #c9c8bb; text-decoration: none; }
-  .ftr__logo { font-size: 22px; font-weight: 600; letter-spacing: .04em; color: var(--bone); }
+  .ftr__logo { display: flex; align-items: center; gap: 8px; font-size: 22px; letter-spacing: .04em; color: var(--bone); } .ftr__logo :global(svg) { height: 19px; width: auto; display: block; }
   .ftr__parent { margin-top: 10px; color: var(--bone) !important; text-decoration: underline !important; text-underline-offset: 4px; }
   .ftr__base { padding-block: 0 40px; font-size: 13px; color: #8f8e82; }
   .ftr__social { display: flex; gap: 10px; margin-top: 12px; }
