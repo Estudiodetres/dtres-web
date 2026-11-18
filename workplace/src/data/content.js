@@ -19,6 +19,7 @@ export const hero = {
   title: 'Ayudamos a encontrar y transformar vuestras próximas oficinas',
   subtitle: 'Nos ocupamos de todo a precio y plazo cerrado.',
   image: { src: '/img/pj-amelia.jpg', alt: 'Oficina de Amelia Hub diseñada y construida por DTRES' },
+  before: { src: '/img/wpc-amelia-antes.jpg', alt: 'Nave de Amelia Hub antes de la reforma de DTRES' },
   promises: [
     { title: 'Un único interlocutor', text: 'Nos ocupamos de todo el proceso por ti.' },
     { title: 'Plazo y precio cerrado', text: 'Compromiso por contrato.' },
