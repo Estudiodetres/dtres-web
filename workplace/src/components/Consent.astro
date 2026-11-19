@@ -7,15 +7,16 @@
 const { lang = 'es', tracking = {}, cookiesUrl = '/cookies/' } = Astro.props;
 const { metaPixel = '', clarity = '', ga4 = '', googleAds = '', googleAdsLead = '' } = tracking;
 const T = {
-  es: { title: 'Cookies', text: 'Usamos cookies de analítica y publicidad para medir qué funciona en la web y mostrar anuncios relevantes. Solo se activan si las aceptas.', more: 'Más información', accept: 'Aceptar', reject: 'Rechazar', config: 'Configurar', save: 'Guardar', nec: 'Necesarias (siempre activas)', ana: 'Analítica', mkt: 'Publicidad (Meta)' },
-  ca: { title: 'Galetes', text: "Fem servir galetes d'analítica i publicitat per mesurar què funciona al web i mostrar anuncis rellevants. Només s'activen si les acceptes.", more: 'Més informació', accept: 'Acceptar', reject: 'Rebutjar', config: 'Configurar', save: 'Desar', nec: 'Necessàries (sempre actives)', ana: 'Analítica', mkt: 'Publicitat (Meta)' },
-  en: { title: 'Cookies', text: 'We use analytics and advertising cookies to measure what works on this site and show relevant ads. They are only enabled if you accept them.', more: 'Learn more', accept: 'Accept', reject: 'Reject', config: 'Settings', save: 'Save', nec: 'Necessary (always on)', ana: 'Analytics', mkt: 'Advertising (Meta)' },
+  es: { title: 'Cookies', head: 'Diseñamos pensando en quien usa el espacio.', text: 'Esta web también. ¿Aceptas cookies para conocerte mejor?', small: 'Analítica y publicidad. Solo se activan si aceptas.', more: 'Más info', accept: 'Aceptar', reject: 'Rechazar', config: 'Configurar', save: 'Guardar', nec: 'Necesarias (siempre activas)', ana: 'Analítica', mkt: 'Publicidad' },
+  ca: { title: 'Galetes', head: "Dissenyem pensant en qui fa servir l'espai.", text: 'Aquest web també. Acceptes galetes per conèixer-te millor?', small: "Analítica i publicitat. Només s'activen si acceptes.", more: 'Més info', accept: 'Acceptar', reject: 'Rebutjar', config: 'Configurar', save: 'Desar', nec: 'Necessàries (sempre actives)', ana: 'Analítica', mkt: 'Publicitat' },
+  en: { title: 'Cookies', head: 'We design around the people who use a space.', text: 'This website too. Accept cookies so we can get to know you better?', small: 'Analytics and advertising. Only enabled if you accept.', more: 'More info', accept: 'Accept', reject: 'Reject', config: 'Settings', save: 'Save', nec: 'Necessary (always on)', ana: 'Analytics', mkt: 'Advertising' },
 };
 const t = T[lang] || T.es;
 ---
 <div id="ck" class="ck" role="dialog" aria-label={t.title} hidden>
-  <p class="ck__t">{t.title}</p>
-  <p class="ck__x">{t.text} <a href={cookiesUrl}>{t.more}</a></p>
+  <p class="ck__h">{t.head}</p>
+  <p class="ck__x">{t.text}</p>
+  <p class="ck__s">{t.small} <a href={cookiesUrl}>{t.more}</a></p>
   <div class="ck__o" hidden>
     <label><input type="checkbox" checked disabled /> {t.nec}</label>
     <label><input type="checkbox" data-c="a" /> {t.ana}</label>
@@ -108,9 +109,10 @@ const t = T[lang] || T.es;
 <style>
   .ck { position: fixed; z-index: 1000; left: 16px; right: 16px; bottom: 16px; max-width: 440px; background: var(--ink); color: var(--bone); padding: 22px 22px 18px; display: flex; flex-direction: column; gap: 12px; box-shadow: 0 12px 40px rgba(0,0,0,.25); font-size: 15px; line-height: 1.45; }
   .ck[hidden] { display: none; }
-  .ck__t { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--sage); }
-  .ck__x { color: #c9c8bb; }
-  .ck__x a { color: var(--bone); text-underline-offset: 3px; }
+  .ck__h { font-size: 21px; line-height: 1.2; font-weight: 500; letter-spacing: -.01em; }
+  .ck__x { color: #c9c8bb; margin-top: -6px; }
+  .ck__s { font-size: 13px; color: #a9a89c; }
+  .ck__s a { color: var(--bone); text-underline-offset: 3px; }
   .ck__o { display: flex; flex-direction: column; gap: 8px; padding: 6px 0; border-top: 1px solid rgba(234,234,228,.2); padding-top: 12px; }
   .ck__o label { display: flex; align-items: center; gap: 10px; cursor: pointer; }
   .ck__o input { width: 18px; height: 18px; accent-color: var(--sage); }
