@@ -5,7 +5,7 @@
 // Eventos: PageView (todas las páginas), Lead (páginas de gracias, con [data-track-lead]),
 // Schedule (clic en reservar llamada), Contact (clic en WhatsApp).
 const { lang = 'es', tracking = {}, cookiesUrl = '/cookies/' } = Astro.props;
-const { metaPixel = '', clarity = '', ga4 = '', googleAds = '' } = tracking;
+const { metaPixel = '', clarity = '', ga4 = '', googleAds = '', googleAdsLead = '' } = tracking;
 const T = {
   es: { title: 'Cookies', text: 'Usamos cookies de analítica y publicidad para medir qué funciona en la web y mostrar anuncios relevantes. Solo se activan si las aceptas.', more: 'Más información', accept: 'Aceptar', reject: 'Rechazar', config: 'Configurar', save: 'Guardar', nec: 'Necesarias (siempre activas)', ana: 'Analítica', mkt: 'Publicidad (Meta)' },
   ca: { title: 'Galetes', text: "Fem servir galetes d'analítica i publicitat per mesurar què funciona al web i mostrar anuncis rellevants. Només s'activen si les acceptes.", more: 'Més informació', accept: 'Acceptar', reject: 'Rebutjar', config: 'Configurar', save: 'Desar', nec: 'Necessàries (sempre actives)', ana: 'Analítica', mkt: 'Publicitat (Meta)' },
@@ -27,7 +27,7 @@ const t = T[lang] || T.es;
     <button type="button" class="ck__l" data-ck="config" data-save={t.save}>{t.config}</button>
   </div>
 </div>
-<script is:inline define:vars={{ metaPixel, clarity, ga4, googleAds }}>
+<script is:inline define:vars={{ metaPixel, clarity, ga4, googleAds, googleAdsLead }}>
 (function () {
   var V = 1, el = document.getElementById('ck'), opts = el.querySelector('.ck__o'), cfg = el.querySelector('[data-ck=config]');
   var on = {}, q = [];
@@ -45,6 +45,7 @@ const t = T[lang] || T.es;
   function send(ev, p) {
     if (on.m) window.fbq('track', ev, p || {});
     if (on.g || on.ads) window.gtag('event', GA[ev] || ev, p || {});
+    if (ev === 'Lead' && on.ads && googleAdsLead) window.gtag('event', 'conversion', { send_to: googleAdsLead }); // Google Ads › Solicitud de presupuesto
   }
   function flush() { while (q.length) send.apply(null, q.shift()); }
   window.dtresTrack = function (ev, p) { if (on.m || on.g || on.ads) send(ev, p); else q.push([ev, p]); };

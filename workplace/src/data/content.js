@@ -13,7 +13,7 @@ export const site = {
   linkedin: 'https://www.linkedin.com/company/86421055/',
   instagram: 'https://www.instagram.com/estudio_detres/',
   // Medición: solo se activan si el visitante acepta las cookies. Clarity y GA4 vacíos = desactivados.
-  tracking: { metaPixel: '1516059266343439', clarity: 'zg29hnnjzi', ga4: 'G-T83Q8LHCS4', googleAds: 'AW-17930709274' },
+  tracking: { metaPixel: '1516059266343439', clarity: 'zg29hnnjzi', ga4: 'G-T83Q8LHCS4', googleAds: 'AW-17930709274', googleAdsLead: 'AW-17930709274/-bPUCNbyy_UbEJrSq-ZC' },
 };
 
 export const hero = {
