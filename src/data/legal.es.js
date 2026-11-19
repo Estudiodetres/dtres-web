@@ -50,9 +50,11 @@ export const cookies = {
     ['Cookies que usa esta web', `<ul>
       <li><strong>dtres_consent</strong> (propia, necesaria, 6 meses): guarda tu elección sobre las cookies.</li>
       <li><strong>_fbp, _fbc</strong> (Meta Platforms, publicidad, hasta 90 días): solo si aceptas la publicidad. Nos permiten medir qué anuncios de Facebook e Instagram traen visitas y contactos, y mostrar anuncios a quien ya ha visitado la web.</li>
-    </ul>
-    <p>Si en el futuro añadimos herramientas de analítica (por ejemplo Microsoft Clarity o Google Analytics), aparecerán aquí y solo se activarán con tu consentimiento de analítica.</p>`],
-    ['Transferencias internacionales', `<p>Meta Platforms puede tratar estos datos fuera del Espacio Económico Europeo, con las garantías del Marco de Privacidad de Datos UE-EE. UU. Más información en la <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener">política de privacidad de Meta</a>.</p>`],
+      <li><strong>_gcl_au</strong> (Google, publicidad, 90 días): solo si aceptas la publicidad. Mide qué anuncios de Google traen contactos.</li>
+      <li><strong>_clck, _clsk, CLID</strong> (Microsoft Clarity, analítica, hasta 1 año): solo si aceptas la analítica. Nos muestran de forma anónima cómo se navega por la web (clics, desplazamiento) para mejorarla.</li>
+      <li><strong>_ga, _ga_*</strong> (Google Analytics, analítica, hasta 2 años): solo si aceptas la analítica. Miden visitas y de dónde llegan.</li>
+    </ul>`],
+    ['Transferencias internacionales', `<p>Meta, Microsoft y Google pueden tratar estos datos fuera del Espacio Económico Europeo, con las garantías del Marco de Privacidad de Datos UE-EE. UU. Más información en la <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener">política de privacidad de Meta</a>.</p>`],
     ['Cómo desactivarlas', `<p>Además de usar <a href="#cookies" data-ck-open>Configurar cookies</a>, puedes borrar o bloquear las cookies desde los ajustes de tu navegador.</p>`],
     ['Enlaces externos', `<p>Algunos enlaces llevan a sitios de terceros, como Google Maps, Google Calendar o WhatsApp. Si los visitas, esos sitios pueden usar sus propias cookies según sus políticas.</p>`],
   ],

@@ -50,9 +50,11 @@ export const cookies = {
     ['Cookies used on this website', `<ul>
       <li><strong>dtres_consent</strong> (first-party, necessary, 6 months): stores your cookie choice.</li>
       <li><strong>_fbp, _fbc</strong> (Meta Platforms, advertising, up to 90 days): only if you accept advertising. They let us measure which Facebook and Instagram ads bring visits and enquiries, and show ads to people who have already visited the site.</li>
-    </ul>
-    <p>If we add analytics tools in the future (for example Microsoft Clarity or Google Analytics), they will be listed here and only enabled with your analytics consent.</p>`],
-    ['International transfers', `<p>Meta Platforms may process this data outside the European Economic Area under the EU-US Data Privacy Framework. More information in <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener">Meta's privacy policy</a>.</p>`],
+      <li><strong>_gcl_au</strong> (Google, advertising, 90 days): only if you accept advertising. Measures which Google ads bring enquiries.</li>
+      <li><strong>_clck, _clsk, CLID</strong> (Microsoft Clarity, analytics, up to 1 year): only if you accept analytics. They show us anonymously how people navigate the site (clicks, scrolling) so we can improve it.</li>
+      <li><strong>_ga, _ga_*</strong> (Google Analytics, analytics, up to 2 years): only if you accept analytics. They measure visits and where they come from.</li>
+    </ul>`],
+    ['International transfers', `<p>Meta, Microsoft and Google may process this data outside the European Economic Area under the EU-US Data Privacy Framework. More information in <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener">Meta's privacy policy</a>.</p>`],
     ['How to disable them', `<p>Besides <a href="#cookies" data-ck-open>Cookie settings</a>, you can delete or block cookies in your browser settings.</p>`],
     ['External links', `<p>Some links lead to third-party sites, such as Google Maps, Google Calendar or WhatsApp. If you visit them, those sites may use their own cookies under their own policies.</p>`],
   ],

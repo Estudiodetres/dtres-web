@@ -18,7 +18,7 @@ export const site = {
   placeId: 'ChIJv3MWA6yXpBIRj6tO7BPYQxA',
   areaServed: ['Barcelona', 'Catalunya'],
   // Medición: solo se activan si el visitante acepta las cookies. Clarity y GA4 vacíos = desactivados.
-  tracking: { metaPixel: '2936012290090211', clarity: '', ga4: '' },
+  tracking: { metaPixel: '2936012290090211', clarity: 'zg28qfp8l4', ga4: '', googleAds: '' },
 };
 
 export const meta = {

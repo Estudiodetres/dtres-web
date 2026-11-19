@@ -50,9 +50,11 @@ export const cookies = {
     ['Galetes que fa servir aquest web', `<ul>
       <li><strong>dtres_consent</strong> (pròpia, necessària, 6 mesos): desa la teva elecció sobre les galetes.</li>
       <li><strong>_fbp, _fbc</strong> (Meta Platforms, publicitat, fins a 90 dies): només si acceptes la publicitat. Ens permeten mesurar quins anuncis de Facebook i Instagram porten visites i contactes, i mostrar anuncis a qui ja ha visitat el web.</li>
-    </ul>
-    <p>Si en el futur afegim eines d'analítica (per exemple Microsoft Clarity o Google Analytics), apareixeran aquí i només s'activaran amb el teu consentiment d'analítica.</p>`],
-    ['Transferències internacionals', `<p>Meta Platforms pot tractar aquestes dades fora de l'Espai Econòmic Europeu, amb les garanties del Marc de Privacitat de Dades UE-EUA. Més informació a la <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener">política de privacitat de Meta</a>.</p>`],
+      <li><strong>_gcl_au</strong> (Google, publicitat, 90 dies): només si acceptes la publicitat. Mesura quins anuncis de Google porten contactes.</li>
+      <li><strong>_clck, _clsk, CLID</strong> (Microsoft Clarity, analítica, fins a 1 any): només si acceptes l'analítica. Ens mostren de forma anònima com es navega pel web (clics, desplaçament) per millorar-lo.</li>
+      <li><strong>_ga, _ga_*</strong> (Google Analytics, analítica, fins a 2 anys): només si acceptes l'analítica. Mesuren visites i d'on arriben.</li>
+    </ul>`],
+    ['Transferències internacionals', `<p>Meta, Microsoft i Google poden tractar aquestes dades fora de l'Espai Econòmic Europeu, amb les garanties del Marc de Privacitat de Dades UE-EUA. Més informació a la <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener">política de privacitat de Meta</a>.</p>`],
     ['Com desactivar-les', `<p>A més de fer servir <a href="#cookies" data-ck-open>Configurar galetes</a>, pots esborrar o bloquejar les galetes des de la configuració del navegador.</p>`],
     ['Enllaços externs', `<p>Alguns enllaços porten a llocs de tercers, com Google Maps, Google Calendar o WhatsApp. Si els visites, aquests llocs poden fer servir les seves pròpies galetes segons les seves polítiques.</p>`],
   ],

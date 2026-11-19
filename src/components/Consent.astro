@@ -5,7 +5,7 @@
 // Eventos: PageView (todas las páginas), Lead (páginas de gracias, con [data-track-lead]),
 // Schedule (clic en reservar llamada), Contact (clic en WhatsApp).
 const { lang = 'es', tracking = {}, cookiesUrl = '/cookies/' } = Astro.props;
-const { metaPixel = '', clarity = '', ga4 = '' } = tracking;
+const { metaPixel = '', clarity = '', ga4 = '', googleAds = '' } = tracking;
 const T = {
   es: { title: 'Cookies', text: 'Usamos cookies de analítica y publicidad para medir qué funciona en la web y mostrar anuncios relevantes. Solo se activan si las aceptas.', more: 'Más información', accept: 'Aceptar', reject: 'Rechazar', config: 'Configurar', save: 'Guardar', nec: 'Necesarias (siempre activas)', ana: 'Analítica', mkt: 'Publicidad (Meta)' },
   ca: { title: 'Galetes', text: "Fem servir galetes d'analítica i publicitat per mesurar què funciona al web i mostrar anuncis rellevants. Només s'activen si les acceptes.", more: 'Més informació', accept: 'Acceptar', reject: 'Rebutjar', config: 'Configurar', save: 'Desar', nec: 'Necessàries (sempre actives)', ana: 'Analítica', mkt: 'Publicitat (Meta)' },
@@ -27,7 +27,7 @@ const t = T[lang] || T.es;
     <button type="button" class="ck__l" data-ck="config" data-save={t.save}>{t.config}</button>
   </div>
 </div>
-<script is:inline define:vars={{ metaPixel, clarity, ga4 }}>
+<script is:inline define:vars={{ metaPixel, clarity, ga4, googleAds }}>
 (function () {
   var V = 1, el = document.getElementById('ck'), opts = el.querySelector('.ck__o'), cfg = el.querySelector('[data-ck=config]');
   var on = {}, q = [];
@@ -44,10 +44,10 @@ const t = T[lang] || T.es;
   }
   function send(ev, p) {
     if (on.m) window.fbq('track', ev, p || {});
-    if (on.g) window.gtag('event', GA[ev] || ev, p || {});
+    if (on.g || on.ads) window.gtag('event', GA[ev] || ev, p || {});
   }
   function flush() { while (q.length) send.apply(null, q.shift()); }
-  window.dtresTrack = function (ev, p) { if (on.m || on.g) send(ev, p); else q.push([ev, p]); };
+  window.dtresTrack = function (ev, p) { if (on.m || on.g || on.ads) send(ev, p); else q.push([ev, p]); };
   function load(c) {
     if (c.m && metaPixel && !on.m) {
       !function (f, b, e, v, n, t, s) { if (f.fbq) return; n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments); }; if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = []; t = b.createElement(e); t.async = !0; t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s); }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
@@ -57,11 +57,17 @@ const t = T[lang] || T.es;
       (function (c2, l, a, r, i, t, y) { c2[a] = c2[a] || function () { (c2[a].q = c2[a].q || []).push(arguments); }; t = l.createElement(r); t.async = 1; t.src = 'https://www.clarity.ms/tag/' + i; y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y); })(window, document, 'clarity', 'script', clarity);
       on.c = 1;
     }
-    if (c.a && ga4 && !on.g) {
-      var s = document.createElement('script'); s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=' + ga4; document.head.appendChild(s);
-      window.dataLayer = window.dataLayer || []; window.gtag = function () { window.dataLayer.push(arguments); };
-      window.gtag('js', new Date()); window.gtag('config', ga4); on.g = 1;
+    function gtagInit(id) {
+      if (!window.gtag) {
+        var s = document.createElement('script'); s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=' + id; document.head.appendChild(s);
+        window.dataLayer = window.dataLayer || []; window.gtag = function () { window.dataLayer.push(arguments); };
+        window.gtag('consent', 'default', { analytics_storage: c.a ? 'granted' : 'denied', ad_storage: c.m ? 'granted' : 'denied', ad_user_data: c.m ? 'granted' : 'denied', ad_personalization: c.m ? 'granted' : 'denied' });
+        window.gtag('js', new Date());
+      }
+      window.gtag('config', id);
     }
+    if (c.a && ga4 && !on.g) { gtagInit(ga4); on.g = 1; }
+    if (c.m && googleAds && !on.ads) { gtagInit(googleAds); on.ads = 1; }
     flush();
   }
   function decide(c) {
