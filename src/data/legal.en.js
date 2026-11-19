@@ -5,7 +5,7 @@ const company = `<strong>${site.legalName}</strong>`;
 const id = `${company}, tax ID ${site.taxId}, registered office at ${site.address.street}, ${site.address.postalCode} ${site.address.city}, Spain`;
 const reg = ' Registered with the Barcelona Commercial Registry, volume 46912, folio 216, sheet B-535114.';
 
-export const updated = '1 November 2026';
+export const updated = '19 November 2026';
 
 export const legal = {
   title: 'Legal notice',
@@ -42,12 +42,18 @@ export const privacy = {
 
 export const cookies = {
   title: 'Cookie policy',
-  desc: 'detres.eu does not use tracking, analytics or advertising cookies.',
+  desc: 'Which cookies detres.eu and workplace.detres.eu use, what they are for and how to manage them.',
   sections: [
     ['What cookies are', `<p>Small files that some websites store in your browser to remember information about your visit.</p>`],
-    ['Cookies used on this website', `<p><strong>None.</strong> detres.eu does not set first-party or third-party cookies: we use no analytics, advertising or social media tools that track your browsing. Fonts are served from our own server, with no third-party connections.</p>
-      <p>That is why we do not show a cookie banner: there is nothing to accept or reject.</p>`],
-    ['External links', `<p>Some links lead to third-party sites, such as Google Maps or Google reviews. If you visit them, those sites may use their own cookies under their own policies.</p>`],
-    ['Changes', `<p>If we ever add a tool that uses cookies, we will update this policy and ask for your consent before setting them.</p>`],
+    ['How we use them', `<p>This policy applies to detres.eu and workplace.detres.eu. We only set analytics and advertising cookies if you accept them in the notice shown when you arrive. If you reject them, the site works exactly the same.</p>
+      <p>You can change your choice at any time from the <a href="#cookies" data-ck-open>Cookie settings</a> link, also in the footer of every page.</p>`],
+    ['Cookies used on this website', `<ul>
+      <li><strong>dtres_consent</strong> (first-party, necessary, 6 months): stores your cookie choice.</li>
+      <li><strong>_fbp, _fbc</strong> (Meta Platforms, advertising, up to 90 days): only if you accept advertising. They let us measure which Facebook and Instagram ads bring visits and enquiries, and show ads to people who have already visited the site.</li>
+    </ul>
+    <p>If we add analytics tools in the future (for example Microsoft Clarity or Google Analytics), they will be listed here and only enabled with your analytics consent.</p>`],
+    ['International transfers', `<p>Meta Platforms may process this data outside the European Economic Area under the EU-US Data Privacy Framework. More information in <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener">Meta's privacy policy</a>.</p>`],
+    ['How to disable them', `<p>Besides <a href="#cookies" data-ck-open>Cookie settings</a>, you can delete or block cookies in your browser settings.</p>`],
+    ['External links', `<p>Some links lead to third-party sites, such as Google Maps, Google Calendar or WhatsApp. If you visit them, those sites may use their own cookies under their own policies.</p>`],
   ],
 };

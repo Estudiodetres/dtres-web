@@ -12,6 +12,8 @@ export const site = {
   legalName: 'ESDETRES Arquitectura e Interiorismo SLP',
   linkedin: 'https://www.linkedin.com/company/86421055/',
   instagram: 'https://www.instagram.com/estudio_detres/',
+  // Medición: solo se activan si el visitante acepta las cookies. Clarity y GA4 vacíos = desactivados.
+  tracking: { metaPixel: '1516059266343439', clarity: '', ga4: '' },
 };
 
 export const hero = {

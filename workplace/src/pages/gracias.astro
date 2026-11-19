@@ -6,7 +6,7 @@ const waText = 'Hola Nacho, acabo de reservar una llamada desde la web de Workpl
 const waUrl = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(waText)}`;
 ---
 <Base title={`${t.eyebrow} · DTRES Workplace`} description={t.title} noindex>
-  <section class="wrap ty">
+  <section class="wrap ty" data-track-lead>
     <p class="lbl">{t.eyebrow}</p>
     <h1>{t.title}</h1>
     <p class="ty__text">{t.text}</p>

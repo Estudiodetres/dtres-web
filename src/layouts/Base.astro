@@ -1,8 +1,9 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import Consent from '../components/Consent.astro';
 import { site, team as esTeam, reviews as esReviews } from '../data/content.js';
-import { htmlLang, ogLocale, langs } from '../i18n/index.js';
+import { htmlLang, ogLocale, langs, routes } from '../i18n/index.js';
 import '@fontsource/schibsted-grotesk/400.css';
 import '@fontsource/schibsted-grotesk/500.css';
 import '@fontsource/schibsted-grotesk/600.css';
@@ -90,6 +91,7 @@ const org = {
   <Header lang={lang} alternates={alternates} />
   <main><slot /></main>
   <Footer lang={lang} />
+  <Consent lang={lang} tracking={site.tracking} cookiesUrl={routes.cookies[lang]} />
 </body>
 </html>
 

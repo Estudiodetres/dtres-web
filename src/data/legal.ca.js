@@ -5,7 +5,7 @@ const company = `<strong>${site.legalName}</strong>`;
 const id = `${company}, amb NIF ${site.taxId} i domicili a ${site.address.street}, ${site.address.postalCode} ${site.address.city}`;
 const reg = ' Inscrita al Registre Mercantil de Barcelona, tom 46912, foli 216, full B-535114.';
 
-export const updated = '1 de novembre de 2026';
+export const updated = '19 de novembre de 2026';
 
 export const legal = {
   title: 'Avís legal',
@@ -42,12 +42,18 @@ export const privacy = {
 
 export const cookies = {
   title: 'Política de galetes',
-  desc: "detres.eu no fa servir galetes de seguiment, analítica ni publicitat.",
+  desc: "Quines galetes fan servir detres.eu i workplace.detres.eu, per a què serveixen i com gestionar-les.",
   sections: [
     ['Què són les galetes', `<p>Són petits fitxers que alguns llocs web desen al navegador per recordar informació sobre la teva visita.</p>`],
-    ['Galetes que fa servir aquest web', `<p><strong>Cap.</strong> detres.eu no instal·la galetes pròpies ni de tercers: no fem servir eines d'analítica, publicitat ni xarxes socials que rastregin la teva navegació. Les tipografies se serveixen des del nostre propi servidor, sense connexions a tercers.</p>
-      <p>Per això no et mostrem cap avís de galetes: no hi ha res a acceptar ni rebutjar.</p>`],
-    ['Enllaços externs', `<p>Alguns enllaços porten a llocs de tercers, com Google Maps o les ressenyes de Google. Si els visites, aquests llocs poden fer servir les seves pròpies galetes segons les seves polítiques.</p>`],
-    ['Canvis', `<p>Si en el futur incorporem alguna eina que faci servir galetes, actualitzarem aquesta política i et demanarem el consentiment abans d'instal·lar-les.</p>`],
+    ['Com les fem servir', `<p>Aquesta política s'aplica a detres.eu i a workplace.detres.eu. Només instal·lem galetes d'analítica i publicitat si les acceptes a l'avís que apareix en entrar. Si les rebutges, el web funciona igual.</p>
+      <p>Pots canviar la teva elecció quan vulguis des de l'enllaç <a href="#cookies" data-ck-open>Configurar galetes</a>, que també és al peu de cada pàgina.</p>`],
+    ['Galetes que fa servir aquest web', `<ul>
+      <li><strong>dtres_consent</strong> (pròpia, necessària, 6 mesos): desa la teva elecció sobre les galetes.</li>
+      <li><strong>_fbp, _fbc</strong> (Meta Platforms, publicitat, fins a 90 dies): només si acceptes la publicitat. Ens permeten mesurar quins anuncis de Facebook i Instagram porten visites i contactes, i mostrar anuncis a qui ja ha visitat el web.</li>
+    </ul>
+    <p>Si en el futur afegim eines d'analítica (per exemple Microsoft Clarity o Google Analytics), apareixeran aquí i només s'activaran amb el teu consentiment d'analítica.</p>`],
+    ['Transferències internacionals', `<p>Meta Platforms pot tractar aquestes dades fora de l'Espai Econòmic Europeu, amb les garanties del Marc de Privacitat de Dades UE-EUA. Més informació a la <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener">política de privacitat de Meta</a>.</p>`],
+    ['Com desactivar-les', `<p>A més de fer servir <a href="#cookies" data-ck-open>Configurar galetes</a>, pots esborrar o bloquejar les galetes des de la configuració del navegador.</p>`],
+    ['Enllaços externs', `<p>Alguns enllaços porten a llocs de tercers, com Google Maps, Google Calendar o WhatsApp. Si els visites, aquests llocs poden fer servir les seves pròpies galetes segons les seves polítiques.</p>`],
   ],
 };

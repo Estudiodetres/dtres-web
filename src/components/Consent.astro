@@ -1,0 +1,115 @@
+---
+// Banner de cookies + medición (Meta Pixel, Microsoft Clarity, Google Analytics 4).
+// Nada se carga hasta que el visitante acepta. El consentimiento se guarda 6 meses en la cookie
+// "dtres_consent", compartida entre detres.eu y workplace.detres.eu.
+// Eventos: PageView (todas las páginas), Lead (páginas de gracias, con [data-track-lead]),
+// Schedule (clic en reservar llamada), Contact (clic en WhatsApp).
+const { lang = 'es', tracking = {}, cookiesUrl = '/cookies/' } = Astro.props;
+const { metaPixel = '', clarity = '', ga4 = '' } = tracking;
+const T = {
+  es: { title: 'Cookies', text: 'Usamos cookies de analítica y publicidad para medir qué funciona en la web y mostrar anuncios relevantes. Solo se activan si las aceptas.', more: 'Más información', accept: 'Aceptar', reject: 'Rechazar', config: 'Configurar', save: 'Guardar', nec: 'Necesarias (siempre activas)', ana: 'Analítica', mkt: 'Publicidad (Meta)' },
+  ca: { title: 'Galetes', text: "Fem servir galetes d'analítica i publicitat per mesurar què funciona al web i mostrar anuncis rellevants. Només s'activen si les acceptes.", more: 'Més informació', accept: 'Acceptar', reject: 'Rebutjar', config: 'Configurar', save: 'Desar', nec: 'Necessàries (sempre actives)', ana: 'Analítica', mkt: 'Publicitat (Meta)' },
+  en: { title: 'Cookies', text: 'We use analytics and advertising cookies to measure what works on this site and show relevant ads. They are only enabled if you accept them.', more: 'Learn more', accept: 'Accept', reject: 'Reject', config: 'Settings', save: 'Save', nec: 'Necessary (always on)', ana: 'Analytics', mkt: 'Advertising (Meta)' },
+};
+const t = T[lang] || T.es;
+---
+<div id="ck" class="ck" role="dialog" aria-label={t.title} hidden>
+  <p class="ck__t">{t.title}</p>
+  <p class="ck__x">{t.text} <a href={cookiesUrl}>{t.more}</a></p>
+  <div class="ck__o" hidden>
+    <label><input type="checkbox" checked disabled /> {t.nec}</label>
+    <label><input type="checkbox" data-c="a" /> {t.ana}</label>
+    <label><input type="checkbox" data-c="m" /> {t.mkt}</label>
+  </div>
+  <div class="ck__b">
+    <button type="button" data-ck="reject">{t.reject}</button>
+    <button type="button" data-ck="accept">{t.accept}</button>
+    <button type="button" class="ck__l" data-ck="config" data-save={t.save}>{t.config}</button>
+  </div>
+</div>
+<script is:inline define:vars={{ metaPixel, clarity, ga4 }}>
+(function () {
+  var V = 1, el = document.getElementById('ck'), opts = el.querySelector('.ck__o'), cfg = el.querySelector('[data-ck=config]');
+  var on = {}, q = [];
+  var GA = { Lead: 'generate_lead', Schedule: 'book_call_click', Contact: 'whatsapp_click' };
+  function read() {
+    var m = document.cookie.match(/(?:^|; )dtres_consent=([^;]*)/);
+    if (!m) return null;
+    try { var c = JSON.parse(decodeURIComponent(m[1])); return c.v === V ? c : null; } catch (e) { return null; }
+  }
+  function write(c) {
+    c.v = V; c.t = Date.now();
+    var dom = /(^|\.)detres\.eu$/.test(location.hostname) ? '; domain=.detres.eu' : '';
+    document.cookie = 'dtres_consent=' + encodeURIComponent(JSON.stringify(c)) + '; max-age=15552000; path=/; SameSite=Lax' + dom + (location.protocol === 'https:' ? '; Secure' : '');
+  }
+  function send(ev, p) {
+    if (on.m) window.fbq('track', ev, p || {});
+    if (on.g) window.gtag('event', GA[ev] || ev, p || {});
+  }
+  function flush() { while (q.length) send.apply(null, q.shift()); }
+  window.dtresTrack = function (ev, p) { if (on.m || on.g) send(ev, p); else q.push([ev, p]); };
+  function load(c) {
+    if (c.m && metaPixel && !on.m) {
+      !function (f, b, e, v, n, t, s) { if (f.fbq) return; n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments); }; if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = []; t = b.createElement(e); t.async = !0; t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s); }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+      window.fbq('init', metaPixel); window.fbq('track', 'PageView'); on.m = 1;
+    }
+    if (c.a && clarity && !on.c) {
+      (function (c2, l, a, r, i, t, y) { c2[a] = c2[a] || function () { (c2[a].q = c2[a].q || []).push(arguments); }; t = l.createElement(r); t.async = 1; t.src = 'https://www.clarity.ms/tag/' + i; y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y); })(window, document, 'clarity', 'script', clarity);
+      on.c = 1;
+    }
+    if (c.a && ga4 && !on.g) {
+      var s = document.createElement('script'); s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=' + ga4; document.head.appendChild(s);
+      window.dataLayer = window.dataLayer || []; window.gtag = function () { window.dataLayer.push(arguments); };
+      window.gtag('js', new Date()); window.gtag('config', ga4); on.g = 1;
+    }
+    flush();
+  }
+  function decide(c) {
+    var prev = read(); write(c); el.hidden = true;
+    if (prev && ((prev.m && !c.m) || (prev.a && !c.a))) { location.reload(); return; } // retirar consentimiento
+    load(c);
+  }
+  function open() {
+    var c = read() || {};
+    opts.querySelector('[data-c=a]').checked = !!c.a;
+    opts.querySelector('[data-c=m]').checked = !!c.m;
+    opts.hidden = false; cfg.textContent = cfg.dataset.save; el.hidden = false;
+  }
+  el.addEventListener('click', function (e) {
+    var b = e.target.closest('[data-ck]'); if (!b) return;
+    var k = b.dataset.ck;
+    if (k === 'accept') decide({ a: 1, m: 1 });
+    else if (k === 'reject') decide({ a: 0, m: 0 });
+    else if (opts.hidden) open();
+    else decide({ a: opts.querySelector('[data-c=a]').checked ? 1 : 0, m: opts.querySelector('[data-c=m]').checked ? 1 : 0 });
+  });
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href], [data-ck-open]'); if (!a) return;
+    if (a.hasAttribute('data-ck-open')) { e.preventDefault(); open(); return; }
+    var h = a.getAttribute('href') || '';
+    if (/wa\.me\/|api\.whatsapp\.com/.test(h)) window.dtresTrack('Contact', { content_name: 'whatsapp' });
+    else if (/calendar\.app\.google|calendly\.com/.test(h)) window.dtresTrack('Schedule', { content_name: 'reservar llamada' });
+  });
+  if (document.querySelector('[data-track-lead]') && !sessionStorage.getItem('dtres_lead:' + location.pathname)) {
+    try { sessionStorage.setItem('dtres_lead:' + location.pathname, '1'); } catch (e) {}
+    window.dtresTrack('Lead', { content_name: location.hostname });
+  }
+  var c = read();
+  if (c) load(c); else el.hidden = false;
+})();
+</script>
+<style>
+  .ck { position: fixed; z-index: 1000; left: 16px; right: 16px; bottom: 16px; max-width: 440px; background: var(--ink); color: var(--bone); padding: 22px 22px 18px; display: flex; flex-direction: column; gap: 12px; box-shadow: 0 12px 40px rgba(0,0,0,.25); font-size: 15px; line-height: 1.45; }
+  .ck[hidden] { display: none; }
+  .ck__t { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--sage); }
+  .ck__x { color: #c9c8bb; }
+  .ck__x a { color: var(--bone); text-underline-offset: 3px; }
+  .ck__o { display: flex; flex-direction: column; gap: 8px; padding: 6px 0; border-top: 1px solid rgba(234,234,228,.2); padding-top: 12px; }
+  .ck__o label { display: flex; align-items: center; gap: 10px; cursor: pointer; }
+  .ck__o input { width: 18px; height: 18px; accent-color: var(--sage); }
+  .ck__b { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-top: 4px; }
+  .ck__b button { font: inherit; font-weight: 500; min-height: 44px; padding: 0 22px; cursor: pointer; border: 1px solid var(--bone); background: var(--bone); color: var(--ink); }
+  .ck__b .ck__l { background: transparent; border-color: transparent; color: #c9c8bb; padding: 0 6px; text-decoration: underline; text-underline-offset: 3px; }
+  @media (max-width: 520px) { .ck__b button:not(.ck__l) { flex: 1; } }
+  @media print { .ck { display: none !important; } }
+</style>

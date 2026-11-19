@@ -17,6 +17,8 @@ export const site = {
   address: { street: "Carrer d'Osi 23, baixos 2a", postalCode: '08034', city: 'Barcelona', region: 'Catalunya', country: 'ES' },
   placeId: 'ChIJv3MWA6yXpBIRj6tO7BPYQxA',
   areaServed: ['Barcelona', 'Catalunya'],
+  // Medición: solo se activan si el visitante acepta las cookies. Clarity y GA4 vacíos = desactivados.
+  tracking: { metaPixel: '2936012290090211', clarity: '', ga4: '' },
 };
 
 export const meta = {

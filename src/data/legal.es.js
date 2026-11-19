@@ -5,7 +5,7 @@ const company = `<strong>${site.legalName}</strong>`;
 const id = `${company}, con NIF ${site.taxId} y domicilio en ${site.address.street}, ${site.address.postalCode} ${site.address.city}`;
 const reg = ' Inscrita en el Registro Mercantil de Barcelona, tomo 46912, folio 216, hoja B-535114.';
 
-export const updated = '1 de noviembre de 2026';
+export const updated = '19 de noviembre de 2026';
 
 export const legal = {
   title: 'Aviso legal',
@@ -42,12 +42,18 @@ export const privacy = {
 
 export const cookies = {
   title: 'Política de cookies',
-  desc: 'detres.eu no utiliza cookies de seguimiento, analítica ni publicidad.',
+  desc: 'Qué cookies usan detres.eu y workplace.detres.eu, para qué sirven y cómo gestionarlas.',
   sections: [
     ['Qué son las cookies', `<p>Son pequeños archivos que algunos sitios web guardan en tu navegador para recordar información sobre tu visita.</p>`],
-    ['Cookies que usa esta web', `<p><strong>Ninguna.</strong> detres.eu no instala cookies propias ni de terceros: no usamos herramientas de analítica, publicidad ni redes sociales que rastreen tu navegación. Las tipografías se sirven desde nuestro propio servidor, sin conexiones a terceros.</p>
-      <p>Por eso no te mostramos ningún aviso de cookies: no hay nada que aceptar ni rechazar.</p>`],
-    ['Enlaces externos', `<p>Algunos enlaces llevan a sitios de terceros, como Google Maps o las reseñas de Google. Si los visitas, esos sitios pueden usar sus propias cookies según sus políticas.</p>`],
-    ['Cambios', `<p>Si en el futuro incorporamos alguna herramienta que use cookies, actualizaremos esta política y te pediremos el consentimiento antes de instalarlas.</p>`],
+    ['Cómo las usamos', `<p>Esta política se aplica a detres.eu y a workplace.detres.eu. Solo instalamos cookies de analítica y publicidad si las aceptas en el aviso que aparece al entrar. Si las rechazas, la web funciona igual.</p>
+      <p>Puedes cambiar tu elección cuando quieras desde el enlace <a href="#cookies" data-ck-open>Configurar cookies</a>, que también está en el pie de cada página.</p>`],
+    ['Cookies que usa esta web', `<ul>
+      <li><strong>dtres_consent</strong> (propia, necesaria, 6 meses): guarda tu elección sobre las cookies.</li>
+      <li><strong>_fbp, _fbc</strong> (Meta Platforms, publicidad, hasta 90 días): solo si aceptas la publicidad. Nos permiten medir qué anuncios de Facebook e Instagram traen visitas y contactos, y mostrar anuncios a quien ya ha visitado la web.</li>
+    </ul>
+    <p>Si en el futuro añadimos herramientas de analítica (por ejemplo Microsoft Clarity o Google Analytics), aparecerán aquí y solo se activarán con tu consentimiento de analítica.</p>`],
+    ['Transferencias internacionales', `<p>Meta Platforms puede tratar estos datos fuera del Espacio Económico Europeo, con las garantías del Marco de Privacidad de Datos UE-EE. UU. Más información en la <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener">política de privacidad de Meta</a>.</p>`],
+    ['Cómo desactivarlas', `<p>Además de usar <a href="#cookies" data-ck-open>Configurar cookies</a>, puedes borrar o bloquear las cookies desde los ajustes de tu navegador.</p>`],
+    ['Enlaces externos', `<p>Algunos enlaces llevan a sitios de terceros, como Google Maps, Google Calendar o WhatsApp. Si los visitas, esos sitios pueden usar sus propias cookies según sus políticas.</p>`],
   ],
 };
