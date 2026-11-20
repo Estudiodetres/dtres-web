@@ -29,6 +29,7 @@ const ld = [
     { '@type': 'ListItem', position: 3, name: title },
   ] },
 ];
+const stageOrder = ['antes', 'durante', 'despues'];
 ---
 <Base title={`${title} · DTRES`} description={desc} jsonLd={ld} lang={lang} alternates={alternates} preload={imgs.length ? { srcset: srcset(imgs[1]), sizes: '(min-width: 760px) 50vw, 100vw' } : null}>
   <section class="wrap pd-hero">
@@ -44,10 +45,14 @@ const ld = [
   {p.img && <section class="wrap pd-main"><img class={p.bw ? 'ph bw' : 'ph'} src={p.img} srcset={srcset(p.img)} sizes="(min-width: 1680px) 1520px, (min-width: 1280px) 1232px, calc(100vw - 48px)" alt={title} width="2000" height="1300" loading="lazy" /></section>}
   {gal.length > 0 && (
     <section class="wrap pd-gal">
-      <p class="lbl">{t.gallery} · {gal.length}</p>
-      <div class="pd-gal__grid">
-        {gal.map((g, k) => <a href={g.src.replace('.jpg', '-w1200.webp')} target="_blank" rel="noopener"><img class="ph" src={g.src} srcset={gset(g.src)} sizes="(min-width: 1100px) 33vw, (min-width: 600px) 50vw, calc(100vw - 48px)" alt={`${title} · ${k + 1}`} width={g.w} height={g.h} loading="lazy" decoding="async" /></a>)}
-      </div>
+      {stageOrder.filter((s) => gal.some((g) => g.stage === s)).map((s, n) => { const st = t.stages[s]; const list = gal.filter((g) => g.stage === s); return (
+        <div class="pd-gal__stage">
+          <header class="pd-gal__head"><span class="pd-gal__n">{String(n + 1).padStart(2, '0')}</span><h2>{st[0]}</h2><p>{st[1]} <span class="lbl">{list.length} {t.photos}</span></p></header>
+          <div class="pd-gal__grid">
+            {list.map((g, k) => <a href={g.src.replace('.jpg', '-w1200.webp')} target="_blank" rel="noopener"><img class="ph" src={g.src} srcset={gset(g.src)} sizes="(min-width: 1100px) 33vw, (min-width: 600px) 50vw, calc(100vw - 48px)" alt={`${title} · ${st[0]} ${k + 1}`} width={g.w} height={g.h} loading="lazy" decoding="async" /><span class="pd-gal__tag">{st[0]}</span></a>)}
+          </div>
+        </div>
+      ); })}
     </section>
   )}
   <nav class="wrap pd-nav">
@@ -72,7 +77,14 @@ const ld = [
   @media (max-width: 520px) { .pd-ba { gap: 8px; } }
   .pd-main { margin-top: 24px; }
   .pd-main img { aspect-ratio: 16 / 10; }
-  .pd-gal { padding-top: 48px; display: flex; flex-direction: column; gap: 20px; }
+  .pd-gal { padding-top: 48px; display: flex; flex-direction: column; gap: 56px; }
+  .pd-gal__stage { display: flex; flex-direction: column; gap: 20px; }
+  .pd-gal__head { display: grid; grid-template-columns: auto 1fr; column-gap: 16px; align-items: baseline; border-top: 1px solid var(--line, rgba(32,33,36,.15)); padding-top: 20px; }
+  .pd-gal__n { font-size: 14px; letter-spacing: .08em; color: var(--muted); grid-row: span 2; }
+  .pd-gal__head h2 { font-size: clamp(26px, 3vw, 36px); line-height: 1.1; margin: 0; }
+  .pd-gal__head p { margin: 4px 0 0; color: var(--muted); display: flex; gap: 12px; flex-wrap: wrap; align-items: baseline; }
+  .pd-gal__grid a { position: relative; }
+  .pd-gal__tag { position: absolute; left: 10px; bottom: 10px; padding: 4px 10px; border-radius: 999px; background: rgba(234,234,228,.92); color: #202124; font-size: 12px; pointer-events: none; }
   .pd-gal__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr)); gap: 12px; }
   .pd-gal__grid a { display: block; }
   .pd-gal__grid img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }

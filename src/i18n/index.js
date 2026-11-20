@@ -105,7 +105,7 @@ export const fmt = (n, lang = 'es') => String(n).replace(/\B(?=(\d{3})+(?!\d))/g
 export const wpLabels = { es: { nav: 'Oficinas', footer: 'Oficinas para empresas' }, ca: { nav: 'Oficines', footer: 'Oficines per a empreses' }, en: { nav: 'Offices', footer: 'Offices for companies' } };
 
 export const projectDetail = {
-  es: { gallery: 'Galería del proceso', before: 'Antes', after: 'Después', back: 'Proyectos', ba: 'Antes / Después', cta: '¿Quieres un resultado así?' },
-  ca: { gallery: 'Galeria del procés', before: 'Abans', after: 'Després', back: 'Projectes', ba: 'Abans / Després', cta: 'Vols un resultat així?' },
-  en: { gallery: 'Project gallery', before: 'Before', after: 'After', back: 'Projects', ba: 'Before / After', cta: 'Want a result like this?' },
+  es: { stages: { antes: ['Antes', 'El espacio tal como lo encontramos.'], durante: ['Durante la obra', 'Demolición, instalaciones y construcción.'], despues: ['Después', 'El resultado entregado.'] }, photos: 'fotos', gallery: 'Galería del proceso', before: 'Antes', after: 'Después', back: 'Proyectos', ba: 'Antes / Después', cta: '¿Quieres un resultado así?' },
+  ca: { stages: { antes: ['Abans', "L'espai tal com el vam trobar."], durante: ["Durant l'obra", 'Enderroc, instal·lacions i construcció.'], despues: ['Després', 'El resultat lliurat.'] }, photos: 'fotos', gallery: 'Galeria del procés', before: 'Abans', after: 'Després', back: 'Projectes', ba: 'Abans / Després', cta: 'Vols un resultat així?' },
+  en: { stages: { antes: ['Before', 'The space as we found it.'], durante: ['During construction', 'Demolition, services and build.'], despues: ['After', 'The finished result.'] }, photos: 'photos', gallery: 'Project gallery', before: 'Before', after: 'After', back: 'Projects', ba: 'Before / After', cta: 'Want a result like this?' },
 };
